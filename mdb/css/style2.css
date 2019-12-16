@@ -475,3 +475,9 @@ text-align: center;
 .montserrat-regular{
   font-family: montserrat-regular;
 }
+
+#navbarNav li:hover,
+#navbarNav li a:hover{
+background-color: white;
+color:#c2c3c5
+}
