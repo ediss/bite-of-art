@@ -84,12 +84,11 @@ body {
 }
 .logo{
   width: 133px;
-  /* color: white; */
   height: 92px;
 }
 .bg-danger{
       position: absolute;
-      left: 57%;
+      left: 55%;
       background-color: transparent  !important;
       display: flex;
       flex-wrap: nowrap;
