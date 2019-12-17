@@ -359,7 +359,7 @@ transform: translateX(0);
   text-align: center;
   color: white;
   font-weight: bold;
-  font-size:32px;
+  font-size:44px;
   
 }
 
@@ -368,6 +368,17 @@ transform: translateX(0);
   border:none !important;
   
 }
+
+.login {
+  line-height: 4.5em;
+  color:white !important;
+  font-size: 21px;
+}
+
+.menu-footer {
+  margin-top: 32%;
+}
+
 
 
 
