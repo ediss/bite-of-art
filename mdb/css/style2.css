@@ -125,8 +125,8 @@ body {
 .animated-icon1,
 .animated-icon2,
 .animated-icon3 {
-  width: 45px;
-  height: 25px;
+  /* width: 45px;
+  height: 25px; */
   position: relative;
   margin: 0px;
   -webkit-transform: rotate(0deg);
@@ -160,9 +160,6 @@ body {
   transition: 0.25s ease-in-out;
 }
 
-.animated-icon1 {
-  height: 45px;
-}
 
 .animated-icon1 span {
   width: 40px;
@@ -489,6 +486,15 @@ body {
   margin-top: 8rem !important;
 }
 
+	.login {
+	  line-height: 4.5em;
+	  color: white !important;
+	  font-size: 21px;
+	}
+
+	.menu-footer {
+	  margin-top: 32%;
+	}
 
 
 @font-face {
