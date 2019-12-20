@@ -364,6 +364,7 @@ body {
 }
 
 .bg-dark-mobile {
+      overflow: hidden;
   /* padding:0; */
   height: 0%;
   width: 100%;
