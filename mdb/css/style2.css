@@ -421,6 +421,7 @@ body {
 }
 
 .card-body {
+  height: 68px;
   padding: 0 !important;
 }
 
