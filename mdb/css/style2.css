@@ -349,11 +349,11 @@ body {
 
 
   .carousel-control-prev {
-    left: -5%;
+    left: -9%;
   }
 
   .carousel-control-next {
-    left: 95%;
+    left: 107%;
   }
 
 }
@@ -411,6 +411,12 @@ body {
 }
 
 .card-img-top {
+
+  width: auto;
+}
+
+.card-img-top1{
+  max-height: 107px;
   width: auto;
 }
 
