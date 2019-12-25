@@ -503,7 +503,12 @@ body {
 	  color: white !important;
     font-size: 21pt;
     /* font-family: montserrat-regular; */
-	}
+  }
+  
+  .menu-span {
+    color:white;
+    font-size: 21pt;
+  }
 
 	.menu-footer {
 	  margin-top: 6em;
