@@ -278,7 +278,7 @@ body {
   } */
   .carousel-controls-main {
     left: -3%;
-    top: 60%;
+    top: 58%;
   }
 
   .carousel-controls {
@@ -315,7 +315,7 @@ body {
   } */
   .carousel-controls-main {
     left: 3%;
-    top: 55%;
+    top: 60%;
   }
 
   .carousel-controls {
@@ -392,7 +392,7 @@ body {
   text-align: center;
   color: white;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 44pt;
 
 }
 
@@ -412,7 +412,7 @@ body {
 
 .card-img-top {
 
-  width: auto;
+  /* width: auto; */
 }
 
 .card-img-top1{
@@ -502,13 +502,19 @@ body {
 	.login {
 	  line-height: 4.5em;
 	  color: white !important;
-	  font-size: 21px;
+    font-size: 21pt;
+    /* font-family: montserrat-regular; */
 	}
 
 	.menu-footer {
 	  margin-top: 32%;
 	}
-
+.footer {
+  position: fixed;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+}
 
 @font-face {
   font-family: montserrat-light;
@@ -526,11 +532,12 @@ body {
 
 .montserrat-light {
   font-family: montserrat-light;
-  ;
+ 
 }
 
 .montserrat-regular {
   font-family: montserrat-regular;
+
 }
 #navbarNav li:hover,
 #navbarNav li a:hover{
@@ -672,4 +679,7 @@ color:#c2c3c5
     transform: scale(1);
   }
 }
+
+
+
 
