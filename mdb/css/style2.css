@@ -407,7 +407,9 @@ body {
 
 }
 
-
+.page-heading {
+  font-size:33pt;
+}
 
 .row .mt-3 {
   display: flex;
@@ -446,9 +448,11 @@ body {
   margin: 0 0 5px 0;
 }
 
+
 .card-title {
   margin: 0px;
   text-align: center;
+  font-size: 21pt;
 }
 
 .carousel-control-prev-icon,
