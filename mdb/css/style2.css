@@ -56,7 +56,7 @@ body {
   text-decoration: none;
   color: #d4d4d4;
 }
-
+/* 
 .text-right,
 .text-left,
 .text-center {
@@ -64,7 +64,7 @@ body {
   padding: 0 10px;
   font-size: 20px;
   line-height: 22px;
-}
+} */
 
 .text-left {
   font-weight: bold;
@@ -240,13 +240,18 @@ body {
 }
 
 .carousel-control-prev {
-  height: 30%;
-  width: 15%;
+  /* height: 30%;
+  width: 15%; */
+
+  top: initial !important;
+  bottom: initial !important;
+  justify-content: left !important;
 }
 
 .carousel-control-next {
-  height: 30%;
-  width: 15%;
+  top: initial !important;
+  bottom: initial !important;
+
 }
 
 
@@ -286,9 +291,7 @@ body {
     top: 89%;
   }
 
-  .carousel-control-prev {
-    left: -7%;
-  }
+
 
   .carousel-control-next {
     left: 111%;
@@ -425,7 +428,7 @@ body {
 
 
 .card-body {
-  height: 68px;
+  height: 100px;
   padding: 0 !important;
 }
 
@@ -445,8 +448,8 @@ body {
 
 .card-title {
   /* margin-top: .75rem; */
-  margin: 8px 0 0 0;
-  text-align: center;
+  /* margin: 8px 0 0 0; */
+  padding-top:0.5em;
   text-align: center;
 }
 
@@ -518,6 +521,13 @@ body {
   /* height: 100px; */
   /* bottom: 0; */
   width: 100%;
+}
+
+.footer-copyright {
+  color: #d4d4d4;
+  
+  /* font-size: 20px; */
+  
 }
 
 @font-face {
