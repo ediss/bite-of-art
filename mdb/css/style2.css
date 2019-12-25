@@ -440,7 +440,7 @@ body {
 }
 
 .card-text:last-child {
-  margin: 0 36px;
+  margin: 5px 36px;
 }
 
 .card-text {
@@ -453,6 +453,14 @@ body {
   margin: 0px;
   text-align: center;
   font-size: 21pt;
+}
+
+.grey-text {
+  color:#818181;
+  /*privremena velicina teksta*/
+
+  font-weight: bold;
+  font-size:15pt;
 }
 
 .carousel-control-prev-icon,
@@ -533,24 +541,26 @@ body {
 @font-face {
   font-family: montserrat-light;
   src: url(../../font/montserrat/Montserrat-Light.otf);
-  font-weight: bold;
-  font-size: 21px;
+  /* font-weight: bold; */
+  /* font-size: 21px; */
 }
 
 @font-face {
   font-family: montserrat-regular;
   src: url(../../font/montserrat/Montserrat-Regular.otf);
-  font-weight: bold;
-  font-size: 21px;
+  /* font-weight: bold; */
+  /* font-size: 21px; */
 }
 
 .montserrat-light {
   font-family: montserrat-light;
+  font-weight: bold;
  
 }
 
 .montserrat-regular {
   font-family: montserrat-regular;
+  font-weight: bold;
 
 }
 #navbarNav li:hover,
