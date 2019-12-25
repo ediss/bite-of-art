@@ -277,13 +277,13 @@ body {
     opacity: 1;
   } */
   .carousel-controls-main {
-    left: 0%;
-    top: 58%;
+    left: -3%;
+    top: 60%;
   }
 
   .carousel-controls {
-    left: 0%;
-    top: 94%;
+    left: -3%;
+    top: 89%;
   }
 
   .carousel-control-prev {
@@ -291,7 +291,7 @@ body {
   }
 
   .carousel-control-next {
-    left: 105%;
+    left: 111%;
   }
 
 
@@ -422,6 +422,11 @@ body {
 
 .card-body {
   height: 68px;
+  padding: 0 !important;
+}
+
+.card-body1{
+  height: 160px;
   padding: 0 !important;
 }
 
