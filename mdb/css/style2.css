@@ -410,15 +410,17 @@ body {
 
 }
 
+
+.card {
+  border:none !important;
+}
 .card-img-top {
 
-  /* width: auto; */
+  border-top-left-radius: initial !important;
+  border-top-right-radius: initial !important;
 }
 
-.card-img-top1{
-  max-height: 107px;
-  width: auto;
-}
+
 
 .card-body {
   height: 68px;
@@ -426,7 +428,7 @@ body {
 }
 
 .card-body1{
-  height: 160px;
+  /* height: 160px; */
   padding: 0 !important;
 }
 
@@ -511,8 +513,8 @@ body {
 	}
 .footer {
   position: fixed;
-  height: 100px;
-  bottom: 0;
+  /* height: 100px; */
+  /* bottom: 0; */
   width: 100%;
 }
 
