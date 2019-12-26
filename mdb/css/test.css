@@ -180,4 +180,13 @@ Attribution required
       }
   
   }
+
+
+  #carouselExample .carousel-inner {
+      left:-10%;
+  }
+
+  .w-120 {
+      width: 120%;
+  }
   
