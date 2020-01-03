@@ -2,8 +2,6 @@ body {
   overflow-x: hidden;
 }
 
-
-
 .w-120 {
   width: 120% !important;
 }
@@ -12,7 +10,6 @@ body {
   left: -10%;
 }
  */
-
 
 .col-20 {
   -ms-flex: 0 0 20%;
@@ -215,7 +212,6 @@ body {
 
 /*Carousel-custom*/
 
-
 @media (min-width: 768px) and (max-width: 991px) {
   /* Show 3rd slide on md  if col-md-4*/
   .carousel-inner
@@ -233,39 +229,41 @@ body {
 }
 
 @media (min-width: 576px) {
-  .carousel-item {
+  .carousel-item-main {
     margin-right: 0;
   }
 
   /* show 2 items */
-  .carousel-inner .active + .carousel-item {
+  .carousel-inner-main .active + .carousel-item-main {
     display: block;
   }
 
-  .carousel-inner
-    .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-  .carousel-inner
-    .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
-    + .carousel-item {
+  .carousel-inner-main
+    .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner-main
+    .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left)
+    + .carousel-item-main {
     transition: none;
   }
 
-  .carousel-inner .carousel-item-next {
+  .carousel-inner-main .carousel-item-next {
     position: relative;
     transform: translate3d(0, 0, 0);
   }
 
   /* left or forward direction */
   .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-  .carousel-item-next.carousel-item-left + .carousel-item,
-  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item {
+  .carousel-item-next.carousel-item-left + .carousel-item-main,
+  .carousel-item-next.carousel-item-left
+    + .carousel-item-main
+    + .carousel-item-main {
     position: relative;
     transform: translate3d(-100%, 0, 0);
     visibility: visible;
   }
 
   /* farthest right hidden item must be abso position for animations */
-  .carousel-inner .carousel-item-prev.carousel-item-right {
+  .carousel-inner-main .carousel-item-prev.carousel-item-right {
     position: absolute;
     top: 0;
     left: 0;
@@ -276,8 +274,10 @@ body {
 
   /* right or prev direction */
   .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-  .carousel-item-prev.carousel-item-right + .carousel-item,
-  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
+  .carousel-item-prev.carousel-item-right + .carousel-item-main,
+  .carousel-item-prev.carousel-item-right
+    + .carousel-item-main
+    + .carousel-item-main {
     position: relative;
     transform: translate3d(100%, 0, 0);
     visibility: visible;
@@ -329,59 +329,65 @@ body {
 }
 
 /*LG 6th*/
+/*LG 6th*/
 @media (min-width: 991px) {
   /* show 3th item */
-  .carousel-inner .active + .carousel-item + .carousel-item {
+  .carousel-inner-main .active + .carousel-item-main + .carousel-item-main {
     display: block;
   }
 
-  .carousel-inner
-    .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
-    + .carousel-item
-    + .carousel-item
-    + .carousel-item {
+  .carousel-inner-main
+    .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left)
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main {
     transition: none;
   }
 
   /* right or prev direction //t - previous slide direction last item animation fix */
-  /* .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-        display: block;
-        visibility: visible;
-    } */
+  /* .carousel-item-prev.carousel-item-right
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  } */
 }
 
 /*LG 6th*/
 @media (min-width: 991px) {
   /* show 5th and 6th item */
-  .carousel-inner .active + .carousel-item + .carousel-item {
+  .carousel-inner-main .active + .carousel-item-main + .carousel-item-main,
+  .carousel-inner-main .active + .carousel-item-main + .carousel-item-main {
     display: block;
   }
 
-  .carousel-inner
-    .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
-    + .carousel-item
-    + .carousel-item
-    + .carousel-item
-    + .carousel-item,
-  .carousel-inner
-    .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
-    + .carousel-item
-    + .carousel-item
-    + .carousel-item
-    + .carousel-item
-    + .carousel-item {
+  .carousel-inner-main
+    .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left)
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main,
+  .carousel-inner-main
+    .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left)
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main {
     transition: none;
   }
 
   /*show 7th slide for animation when its a 6 slides carousel */
-  .carousel-inner
-    .active.carousel-item
-    + .carousel-item
-    + .carousel-item
-    + .carousel-item {
+  .carousel-inner-main
+    .active.carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main {
     position: absolute;
     top: 0;
     right: -33.3333%; /*change this with javascript in the future*/
@@ -391,14 +397,28 @@ body {
   }
 
   /* forward direction > */
-  .carousel-item-next.carousel-item-left + .carousel-item {
+  .carousel-item-next.carousel-item-left
+    + .carousel-item-main
+    + .carousel-item-main,
+  .carousel-item-next.carousel-item-left
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main {
     position: relative;
     transform: translate3d(-100%, 0, 0);
     visibility: visible;
   }
 
   /* prev direction < last item animation fix */
-  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
+  .carousel-item-prev.carousel-item-right
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main
+    .carousel-item-prev.carousel-item-right
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main
+    + .carousel-item-main {
     position: relative;
     transform: translate3d(100%, 0, 0);
     visibility: visible;
@@ -407,7 +427,192 @@ body {
   }
 }
 
+/*news*/
+
+@media (min-width: 576px) {
+  .carousel-item-news {
+    margin-right: 0;
+  }
+
+  /* show 2 items */
+  .carousel-inner-news .active + .carousel-item-news {
+    display: block;
+  }
+
+  .carousel-inner-news
+    .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner-news
+    .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left)
+    + .carousel-item-news {
+    transition: none;
+  }
+
+  .carousel-inner-news .carousel-item-next {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* left or forward direction */
+  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  .carousel-item-next.carousel-item-left + .carousel-item-news,
+  .carousel-item-next.carousel-item-left
+    + .carousel-item-news
+    + .carousel-item-news {
+    position: relative;
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  /* farthest right hidden item must be abso position for animations */
+  .carousel-inner-news .carousel-item-prev.carousel-item-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* right or prev direction */
+  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+  .carousel-item-prev.carousel-item-right + .carousel-item-news,
+  .carousel-item-prev.carousel-item-right
+    + .carousel-item-news
+    + .carousel-item-news {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  }
+}
+
+/*LG 6th*/
+@media (min-width: 991px) {
+  /* show 4th item */
+  .carousel-inner-news
+    .active
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news {
+    display: block;
+  }
+
+  .carousel-inner-news
+    .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left)
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news {
+    transition: none;
+  }
+
+  /* right or prev direction //t - previous slide direction last item animation fix */
+  .carousel-item-prev.carousel-item-right
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  }
+}
+
+/*LG 6th*/
+@media (min-width: 991px) {
+  /* show 5th and 6th item */
+
+  .carousel-inner-news .active + .carousel-item-news + .carousel-item-news  + .carousel-item-news,
+  .carousel-inner-news .active + .carousel-item-news + .carousel-item-news  + .carousel-item-news{
+    display: block;
+  }
+
+
+  /* .carousel-inner-news
+    .active
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+     {
+    display: block;
+  } */
+
+  .carousel-inner-news
+    .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left)
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news,
+  .carousel-inner-news
+    .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left)
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news {
+    transition: none;
+  }
+
+  .carousel-inner-news
+  .active.carousel-item-news
+  + .carousel-item-news
+  + .carousel-item-news
+  + .carousel-item-news
+  + .carousel-item-news
+  + .carousel-item-news{
+  position: absolute;
+  top: 0;
+  right: -20%; /*change this with javascript in the future*/
+  z-index: -1;
+  display: block;
+  visibility: visible;
+}
+  /* forward direction > */
+  .carousel-item-next.carousel-item-left
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    .carousel-item-next.carousel-item-left
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news 
+    + .carousel-item-news{
+    position: relative;
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  /* prev direction < last item animation fix */
+  .carousel-item-prev.carousel-item-right
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news,
+  .carousel-item-prev.carousel-item-right
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news 
+    {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+  }
+}
+
 #carouselMainGallery .carousel-inner {
+  left: -10%;
+}
+
+#carouselExample .carousel-inner-main {
   left: -10%;
 }
 
@@ -487,7 +692,6 @@ body {
     display: block;
   }
 
-  
   .carousel-controls-main {
     left: 3%;
     top: 60%;
@@ -538,7 +742,7 @@ body {
 
 .bg-dark-mobile {
   overflow: hidden;
-  
+
   height: 0%;
   width: 100%;
   position: fixed;
@@ -546,7 +750,7 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(193, 193, 193);
-  
+
   overflow-y: hidden;
   transition: 0.5s;
 }
