@@ -879,6 +879,11 @@ body {
   transform: translateX(0);
 } */
 
+.ml-mt-35px{
+  margin-top: 35px;
+  margin-left: 35px;
+}
+
 .bg-dark-mobile {
   overflow: hidden;
 
@@ -888,7 +893,7 @@ body {
   z-index: 11;
   top: 0;
   left: 0;
-  background-color: rgba(193, 193, 193);
+  background-color:#FFFFFF;
 
   overflow-y: hidden;
   transition: 0.5s;
@@ -903,11 +908,12 @@ body {
 }
 
 #navbarNav li a {
-  font-family: "Roboto-Light", sans-serif;
   text-align: center;
-  color: white;
-  font-weight: bold;
-  font-size: 44pt;
+  color: #cccccc;
+  font-size: 24pt;
+  font-family: montserrat-bold;
+  src: url(../../font/montserrat/Montserrat-Bold.otf);
+
 }
 
 .navbar-light .navbar-toggler {
@@ -915,8 +921,11 @@ body {
   border: none !important;
 }
 
+.h-100px {
+  height: 100px;
+}
 .page-heading {
-  font-size:33pt;
+  font-size:24pt;
 }
 
 .row .mt-3 {
@@ -1039,6 +1048,14 @@ body {
   
 }
 
+
+@font-face {
+  font-family: montserrat-bold;
+  src: url(../../font/montserrat/Montserrat-Bold.otf);
+  /* font-weight: bold; */
+  /* font-size: 21px; */
+}
+
 @font-face {
   font-family: montserrat-light;
   src: url(../../font/montserrat/Montserrat-Light.otf);
@@ -1051,6 +1068,12 @@ body {
   src: url(../../font/montserrat/Montserrat-Regular.otf);
   /* font-weight: bold; */
   /* font-size: 21px; */
+}
+
+.montserrat-bold {
+  font-family: montserrat-bold;
+  /* font-weight: bold; */
+ 
 }
 
 .montserrat-light {
