@@ -745,12 +745,22 @@ body {
 .w-120 {
   width: 120%;
 }
-
+#mainGallery,
+#smallGallery {
+  position: relative;
+}
 .carousel-controls-main,
 .carousel-controls {
   position: absolute;
-  width: 80% !important;
+  left:-2%;
+  width: 100% !important;
   margin: 0 5%;
+}
+.carousel-controls-main {
+  top: 85%;
+}
+.carousel-controls {
+  top: 75%;
 }
 
 .carousel-control-prev {
