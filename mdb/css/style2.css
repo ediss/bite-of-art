@@ -750,7 +750,7 @@ body {
   /* top: initial !important;
   bottom: initial !important;*/
   justify-content: left !important;
-  opacity: 1 !important;
+  /* opacity: 1 !important; */
   cursor:default;
 }
 
