@@ -957,6 +957,7 @@ body {
   text-align: center;
   font-size: 18pt;
   padding-top: 15px;
+  line-height: 24pt;
 }
 
 .grey-text {
@@ -1213,3 +1214,48 @@ input[type=submit] {
 .social img {
   /* margin-left: 2.5%; */
 }
+
+
+
+/*Main page*/
+
+
+
+.img-opacity:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+
+.img-opacity:hover {
+  
+  cursor: pointer;
+}
+.img-opacity:hover:before {
+  
+  display : none;
+
+}
+.img-opacity:hover + .img-description {
+  display : none;
+
+}
+.img-description {
+  
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  color:white;
+  font-family: montserrat-bold;
+  src: url(../../font/montserrat/Montserrat-Bold.otf);
+  font-size: 12pt;
+  margin: 0 0 5px 0;
+
+
+}
+
