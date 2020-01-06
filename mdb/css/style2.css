@@ -737,7 +737,8 @@ body {
   bottom: 0;
 }
 .carousel-controls {
-  top: 75%;
+  /* top: 100%; */
+  bottom: 0;
 }
 
 .carousel-control-prev {
