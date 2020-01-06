@@ -745,7 +745,7 @@ body {
   width: 15%; */
   margin-bottom: 40px;
   margin-top: 40px;
-  margin-left: 2%;
+  margin-left: 35px;
   /* top: initial !important;
   bottom: initial !important;*/
   justify-content: left !important;
@@ -761,7 +761,7 @@ body {
   margin-bottom: 40px;
   margin-top: 40px;
   justify-content: flex-end;
-  margin-right: 2%;
+  margin-right: 35px;
   opacity: 1 !important;
   cursor:default;
 }
@@ -946,14 +946,17 @@ body {
 
 .card-text {
   text-align: center;
-  margin: 0 0 5px 0;
+  margin: 0 0 5px 0; /*need to be checked*/
+  line-height: 24pt;
+
 }
 
 
 .card-title {
   margin: 0px;
   text-align: center;
-  font-size: 21pt;
+  font-size: 18pt;
+  padding-top: 15px;
 }
 
 .grey-text {
