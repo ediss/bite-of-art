@@ -727,12 +727,14 @@ body {
 .carousel-controls-main,
 .carousel-controls {
   position: absolute;
-  left:-2%;
+  left:2%;
   width: 100% !important;
-  margin: 0 5%;
+  /* margin: 0 5%; */
 }
 .carousel-controls-main {
-  top: 85%;
+  /* top: 85%; */
+  height: 100px;
+  bottom: 0;
 }
 .carousel-controls {
   top: 75%;
@@ -741,15 +743,18 @@ body {
 .carousel-control-prev {
   /* height: 30%;
   width: 15%; */
-
-  top: initial !important;
-  bottom: initial !important;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  /* top: initial !important;
+  bottom: initial !important;*/
   justify-content: left !important;
 }
 
 .carousel-control-next {
-  top: initial !important;
-  bottom: initial !important;
+  /* top: initial !important;
+  bottom: initial !important; */
+  margin-bottom: 40px;
+  margin-top: 40px;
 
 }
 
@@ -953,8 +958,8 @@ body {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  width: 35px !important;
-  height: 35px !important;
+  width: 20px !important;
+  height: 20px !important;
 }
 
 .carousel-control-prev-icon:hover,
