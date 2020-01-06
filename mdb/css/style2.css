@@ -727,7 +727,7 @@ body {
 .carousel-controls-main,
 .carousel-controls {
   position: absolute;
-  left:2%;
+  /* left:2%; */
   width: 100% !important;
   /* margin: 0 5%; */
 }
@@ -745,6 +745,7 @@ body {
   width: 15%; */
   margin-bottom: 40px;
   margin-top: 40px;
+  margin-left: 2%;
   /* top: initial !important;
   bottom: initial !important;*/
   justify-content: left !important;
@@ -755,7 +756,8 @@ body {
   bottom: initial !important; */
   margin-bottom: 40px;
   margin-top: 40px;
-
+  justify-content: flex-end;
+  margin-right: 2%;
 }
 
 /* display 3 */
