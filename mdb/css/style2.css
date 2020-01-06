@@ -1114,3 +1114,99 @@ body {
   font-family: montserrat-bold;
   src: url(../../font/montserrat/Montserrat-Bold.otf); 
 }
+
+
+
+/*CONTACT*/
+
+.md-form {
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem
+}
+
+.md-form input:not([type]),
+.md-form input[type="text"]:not(.browser-default),
+.md-form input[type="password"]:not(.browser-default),
+.md-form input[type="email"]:not(.browser-default),
+.md-form input[type="url"]:not(.browser-default),
+.md-form input[type="time"]:not(.browser-default),
+.md-form input[type="date"]:not(.browser-default),
+.md-form input[type="datetime"]:not(.browser-default),
+.md-form input[type="datetime-local"]:not(.browser-default),
+.md-form input[type="tel"]:not(.browser-default),
+.md-form input[type="number"]:not(.browser-default),
+.md-form input[type="search"]:not(.browser-default),
+.md-form input[type="search-md"],
+.md-form textarea.md-textarea {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #000000;
+    border-radius: 0;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out
+}
+
+
+.md-form label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  color: #757575;
+  cursor: text;
+  -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
+  transition: color .2s ease-out, -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out, color .2s ease-out;
+  transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+  -webkit-transform: translateY(12px);
+  transform: translateY(12px);
+  -webkit-transform-origin: 0% 100%;
+  transform-origin: 0% 100%
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-family: montserrat-regular;
+  src: url(../../font/montserrat/Montserrat-Regular.otf);
+  font-size: 14pt;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-family: montserrat-regular;
+  src: url(../../font/montserrat/Montserrat-Regular.otf);
+  font-size: 14pt;}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  font-family: montserrat-regular;
+  src: url(../../font/montserrat/Montserrat-Regular.otf);
+  font-size: 14pt;}
+
+input[type=submit] {
+  background-color: #cccccc;
+  border: none;
+  color: white;
+  font-family: montserrat-bold;
+  src: url(../../font/montserrat/Montserrat-Bold.otf);
+  font-size: 24pt;
+  
+  text-decoration: none;
+  width: 260px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.social {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 100px;
+}
+.social img {
+  /* margin-left: 2.5%; */
+}
