@@ -1013,9 +1013,7 @@ body {
     font-size: 12pt;
   }
 
-.menu-footer {
-  margin-top: 6em;
-}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -1080,14 +1078,17 @@ body {
   animation-duration: 0.6s;
 }
 
-.languages {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  margin-bottom: 100px;
-}
 
+
+.languages {
+  
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 100px;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
 .active-language {
   font-family: montserrat-bold;
   src: url(../../font/montserrat/Montserrat-Bold.otf); 
