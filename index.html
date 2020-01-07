@@ -29,7 +29,10 @@
                 <div class="col-12 p-0">
                     <div class="row">
                         <div class="col-4">
-                            <a href="index.html"> <img src="images/logo.png" class="img-fluid" alt="logo"></a>
+                            
+                                <a href="index.html"> <img src="images/logo.png" class="img-fluid" alt="logo"></a>
+                            
+                            
                         </div>
                         <div class="col-4 text-center">
                             <img src="images/live.png" class="img-fluid" alt="live">
@@ -54,9 +57,9 @@
                 <div class="ml-auto bg-dark-mobile overlay " id="overlay">
                     <div class="row h-100px">
                         <div class="col-4 col-md-6 h-100px">
-                            <div class="m-35px">
-                                <img src="images/logo-menu.png" class="img-fluid" alt="">
-                            </div>
+                            
+                                <img src="images/logo.png" class="img-fluid" alt="">
+                            
 
                         </div>
 
@@ -268,7 +271,7 @@
             <div id="recipeCarousel" class="carousel slide" data-ride="carousel" data-interval="900000">
                 <div class="carousel-inner carousel-inner-news w-100 mini p-0 m-0" role="listbox">
                     <div class="carousel-item carousel-item-news  col-md-20 p-0 active">
-                        <div class="card">
+                        <div class="card ">
                             <div class="img-opacity">
                                 <img class="img-fluid  d-block" src="./images/news/1.jpg" alt="slide 1">
                             </div>
@@ -282,7 +285,7 @@
 
                     </div>
                     <div class="carousel-item carousel-item-news  col-md-20 p-0">
-                        <div class="card">
+                        <div class="card ">
                             <div class="img-opacity">
                                 <img class="img-fluid  d-block" src="./images/news/2.png" alt="slide 2">
                             </div>
@@ -296,7 +299,7 @@
                     </div>
 
                     <div class="carousel-item carousel-item-news  col-md-20 p-0">
-                        <div class="card">
+                        <div class="card ">
                             <div class="img-opacity">
                                 <img class="img-fluid  d-block" src="./images/news/3.jpg" alt="slide 3">
                             </div>
@@ -310,7 +313,7 @@
                     </div>
 
                     <div class="carousel-item carousel-item-news  col-md-20 p-0">
-                        <div class="card">
+                        <div class="card ">
                             <div class="img-opacity">
                                 <img class="img-fluid  d-block" src="./images/news/4.jpg" alt="slide 4">
                             </div>
@@ -324,7 +327,7 @@
                     </div>
 
                     <div class="carousel-item carousel-item-news  col-md-20 p-0">
-                        <div class="card">
+                        <div class="card ">
                             <div class="img-opacity">
                                 <img class="img-fluid  d-block" src="./images/news/5.jpg" alt="slide 5">
                             </div>
@@ -338,7 +341,7 @@
                     </div>
 
                     <div class="carousel-item carousel-item-news  col-md-20 p-0">
-                        <div class="card">
+                        <div class="card ">
                             <div class="img-opacity">
                                 <img class="img-fluid  d-block" src="./images/news/6.png" alt="slide 6">
                             </div>
@@ -352,7 +355,7 @@
                     </div>
 
                     <div class="carousel-item carousel-item-news  col-md-20 p-0">
-                        <div class="card">
+                        <div class="card ">
                             <div class="img-opacity">
                                 <img class="img-fluid  d-block" src="./images/news/7.png" alt="slide 7">
                             </div>
@@ -366,7 +369,7 @@
 
                     </div>
                     <div class="carousel-item carousel-item-news  col-md-20 p-0">
-                        <div class="card">
+                        <div class="card ">
                             <div class="img-opacity">
                                 <img class="img-fluid  d-block" src="./images/news/8.jpg" alt="slide 8">
                             </div>
@@ -381,7 +384,7 @@
 
                     </div>
                     <div class="carousel-item carousel-item-news  col-md-20 p-0">
-                        <div class="card">
+                        <div class="card ">
                             <div class="img-opacity">
                                 <img class="img-fluid  d-block" src="./images/news/9.jpg" alt="slide 9">
                             </div>
@@ -396,7 +399,7 @@
 
                     </div>
                     <div class="carousel-item carousel-item-news  col-md-20 p-0">
-                        <div class="card">
+                        <div class="card ">
                             <div class="img-opacity">
                                 <img class="img-fluid  d-block" src="./images/news/10.jpg" alt="slide 10">
                             </div>
@@ -453,9 +456,8 @@
 
     <!-- Footer -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
@@ -644,6 +646,30 @@
 
 
     <script>
+
+$(document).ready(function(){
+
+        $( ".img-opacity" ).mouseover(function(e) {
+            e.preventDefault();
+
+            // $( this ).next( '.img-description' ).fadeOut( 900, "linear"  );
+            // $(this).next( '.img-description' ).hide(1000, "swing");
+            $(this).next( '.img-description' ).addClass('animation-duration fadeOutDown').css('opacity', '0'); 
+            // $(this).next( '.img-description' ).fadeOut("slow");
+
+        });
+
+        $( ".img-opacity" ).mouseout(function() {
+            // $(this).next( '.img-description' ).removeClass('animation-duration fadeOutDown').toggleClass('animation-duration fadeOutDown');
+            $(this).next( '.img-description' ).removeClass('animation-duration fadeOutDown').css('opacity', '1').addClass('animation-duration fadeInUp'); 
+        });
+
+
+
+});
+
+
+        
          $('#toggle').click(function() {
    $(this).toggleClass('active');
    $('#overlay').toggleClass('open');
