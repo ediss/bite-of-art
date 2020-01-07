@@ -46,21 +46,24 @@
   transition: opacity .25s ease;
 }
 
-.button_container:hover {
-	 opacity: 0.7;
+.button_container:hover +.active +.top {
+     opacity: 0.7;
+     background: #000000;
+
+
 }
-  
+
 .button_container.active .top {
 	 transform: translateY(11px) translateX(0) rotate(45deg);
-	 background: #ccc;
+	 background: #000000;
 }
  .button_container.active .middle {
 	 opacity: 0;
-	 background: #ccc;
+	 background: #000000;
 }
  .button_container.active .bottom {
 	 transform: translateY(-11px) translateX(0) rotate(-45deg);
-	 background: #ccc;
+	 background: #000000;
 }
 .button_container span {
 	 background: #ccc;
@@ -72,6 +75,10 @@
 	 left: 0;
 	 transition: all 0.35s ease;
 	 cursor: pointer;
+}
+
+.button_container:hover span {
+    background-color: #000000;
 }
  .button_container span:nth-of-type(2) {
 	 top: 11px;
