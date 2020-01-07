@@ -872,20 +872,10 @@ body {
   margin:35px;
 }
 
-.bg-dark-mobile {
-  overflow: hidden;
 
-  height: 0%;
-  width: 100%;
-  position: fixed;
-  z-index: 11;
-  top: 0;
-  left: 0;
-  background-color:#FFFFFF;
 
-  overflow-y: hidden;
-  transition: 0.5s;
-}
+
+
 
 .closebtn {
   font-size: 60px;
@@ -895,16 +885,7 @@ body {
   margin-top: 0.27em;
 }
 
-#navbarNav li a {
-  /* text-align: center; */
-  line-height: 100px;
-  color: #cccccc;
-  font-size: 24pt;
-  font-family: montserrat-bold;
-  src: url(../../font/montserrat/Montserrat-Bold.otf);
-  padding: 0 !important;
 
-}
 
 .navbar-light .navbar-toggler {
   /* border-color: white !important; */
@@ -1032,22 +1013,9 @@ body {
   margin-top: 8rem !important;
 }
 
-	.login a{
-	  color: #000000 !important;
-    font-size: 12pt;
-  }
 
-  .login a:hover {
-   transition: 0.5s;
-   text-decoration: none;
-   font-family: montserrat-bold;
-   src: url(../../font/montserrat/Montserrat-Bold.otf);
-  }
   
-  .menu-span {
-    color:#000000;
-    font-size: 12pt;
-  }
+
 
 
 .footer {
@@ -1099,13 +1067,6 @@ body {
 
 .montserrat-regular {
   font-family: montserrat-regular;
-}
-#navbarNav li:hover {
-  background-color: #cccccc;
-  
-}
-#navbarNav li a:hover {
-  color: #ffffff;
 }
 
 
@@ -1215,6 +1176,12 @@ input[type=submit] {
   width: 260px;
   height: 100px;
   cursor: pointer;
+  transition:background-color 1.5s;
+}
+
+input[type=submit]:hover {
+  background-color: #000000;
+ 
 }
 
 .social {
@@ -1232,8 +1199,7 @@ textarea.form-control {
 }
 
 .btn-sbm-mt {
-  margin-top: 4em;
-  
+  margin-top: 17%;
 }
 
 /*Main page*/
