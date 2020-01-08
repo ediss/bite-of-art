@@ -304,7 +304,6 @@ body {
 }
 
 /*LG 6th*/
-/*LG 6th*/
 @media (min-width: 991px) {
   /* show 3th item */
   .carousel-inner-main .active + .carousel-item-main + .carousel-item-main {
@@ -709,9 +708,7 @@ body {
   }
 }
 
-#carouselMainGallery .carousel-inner {
-  left: -10%;
-}
+
 
 #carouselExample .carousel-inner-main {
   left: -10%;
@@ -930,7 +927,7 @@ body {
   text-align: center;
   margin: 0 0 5px 0; /*need to be checked*/
   line-height: 24pt;
-  font-size: 10pt;
+  font-size: 18pt;
 
 }
 
@@ -1257,5 +1254,22 @@ textarea.form-control {
 }
 
 
+/* .carousel-inner-main .active + .carousel-item-main:nth-child(2){
+  border:2px solid red;
+} */
 
+
+.opacity-0 {
+  opacity: 0;
+}
+
+
+.opacity-1 {
+  
+  opacity: 1 !important;
+}
+
+.border-green {
+  border:3px solid green;
+}
 
