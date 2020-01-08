@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link type="text/css" rel="stylesheet" href="mdb/css/custom-menu.css" />
+    <link type="text/css" rel="stylesheet" href="mdb/css/style2.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="mdb/css/mdb.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- <script src="https://kit.fontawesome.com/fcb04e2a3d.js" crossorigin="anonymous"></script> -->
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row h-100px">
+            <!--Navbar-->
+
+            <nav class="navbar navbar-light  lighten-4  w-100 p-0 h-100">
+                <div class="col-12 p-0">
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="index.html"> <img src="images/logo.png" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="col-4 text-center">
+                           
+                        </div>
+                        <div class="col-4" id="animated-menu-icon">
+
+
+                            <div class="button_container m-35px" id="toggle"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+
+              
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="ml-auto bg-dark-mobile overlay " id="overlay">
+                    <div class="row h-100px">
+                        <div class="col-4 col-md-6 h-100px">
+                            <img src="images/logo-menu.png" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="col-8 col-md-6">
+                            <div class="row m-35px">
+                                <div class="col-10 text-right montserrat-regular login">
+                                    <a href="#" class="">LOG IN</a>
+                                    <span class="ml-3 mr-3 menu-span">|</span>
+                                    <a href="#" class="">BITE MEMBERSHIP</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="menu-links">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link h-100px text-center" href="news.html"><span
+                                        class="sr-only">(current)</span>NEWS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link h-100px text-center" href="about-bite.html">ABOUT BITE </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link h-100px text-center" href="bitenetwork.html">BITE NETWORK</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link h-100px text-center" href="contact.html">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="row languages">
+                        <div class="col-md-4 offset-4 montserrat-regular">
+                            <div class="menu-footer text-center login">
+                                <a href="#" class=" active-language">ENG</a> <span class="ml-1 mr-1 menu-span">|</span>
+                                <a href="#" class="">SPAN</a> <span class="ml-1 mr-1 menu-span">|</span>
+                                <a href="#" class="">SERB</a> <span class="ml-1 mr-1 menu-span">|</span>
+                                <a href="#" class="">SLN</a> <span class="ml-1 mr-1 menu-span">|</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="menu-footer text-center">
+                                        <a href="#" class="login font-weight-bold">ENG</a> <span class="ml-1 mr-1">|</span>
+                                        <a href="#" class="login">SPAN</a> <span class="ml-1 mr-1">|</span>
+                                        <a href="#" class="login">SERB</a> <span class="ml-1 mr-1">|</span>
+                                        <a href="#" class="login">SLN</a> <span class="ml-1 mr-1">|</span>
+                                </div> -->
+
+                </div>
+            </nav>
+            <!--/.Navbar-->
+        </div>
+
+        <div class="row h-100px">
+            <div class="col-md-6 offset-md-3 text-center">
+                <h1 class="page-heading montserrat-bold pt-4 mb-0">CONTACT</h1>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                                <input type="text" id="name" name="name" class="form-control p-0"
+                                    placeholder="Full name">
+                                <!-- <label for="name" class="">Your name</label> -->
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                                <input type="text" id="email" name="email" class="form-control p-0" placeholder="E-mail">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                                <textarea type="text" id="message" name="message" rows="5"
+                                    class="form-control p-0 md-textarea" placeholder="Text message"></textarea>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row btn-sbm-mt">
+                        <div class="col-md-6 offset-md-3  text-center">
+                            <input type="submit" value="SUBMIT">
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                </form>
+
+            </div>
+        </div>
+    <!-- Footer -->
+    <footer class="contact-footer">
+        <div class="row ">
+            <div class="col-md-6 offset-md-3 social text-center">
+                    <img src="images/social-network/instagram.png">
+                    <img src="images/social-network/facebook.png">
+                    <img src="images/social-network/twitter.png">
+                    <img src="images/social-network/linkedin.png">
+            </div>
+                
+        </div>
+
+    </footer>
+    <!-- Footer -->
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+
+    <script src="mdb/js/mdb.min.js"> </script>
+
+    <!------ JS CODE ---------->
+
+
+
+
+    <script>
+        $('#toggle').click(function() {
+   $(this).toggleClass('active');
+   $('#overlay').toggleClass('open');
+  });
+
+    </script>
+
+</body>
+
+</html>

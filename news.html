@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link type="text/css" rel="stylesheet" href="mdb/css/custom-menu.css" />
     <link type="text/css" rel="stylesheet" href="mdb/css/style2.css" />
     <!-- <link type="text/css" rel="stylesheet" href="mdb/css/mdb.css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,13 +20,11 @@
 <body>
 
     <div class="container-fluid">
-        <div class="row">
-            <!--Navbar-->
-
+        <div class="row h-100px">
             <!--Navbar-->
 
             <nav class="navbar navbar-light  lighten-4  w-100 p-0 h-100">
-                <div class="col-12">
+                <div class="col-12 p-0">
                     <div class="row">
                         <div class="col-4">
                             <a href="index.html"> <img src="images/logo.png" class="img-fluid" alt="logo"></a>
@@ -33,33 +32,32 @@
                         <div class="col-4 text-center">
                         </div>
                         <div class="col-4" id="animated-menu-icon">
-                            <img src="images/menu-open.png" class="img-fluid float-right animated-icon1 bounce"
-                                onclick="openNav()" alt="live">
-                            <!-- <div class="animated-icon1 float-right mt-4" onclick="openNav()">
-                                        <span></span><span></span><span></span>
-                                    </div> -->
+
+
+                            <div class="button_container m-35px" id="toggle"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+
+              
                         </div>
                     </div>
 
+
+
                 </div>
 
-                <div class="ml-auto bg-dark-mobile" id="navbarNav">
-                    <div class="row ">
-                        <div class="col-4 col-md-6">
-                            <img src="images/logo-menu.png" class="img-fluid" alt="">
+
+                <div class="ml-auto bg-dark-mobile overlay " id="overlay">
+                    <div class="row h-100px">
+                        <div class="col-4 col-md-6 h-100px">
+                            <img src="images/logo.png" class="img-fluid" alt="">
                         </div>
 
                         <div class="col-8 col-md-6">
-                            <div class="row">
-                                <div class="col-10 text-right montserrat-regular ">
-                                    <a href="#" class="login">LOG IN</a>
+                            <div class="row m-35px">
+                                <div class="col-10 text-right montserrat-regular login">
+                                    <a href="#" class="">LOG IN</a>
                                     <span class="ml-3 mr-3 menu-span">|</span>
-                                    <a href="#" class="login">BITE MEMBERSHIP</a>
+                                    <a href="#" class="">BITE MEMBERSHIP</a>
 
-                                </div>
-                                <div class="col-2">
-                                    <a href="javascript:void(0)" class="ml-auto closebtn"
-                                        onclick="closeNav()">&times;</a>
                                 </div>
 
                             </div>
@@ -70,205 +68,209 @@
 
                     <div class="menu-links">
                         <ul class="navbar-nav">
-                            <li class="nav-item ">
-                                <a class="nav-link" href="news.html"><span class="sr-only">(current)</span>NEWS</a>
+                            <li class="nav-item">
+                                <a class="nav-link h-100px text-center" href="news.html"><span
+                                        class="sr-only">(current)</span>NEWS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">ABOUT BITE </a>
+                                <a class="nav-link h-100px text-center" href="about-bite.html">ABOUT BITE </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="bitenetwork.html">BITE NETWORK</a>
+                                <a class="nav-link h-100px text-center" href="bitenetwork.html">BITE NETWORK</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">CONTACT</a>
+                                <a class="nav-link h-100px text-center" href="contact.html">CONTACT</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="row ">
+                    <div class="row languages">
                         <div class="col-md-4 offset-4 montserrat-regular">
-                            <div class="menu-footer text-center ">
-                                <a href="#" class="login font-weight-bold">ENG</a> <span
-                                    class="ml-1 mr-1 menu-span">|</span>
-                                <a href="#" class="login">SPAN</a> <span class="ml-1 mr-1 menu-span">|</span>
-                                <a href="#" class="login">SERB</a> <span class="ml-1 mr-1 menu-span">|</span>
-                                <a href="#" class="login">SLN</a> <span class="ml-1 mr-1 menu-span">|</span>
+                            <div class="menu-footer text-center login">
+                                <a href="#" class=" active-language">ENG</a> <span class="ml-1 mr-1 menu-span">|</span>
+                                <a href="#" class="">SPAN</a> <span class="ml-1 mr-1 menu-span">|</span>
+                                <a href="#" class="">SERB</a> <span class="ml-1 mr-1 menu-span">|</span>
+                                <a href="#" class="">SLN</a> <span class="ml-1 mr-1 menu-span">|</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- <div class="menu-footer text-center">
-                                    <a href="#" class="login font-weight-bold">ENG</a> <span class="ml-1 mr-1">|</span>
-                                    <a href="#" class="login">SPAN</a> <span class="ml-1 mr-1">|</span>
-                                    <a href="#" class="login">SERB</a> <span class="ml-1 mr-1">|</span>
-                                    <a href="#" class="login">SLN</a> <span class="ml-1 mr-1">|</span>
-                            </div> -->
+                                        <a href="#" class="login font-weight-bold">ENG</a> <span class="ml-1 mr-1">|</span>
+                                        <a href="#" class="login">SPAN</a> <span class="ml-1 mr-1">|</span>
+                                        <a href="#" class="login">SERB</a> <span class="ml-1 mr-1">|</span>
+                                        <a href="#" class="login">SLN</a> <span class="ml-1 mr-1">|</span>
+                                </div> -->
 
                 </div>
             </nav>
             <!--/.Navbar-->
-            <!--/.Navbar-->
         </div>
 
-        <h1 class="page-heading text-center font-weight-bold">NEWS</h1>
+        <div class="h-100px">
+            <h1 class="page-heading text-center montserrat-bold pt-4 mb-0">NEWS</h1>
+        </div>
+
 
         <!-- PROBA -->
 
-        <div class="row mt-5">
-            <div id="recipeCarousel" class="carousel slide carousel-multi-item " data-ride="carousel">
 
-                <div class="carousel-inner w-100 mini" role="listbox">
+        <div class="row" id="smallGallery">
+            <div id="recipeCarousel" class="carousel slide" data-ride="carousel" data-interval="900000">
+                <div class="carousel-inner carousel-inner-news w-100 mini p-0 m-0" role="listbox">
+                    <div class="carousel-item carousel-item-news  col-md-20 p-0 active">
+                        <div class="card">
+                            <img class="img-fluid  d-block" src="./images/news/1.jpg" alt="slide 1">
+                        </div>
 
-                    <div class="carousel-item active">
-                        <div class="col-md-20">
-                            <div class="card">
-                                <img class="card-img-top1 img-fluid d-block" src="./images/news/1.jpg" alt="slide 6">
-                            </div>
+                        <div class="card-body-news col-md-10 offset-1">
+                            <p class="card-text montserrat-bold">Dnevnik Diane Budisavljevic
+                                neprocenjiva istorijska lekcija
+                                Beograd 31.12.2019 </p>
 
-                            <div class="card-body1">
-                                <!-- <h4 class="card-title montserrat-light">Lorem ipsum</h4> -->
-                                <p class="card-text montserrat-light grey-text">Some quick example text to build on the card
-                                    title </p>
-                            </div>
+
+
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-20">
-                            <div class="card">
-                                <img class="card-img-top1 img-fluid  d-block" src="./images/news/2.png" alt="slide 6">
-                            </div>
+                    <div class="carousel-item carousel-item-news  col-md-20 p-0">
+                        <div class="card">
+                            <img class="img-fluid  d-block" src="./images/news/2.png" alt="slide 2">
+                        </div>
 
-                            <div class="card-body1">
-                                <!-- <h4 class="card-title montserrat-light">Lorem ipsum</h4> -->
-                                <p class="card-text montserrat-light grey-text">Some quick example text to build on the card
-                                    title </p>
-                            </div>
+                        <div class="card-body-news col-md-10 offset-1 ">
+                            <p class="card-text montserrat-bold">Dnevnik Diane Budisavljevic
+                                neprocenjiva istorijska lekcija
+                                Beograd 31.12.2019 </p>
+
+
+
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-20">
-                            <div class="card">
-                                <img class="card-img-top1  img-fluid d-block" src="./images/news/3.jpg" alt="slide 6">
-                            </div>
+                    <div class="carousel-item carousel-item-news  col-md-20 p-0">
+                        <div class="card">
+                            <img class="img-fluid  d-block" src="./images/news/3.jpg" alt="slide 3">
+                        </div>
 
-                            <div class="card-body1">
-                                <!-- <h4 class="card-title montserrat-light">Lorem ipsum</h4> -->
-                                <p class="card-text montserrat-light grey-text">Some quick example text to build on the card
-                                    title </p>
-                            </div>
+                        <div class="card-body-news col-md-10 offset-1 ">
+                            <p class="card-text montserrat-bold">Dnevnik Diane Budisavljevic
+                                neprocenjiva istorijska lekcija
+                                Beograd 31.12.2019 </p>
+
+
+
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-20">
-                            <div class="card">
-                                <img class="card-img-top1 img-fluid d-block" src="./images/news/4.jpg" alt="slide 6">
-                            </div>
+                    <div class="carousel-item carousel-item-news  col-md-20 p-0">
+                        <div class="card">
+                            <img class="img-fluid  d-block" src="./images/news/4.jpg" alt="slide 4">
+                        </div>
 
-                            <div class="card-body1">
-                                <!-- <h4 class="card-title montserrat-light">Lorem ipsum</h4> -->
-                                <p class="card-text montserrat-light grey-text">Some quick example text to build on the card
-                                    title </p>
-                            </div>
+                        <div class="card-body-news col-md-10 offset-1 ">
+                            <p class="card-text montserrat-bold">Dnevnik Diane Budisavljevic
+                                neprocenjiva istorijska lekcija
+                                Beograd 31.12.2019 </p>
+
+
+
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-20">
-                            <div class="card">
-                                <img class="card-img-top1 img-fluid d-block" src="./images/news/5.jpg" alt="slide 6">
-                            </div>
+                    <div class="carousel-item carousel-item-news  col-md-20 p-0">
+                        <div class="card">
+                            <img class="img-fluid  d-block" src="./images/news/5.jpg" alt="slide 5">
+                        </div>
 
-                            <div class="card-body1">
-                                <!-- <h4 class="card-title montserrat-light">Lorem ipsum</h4> -->
-                                <p class="card-text montserrat-light grey-text">Some quick example text to build on the card
-                                    title </p>
-                            </div>
+                        <div class="card-body-news col-md-10 offset-1 ">
+                            <p class="card-text montserrat-bold">Dnevnik Diane Budisavljevic
+                                neprocenjiva istorijska lekcija
+                                Beograd 31.12.2019 </p>
+
+
+
                         </div>
                     </div>
+                    <div class="carousel-item carousel-item-news  col-md-20 p-0">
+                        <div class="card">
+                            <img class="img-fluid  d-block" src="./images/news/6.png" alt="slide 6">
+                        </div>
 
-                    <div class="carousel-item">
-                        <div class="col-md-20">
-                            <div class="card">
-                                <img class="card-img-top1 img-fluid  d-block" src="./images/news/6.png" alt="slide 6">
-                            </div>
+                        <div class="card-body-news col-md-10 offset-1 ">
+                            <p class="card-text montserrat-bold">Dnevnik Diane Budisavljevic
+                                neprocenjiva istorijska lekcija
+                                Beograd 31.12.2019 </p>
 
-                            <div class="card-body1">
-                                <!-- <h4 class="card-title montserrat-light">Lorem ipsum</h4> -->
-                                <p class="card-text montserrat-light grey-text">Some quick example text to build on the card
-                                    title </p>
-                            </div>
+
+
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-20">
-                            <div class="card">
-                                <img class="card-img-top1 img-fluid  d-block" src="./images/news/7.png" alt="slide 6">
-                            </div>
+                    <div class="carousel-item carousel-item-news  col-md-20 p-0">
+                        <div class="card">
+                            <img class="img-fluid  d-block" src="./images/news/7.png" alt="slide 7">
+                        </div>
 
-                            <div class="card-body1">
-                                <!-- <h4 class="card-title montserrat-light">Lorem ipsum</h4> -->
-                                <p class="card-text montserrat-light grey-text">Some quick example text to build on the card
-                                    title </p>
-                            </div>
+                        <div class="card-body-news col-md-10 offset-1 ">
+                            <p class="card-text montserrat-bold">Dnevnik Diane Budisavljevic
+                                neprocenjiva istorijska lekcija
+                                Beograd 31.12.2019 </p>
+
+
+
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-20">
-                            <div class="card">
-                                <img class="card-img-top1 img-fluid  d-block" src="./images/news/8.jpg" alt="slide 6">
-                            </div>
+                    <div class="carousel-item carousel-item-news  col-md-20 p-0">
+                        <div class="card">
+                            <img class="img-fluid  d-block" src="./images/news/8.jpg" alt="slide 8">
+                        </div>
 
-                            <div class="card-body1">
-                                <!-- <h4 class="card-title montserrat-light">Lorem ipsum</h4> -->
-                                <p class="card-text montserrat-light grey-text">Some quick example text to build on the card
-                                    title </p>
-                            </div>
+                        <div class="card-body-news col-md-10 offset-1 ">
+                            <p class="card-text montserrat-bold">Dnevnik Diane Budisavljevic
+                                neprocenjiva istorijska lekcija
+                                Beograd 31.12.2019 </p>
+
+
+
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-20">
-                            <div class="card">
-                                <img class="card-img-top1  img-fluid d-block" src="./images/news/9.jpg" alt="slide 6">
-                            </div>
+                    <div class="carousel-item carousel-item-news  col-md-20 p-0">
+                        <div class="card">
+                            <img class="img-fluid  d-block" src="./images/news/9.jpg" alt="slide 9">
+                        </div>
 
-                            <div class="card-body1">
-                                <!-- <h4 class="card-title montserrat-light">Lorem ipsum</h4> -->
-                                <p class="card-text montserrat-light grey-text">Some quick example text to build on the card
-                                    title </p>
-                            </div>
+                        <div class="card-body-news col-md-10 offset-1 ">
+                            <p class="card-text montserrat-bold">Dnevnik Diane Budisavljevic
+                                neprocenjiva istorijska lekcija
+                                Beograd 31.12.2019 </p>
+
+
+
                         </div>
                     </div>
-
-                    <div class="carousel-item">
-
-                        <div class="col-md-20">
-                            <div class="card">
-                                <img class="card-img-top1 img-fluid  d-block" src="./images/news/10.jpg" alt="slide 6">
-                            </div>
-
-                            <div class="card-body1">
-                                <!-- <h4 class="card-title montserrat-light">Lorem ipsum</h4> -->
-                                <p class="card-text montserrat-light grey-text">Some quick example text to build on the card
-                                    title </p>
-                            </div>
+                    <div class="carousel-item carousel-item-news  col-md-20 p-0">
+                        <div class="card">
+                            <img class="img-fluid  d-block" src="./images/news/10.jpg" alt="slide 10">
                         </div>
 
+                        <div class="card-body-news col-md-10 offset-1 ">
+                            <p class="card-text montserrat-bold">Dnevnik Diane Budisavljevic
+                                neprocenjiva istorijska lekcija
+                                Beograd 31.12.2019 </p>
+
+
+
+                        </div>
                     </div>
 
                 </div>
-
+                <div class="carousel-controls">
+                    <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
-
-            <div class="carousel-controls" style="top:55%">
-                <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-
 
         </div>
 
@@ -307,45 +309,9 @@
         })
 
 
-        $('.carousel-main .carousel-item-main').each(function () {
-            var minPerSlide = 3;
-            var next = $(this).next();
-            if (!next.length) {
-                next = $(this).siblings(':first');
-            }
-
-            next.children(':first-child').clone().appendTo($(this));
-
-            for (var i = 0; i < minPerSlide; i++) {
-                next = next.next();
-                if (!next.length) {
-                    next = $(this).siblings(':first');
-                }
-                next.children(':first-child').clone().appendTo($(this));
-
-            }
-        });
 
 
 
-
-        $('.carousel .carousel-item').each(function () {
-            var minPerSlide = 5;
-            var next = $(this).next();
-            if (!next.length) {
-                next = $(this).siblings(':first');
-            }
-            next.children(':first-child').clone().appendTo($(this));
-
-            for (var i = 0; i < minPerSlide; i++) {
-                next = next.next();
-                if (!next.length) {
-                    next = $(this).siblings(':first');
-                }
-
-                next.children(':first-child').clone().appendTo($(this));
-            }
-        });
     </script>
     <script>
         $('.carousel-controls .carousel-control-prev').css({
@@ -391,6 +357,41 @@
         var index = checkForActive()
 
         $(document).ready(function () {
+
+            var count = $('#recipeCarousel .carousel-inner').children().length
+            var firstSrc = $('#recipeCarousel .carousel-inner .carousel-item:first-child img').attr('src'),
+                lastSrc = $('#recipeCarousel .carousel-inner .carousel-item:nth-child(' + (count - 4) + ') img').attr('src')
+
+            function showHideButtons() {
+                setTimeout(function () {
+                    if ($('#smallGallery .active img').attr('src') == lastSrc) {
+                        $('.carousel-controls .carousel-control-next').css({
+                            opacity: 0,
+                            'pointer-events': 'none'
+                        });
+                    } else {
+                        $('.carousel-controls .carousel-control-next').css({
+                            opacity: 1,
+                            'pointer-events': 'auto'
+                        });
+                    }
+                    if ($('#smallGallery .active img').attr('src') == firstSrc) {
+                        $('.carousel-controls .carousel-control-prev').css({
+                            opacity: 0,
+                            'pointer-events': 'none'
+                        });
+                    } else {
+                        $('.carousel-controls .carousel-control-prev').css({
+                            opacity: 1,
+                            'pointer-events': 'auto'
+                        });
+                    }
+                }, 700)
+            }
+
+
+
+
             var count = countActive();
 
             $('.first-button').on('click', function () {
@@ -499,15 +500,11 @@
 
 
     <script>
-        /* OPen when someone clicks on the "symbol inside the overlay */
-        function openNav() {
-            document.getElementById("navbarNav").style.height = "100%";
-        }
+          $('#toggle').click(function() {
+   $(this).toggleClass('active');
+   $('#overlay').toggleClass('open');
+  });
 
-        /* Close when someone clicks on the "x" symbol inside the overlay */
-        function closeNav() {
-            document.getElementById("navbarNav").style.height = "0%";
-        }
     </script>
 
 </body>
