@@ -496,13 +496,13 @@
 
             $(active).mouseover(
                 function () {
-                    $(this).find('.card-body').css('opacity', '0');
+                    $(this).find('.card-body').css('opacity', '0').removeClass('animation-duration zoomIn zoomOut');
                 }
             );
 
             $(active.next().next()).mouseover(
                 function () {
-                    $(this).find('.card-body').css('opacity', '0');
+                    $(this).find('.card-body').css('opacity', '0').removeClass('animation-duration zoomOut zoomIn');
                 }
             );
 
@@ -530,6 +530,9 @@
                     // append slides to end
                     if (e.direction == "left") {
                         $('.carousel-item-main').eq(i).appendTo('.carousel-inner-main');
+                    }
+                    else {
+                        $('.carousel-item-main').eq(0).appendTo('.carousel-inner-main');
                     }
                 }
             }
