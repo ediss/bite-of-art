@@ -468,184 +468,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
         </script>
 
+
+<script src="custom-carousel-main.js"></script>
+<script src="custom-carousel-news.js"></script>
     <!------ JS CODE ---------->
-
-
-    <!--New Script for Carousel-->
-
-    <script>
-
-        $('#carouselExample .card-body').css({ opacity: 0 });
-
-        $('#carouselExample').bind('wheel', function (e) {
-
-            if (e.originalEvent.wheelDelta / 120 < 0) {
-
-
-                $(this).carousel('next');
-            } else {
-
-                $(this).carousel('prev');
-            }
-
-        });
-
-        $('#carouselExample').on('slide.bs.carousel', function (e) {
-
-            var active = $(e.relatedTarget);
-
-            $(active).mouseover(
-                function () {
-                    $(this).find('.card-body').css('opacity', '0').removeClass('animation-duration zoomIn zoomOut');
-                }
-            );
-
-            $(active.next().next()).mouseover(
-                function () {
-                    $(this).find('.card-body').css('opacity', '0').removeClass('animation-duration zoomOut zoomIn');
-                }
-            );
-
-            $(active.next()).mouseover(
-                function () {
-                    $(this).find('.card-body').css('opacity', '1').removeClass('zoomOut').addClass('animation-duration zoomIn');
-                }
-            );
-
-            $((active).next()).mouseout(function () {
-                $(this).find(".card-body").css('opacity', '0').removeClass('animation-duration zoomIn').addClass('animation-duration zoomOut');
-            });
-
-
-            var idx = active.index();
-
-            var itemsPerSlide = 4;
-            var totalItems = $('.carousel-item-main').length;
-
-            if (idx >= totalItems - (itemsPerSlide - 1)) {
-
-                var it = itemsPerSlide - (totalItems - idx);
-
-                for (var i = 0; i < it; i++) {
-                    // append slides to end
-                    if (e.direction == "left") {
-                        $('.carousel-item-main').eq(i).appendTo('.carousel-inner-main');
-                    }
-                    else {
-                        $('.carousel-item-main').eq(0).appendTo('.carousel-inner-main');
-                    }
-                }
-            }
-        });
-
-
-
-        $('#recipeCarousel').on('slide.bs.carousel', function (e) {
-
-            /*
-            
-            CC 2.0 License Iatek LLC 2018
-            Attribution required
-            
-            */
-
-            var $e = $(e.relatedTarget);
-            var idx = $e.index();
-            var itemsPerSlide = 2;
-            var totalItems = $('.carousel-item-news').length;
-
-            if (idx >= totalItems - (itemsPerSlide - 1)) {
-                var it = itemsPerSlide - (totalItems - idx);
-                for (var i = 0; i < it; i++) {
-                    // append slides to end
-                    if (e.direction == "left") {
-                        $('.carousel-item-news').eq(i).appendTo('.carousel-inner-news');
-                    } else {
-                        $('.carousel-item-news').eq(0).appendTo('.carousel-inner-news');
-                    }
-
-
-                }
-            }
-        });
-
-
-
-
-    </script>
-
-
-    <script>
-        $('.carousel-controls .carousel-control-prev').css({
-            opacity: 0
-        });
-        $(document).ready(function () {
-            var count = $('#recipeCarousel .carousel-inner').children().length
-            var firstSrc = $('#recipeCarousel .carousel-inner .carousel-item:first-child img').attr('src'),
-                lastSrc = $('#recipeCarousel .carousel-inner .carousel-item:nth-child(' + (count - 4) + ') img').attr('src');
-
-
-
-            function showHideButtons() {
-                setTimeout(function () {
-                    if ($('#smallGallery .active img').attr('src') == lastSrc) {
-                        $('.carousel-controls .carousel-control-next').css({
-                            opacity: 0,
-                            'pointer-events': 'none'
-                        });
-                    } else {
-                        $('.carousel-controls .carousel-control-next').css({
-                            opacity: 1,
-                            'pointer-events': 'auto'
-                        });
-                    }
-                    if ($('#smallGallery .active img').attr('src') == firstSrc) {
-                        $('.carousel-controls .carousel-control-prev').css({
-                            opacity: 0,
-                            'pointer-events': 'none'
-                        });
-                    } else {
-                        $('.carousel-controls .carousel-control-prev').css({
-                            opacity: 1,
-                            'pointer-events': 'auto'
-                        });
-                    }
-                }, 700)
-            }
-
-
-            $('.carousel-controls-main .carousel-control-prev,.carousel-controls-main .carousel-control-next')
-                .bind('click', function (e) {
-                    changeText()
-                })
-
-            $('.carousel-controls .carousel-control-prev,.carousel-controls .carousel-control-next').bind(
-                'click',
-                function (e) {
-                    showHideButtons()
-                })
-
-            $('#recipeCarousel').bind('wheel', function (e) {
-                if ($('#smallGallery .active img').attr('src') != lastSrc) {
-                    if (e.originalEvent.wheelDelta / 120 < 0) {
-                        $(this).carousel('next');
-                    }
-                }
-                if ($('#smallGallery .active img').attr('src') != firstSrc) {
-                    if (e.originalEvent.wheelDelta / 120 > 0) {
-                        $(this).carousel('prev');
-                    }
-                }
-                showHideButtons()
-            });
-
-
-
-        });
-    </script>
-
-
-
 
 
     <script>
@@ -655,22 +481,17 @@
             $(".img-opacity").mouseover(function (e) {
                 e.preventDefault();
 
-                // $( this ).next( '.img-description' ).fadeOut( 900, "linear"  );
-                // $(this).next( '.img-description' ).hide(1000, "swing");
+                
                 $(this).next('.img-description').addClass('animation-duration fadeOutDown').css('opacity', '0');
-                // $(this).next( '.img-description' ).fadeOut("slow");
+                
 
             });
 
             $(".img-opacity").mouseout(function () {
-                // $(this).next( '.img-description' ).removeClass('animation-duration fadeOutDown').toggleClass('animation-duration fadeOutDown');
                 $(this).next('.img-description').removeClass('animation-duration fadeOutDown').css('opacity', '1').addClass('animation-duration fadeInUp');
             });
 
-
-
         });
-
 
 
         $('#toggle').click(function () {
