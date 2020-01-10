@@ -25,6 +25,11 @@
 
         });
 
+        $('.carousel-item img').bind('click',function(e){
+            var alt = e.target.alt.replace(' ','_');
+            window.open(window.location.origin+'/'+alt+'.html','_self');
+        })
+
         $('#carouselExample').on('slide.bs.carousel', function (e) {
 
             var active = $(e.relatedTarget);
