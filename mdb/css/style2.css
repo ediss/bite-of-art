@@ -189,6 +189,8 @@ body {
 
 @media (min-width: 768px) and (max-width: 991px) {
   /* Show 3rd slide on md  if col-md-4*/
+  
+  /*@todo check this*/
   .carousel-inner
     .active.col-md-4.carousel-item
     + .carousel-item
@@ -912,6 +914,7 @@ body {
 .card-body {
   height: 100px;
   padding: 0 !important;
+  font-size: 14pt;
 }
 
 .card-body1 {
@@ -926,16 +929,13 @@ body {
 .card-text {
   text-align: center;
   margin: 0 0 5px 0; /*need to be checked*/
-  line-height: 24pt;
-  font-size: 18pt;
-
+  line-height: 20pt;
 }
 
 
 .card-title {
   margin: 0px;
   text-align: center;
-  font-size: 18pt;
   padding-top: 15px;
   line-height: 24pt;
 }
@@ -1202,18 +1202,6 @@ textarea.form-control {
 /*Main page*/
 
 
-/* .img-opacity img {
-  opacity: 0.8;
-  
-  transition:  opacity 0.5s linear;
-}
-
-
-.img-opacity img:hover {
-  cursor: pointer;
-  opacity: 1;
-} */
-
 .img-opacity:before{
   content: '';
   position: absolute;
@@ -1230,11 +1218,6 @@ textarea.form-control {
   background: rgba(0,0,0,0);
 }
 
-
-
-/* .img-opacity + .img-description {
- visibility: visible;
-} */
 
 
 .img-description {
@@ -1254,21 +1237,27 @@ textarea.form-control {
 }
 
 
-/* .carousel-inner-main .active + .carousel-item-main:nth-child(2){
+.b-red {
   border:2px solid red;
-} */
+}
 
-
-.opacity-0 {
-  opacity: 0;
+.b-blue {
+  border:2px solid blue;
 }
 
 
-.opacity-1 {
-  
-  opacity: 1 !important;
+
+.b-green {
+  border:2px solid green;
 }
 
-.border-green {
-  border:3px solid green;
+
+.b-black {
+  border:2px solid black;
+}
+
+
+
+.galleryOpened-card {
+  /* margin-left:25% !important; */
 }

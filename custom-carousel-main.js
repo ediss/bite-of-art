@@ -4,13 +4,13 @@
 
         $('#carouselExample .active').next().mouseover(
             function () {
-                $(this).find('.card-body').css('opacity', '1').removeClass('zoomOut  animation-duration').addClass('animation-duration zoomIn');
+                $(this).find('.card-body').css('opacity', '1').removeClass('fadeOutDown  animation-duration').addClass('animation-duration fadeInUp');
             }
         );
 
         $('#carouselExample .active').next().mouseout(
             function () {
-                $(this).find(".card-body").css('opacity', '0').removeClass('animation-duration zoomIn').addClass('animation-duration zoomOut ');
+                $(this).find(".card-body").css('opacity', '0').removeClass('animation-duration fadeInUp').addClass('animation-duration fadeOutDown ');
             }
         );
 
@@ -57,18 +57,18 @@
             $.each($('.carousel-item-main'), function(key,val){
                 
                 $(val).mouseover(function () {
-                    $(this).find('.card-body').css('opacity', '0').removeClass('animation-duration zoomIn').addClass('zoomOut');;
+                    $(this).find('.card-body').css('opacity', '0').removeClass('animation-duration fadeInUp');
                 });
                 $(val).mouseout(function () {
-                    $(this).find(".card-body").css('opacity', '0').addClass('animation-duration zoomIn').removeClass('animation-duration zoomOut');
+                    $(this).find(".card-body").css('opacity', '0').removeClass('animation-duration fadeOutDown');
                 });
             });
 
             $(active.next()).mouseover(function () {
-                $(this).find('.card-body').css('opacity', '1').addClass('animation-duration zoomIn').removeClass('zoomOut');;
+                $(this).find('.card-body').css('opacity', '1').removeClass('fadeOutDown').addClass('animation-duration fadeInUp');
             });
             $((active).next()).mouseout(function () {
-                $(this).find(".card-body").css('opacity', '0').removeClass('animation-duration zoomIn').addClass('animation-duration zoomOut');
+                $(this).find(".card-body").css('opacity', '0').removeClass('animation-duration fadeInUp').addClass('animation-duration fadeOutDown');
             });
 
            
