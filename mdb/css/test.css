@@ -712,8 +712,8 @@ body {
 
 
 
-#carouselExample .carousel-inner-main {
-  /* left: -10%; */
+#carouselExample2 .carousel-inner-main {
+  left: -10%;
 }
 
 .w-120 {
@@ -934,9 +934,9 @@ body {
 
 
 .card-title {
-  margin: 0px;
-  text-align: center;
-  padding-top: 15px;
+  margin-left: 859px;
+  text-align: right;
+  
   line-height: 24pt;
 }
 
@@ -1261,3 +1261,66 @@ textarea.form-control {
 .galleryOpened-card {
   /* margin-left:25% !important; */
 }
+
+
+/* #mainGallery .carousel-inner-main .active  {
+
+  
+  right:  50%
+
+
+
+ }
+#mainGallery .carousel-inner-main .active + .carousel-item-main + .carousel-item-main {
+
+  
+    left: 50%
+  
+  
+
+   } */
+
+   .transform-img {
+    /* height: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%; */
+    transform-origin: 0 0;
+    margin-left: 25%;
+    transform: scale(1.5);
+   }
+
+   .transform-matrix {
+    margin-left: 25%;
+    transform: matrix(2, 0, 0, 2, 0, 0);
+    /* transform-origin: 1, 0; */
+
+   }
+
+   .card-body {
+    /* height: 400px;
+    margin-top: 46%; */
+    font-size: 14pt;
+  }
+
+  .left-35{
+    left:24%
+  }
+
+  .right-35{
+    right:24%
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .w-140 {
+    width: 140%;
+  }
+
+  #carouselExample .w-140 {
+    left: -55%;
+  }
