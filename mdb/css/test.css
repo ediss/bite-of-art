@@ -1288,7 +1288,7 @@ textarea.form-control {
     width: 100%; */
     transform-origin: 0 0;
     margin-left: 25%;
-    transform: scale(1.5);
+    transform: scale(1.8);
    }
 
    .transform-matrix {
@@ -1322,5 +1322,5 @@ textarea.form-control {
   }
 
   #carouselExample .w-140 {
-    left: -55%;
+    left: -76%;
   }
