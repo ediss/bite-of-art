@@ -1287,7 +1287,7 @@ textarea.form-control {
     max-height: 100%;
     width: 100%; */
     transform-origin: 0 0;
-    margin-left: 25%;
+    /* margin-left: 25%; */
     transform: scale(1.6);
    }
 
@@ -1321,7 +1321,10 @@ textarea.form-control {
     width: 140%;
   }
 
-  #carouselExample .w-140 {
+  #mainGallery .w-140 {
     
     left: -62%;
   }
+
+
+  
