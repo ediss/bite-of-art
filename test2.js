@@ -16,7 +16,7 @@ $(document).ready(function(){
     
             step: function(now,fx) {
                 $(this).parent().css({
-                    transition: 'all 2.5s linear',
+                    // transition: 'all 2.5s linear',
                     width: '140%',
                     'transform-origin': '0 0',
                     
@@ -37,7 +37,7 @@ $(document).ready(function(){
             complete: function(){
                 
                $(this).parent().css({
-                   transition: 'all .9s linear',
+                   transition: 'all 2.5s linear',
                 'transform-origin': 'left top',
                    transform: ' scale(1.6)',
                    left: '-62%',
