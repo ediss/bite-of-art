@@ -1,13 +1,13 @@
 $(document).ready(function(){
     var animDuration = 1000;
 
-    $(".klik").click(function () {
+    $("#mainGallery").on( 'click', '.klik', (function () {
         $('#carouselExample').find('.card-body').css({ height: '0px' });
         $("#mainGallery").find('.active').next().next().nextAll().hide();
         
         $("#mainGallery").find('.active').animate({
-            transition: 'all 1.2s ease-in-out',
-            right : '55%',
+            transition: 'all .2s ease-in-out',
+            right : '31%',
         }, 3400);
         
         $("#mainGallery").find('.active').nextAll().animate({ left: '33.3333%'}, {
@@ -37,7 +37,7 @@ $(document).ready(function(){
             complete: function(){
                 
                $(this).parent().css({
-                   transition: 'all 2.5s linear',
+                   transition: 'all .9s linear',
                 'transform-origin': 'left top',
                    transform: ' scale(1.6)',
                    left: '-62%',
@@ -57,7 +57,7 @@ $(document).ready(function(){
         });
         
     
-    });
+    }));
     
 })
         

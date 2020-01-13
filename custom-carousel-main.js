@@ -44,6 +44,7 @@ $('#carouselExample .card-body').css({ opacity: 0 });
             var itemsPerSlide = 4;
             var totalItems = $('.carousel-item-main').length;
 
+            
 
             if (idx >= totalItems - (itemsPerSlide - 1)) {
 
@@ -66,6 +67,8 @@ $('#carouselExample .card-body').css({ opacity: 0 });
 
             $.each($('.carousel-item-main'), function(key,val){
 
+                $(this).find('.card').removeClass('klik');
+
                 $(val).mouseover(function () {
                     $(this).find('.card-body').css('opacity', '0').removeClass('animation-duration fadeInUp');
                 });
@@ -73,6 +76,7 @@ $('#carouselExample .card-body').css({ opacity: 0 });
                     $(this).find(".card-body").css('opacity', '0').removeClass('animation-duration fadeOutDown');
                 });
             });
+            $(active).next().find('.card').addClass('klik');
 
             $(active.next()).mouseover(function () {
                 $(this).find('.card-body').css('opacity', '1').removeClass('fadeOutDown').addClass('animation-duration fadeInUp');
