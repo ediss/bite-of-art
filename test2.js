@@ -3,70 +3,66 @@ $(document).ready(function(){
 
     $("#mainGallery").on( 'click', '.klik', (function () {
         
-        $("#mainGallery").find('.active').next().next().nextAll().hide();
+        $("#mainGallery").find('.active').next().nextAll().css({visibility: 'hidden'});
         
         $("#smallGallery").fadeOut('slow');
         
         $('#carouselExample').find('.card-body').animate({ 
-            // transition: 'all 2s ease-in-out',
-            opacity: '0' ,
-        }, 1000);
+            transition: 'all 2s ease-in-out',
+            height: '0px' ,
+        }, 1500);
         
-        $("#mainGallery").find('.active').animate({
-            transition: 'all .2s ease-in-out',
-            right : '31%',
-        }, 2400);
-        
-        $("#mainGallery").find('.active').nextAll().animate({ left: '33.3333%'}, {
-            // transition: 'all 1.2s ease-in-out',
-            // left:'33.3333%',
-    
-            step: function(now,fx) {
-                $(this).parent().css({
-                    // transition: 'all 2.5s linear',
-                    // width: '140%',
-                    'transform-origin': '0 0',
-                    
-                    // transform: ' scale(1.6, 1)',
-                    // left: '-62%',
+        // $("#carouselExample").find('.active').animate({ right: '35%'}, {
+        //     step : function(v) {
+        //         $(this).css({
+        //             transition: 'all 2s ease-in-out',
+        //             // border : '2px solid red'
+        //             visibility : 'hidden',
+        //         })
+        //     }
+        // },2400);
 
-                  });
-
-                  
-                  
-
-           
-            },
-            
-            
-            duration: 2500,
-            
-            complete: function(){
+        $("#carouselExample .carousel-inner-main").animate({ opacity:1
+  
+        },
+        {
+            step : function() {
                 
-               $(this).parent().css({
+                $(this).find('.active').animate({
+                    transition: 'all 2s ease-in-out',
+                    border : '2px solid red',
+                    // visibility : 'hidden',
 
-                transition: 'all .9s linear',
-                'transform-origin': 'left top',
-                transform: ' scale(1.6)',
-                width: '140%',
-                left: '-62%',
-               });
+                    right: '50vw',
 
-               $('#carouselExample').find('.card-body').animate({ 
-                // transition: 'all 2s ease-in-out',
-                height: '0px' ,
-            }, 1000);
+                    visibility : 'hidden',
+                });
 
-               $("#mainGallery").find('.active').nextAll().removeClass('p-0', 1000);
-               
+
+                $(this).css({
+                    transition: 'all 1.9s ease-in-out',
+                    
+                    // visibility : 'hidden',          width: '140%',
+            // 'transform-origin': '0 0',
+            transform: 'scale(1.6) translate3d(29%, 90px, 0)',
+            width: '140%'
+
+                    
+                });
+
+                $(this).find('.p-0').removeClass('p-0');
+            },
+            duration : 2000,
+
+            complete: function() {
+                console.log('gotova');
             }
-    
-        }, 3400);    
+        });
 
-        // $("#smallGallery").css({
-        //     // right: "120%",
-        //     display:'none'
-        // });
+            
+        
+        
+ 
         
     
     }));
