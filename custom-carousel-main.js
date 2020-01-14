@@ -17,7 +17,7 @@ $('#carouselExample .card-body').css({ opacity: 0 });
         );
 
 
-        $('#carouselExample').bind('wheel', function (e) {
+        $('#carouselExample, #carouselExample2').bind('wheel', function (e) {
 
             if (e.originalEvent.wheelDelta / 120 < 0) {
                 $(this).carousel('next');
@@ -35,7 +35,7 @@ $('#carouselExample .card-body').css({ opacity: 0 });
 
         // })
 
-        $('#carouselExample').on('slide.bs.carousel', function (e) {
+        $('#carouselExample, #carouselExample2').on('slide.bs.carousel', function (e) {
 
             var active = $(e.relatedTarget);
 

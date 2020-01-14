@@ -60,20 +60,25 @@ $(document).ready(function() {
 
         
         },
-        duration: 2000,
+        duration: 3000,
 
         complete: function() {
           console.log("gotova");
+          
+
+          $('#carouselExample').replaceWith($('.carouselExample2'));
+          $('#carouselExample2').css('display', 'block');
+          
 
    
           
            
           
-            $("#mainGallery")
-          .find(".active")
-          .next()
-          .nextAll()
-          .css({ visibility: "hidden" });
+        //     $("#mainGallery")
+        //   .find(".active")
+        //   .next()
+        //   .nextAll()
+        //   .css({ visibility: "hidden" });
         }
       }
     );
