@@ -17,7 +17,7 @@ $('#carouselExample .card-body').css({ opacity: 0 });
         );
 
 
-        $('#carouselExample, #carouselExample2').bind('wheel', function (e) {
+        $('#carouselExample').bind('wheel', function (e) {
 
             if (e.originalEvent.wheelDelta / 120 < 0) {
                 $(this).carousel('next');
@@ -27,15 +27,9 @@ $('#carouselExample .card-body').css({ opacity: 0 });
 
         });
 
-        // $('.carousel-item img').bind('click',function(e){
-        //    // var alt = e.target.alt.replace(' ','_');
-        //     // window.open(window.location.origin+'/'+alt+'.html','_self');
 
 
-
-        // })
-
-        $('#carouselExample, #carouselExample2').on('slide.bs.carousel', function (e) {
+        $('#carouselExample').on('slide.bs.carousel', function (e) {
 
             var active = $(e.relatedTarget);
 
@@ -52,7 +46,7 @@ $('#carouselExample .card-body').css({ opacity: 0 });
                 var it = itemsPerSlide - (totalItems - idx);
 
                 for (var i = 0; i < it; i++) {
-
+                    console.log('radi');
                     // append slides to end
                     if (e.direction == "left") {
                         $('.carousel-item-main').eq(i).appendTo('.carousel-inner-main');
@@ -62,6 +56,8 @@ $('#carouselExample .card-body').css({ opacity: 0 });
                         $('.carousel-item-main').eq(0).appendTo('.carousel-inner-main');
                     }
                 }
+
+        
             }
 
 

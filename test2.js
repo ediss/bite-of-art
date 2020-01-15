@@ -3,6 +3,16 @@ $(document).ready(function() {
 
   $("#mainGallery").on("click", ".klik", function() {
  
+    $('.logo').animate( {        
+        transition: "top 4.4s ease-in-out",
+        'top' : '-100px',
+    });
+
+    $('.live').css('visibility', 'hidden');
+
+    $('#carouselExample .carousel-controls-main').hide();
+    
+
 
     $("#smallGallery").fadeOut("slow");
 
@@ -10,10 +20,17 @@ $(document).ready(function() {
       .find(".card-body")
       .animate(
         {
-          transition: "all 2s ease-in-out",
+          transition: "height 1.4s ease-in-out",
           height: "0px"
         },
-        1500
+        {
+            step:function() {
+                $(this).animate({
+                    transition: "visibility 1s ease-in-out",
+                    'visibility' : 'hidden'
+                });
+            }
+        }
       );
 
     $("#carouselExample").find(".active").animate({
@@ -68,6 +85,10 @@ $(document).ready(function() {
 
           $('#carouselExample').replaceWith($('.carouselExample2'));
           $('#carouselExample2').css('display', 'block');
+          $('.close-gallery').removeClass('d-none').addClass('d-block animation-duration2 fadeInDown');
+          $('.page-footer').hide();
+
+          
           
 
    

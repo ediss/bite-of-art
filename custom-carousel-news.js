@@ -65,13 +65,6 @@
             }
 
 
-
-            $('.carousel-controls .carousel-control-prev,.carousel-controls .carousel-control-next').bind(
-                'click',
-                function (e) {
-                    showHideButtons()
-                })
-
             $('#recipeCarousel').bind('wheel', function (e) {
                 if ($('#smallGallery .active img').attr('src') != lastSrc) {
                     if (e.originalEvent.wheelDelta / 120 < 0) {
