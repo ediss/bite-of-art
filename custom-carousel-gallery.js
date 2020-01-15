@@ -11,13 +11,17 @@ $(".close-gallery").click(function(e) {
     transition: "right .3s linear"
   }),
     $("#carouselExample2").animate({
-      left: "100%",
+      left: "200%",
       "transform-origin": "0 0",
-      transition: "left .8 linear"
+    //   transition: "left 0.5s linear",
+    //   'transition-duration': '5s'
+
     }),
+
+    $(this).removeClass('fadeInDown').addClass('fadeOutUp');
     setTimeout(function() {
       window.location.href = "index.html";
-    }, 1000);
+    }, 1500);
 });
 
 $(document).ready(function() {
@@ -27,7 +31,7 @@ $(document).ready(function() {
     ).attr("src"),
     lastSrc = $(
       "#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:nth-child(" +
-        (count - 4) +
+        (count - 1) +
         ") img"
     ).attr("src");
 

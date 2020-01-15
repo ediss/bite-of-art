@@ -33,7 +33,7 @@
         $(document).ready(function () {
             var count = $('#recipeCarousel .carousel-inner').children().length
             var firstSrc = $('#recipeCarousel .carousel-inner .carousel-item:first-child img').attr('src'),
-                lastSrc = $('#recipeCarousel .carousel-inner .carousel-item:nth-child(' + (count - 4) + ') img').attr('src');
+                lastSrc = $('#recipeCarousel .carousel-inner .carousel-item:nth-child(' + (count - 1) + ') img').attr('src');
 
 
 
