@@ -10,12 +10,9 @@ $(".close-gallery").click(function(e) {
     "transform-origin": "0 0",
     transition: "right .3s linear"
   }),
-    $("#carouselExample2").animate({
+    $("#carouselExample2, #carouselExample3").animate({
       left: "200%",
       "transform-origin": "0 0",
-    //   transition: "left 0.5s linear",
-    //   'transition-duration': '5s'
-
     }),
 
     $(this).removeClass('fadeInDown').addClass('fadeOutUp');
