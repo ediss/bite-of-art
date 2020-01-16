@@ -1571,3 +1571,17 @@ textarea.form-control {
   position: fixed;
   bottom: 0;
 }
+
+.close-gallery {
+  background-image: url("../../images/iconic/close-gallery.png");
+  -webkit-transition: background-image 0.5s; /* Safari */
+  transition: background-image 0.5s;
+  background-repeat: no-repeat;
+  height:100%;
+  width:26px;
+  cursor: pointer;
+}
+
+.close-gallery:hover {
+  background-image: url("../../images/iconic/close-gallery-black.png");
+}
