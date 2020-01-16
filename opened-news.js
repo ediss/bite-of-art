@@ -24,7 +24,7 @@ $(document).ready(function() {
         .addClass("animation-duration2 fadeInUp");
       $(".first-image")
         .removeClass("d-none")
-        .addClass("animation-duration2 bounceInRight");
+        .addClass("animation-duration2 fadeInRight");
     }, 1500);
   });
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
   $("#carouselExample3").bind("wheel", function(e) {
     $('.news-first-slide').removeClass('fadeInUp');
-    $(".first-image").removeClass("animation-duration2 bounceInRight");
+    $(".first-image").removeClass("animation-duration2 fadeInRight");
 
     
     if ($("#carouselExample3 .active img").attr("src") != lastSrc) {
