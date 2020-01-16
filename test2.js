@@ -1,9 +1,6 @@
 $(document).ready(function() {
-  var animDuration = 1000;
 
   $("#mainGallery").on("click", ".klik", function() {
-
-
  
     $('.logo').animate( {        
         transition: "top 4.4s ease-in-out",
@@ -37,7 +34,6 @@ $(document).ready(function() {
 
     $("#carouselExample").find(".active").animate({
           transition: "right 3s ease-in-out",
-          // border : '2px solid red'
           right: "35%"
         },2000
     );
@@ -69,7 +65,6 @@ $(document).ready(function() {
           .find("img")
           .css({
               "transform": "translate3d(31.5%, 0, 0)",
-            //   "transform-origin": "0 0",
               transition: "transform 2.5s ease-in-out",
           });
 
@@ -82,8 +77,6 @@ $(document).ready(function() {
         duration: 3000,
 
         complete: function() {
-          console.log("gotova");
-          
 
           $('#carouselExample').replaceWith($('#carouselExample2'));
           $('#carouselExample2').css('display', 'block');
