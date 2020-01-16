@@ -38,7 +38,7 @@ $(".close-gallery").click(function(e) {
 
   function showHideButtons() {
     setTimeout(function() {
-      if ($("#carousel-inner-main .active img").attr("src") == lastSrc) {
+      if ($("#carouselExample2 .active img").attr("src") == lastSrc) {
         $(".carousel-controls-main .carousel-control-next").css({
           opacity: 0,
           "pointer-events": "none"
@@ -49,7 +49,7 @@ $(".close-gallery").click(function(e) {
           "pointer-events": "auto"
         });
       }
-      if ($("#carousel-inner-main .active img").attr("src") == firstSrc) {
+      if ($("#carouselExample2 .active img").attr("src") == firstSrc) {
         $(".carousel-controls-main .carousel-control-prev").css({
           opacity: 0,
           "pointer-events": "none"
