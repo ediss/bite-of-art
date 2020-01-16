@@ -1585,3 +1585,8 @@ textarea.form-control {
 .close-gallery:hover {
   background-image: url("../../images/iconic/close-gallery-black.png");
 }
+
+.social-scale {
+  transform: scale(0.6);
+}
+
