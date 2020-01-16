@@ -69,14 +69,17 @@ $(document).ready(function() {
   });
 
   $("#carouselExample2").bind("wheel", function(e) {
+    $('.gallery-first-slide').parent().removeClass('fadeInUp');
     if ($("#carouselExample2 .active img").attr("src") != lastSrc) {
       if (e.originalEvent.wheelDelta / 120 < 0) {
+        
         $(this).carousel("next");
       }
     }
     if ($("#carouselExample2 .active img").attr("src") != firstSrc) {
       if (e.originalEvent.wheelDelta / 120 > 0) {
         $(this).carousel("prev");
+        
       }
     }
     showHideButtons();

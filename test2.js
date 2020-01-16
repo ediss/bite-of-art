@@ -2,6 +2,8 @@ $(document).ready(function() {
   var animDuration = 1000;
 
   $("#mainGallery").on("click", ".klik", function() {
+
+
  
     $('.logo').animate( {        
         transition: "top 4.4s ease-in-out",
@@ -83,23 +85,13 @@ $(document).ready(function() {
           console.log("gotova");
           
 
-          $('#carouselExample').replaceWith($('.carouselExample2'));
+          $('#carouselExample').replaceWith($('#carouselExample2'));
           $('#carouselExample2').css('display', 'block');
           $('.close-gallery').removeClass('d-none').addClass('d-block animation-duration2 fadeInDown');
           $('.page-footer').hide();
 
           
           
-
-   
-          
-           
-          
-        //     $("#mainGallery")
-        //   .find(".active")
-        //   .next()
-        //   .nextAll()
-        //   .css({ visibility: "hidden" });
         }
       }
     );

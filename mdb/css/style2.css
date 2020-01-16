@@ -1515,11 +1515,11 @@ textarea.form-control {
   animation-duration: 2.8s;
 }
 
-.gallery-first-slide {
+.gallery-first-slide, .news-first-slide {
   font-size: 8pt;
 }
 
-.gallery-first-slide p {
+.gallery-first-slide, .news-first-slide  p {
   line-height: 20pt;
   padding: 0 35% 0 0;
 
@@ -1545,4 +1545,29 @@ textarea.form-control {
 
 .klik:hover {
   cursor: pointer;
+}
+
+
+
+.overlay-news {
+  height: calc(100% - (100px));
+  margin-top: 100px;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255, 1);
+  overflow-x: hidden;
+  transition: 1.5s;
+}
+
+#openedNews .w-140 {
+  left:-62%;
+}
+
+#carouselExample3 .carousel-controls-main {
+  position: fixed;
+  bottom: 0;
 }
