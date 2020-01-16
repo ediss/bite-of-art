@@ -627,31 +627,13 @@
                         </div>
 
                     </div>
+                    
                     <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
-                        <div class="card">
-                            <img class="img-fluid  d-block gallery-img" src="./images/gallery/7.jpg" alt="slide 6">
+                            <div class="card">
+                                <img class="img-fluid  d-block gallery-img" src="./images/gallery/6.jpg" alt="slide 5">
+                            </div>
+    
                         </div>
-
-                    </div>
-                    <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
-                        <div class="card">
-                            <img class="img-fluid  d-block gallery-img" src="./images/gallery/8.jpg" alt="slide 7">
-                        </div>
-
-                    </div>
-                    <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
-                        <div class="card">
-                            <img class="img-fluid  d-block gallery-img" src="./images/gallery/9.jpg" alt="slide 8">
-                        </div>
-
-                    </div>
-                    <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
-                        <div class="card">
-                            <img class="img-fluid  d-block gallery-img" src="./images/gallery/10.jpg" alt="slide 9">
-                        </div>
-
-
-                    </div>
 
                 </div>
                 <div class="carousel-controls-main d-none">
@@ -670,9 +652,7 @@
                         <li data-target="#carouselExample3" data-slide-to="3"></li>
                         <li data-target="#carouselExample3" data-slide-to="4"></li>
                         <li data-target="#carouselExample3" data-slide-to="5"></li>
-                        <li data-target="#carouselExample3" data-slide-to="6"></li>
-                        <li data-target="#carouselExample3" data-slide-to="7"></li>
-                        <li data-target="#carouselExample3" data-slide-to="8"></li>
+                        <!-- <li data-target="#carouselExample3" data-slide-to="6"></li> -->
                     </ol>
                 </div>
             </div>
@@ -716,6 +696,7 @@
     <script src="custom-carousel-gallery.js"></script>
     <script src="custom-carousel-news.js"></script>
     <script src="test2.js"></script>
+    <script src="opened-news.js"></script>
     <!------ JS CODE ---------->
 
 
@@ -728,27 +709,27 @@
             document.getElementById("openedNews").style.width = "0%";
         }
 
-        $(".img-opacity").click(function () {
-            console.log('klik');
-            openNav();
+        // $(".img-opacity").click(function () {
+            
+        //     openNav();
 
-            setTimeout(function () {
-                $('.logo').animate({
-                    transition: "top 4.4s ease-in-out",
-                    'top': '-100px',
-                });
+        //     setTimeout(function () {
+        //         $('.logo').animate({
+        //             transition: "top 4.4s ease-in-out",
+        //             'top': '-100px',
+        //         });
 
-                $('.live').css('visibility', 'hidden');
-                $('.close-gallery').removeClass('d-none').addClass(' animation-duration2 fadeInDown');
+        //         $('.live').css('visibility', 'hidden');
+        //         $('.close-gallery').removeClass('d-none').addClass(' animation-duration2 fadeInDown');
 
-                $('.news-first-slide').removeClass('d-none').addClass('animation-duration2 fadeInUp');
-                $('#carouselExample3').find('.carousel-controls-main').removeClass('d-none').addClass('animation-duration2 fadeInUp');
-                $('.first-image').removeClass('d-none').addClass('animation-duration2 bounceInRight');
-            }, 1500);
+        //         $('.news-first-slide').removeClass('d-none').addClass('animation-duration2 fadeInUp');
+        //         $('#carouselExample3').find('.carousel-controls-main').removeClass('d-none').addClass('animation-duration2 fadeInUp');
+        //         $('.first-image').removeClass('d-none').addClass('animation-duration2 bounceInRight');
+        //     }, 1500);
 
 
 
-        });
+        // });
         $(document).ready(function () {
 
 

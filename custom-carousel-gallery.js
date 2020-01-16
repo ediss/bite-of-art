@@ -1,10 +1,15 @@
+$(document).ready(function() {
 $("#carouselExample2 .carousel-controls-main .carousel-control-prev").css({
+  opacity: 0
+});
+
+$("#carouselExample3 .carousel-controls-main .carousel-control-prev").css({
   opacity: 0
 });
 
 $(".close-gallery").click(function(e) {
   e.preventDefault();
-  $("#carouselExample2").animate({
+  $("#carouselExample2, #carouselExample3").animate({
     right: "10%",
 
     "transform-origin": "0 0",
@@ -21,20 +26,19 @@ $(".close-gallery").click(function(e) {
     }, 1500);
 });
 
-$(document).ready(function() {
+
+
+
+  
+
+
   var count = $("#carouselExample2 .carousel-inner-gallery").children().length;
-  var firstSrc = $(
-      "#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:first-child img"
-    ).attr("src"),
-    lastSrc = $(
-      "#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:nth-child(" +
-        (count - 1) +
-        ") img"
-    ).attr("src");
+  var firstSrc = $("#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:first-child img").attr("src"),
+       lastSrc = $("#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:nth-child(" + (count - 1) + ") img").attr("src");
 
   function showHideButtons() {
     setTimeout(function() {
-      if ($("#carouselExample2 .active img").attr("src") == lastSrc) {
+      if ($("#carousel-inner-main .active img").attr("src") == lastSrc) {
         $(".carousel-controls-main .carousel-control-next").css({
           opacity: 0,
           "pointer-events": "none"
@@ -45,7 +49,7 @@ $(document).ready(function() {
           "pointer-events": "auto"
         });
       }
-      if ($("#carouselExample2 .active img").attr("src") == firstSrc) {
+      if ($("#carousel-inner-main .active img").attr("src") == firstSrc) {
         $(".carousel-controls-main .carousel-control-prev").css({
           opacity: 0,
           "pointer-events": "none"
@@ -66,6 +70,9 @@ $(document).ready(function() {
   });
 
   $("#carouselExample2").bind("wheel", function(e) {
+
+    
+    
     $('.gallery-first-slide').parent().removeClass('fadeInUp');
     if ($("#carouselExample2 .active img").attr("src") != lastSrc) {
       if (e.originalEvent.wheelDelta / 120 < 0) {
