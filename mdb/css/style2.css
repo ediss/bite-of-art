@@ -55,10 +55,7 @@ body {
   line-height: 22px;
 } */
 
-.text-left {
-  font-weight: bold;
-  border-left: 1px solid #d4d4d4;
-}
+
 
 
 
@@ -1106,7 +1103,7 @@ body {
 .card-body {
   height: 100px;
   padding: 0 !important;
-  font-size: 14pt;
+  /* font-size: 14pt; */
 }
 
 .card-body1 {
@@ -1422,8 +1419,8 @@ textarea.form-control {
   font-family: montserrat-bold;
   src: url(../../font/montserrat/Montserrat-Bold.otf);
   font-size: 10pt;
-  margin: 0 0 5px 0;
-
+  margin-left: 1rem;
+  margin-right: 1rem;
   transition: visibility 0.51s linear
 
 }
@@ -1451,29 +1448,18 @@ textarea.form-control {
 
 
 .transform-img {
-  /* height: 100%;
-  box-sizing: border-box;
-  max-width: 100%;
-  max-height: 100%;
-  width: 100%; */
   transform-origin: 0 0;
   transition: all 1.2s ease-in-out;
-
-  /* margin-left: 25%; */
   transform: scale(1.6);
  }
 
  .transform-matrix {
   margin-left: 25%;
   transform: matrix(2, 0, 0, 2, 0, 0);
-  /* transform-origin: 1, 0; */
-
  }
 
  .card-body {
-  /* height: 400px;
-  margin-top: 46%; */
-  font-size: 14pt;
+  font-size: 10pt;
 }
 
 .left-35{
@@ -1516,12 +1502,17 @@ textarea.form-control {
 }
 
 .gallery-first-slide, .news-first-slide {
-  font-size: 8pt;
+  font-size: 11pt;
+}
+
+.gallery-first-slide h1 {
+  font-size: 15pt;
+  line-height: 18pt;
 }
 
 .gallery-first-slide, .news-first-slide  p {
-  line-height: 20pt;
-  padding: 0 35% 0 0;
+  line-height: 15pt;
+  padding: 0 30% 0 0;
 
 }
 
@@ -1586,7 +1577,9 @@ textarea.form-control {
   background-image: url("../../images/iconic/close-gallery-black.png");
 }
 
-.social-scale {
-  transform: scale(0.6);
+.social-scale img{
+  transform: scale(0.625);
 }
+
+
 
