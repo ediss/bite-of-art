@@ -1511,7 +1511,14 @@ textarea.form-control {
   font-weight: bold;
 }
 
-.gallery-first-slide, .news-first-slide  p {
+
+.gallery-first-slide p {
+  line-height: 1.2vw;
+  padding: 0 30% 0 0;
+
+}
+
+.news-first-slide  p {
   line-height: 1.2vw;
   padding: 0 30% 0 0;
 
