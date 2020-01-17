@@ -1532,6 +1532,9 @@ textarea.form-control {
   position: fixed;
   bottom: 0;
 }
+.carousel-indicators{
+  top:35px;
+}
 .carousel-indicators li {
   background-color: #cccccc;
   width: 10px;
@@ -1543,7 +1546,9 @@ textarea.form-control {
 }
 
 .logo {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
+  top:0;
 }
 
 .klik:hover {

@@ -39,8 +39,9 @@
 
 .button_container {
   position: fixed;
-  right: 0;
-  width: 35px;
+  right: 35px;
+	width: 35px;
+	top:35px;
   cursor: pointer;
   z-index: 100;
   transition: opacity .25s ease;

@@ -44,18 +44,18 @@
 
                         </div>
                         <div class="col-4 text-center">
-                            <div class="live ">
-                                <img src="images/live.png" class="img-fluid" alt="live">
+                            <div class="live" >
+                                <img src="images/live.png" class="img-fluid" alt="live" id="flip">
                             </div>
                         </div>
-                        <div class="col-4" id="animated-menu-icon">
 
 
-                            <div class="button_container m-35px" id="toggle"><span class="top"></span><span
-                                    class="middle"></span><span class="bottom"></span></div>
+
+                        <div class="col-4 button_container" id="toggle"><span class="top"></span><span
+                                class="middle"></span><span class="bottom"></span></div>
 
 
-                        </div>
+
                     </div>
 
 
@@ -277,7 +277,7 @@
                         <div class="card">
                             <div class="gallery-first-slide montserrat-regular">
                                 <p>01 JAN - 03 FEB 2019</p>
-                                <h1 class = "montserrat-bold">Lorem Ipsum Naslov <br /> Ipsum Loremski</h1>
+                                <h1 class="montserrat-bold">Lorem Ipsum Naslov <br /> Ipsum Loremski</h1>
                                 <p>@ Gallery November, Belgrade, Serbia</p>
                                 <p>Night sea give bearing. Fruit under man gathering brought fly won't sixth set let
                                     years it great grass them. Kind lights thing. Behold of second spirit male. Him.
@@ -291,7 +291,7 @@
                                     beast image, gathering. Saw green winged can't shall can't. Isn't. May creature
                                     evening. Whales gathered moved land which, and in, gathered. Abundantly day
                                     moveth night.</p>
-                                
+
                             </div>
                         </div>
 
@@ -577,7 +577,7 @@
                     <div class="carousel-item carousel-item-gallery d-none news-first-slide col-md-4 col-lg-4">
                         <div class="card  montserrat-regular">
                             <p>01 JAN - 03 FEB 2019</p>
-                            <h1 class = "montserrat-bold">Naslov vesti </h1>
+                            <h1 class="montserrat-bold">Naslov vesti </h1>
                             <p>@ Gallery November, Belgrade, Serbia</p>
                             <p>Night sea give bearing. Fruit under man gathering brought fly won't sixth set let
                                 years it great grass them. Kind lights thing. Behold of second spirit male. Him.
@@ -589,7 +589,7 @@
                                 beast image, gathering. Saw green winged can't shall can't. Isn't. May creature
                                 evening. Whales gathered moved land which, and in, gathered. Abundantly day
                                 moveth night.</p>
-                            
+
                         </div>
 
                         <div class="social-scale">
@@ -709,37 +709,26 @@
             document.getElementById("openedNews").style.width = "0%";
         }
 
-        // $(".img-opacity").click(function () {
 
-        //     openNav();
-
-        //     setTimeout(function () {
-        //         $('.logo').animate({
-        //             transition: "top 4.4s ease-in-out",
-        //             'top': '-100px',
-        //         });
-
-        //         $('.live').css('visibility', 'hidden');
-        //         $('.close-gallery').removeClass('d-none').addClass(' animation-duration2 fadeInDown');
-
-        //         $('.news-first-slide').removeClass('d-none').addClass('animation-duration2 fadeInUp');
-        //         $('#carouselExample3').find('.carousel-controls-main').removeClass('d-none').addClass('animation-duration2 fadeInUp');
-        //         $('.first-image').removeClass('d-none').addClass('animation-duration2 bounceInRight');
-        //     }, 1500);
-
-
-
-        // });
         $(document).ready(function () {
 
+function flip() {
+    var images = [
+                "images/live.png",
+                "images/live2.png",
+                
+            ]
+            var current = 0;
+            setInterval(function () {
 
+                $('#flip').attr('src', images[current]);
+                current = (current < images.length - 1) ? current + 1 : 0;
 
-            // $(".second").click(function () {
-            //     $(this).animate({ width: 0 }, { duration: 1000 });
-            //     $(this).hide();
-            //     $(".first").show();
-            //     $(".first").animate({ width: 100 }, { duration: 1000 });
-            // });
+            }, 500); /*1000 = 1 sec*/
+}
+
+flip();
+   
 
 
             $(".img-opacity").mouseover(function (e) {
