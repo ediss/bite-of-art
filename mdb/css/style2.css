@@ -1508,19 +1508,23 @@ textarea.form-control {
 .gallery-first-slide h1 {
   font-size: 1.2vw;
   line-height: 1.6vw;
-  font-weight: bold;
 }
 
 
 .gallery-first-slide p {
   line-height: 1.2vw;
-  padding: 0 30% 0 0;
+  padding: 0 5vw 0 0;
 
+}
+
+.news-first-slide h1 {
+  font-size: 1.2vw;
+  line-height: 1.6vw;
 }
 
 .news-first-slide  p {
   line-height: 1.2vw;
-  padding: 0 30% 0 0;
+  padding: 0 5vw 0 0;
 
 }
 
@@ -1585,8 +1589,16 @@ textarea.form-control {
   background-image: url("../../images/iconic/close-gallery-black.png");
 }
 
+.social-scale {
+  position: absolute;
+  bottom: 0;
+}
 .social-scale img{
   transform: scale(0.625);
+}
+
+.carousel-inner-gallery {
+  display:flex;
 }
 
 
