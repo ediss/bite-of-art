@@ -1633,4 +1633,6 @@ input[type=submit]:hover {
   opacity: 0;
 }
 
+#artist input { background-color: #cccccc !important; }
+
 
