@@ -20,4 +20,6 @@ Route::get('/','GalleryController@getGalleries');
 Route::get('/test','GalleryController@test');
 
 
+Route::post('/test/ajax','GalleryController@ajaxTest');
+
 Route::post('/getmsg', 'GalleryController@ajax');

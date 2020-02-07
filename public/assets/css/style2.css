@@ -1619,10 +1619,11 @@ input[type=submit]:hover {
   border: 1px solid black;
   color: black;
   background-color: white;
-  padding: 8px 20px;
+  /* padding: 8px 20px; */
   /* border-radius: 8px; */
   font-size: 1rem;
   /* font-weight: bold; */
+  width:100px;
 }
 
 .upload-btn-wrapper input[type=file] {
@@ -1633,6 +1634,6 @@ input[type=submit]:hover {
   opacity: 0;
 }
 
-#artist input { background-color: #cccccc !important; }
+#artist-header input { background-color: #cccccc !important; }
 
 
