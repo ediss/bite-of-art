@@ -92,7 +92,8 @@
           $.ajax({
    
             type:'POST',
-              url:'/getmsg',
+              url:'/event',
+              // url:"{{ url('/event/{id?}') }}",
               headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
               data : { id : data_id},
               

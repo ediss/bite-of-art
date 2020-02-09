@@ -9,7 +9,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12 p-0">
-        <form action="">
+        <form id="ajaxSubmit"  action="" enctype="multipart/form-data" method="POST">
             @csrf
             <!--Add event-->
             <div class="row">
@@ -55,12 +55,12 @@
                                 <div class="form-group col-2 text-left">
                                     <div class="upload-btn-wrapper">
                                         <button class="my-btn">Upload Cover</button>
-                                        <input type="file" name="event_cover" />
+                                        <input type="file" name="event_cover" id="event_cover"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group col-10">
-                                    <textarea class="form-control border-0" id="event_cover_description"></textarea>
+                                    <textarea class="form-control border-0" name="event_cover_description" id="event_cover_description"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -74,12 +74,12 @@
                                 <div class="form-group col-2 text-left">
                                     <div class="upload-btn-wrapper">
                                         <button class="my-btn">Additional photo#1</button>
-                                        <input type="file" name="event_image_1" />
+                                        <input type="file" name="event_image_1"  id="event_image_1">
                                     </div>
                                 </div>
 
                                 <div class="form-group col-10">
-                                    <textarea class="form-control border-0" id="event_image_1_desc"></textarea>
+                                    <textarea class="form-control border-0" name="event_image_1_desc" id="event_image_1_desc"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -93,12 +93,12 @@
                                 <div class="form-group col-2 text-left">
                                     <div class="upload-btn-wrapper">
                                         <button class="my-btn">Additional photo#2</button>
-                                        <input type="file" name="event_image_2" />
+                                        <input type="file" name="event_image_2"  id="event_image_2">
                                     </div>
                                 </div>
 
                                 <div class="form-group col-10">
-                                    <textarea class="form-control border-0" id="event_image_2_desc"></textarea>
+                                    <textarea class="form-control border-0" name="event_image_2_desc" id="event_image_2_desc"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -112,12 +112,12 @@
                                 <div class="form-group col-2 text-left">
                                     <div class="upload-btn-wrapper">
                                         <button class="my-btn">Additional photo#3</button>
-                                        <input type="file" name="event_image_3" />
+                                        <input type="file" name="event_image_3"  id="event_image_3">
                                     </div>
                                 </div>
 
                                 <div class="form-group col-10">
-                                    <textarea class="form-control border-0" id="event_image_3_desc"></textarea>
+                                    <textarea class="form-control border-0" name="event_image_3_desc" id="event_image_3_desc"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
                                     <label for="">Note:</label>
                                 </div>
                                 <div class="form-group col-11">
-                                    <textarea class="form-control border-0" id="event_note"></textarea>
+                                    <textarea class="form-control border-0" name="event_note" id="event_note"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +205,7 @@
                                 </div>
 
                                 <div class="form-group col-10">
-                                    <textarea class="form-control border-0" id="artist_cover_description"></textarea>
+                                    <textarea class="form-control border-0" name="artist_about" id="artist_about"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -224,7 +224,7 @@
                                 </div>
 
                                 <div class="form-group col-10">
-                                    <textarea class="form-control border-0" id="artist_image_1_desc"></textarea>
+                                    <textarea class="form-control border-0" name="artist_image_1_desc" id="artist_image_1_desc"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
                                 </div>
 
                                 <div class="form-group col-10">
-                                    <textarea class="form-control border-0" id="artist_image_2_desc"></textarea>
+                                    <textarea class="form-control border-0" name="artist_image_2_desc" id="artist_image_2_desc"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +262,7 @@
                                 </div>
 
                                 <div class="form-group col-10">
-                                    <textarea class="form-control border-0" id="artist_image_3_desc"></textarea>
+                                    <textarea class="form-control border-0" name="artist_image_3_desc" id="artist_image_3_desc"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -298,7 +298,7 @@
                                     <label for="">Note:</label>
                                 </div>
                                 <div class="form-group col-11">
-                                    <textarea class="form-control border-0" id="artist_note"></textarea>
+                                    <textarea class="form-control border-0" name="artist_note" id="artist_note"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -369,7 +369,7 @@
                                 </div>
 
                                 <div class="form-group col-10">
-                                    <textarea class="form-control border-0" id="artwork_image_1_desc"></textarea>
+                                    <textarea class="form-control border-0" name="artwork_image_1_desc" id="artwork_image_1_desc"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -388,7 +388,7 @@
                                 </div>
 
                                 <div class="form-group col-10">
-                                    <textarea class="form-control border-0" id="artwork_image_2_desc"></textarea>
+                                    <textarea class="form-control border-0" name="artwork_image_2_desc" id="artwork_image_2_desc"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -407,7 +407,7 @@
                                 </div>
 
                                 <div class="form-group col-10">
-                                    <textarea class="form-control border-0" id="artwork_image_3_desc"></textarea>
+                                    <textarea class="form-control border-0" name="artwork_image_3_desc" id="artwork_image_3_desc"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -430,7 +430,7 @@
                             <div class="row">
                                 <div class="form-group col-4">
                                     <label for="">Media file description</label>
-                                    <textarea class="form-control border-0" id="artwork_media_desc"></textarea>
+                                    <textarea class="form-control border-0" name="artwork_media_desc" id="artwork_media_desc"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -445,7 +445,7 @@
                                     <label for="">Note:</label>
                                 </div>
                                 <div class="form-group col-11">
-                                    <textarea class="form-control border-0" id="artwork_note"></textarea>
+                                    <textarea class="form-control border-0" name="artwork_note" id="artwork_note"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -453,7 +453,7 @@
                 </div>
             </div>
             <!--end artwork-->
-            <input type="submit" class="btn btn primary" value="SAVE" name="save" id="ajaxSubmit">
+            <input type="submit" class="btn btn primary" value="SAVE" name="save" >
         </form>
         <div id="artist_artworks" class="row"></div>
     </div>
@@ -470,40 +470,33 @@
 
     $(document).ready(function(){
 
-        jQuery('#ajaxSubmit').click(function(e){
-            var event = 
-                {
-                    "event_name"          : $("input[type=text][name=event_name]").val(),
-                    "event_date"          : $("input[type=text][name=daterange]").val(),
-                    "event_cover"         : $("input[type=file][name=event_cover]").val(),
-                    'event_cover_desc'    : $('textarea#event_cover_description').val(),
-                    'event_image_1'       : $("input[type=file][name=event_image_1]").val(),
-                    'event_image_2'       : $("input[type=file][name=event_image_2]").val(),
-                    'event_image_3'       : $("input[type=file][name=event_image_3]").val(),
-
-                    'event_image_1_desc'  : $('textarea#event_image_1_desc').val(),
-                    'event_image_2_desc'  : $('textarea#event_image_2_desc').val(),
-                    'event_image_3_desc'  : $('textarea#event_image_3_desc').val(),
-                    "event_media"         : $("input[type=text][name=event_media]").val(),
-                    'event_media_desc'    : $('textarea#event_media_description').val(),
-                    'event_note'          : $('textarea#event_note').val(),
-
-                }
-            
+        jQuery('#ajaxSubmit').submit(function(e){
                e.preventDefault();
+
+               var json_artists = JSON.stringify(artists);
+
+
+               var formData = new FormData(this);
+               formData.append('artists',json_artists);
+                //console.log(formData);
                $.ajaxSetup({
                   headers: {
                       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                   }
               });
-               jQuery.ajax({
-                  url: "{{ url('/test/ajax') }}",
+               $.ajax({
+                  url: "{{ url('/ajax') }}",
                   method: 'post',
-                  data: {
-                    artists : artists,
-                    event   : event 
-               
-                  },
+                  contentType: false,
+                  processData: false,
+                  cache: false,
+
+                  data:formData,
+                //   data:{
+                //     artists : artists,
+                //     event   : event,
+                //     data: formData,
+                //   },
                   success: function(result){
                     //  jQuery('.alert').show();
                     //  jQuery('.alert').html(result.success);
@@ -511,14 +504,14 @@
                });
 
 
-            
+
 
     $('.js-datepicker-range').daterangepicker({
             locale: {
             format: 'YYYY.MM.DD'
         },
     });
-        
+
         $( ".save_event" ).click(function() {
             $( ".event-wraper" ).animate({
                 left: '-100vw'
@@ -537,7 +530,7 @@
                 $('#artist').addClass('d-none');
                 $('.add_artist').addClass('d-none');
 
-                
+
 
             });
         });
@@ -559,13 +552,13 @@
                 $('.artist-wraper').addClass('d-none');
                 $('#artwork').show().removeClass('d-none');
             $('.artwork-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
-                
+
 
             });
         });
 
         $('.save_artwork').click(function() {
-            
+
 
             artwork.push({
                 "artwork_name"          : $("input[type=text][name=artwork_name]").val(),
@@ -601,10 +594,12 @@
         });
 
         $( ".save_artist" ).on( "click", function() {
+            
+
             artists.push({
                 "artist_name"               : $("input[type=text][name=artist_name]").val(),
-                "artist_cover"              : $("input[type=file][name=artist_cover]").val(),
-                'artist_cover_desc'         : $('textarea#artist_cover_description').val(),
+                "artist_cover"              : $("input[type=file][name=artist_cover").val(),
+                'artist_about'              : $('textarea#artist_about').val(),
                 'artist_image_1'            : $("input[type=file][name=artist_image_1]").val(),
                 'artist_image_2'            : $("input[type=file][name=artist_image_2]").val(),
                 'artist_image_3'            : $("input[type=file][name=artist_image_3]").val(),

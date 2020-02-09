@@ -24,13 +24,13 @@
         @endphp
         <div class="card">
             <div class="gallery-first-slide montserrat-regular">
-                <p>{{ strtoupper(date('d M', strtotime($data->gallery_open))) }} -
-                    {{ strtoupper(date('d M Y', strtotime($data->gallery_closed ))) }}</p>
+                <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
+                    {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p>
                 <p>
-                    <h1 class="montserrat-bold"> {{ $data->gallery_name }}</h1>
+                    <h1 class="montserrat-bold"> {{ $data->event_name }}</h1>
                 </p>
-                <p>@ {{ $data->gallery_place }}</p>
-                <p> {{ $data->gallery_description }} </p>
+                <p>@ {{ $data->event_place }}</p>
+                <p> {{ $data->event_description }} </p>
 
             </div>
         </div>
@@ -52,7 +52,7 @@
             $counter++;
         @endphp
         <div class="card">
-            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->gallery_cover }}"
+            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->event_cover }}"
                 alt="slide 2">
 
         </div>
@@ -60,13 +60,13 @@
     </div>
 
 
-    @if(isset($data->gallery_img))
+    @if(isset($data->event_img_1))
         @php
             $counter++;
         @endphp
     <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
         <div class="card">
-            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->gallery_img }}"
+            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->event_img_1 }}"
                 alt="slide 2">
 
         </div>
@@ -74,13 +74,13 @@
     </div>
     @endif
 
-    @if(isset($data->gallery_img_2))
+    @if(isset($data->event_img_2))
         @php
             $counter++;
         @endphp
     <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
         <div class="card">
-            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->gallery_img_2 }}"
+            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->event_img_2 }}"
                 alt="slide 2">
 
         </div>
@@ -88,13 +88,13 @@
     </div>
     @endif
 
-    @if(isset($data->gallery_img_3))
+    @if(isset($data->event_img_3))
         @php
             $counter++;
         @endphp
     <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
         <div class="card">
-            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->gallery_img_3 }}"
+            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->event_img_3 }}"
                 alt="slide 2">
 
         </div>
@@ -103,7 +103,7 @@
     @endif
 
     <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
-        @php 
+        @php
             $counter++;
         @endphp
         <div class="card">

@@ -16,10 +16,11 @@
 // });
 
 
-Route::get('/','GalleryController@getGalleries');
-Route::get('/test','GalleryController@test');
+Route::get('/','EventController@index');
+Route::any('/test','GalleryController@test');
 
 
-Route::post('/test/ajax','GalleryController@ajaxTest');
+Route::any('/ajax','EventController@ajaxTest');
 
-Route::post('/getmsg', 'GalleryController@ajax');
+Route::post('/event', 'EventController@ajaxLoadEventData');
+// Route::post('/event/{id?}', 'EventController@ajaxLoadEventData');

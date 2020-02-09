@@ -11,16 +11,16 @@
     <div id="carouselExample" class="carousel slide " data-ride="carousel" data-interval="900000">
         <div class="carousel-inner carousel-inner-main w-120 p-0 m-0" role="listbox">
 
-            @foreach ($galleries as $gallery)
-            <div class="carousel-item carousel-item-main  col-4 p-0 {{ ($gallery->id == 1) ? 'active' : '' }}">
-                <div class="card {{ ($loop->iteration == 2) ? 'klik' : ''}}" data-id="{{ $gallery->id }}">
-                    <img class="img-fluid  d-block" src="{{ 'images/galleries/'.$gallery->gallery_cover}}"
+            @foreach ($events as $event)
+            <div class="carousel-item carousel-item-main  col-4 p-0 {{ ($event->id == 1) ? 'active' : '' }}">
+                <div class="card {{ ($loop->iteration == 2) ? 'klik' : ''}}" data-id="{{ $event->id }}">
+                    <img class="img-fluid  d-block" src="{{ 'images/galleries/'.$event->event_cover}}"
                         alt="slide 2">
                 </div>
 
                 <div class="card-body ">
-                    <h4 class="card-title montserrat-bold">{{ $gallery->gallery_name }}</h4>
-                    <p class="card-text montserrat-bold">@ {{ $gallery->gallery_place }}</p>
+                    <h4 class="card-title montserrat-bold">{{ $event->event_name }}</h4>
+                    <p class="card-text montserrat-bold">@ {{ $event->event_place }}</p>
 
                 </div>
             </div>
