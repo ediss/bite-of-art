@@ -265,7 +265,7 @@
                     
                         $('.event-wraper').addClass('d-none');
 
-                        $('.add_artist').removeClass('d-none');
+                        // $('.add_artist').removeClass('d-none');
 
                         $("#artist").removeClass('d-none').html(result.html).show().addClass('fadeInDRight animation-duration');
                         $('.artist-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
@@ -302,6 +302,7 @@
 
             e.preventDefault();
 
+            $('#artwork-header .artist_id').css('border:2px solid red');
             // $('#artist').addClass('d-none');
             $('.add_artist').addClass('d-none');
             $('#artwork').show().removeClass('d-none');
@@ -332,6 +333,8 @@
                 data:formData,
                 success: function(result){
                     console.log(result.html);
+                    $('.add_artwork').removeClass('d-none');
+                    $('.artist_id').val(result.html)
                 //     $( ".event-wraper" ).animate({
                 //         left: '-100vw'
                 //     }, 2000, function() {
@@ -402,7 +405,7 @@
 
                 data:formData,
                 success: function(result){
-                    $('.add_artist').removeClass('d-none');
+                    // $('.add_artist').removeClass('d-none');
                     // $("#artist").fadeOut('slow', 'swing');
                     $( ".artist-wraper" ).animate({
                         left: '-100vw'
