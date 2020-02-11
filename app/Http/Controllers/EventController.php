@@ -12,6 +12,10 @@ use View;
 
 class EventController extends Controller
 {
+    // public function __construct() {
+    //     $this->middleware('auth');
+    // }
+    
     public function index() {
 
         $event = new Event();
@@ -237,6 +241,8 @@ class EventController extends Controller
         $event_id            = $request->input('event_id');
         $artist_id           = $request->input('artist_id');
 
+        
+
 
         if ($request->hasFile('artwork_cover')) {
             $artwork_cover        = $request->file('artwork_cover');
@@ -281,8 +287,9 @@ class EventController extends Controller
         $artworkObj->artwork_media          = $artwork_media;
         $artworkObj->artwork_media_desc     = $artwork_media_desc;
         $artworkObj->artwork_note           = $artwork_note;
-        $artworkObj->event_id              = $event_id;
-        $artworkObj->nfc_tag               = 'nfc_tag';
+        $artworkObj->event_id               = $event_id;
+        $artworkObj->artist_id              = $artist_id;
+        $artworkObj->nfc_tag                = 'nfc_tag';
 
 
 

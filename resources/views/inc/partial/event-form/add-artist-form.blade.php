@@ -8,6 +8,7 @@
                     <i class="fa fa-floppy-o fa-2x mr-3 save_artist" aria-hidden="true"></i>
                     <i class="fa fa-pencil-square-o fa-2x mt-1 edit_artist" aria-hidden="true"></i>
                     <input type="hidden" name="event_id" value="{{$event_id}}">
+                    <input type="hidden" class="artist_id" name="artist_id" value="">
                 </div>
 
                 <div class="form-group col-4">
@@ -21,8 +22,10 @@
                 </div>
 
                 <div class="form-group col-5 text-right">
-                    <button type="button" class="btn btn-outline-dark font-weight-bold add_artwork">ADD
+                    <button type="button" class="btn btn-outline-dark font-weight-bold add_artwork d-none">ADD
                         ARTWORK</button>
+
+                        <button type="button" class="btn btn-outline-dark font-weight-bold done_artwork d-none">DONE</button>
 
                 </div>
             </div>

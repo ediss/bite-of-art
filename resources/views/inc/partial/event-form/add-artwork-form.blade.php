@@ -8,7 +8,7 @@
                     <div class="form-group col-1 text-right">
                         <i class="fa fa-floppy-o fa-2x mr-3 save_artwork" aria-hidden="true"></i>
                         <i class="fa fa-pencil-square-o fa-2x mt-1 edit_artwork" aria-hidden="true"></i>
-                        <input type="hidden" name="artist_id" value="{{ $artist_id }}">
+                        <input type="hidden" name="artist_id" class="artist_id" value="{{ $artist_id }}">
                     </div>
 
                     <div class="form-group col-4">
