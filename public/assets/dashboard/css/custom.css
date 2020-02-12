@@ -6,3 +6,17 @@
 .all-events:hover {
     cursor: pointer;
 }
+
+.fa-times-circle {
+    color:#e95f71 !important;
+}
+
+.fa-check {
+    color: green !important;
+}
+
+.resize {
+    max-width:50%;
+    max-height:50%;
+
+}

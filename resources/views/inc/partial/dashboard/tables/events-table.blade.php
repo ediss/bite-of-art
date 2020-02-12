@@ -1,5 +1,5 @@
 <div class="table-responsive"> 
-        <table class="table table-striped table-hover" >
+        <table class="table table-striped table-hover" style="table-layout:fixed;">
           <thead>
             <tr>
               <th>#</th>
@@ -18,6 +18,7 @@
               <th>Gallerist</th>
               {{-- <th>NFC Tag</th> --}}
               <th>Approved</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -30,11 +31,11 @@
                     <td>{{ $event->event_open }}</td>
                     <td>{{ $event->event_closed }}</td>
                     <td>{{ $event->event_place }}</td>
-                    <td>{{ substr($event->event_description, 0, 100) }}</td>
+                    <td>{{ substr($event->event_description, 0, 50) }}...</td>
                     {{-- <td>{{ $event->srb_event_description }}</td>
                     <td>{{ $event->esp_event_description }}</td>
                     <td>{{ $event->slo_event_description }}</td> --}}
-                    <td><img src = "{{ $event->cover }}" class="img-fluid"></td>
+                    <td><img src = "{{ $event->event_cover }}" class="img-fluid"></td>
                     {{-- if isset --}}
                     {{-- <td>
                         
@@ -43,12 +44,30 @@
                         <img src = "{{ $event->event_img_3 }}" class="img-fluid"> <p>{{ $event->event_img_3_desc }}</p>
                     </td> --}}
 
-                    <td>{{ $event->event_media }} <br/> {{ $event->event_media_des }}</td>
+                    <td><a href= "{{ $event->event_media }}">{{ $event->event_media }}</a> <br/> {{ $event->event_media_des }}</td>
                     {{-- <td>{{ $event->event_note }}</td> --}}
 
-                    <td>{{ $event->gallerist_id }}</td>
+                    <td> {{ $event->gallerist_id }}</td>
                     {{-- <td>{{ $event->nfc_tag }}</td> --}}
-                    <td>yes/no</td>
+                    @if($event->approved == 0)
+                      <td><i class="fa fa-2x fa-times-circle"></i> <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+                      </div></td>
+                    @else
+                      <td><i class="fa fa-2x fa-check"></i></td>
+                    @endif
+
+                    <td>
+                      
+                      
+                      <a class="text-primary  js-modal mb-5" data-modalid='add_backoffice_user'
+                          data-modaltitle="Izmena pacijenta: {{'name'}}"
+                          data-url="" data-savetext="Sačuvaj">
+                          <i class="fa fa-2x fa-edit"></i>
+                      </a>
+                      <a href="" class="dashtext-2 js-delete-patient ml-2" data-id="{{ 1 }}"> <i class="fa fa-2x fa-expand"></i></i> </a>
+                  </td>
                   
                  </tr>
               @endforeach

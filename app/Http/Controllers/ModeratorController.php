@@ -12,6 +12,10 @@ use View;
 class ModeratorController extends Controller
 {
     //@todo make middleware for moderator
+    public function __construct()
+    {
+        $this->middleware('moderator');
+    }
 
     public function index() {
         return view('layout.dashboard');
