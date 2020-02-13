@@ -49,7 +49,13 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
 
+<script>
+$('#toggle').click(function () {
+    $(this).toggleClass('active');
+    $('#overlay').toggleClass('open');
 
+});
+</script>
 
 @yield('footer-scripts')
 

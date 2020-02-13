@@ -39,10 +39,12 @@
                                     class="btn btn-outline-dark font-weight-bold add_artist d-none">ADD
                                     ARTIST</button>
 
+                                    <button type="button" class="btn btn-outline-dark font-weight-bold done_event d-none">DONE</button>
+
+
                             </div>
                         </div>
                     </div>
-                    {{-- <button type="button" name="add_artist" class="btn btn-success mt-2 add_artist">Dodaj umetnika</button> --}}
 
                 </div>
 
@@ -197,42 +199,6 @@
 
     $(document).ready(function(){
 
-        jQuery('#ajaxSubmit').submit(function(e){
-               e.preventDefault();
-
-            //    var json_artists = JSON.stringify(artists);
-
-
-               var formData = new FormData(this);
-               formData.append('artists', artists);
-                //console.log(formData);
-               $.ajaxSetup({
-                  headers: {
-                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                  }
-              });
-               $.ajax({
-                  url: "{{ url('/ajax') }}",
-                  method: 'post',
-                  contentType: false,
-                  processData: false,
-                  cache: false,
-
-                //   data:formData,
-                  data:{
-                    artists : artists,
-                    event   : event,
-                    // data: formData,
-                  },
-                  success: function(result){
-                    //  jQuery('.alert').show();
-                    //  jQuery('.alert').html(result.success);
-                  }});
-               });
-
-
-
-
     $('.js-datepicker-range').daterangepicker({
             locale: {
             format: 'YYYY.MM.DD'
@@ -261,7 +227,7 @@
                   success: function(result){
                     $( ".event-wraper" ).animate({
                         left: '-100vw'
-                    }, 2000, function() {
+                    }, 1000, function() {
                     
                         $('.event-wraper').addClass('d-none');
 
@@ -282,7 +248,7 @@
             $('.event-wraper').removeClass('d-none');
             $( ".event-wraper" ).animate({
                 left: '0'
-            }, 2000, function() {
+            }, 1000, function() {
                 $('#artist').addClass('d-none');
                 $('.add_artist').addClass('d-none');
 
@@ -334,6 +300,7 @@
                 success: function(result){
                     console.log(result.html);
                     $('.add_artwork').removeClass('d-none');
+                    $('.done_artwork').removeClass('d-none');
                     $('.artist_id').val(result.html)
                 //     $( ".event-wraper" ).animate({
                 //         left: '-100vw'
@@ -440,6 +407,13 @@
         
 
             $("#artist_artworks").empty();
+    });
+
+    $(document).on('click', '.done_artwork', function(e) {
+        $( "#artist" ).hide();
+        $(".add_artist").removeClass('d-none');
+        $(".done_event").removeClass('d-none');
+
     });
 
 });

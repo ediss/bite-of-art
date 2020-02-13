@@ -10,6 +10,11 @@ use View;
 
 class GalleryController extends Controller
 {
+
+
+    // public function __construct() {
+    //     $this->middleware('auth');
+    // }
     public function getGalleries() {
 
         $gallery = new Gallery();
