@@ -25,6 +25,8 @@
                     <button type="button" class="btn btn-outline-dark font-weight-bold add_artwork d-none">ADD
                         ARTWORK</button>
 
+                        <button type="button" class="btn btn-outline-dark font-weight-bold done_artwork d-none">DONE</button>
+
                 </div>
             </div>
         </div>
