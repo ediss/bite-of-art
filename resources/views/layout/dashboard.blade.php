@@ -46,9 +46,9 @@
             <div class="container-fluid d-flex align-items-center justify-content-between">
                 <div class="navbar-header">
                     <!-- Navbar Header--><a href="index.html" class="navbar-brand">
-                        <div class="brand-text brand-big visible text-uppercase"><strong
-                                class="text-primary">Dark</strong><strong>Admin</strong></div>
-                        <div class="brand-text brand-sm"><strong class="text-primary">D</strong><strong>A</strong></div>
+                        <div class="brand-text brand-big visible text-uppercase">
+                            <strong class="text-primary">Bite</strong><strong>Of</strong><strong class="text-primary">Art</strong></div>
+                        <div class="brand-text brand-sm"><strong class="text-primary">B</strong><strong>O</strong><strong class="text-primary">A</strong></div>
                     </a>
                     <!-- Sidebar Toggle Btn-->
                     <button class="sidebar-toggle"><i class="fa fa-long-arrow-left"></i></button>
@@ -360,7 +360,12 @@
     <script src="{{ asset('assets/dashboard/js/charts-home.js') }}"></script>
     <script src="{{ asset('assets/dashboard/js/front.js') }}"></script>
 
-    <script src=" {{ asset('assets/js/custom-carousel-main.js') }}"></script>
+    <script src=" {{ asset('assets/js/common/ajaxload.js') }}"></script>
+    <script src=" {{ asset('assets/js/common/pagination.js') }}"></script>
+    {{-- <script src=" {{ asset('assets/js/common/global.js') }}"></script> --}}
+
+<script>    AjaxLoad.initialize(); </script>
+
 
     <script>
         $( ".all-gallerists" ).click(function(e) {
@@ -394,6 +399,13 @@
                     $('#content').html(data.html)
                 }
             });
+
+        });
+
+        $(document).on('click', '.custom-control-input', function(e) {
+            // e.preventDefault();
+
+            $event_id = $(this).val();
 
         });
     </script>

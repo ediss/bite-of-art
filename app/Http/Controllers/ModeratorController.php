@@ -44,4 +44,50 @@ class ModeratorController extends Controller
 
         return Response::json(["html" => $html]);
     }
+
+    public function updateEvent(Request $request, $event_id) {
+        $success = null;
+        $validator = null;
+        $event = Event::find($event_id);
+
+        // if ($request->isMethod('post')) {
+        //     $validator = Validator::make($request->all(), [
+        //         "new_consultation"  => "required",
+        //         "new_profession"    => "max:60"
+        //     ],
+        //     [
+
+        //         "new_consultation.required" => "Polje 'Konsultacija: ' ne sme biti prazno",
+        //         "new_profession.max"        => "Maksimum broj karaktera koji mozete da uneste za zanimanje je: 60",
+        //     ]);
+
+        //     if ($validator->passes()){
+
+        //         $patient = Patient::find($patient_id);
+
+        //         $patient->address            = $request->input('new_address');
+        //         $patient->phone              = $request->input('new_phone');
+        //         $patient->skype_name         = $request->input('new_skype');
+        //         $patient->profession         = $request->input('new_profession');
+        //         $patient->diagnosis          = $request->input('new_patient_diagnosis');
+        //         $patient->therapy            = $request->input('new_patient_therapy');
+        //         $patient->consultation       = $request->input('new_consultation');
+
+
+        //         if($patient->save()) {
+        //             Session::flash('success', 'Uspesno ste izmenili podatke o pacijentu ');
+        //             $success = true;
+        //         }
+        //     }
+        // }
+
+        $html = View::make('moderator.modals.update-event', [
+
+            'event' => $event,
+            'validator' => $validator
+        ])->render();
+
+        return Response::json( ["html"=>$html, "success" => $success]);
+
+    }
 }

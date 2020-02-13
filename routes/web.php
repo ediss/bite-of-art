@@ -49,4 +49,5 @@ Route::group([
     Route::get('/', 'ModeratorController@index')->name('moderator.dashboard');
     Route::get('/get-gallerists', 'ModeratorController@getGallerists');
     Route::get('/get-events', 'ModeratorController@getEvents');
+    Route::get('/update-event{id}', 'ModeratorController@updateEvent')->name('moderator.event.update');
 });

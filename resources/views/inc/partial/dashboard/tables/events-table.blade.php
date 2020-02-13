@@ -51,8 +51,9 @@
                     {{-- <td>{{ $event->nfc_tag }}</td> --}}
                     @if($event->approved == 0)
                       <td><i class="fa fa-2x fa-times-circle"></i> <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+                        <input type="checkbox" class="custom-control-input" name="" id="customSwitch_{{ $event->id }}">
+                        <label class="custom-control-label" for="customSwitch_{{ $event->id }}"></label>
+                        <input type="hidden" class="event_id" name="event_id" value= {{ $event->id }}>
                       </div></td>
                     @else
                       <td><i class="fa fa-2x fa-check"></i></td>
@@ -60,12 +61,16 @@
 
                     <td>
                       
-                      
                       <a class="text-primary  js-modal mb-5" data-modalid='add_backoffice_user'
+                      data-modaltitle="Update Event: {{$event->event_name}}"
+                      data-url="{{ route('moderator.event.update', ['id' => $event->id]) }}" data-savetext="Save">
+                      <i class="fa fa-2x fa-edit"></i>
+                  </a>
+                      {{-- <a class="text-primary  js-modal mb-5" data-modalid='add_backoffice_user'
                           data-modaltitle="Izmena pacijenta: {{'name'}}"
                           data-url="" data-savetext="Sačuvaj">
                           <i class="fa fa-2x fa-edit"></i>
-                      </a>
+                      </a> --}}
                       <a href="" class="dashtext-2 js-delete-patient ml-2" data-id="{{ 1 }}"> <i class="fa fa-2x fa-expand"></i></i> </a>
                   </td>
                   
