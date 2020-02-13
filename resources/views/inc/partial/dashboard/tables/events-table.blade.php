@@ -44,7 +44,7 @@
                         <img src = "{{ $event->event_img_3 }}" class="img-fluid"> <p>{{ $event->event_img_3_desc }}</p>
                     </td> --}}
 
-                    <td><a href= "{{ $event->event_media }}">{{ $event->event_media }}</a> <br/> {{ $event->event_media_des }}</td>
+                    <td><a href= "{{ $event->event_media }}">{{ substr($event->event_media, 0, 45) }}</a> <br/> {{ $event->event_media_des }}</td>
                     {{-- <td>{{ $event->event_note }}</td> --}}
 
                     <td> {{ $event->gallerist_id }}</td>

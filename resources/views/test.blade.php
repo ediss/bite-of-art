@@ -284,6 +284,7 @@
 
             var form = document.getElementById('artworkSubmit');
             var formData = new FormData(form);
+            // var artist_id
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -298,9 +299,10 @@
 
                 data:formData,
                 success: function(result){
-                    console.log(result.html);
+                    
                     $('.add_artwork').removeClass('d-none');
                     $('.done_artwork').removeClass('d-none');
+                    alert(result);
                     $('.artist_id').val(result.html)
                 //     $( ".event-wraper" ).animate({
                 //         left: '-100vw'
