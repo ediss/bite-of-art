@@ -259,16 +259,37 @@
 
 
         $('.add_artist').click(function() {
+            $('.add_artwork').addClass('d-none');
+            $('.done_artwork').addClass('d-none');
+            
+            $('.add_artist').addClass('d-none');
+            $('.done_event').addClass('d-none');
+
             $('#artist').removeClass('d-none').show().addClass('fadeInDRight animation-duration');
             $('.artist-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
+            $('.artist-wraper').animate({
+                left: '0'
+            }, 1000, function() {
+                $('.artist-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
+                
+            });
         });
 
         $(document).on('click', '.add_artwork', function(e) {
 
+            var artist_id = $(".artist_id").val();
+            var event_id = $(".event_artwork_id").val();
+            $('.add_artwork').addClass('d-none');
+            $('.done_artwork').addClass('d-none');
+
+            $('#artwork').find(':input').val('');
+            $('.artist_id').val(artist_id);
+            $('.event_artwork_id').val(event_id);
+
+
 
             e.preventDefault();
 
-            $('#artwork-header .artist_id').css('border:2px solid red');
             // $('#artist').addClass('d-none');
             $('.add_artist').addClass('d-none');
             $('#artwork').show().removeClass('d-none');
@@ -279,12 +300,12 @@
 
         $(document).on('click', '.save_artwork', function(e) {
 
-        
+            
             e.preventDefault();
 
             var form = document.getElementById('artworkSubmit');
             var formData = new FormData(form);
-            // var artist_id
+            
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -302,8 +323,8 @@
                     
                     $('.add_artwork').removeClass('d-none');
                     $('.done_artwork').removeClass('d-none');
-                    alert(result);
-                    $('.artist_id').val(result.html)
+                    // alert(result);
+                    //$('.artist_id').val(result.html)
                 //     $( ".event-wraper" ).animate({
                 //         left: '-100vw'
                 //     }, 2000, function() {
@@ -318,31 +339,9 @@
                 // });
                 }
             });
-            
-
-
-            // artwork.push({
-            //     "artwork_name"          : $("input[type=text][name=artwork_name]").val(),
-            //     "artwork_cover"         : $("input[type=file][name=artwork_cover]").val(),
-            //     'artwork_cover_desc'    : $('textarea#artwork_cover_description').val(),
-            //     'artwork_image_1'       : $("input[type=file][name=artwork_image_1]").val(),
-            //     'artwork_image_2'       : $("input[type=file][name=artwork_image_2]").val(),
-            //     'artwork_image_3'       : $("input[type=file][name=artwork_image_3]").val(),
-
-            //     'artwork_image_1_desc'  : $('textarea#artwork_image_1_desc').val(),
-            //     'artwork_image_2_desc'  : $('textarea#artwork_image_2_desc').val(),
-            //     'artwork_image_3_desc'  : $('textarea#artwork_image_3_desc').val(),
-            //     "artwork_media"         : $("input[type=text][name=artwork_media]").val(),
-            //     "artwork_media_desc"    : $('textarea#artwork_media_desc').val(),
-            //     'artwork_note'          : $('textarea#artwork_note').val(),
-
-
-
-            // });
-
             console.log(artwork);
 
-            $('#artwork').find(':input').val('');
+            
 
             $('#artwork').fadeOut('slow','swing')
 
@@ -415,6 +414,14 @@
         $( "#artist" ).hide();
         $(".add_artist").removeClass('d-none');
         $(".done_event").removeClass('d-none');
+
+        var event_id = $('.event_id').val();
+        $('#artist').find(':input').val('');
+
+        $('.event_id').val(event_id);
+
+
+
 
     });
 

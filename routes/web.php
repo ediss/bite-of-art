@@ -36,8 +36,8 @@ Route::post('/event',           'EventController@ajaxLoadEventData')->middleware
 
 Route::post('/submitEvent',     'EventController@submitEvent');
 
-Route::post('/submitArtist',    'EventController@submitArtist')->middleware('auth');
-Route::post('/submitArtwork',   'EventController@submitArtwork')->middleware('auth');
+Route::post('/submitArtist',    'EventController@submitArtist');
+Route::post('/submitArtwork',   'EventController@submitArtwork');
 
 
 

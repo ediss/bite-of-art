@@ -299,6 +299,8 @@ class EventController extends Controller
 
 
         $artworkObj->save();
+
+        dd($artist_id);
         return Response::json(["result" => $artist_id]);
 
     }
