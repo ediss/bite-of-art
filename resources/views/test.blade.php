@@ -125,7 +125,6 @@
                 left: '0'
             }, 1000, function() {
                 $('.artist-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
-
             });
         });
 
@@ -148,12 +147,11 @@
 
         $(document).on('click', '.save_artwork', function(e) {
 
-
             e.preventDefault();
 
             var form = document.getElementById('artworkSubmit');
             var formData = new FormData(form);
-            // var artist_id
+            
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
