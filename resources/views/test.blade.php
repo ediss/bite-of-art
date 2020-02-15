@@ -9,166 +9,11 @@
 @section('content')
 <div class="row">
     <div class="col-md-12 p-0">
-        <form id="eventSubmit" action="" enctype="multipart/form-data" method="POST">
-            @csrf
-            <!--Add event-->
-            <div class="row">
+        <!--Add event-->
+        <div id = "event">
+            @include('inc.partial.event-form.add-event-form')
+        </div>
 
-                <div class="col-md-12 border-bottom border-top ">
-
-                    <div class="col-md-10 offset-1 ">
-                        <div class="row mt-5">
-                            <div class="form-group col-2 ">
-                                <i class="fa fa-floppy-o fa-2x mr-3 save_event" aria-hidden="true"></i>
-                                <i class="fa fa-pencil-square-o fa-2x mt-1 edit_event" aria-hidden="true"></i>
-                            </div>
-
-                            <div class="form-group col-3">
-                                <input type="text" class="form-control border-0" name="event_name"
-                                    placeholder="Event name">
-                            </div>
-
-                            <div class="form-group col-2">
-                                <input type="text" name="daterange" class="form-control2 js-datepicker-range border-0"
-                                    value="{{ Request::get('daterange') }}">
-
-                            </div>
-
-                            <div class="form-group col-5 text-right">
-                                <button type="button"
-                                    class="btn btn-outline-dark font-weight-bold add_artist d-none">ADD
-                                    ARTIST</button>
-
-                                    <button type="button" class="btn btn-outline-dark font-weight-bold done_event d-none">DONE</button>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-                <div class="event-wraper col-12">
-                    <div class="col-12 mt-3">
-                        <div class="col-md-10 offset-1 ">
-                            <div class="row ">
-                                <div class="form-group col-2 text-left">
-                                    <div class="upload-btn-wrapper">
-                                        <button class="my-btn">Upload Cover</button>
-                                        <input type="file" name="event_cover" id="event_cover" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group col-10">
-                                    <textarea class="form-control border-0" name="event_cover_description"
-                                        id="event_cover_description"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="col-md-12 mt-3">
-                        <div class="col-md-10 offset-1">
-                            <div class="row ">
-                                <div class="form-group col-2 text-left">
-                                    <div class="upload-btn-wrapper">
-                                        <button class="my-btn">Additional photo#1</button>
-                                        <input type="file" name="event_image_1" id="event_image_1">
-                                    </div>
-                                </div>
-
-                                <div class="form-group col-10">
-                                    <textarea class="form-control border-0" name="event_image_1_desc"
-                                        id="event_image_1_desc"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="col-md-12 mt-3">
-                        <div class="col-md-10 offset-1">
-                            <div class="row ">
-                                <div class="form-group col-2 text-left">
-                                    <div class="upload-btn-wrapper">
-                                        <button class="my-btn">Additional photo#2</button>
-                                        <input type="file" name="event_image_2" id="event_image_2">
-                                    </div>
-                                </div>
-
-                                <div class="form-group col-10">
-                                    <textarea class="form-control border-0" name="event_image_2_desc"
-                                        id="event_image_2_desc"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="col-md-12 mt-3">
-                        <div class="col-md-10 offset-1">
-                            <div class="row ">
-                                <div class="form-group col-2 text-left">
-                                    <div class="upload-btn-wrapper">
-                                        <button class="my-btn">Additional photo#3</button>
-                                        <input type="file" name="event_image_3" id="event_image_3">
-                                    </div>
-                                </div>
-
-                                <div class="form-group col-10">
-                                    <textarea class="form-control border-0" name="event_image_3_desc"
-                                        id="event_image_3_desc"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="col-md-12 mt-3">
-                        <div class="col-md-10 offset-1">
-                            <div class="row ">
-                                <div class="form-group col-4">
-                                    <input type="text" class="form-control  border-top-0 border-left-0 border-right-0"
-                                        name="event_media" placeholder="Paste url">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label for="">Media file description</label>
-                                <div class="form-group col-4">
-                                    <textarea class="form-control border-0" id="event_media_description"
-                                        name="event_media_description"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="col-md-12 mt-3">
-                        <div class="col-md-10 offset-1">
-                            <div class="row ">
-                                <div class="form-group col-1">
-                                    <label for="">Note:</label>
-                                </div>
-                                <div class="form-group col-11">
-                                    <textarea class="form-control border-0" name="event_note"
-                                        id="event_note"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--end event-->
-        </form>
 
 
         <!--Add artist-->
@@ -205,7 +50,7 @@
         },
     });
 
-        $( ".save_event" ).click(function(e) {
+    $(document).on('click', '.save_event', function(e) {
 
             e.preventDefault();
 
@@ -217,7 +62,7 @@
                   }
               });
                $.ajax({
-                  url: "{{ url('/submitEvent') }}",
+                  url: "{{ url('/test') }}",
                   method: 'post',
                   contentType: false,
                   processData: false,
@@ -225,10 +70,14 @@
 
                   data:formData,
                   success: function(result){
-                    $( ".event-wraper" ).animate({
+                      if(result.success === false) {
+                        $("#event").html(result.html);
+                      }
+                      if(result.success === true) {
+                        $( ".event-wraper" ).animate({
                         left: '-100vw'
-                    }, 1000, function() {
-                    
+                        }, 1000, function() {
+
                         $('.event-wraper').addClass('d-none');
 
                         // $('.add_artist').removeClass('d-none');
@@ -236,12 +85,18 @@
                         $("#artist").removeClass('d-none').html(result.html).show().addClass('fadeInDRight animation-duration');
                         $('.artist-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
 
-                    });
-                }
-               });
-               
+                        });
+                      }
 
-       
+                  },
+                  error: function(xhr, status, error) {
+
+                  }
+
+               });
+
+
+
         });
 
         $( ".edit_event" ).click(function() {
@@ -259,27 +114,41 @@
 
 
         $('.add_artist').click(function() {
+            $('.add_artwork').addClass('d-none');
+            $('.done_artwork').addClass('d-none');
+
+            $('.add_artist').addClass('d-none');
+            $('.done_event').addClass('d-none');
             $('#artist').removeClass('d-none').show().addClass('fadeInDRight animation-duration');
             $('.artist-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
+            $('.artist-wraper').animate({
+                left: '0'
+            }, 1000, function() {
+                $('.artist-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
+
+            });
         });
 
         $(document).on('click', '.add_artwork', function(e) {
-
-
+            var artist_id = $(".artist_id").val();
+            var event_id = $(".event_artwork_id").val();
+            $('.add_artwork').addClass('d-none');
+            $('.done_artwork').addClass('d-none');
+            $('#artwork').find(':input').val('');
+            $('.artist_id').val(artist_id);
+            $('.event_artwork_id').val(event_id);
             e.preventDefault();
-
-            $('#artwork-header .artist_id').css('border:2px solid red');
             // $('#artist').addClass('d-none');
             $('.add_artist').addClass('d-none');
             $('#artwork').show().removeClass('d-none');
             $('.artwork-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
-    
+
         });
 
 
         $(document).on('click', '.save_artwork', function(e) {
 
-        
+
             e.preventDefault();
 
             var form = document.getElementById('artworkSubmit');
@@ -296,66 +165,30 @@
                 contentType: false,
                 processData: false,
                 cache: false,
-
                 data:formData,
                 success: function(result){
+
+                    if(result.success === false) {
+                        $("#artwork").html(result.html);
+                        $('.artwork-wraper').removeClass('d-none');
+                      }
+                      if(result.success === true) {
+                        $('.add_artwork').removeClass('d-none');
+                        $('.done_artwork').removeClass('d-none');
+                        $('#artwork').fadeOut('slow','swing')
+                      }
+
                     
-                    $('.add_artwork').removeClass('d-none');
-                    $('.done_artwork').removeClass('d-none');
-                    alert(result);
-                    $('.artist_id').val(result.html)
-                //     $( ".event-wraper" ).animate({
-                //         left: '-100vw'
-                //     }, 2000, function() {
-                    
-                //     $('.event-wraper').addClass('d-none');
 
-                //     $('.add_artist').removeClass('d-none');
-
-                //     $("#artist").removeClass('d-none').html(result.html).show().addClass('fadeInDRight animation-duration');
-                //     $('.artist-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
-
-                // });
                 }
             });
+
             
 
-
-            // artwork.push({
-            //     "artwork_name"          : $("input[type=text][name=artwork_name]").val(),
-            //     "artwork_cover"         : $("input[type=file][name=artwork_cover]").val(),
-            //     'artwork_cover_desc'    : $('textarea#artwork_cover_description').val(),
-            //     'artwork_image_1'       : $("input[type=file][name=artwork_image_1]").val(),
-            //     'artwork_image_2'       : $("input[type=file][name=artwork_image_2]").val(),
-            //     'artwork_image_3'       : $("input[type=file][name=artwork_image_3]").val(),
-
-            //     'artwork_image_1_desc'  : $('textarea#artwork_image_1_desc').val(),
-            //     'artwork_image_2_desc'  : $('textarea#artwork_image_2_desc').val(),
-            //     'artwork_image_3_desc'  : $('textarea#artwork_image_3_desc').val(),
-            //     "artwork_media"         : $("input[type=text][name=artwork_media]").val(),
-            //     "artwork_media_desc"    : $('textarea#artwork_media_desc').val(),
-            //     'artwork_note'          : $('textarea#artwork_note').val(),
-
-
-
-            // });
-
-            console.log(artwork);
-
-            $('#artwork').find(':input').val('');
-
-            $('#artwork').fadeOut('slow','swing')
-
-
-
-
-
-
-
         });
-        
+
         $(document).on('click', '.save_artist', function(e) {
-                
+
             e.preventDefault();
 
             var form = document.getElementById('artistSubmit');
@@ -374,18 +207,26 @@
 
                 data:formData,
                 success: function(result){
-                    // $('.add_artist').removeClass('d-none');
-                    // $("#artist").fadeOut('slow', 'swing');
-                    $( ".artist-wraper" ).animate({
-                        left: '-100vw'
-                    }, 2000, function() {
-                        $('.artist-wraper').addClass('d-none');
-                        
-                        $("#artwork").removeClass('d-none').html(result.html).show().addClass('fadeInDRight animation-duration');
 
-                        $('.artwork-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
+                    if(result.success === false) {
+                        $("#artist").html(result.html);
+                        $('.artist-wraper').removeClass('d-none');
+                    }
+                    if(result.success === true) {
+                        $( ".artist-wraper" ).animate({
+                            left: '-100vw'
+                        }, 2000, function() {
+                            $('.artist-wraper').addClass('d-none');
 
-                });
+                            $("#artwork").removeClass('d-none').html(result.html).show().addClass('fadeInDRight animation-duration');
+
+                            $('.artwork-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
+
+                        });
+                      }
+
+
+
                 }
             });
             // artists.push({
@@ -406,7 +247,7 @@
             // });
 
             artwork = [];
-        
+
 
             $("#artist_artworks").empty();
     });
@@ -415,7 +256,9 @@
         $( "#artist" ).hide();
         $(".add_artist").removeClass('d-none');
         $(".done_event").removeClass('d-none');
-
+        var event_id = $('.event_id').val();
+        $('#artist').find(':input').val('');
+        $('.event_id').val(event_id);
     });
 
 });

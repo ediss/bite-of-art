@@ -13,7 +13,15 @@
                     </div>
 
                     <div class="form-group col-4">
-                        <input type="text" class="form-control border-0" name="artwork_name" placeholder="Artwork name">
+                        <input type="text" class="form-control border-0" name="artwork_name" placeholder="Artwork name" value="{{ Request::get('artwork_name') }}">
+                        @if ( $validator && $validator->errors()->first('artwork_name') )
+                        <div class="alert alert-danger mt-2">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            {{ $validator->errors()->first('artwork_name') }}
+                        </div>
+                        @endif
                     </div>
 
                     <div class="form-group col-2">
@@ -39,11 +47,26 @@
                                 <button class="my-btn">Upload Cover</button>
                                 <input type="file" name="artwork_cover" />
                             </div>
+                            @if ( $validator && $validator->errors()->first('artwork_cover') )
+                            <div class="alert alert-danger mt-2">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                {{ $validator->errors()->first('artwork_cover') }}
+                            </div>
+                            @endif
                         </div>
 
                         <div class="form-group col-10">
-                            <textarea class="form-control border-0" id="artwork_cover_description"
-                                name="artwork_cover_description"></textarea>
+                            <textarea class="form-control border-0" id="artwork_cover_description" name="artwork_cover_description">{{ Request::get('artwork_cover_description') }}</textarea>
+                                @if ( $validator && $validator->errors()->first('artwork_cover_description') )
+                                <div class="alert alert-danger mt-2">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    {{ $validator->errors()->first('artwork_cover_description') }}
+                                </div>
+                                @endif
                         </div>
                     </div>
                 </div>
@@ -63,7 +86,7 @@
 
                         <div class="form-group col-10">
                             <textarea class="form-control border-0" name="artwork_image_1_desc"
-                                id="artwork_image_1_desc"></textarea>
+                                id="artwork_image_1_desc">{{ Request::get('artwork_image_1_desc') }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -83,7 +106,7 @@
 
                         <div class="form-group col-10">
                             <textarea class="form-control border-0" name="artwork_image_2_desc"
-                                id="artwork_image_2_desc"></textarea>
+                                id="artwork_image_2_desc">{{ Request::get('artwork_image_2_desc') }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -103,7 +126,7 @@
 
                         <div class="form-group col-10">
                             <textarea class="form-control border-0" name="artwork_image_3_desc"
-                                id="artwork_image_3_desc"></textarea>
+                                id="artwork_image_3_desc">{{ Request::get('artwork_image_3_desc') }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -118,7 +141,7 @@
 
                         <div class="form-group col-4">
                             <input type="text" name="artwork_media"
-                                class="form-control  border-top-0 border-left-0 border-right-0" placeholder="Paste url">
+                                class="form-control  border-top-0 border-left-0 border-right-0" placeholder="Paste url" value="{{ Request::get('artwork_media') }}">
                         </div>
 
                     </div>
@@ -126,7 +149,7 @@
                         <div class="form-group col-4">
                             <label for="">Media file description</label>
                             <textarea class="form-control border-0" name="artwork_media_desc"
-                                id="artwork_media_desc"></textarea>
+                                id="artwork_media_desc">{{ Request::get('artwork_media_desc') }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -141,7 +164,7 @@
                             <label for="">Note:</label>
                         </div>
                         <div class="form-group col-11">
-                            <textarea class="form-control border-0" name="artwork_note" id="artwork_note"></textarea>
+                            <textarea class="form-control border-0" name="artwork_note" id="artwork_note">{{ Request::get('artwork_note') }}</textarea>
                         </div>
                     </div>
                 </div>

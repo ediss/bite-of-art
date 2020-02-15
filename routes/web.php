@@ -27,14 +27,14 @@ Route::post('/login', 'Auth\CustomLoginController@login')->name('custom.login.su
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/',                 'EventController@index');
-Route::any('/test',             'GalleryController@test');
+Route::any('/test',             'EventController@submitEvent');
 
 
 Route::any('/ajax',             'EventController@ajaxTest')->middleware('auth');
 
 Route::post('/event',           'EventController@ajaxLoadEventData')->middleware('auth');
 
-Route::post('/submitEvent',     'EventController@submitEvent');
+//Route::post('/submitEvent',     'EventController@submitEvent');
 
 Route::post('/submitArtist',    'EventController@submitArtist')->middleware('auth');
 Route::post('/submitArtwork',   'EventController@submitArtwork')->middleware('auth');
