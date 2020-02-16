@@ -51,7 +51,7 @@ function saveArtist() {
       }
   });
   $.ajax({
-      url: "/submitArtist",
+      url: "/gallerist/submitArtist",
       method: 'post',
       contentType: false,
       processData: false,
@@ -93,7 +93,7 @@ function saveArtwork() {
       }
   });
   $.ajax({
-      url: "/submitArtwork",
+      url: "/gallerist/submitArtwork",
       method: 'post',
       contentType: false,
       processData: false,
