@@ -1,177 +1,226 @@
 <form id="artistSubmit" action="" enctype="multipart/form-data" method="POST" class="w-100">
     @csrf
+
     <div class="row">
-    <div class="col-md-12 border-top h-100px text-center" id="artist-header" style="background-color:#cccccc">
-        <div class="col-md-10 offset-1 mt-5">
-            <div class="row ">
-                <div class="form-group col-1 text-right">
-                    <i class="fa fa-floppy-o fa-2x mr-3 save_artist" aria-hidden="true"></i>
-                    <i class="fa fa-pencil-square-o fa-2x mt-1 edit_artist" aria-hidden="true"></i>
+
+        <div class="col-md-12" id="artist-header" style="background-color:#e6e6e6">
+
+            <div class="row elements-mid-align">
+                <div class="col-md-2">
                     <input type="hidden" class="event_id" name="event_id" value="{{$event_id}}">
-                    {{-- <input type="hidden" class="artist_id" name="artist_id" value=""> --}}
+
                 </div>
 
-                <div class="form-group col-4">
-                    <input type="text" name="artist_name" class="form-control border-0"
-                        placeholder="Artist name" value="{{ Request::get('artist_name') }}">
-                        @if ( $validator && $validator->errors()->first('artist_name') )
-                        <div class="alert alert-danger mt-2">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            {{ $validator->errors()->first('artist_name') }}
-                        </div>
-                        @endif
+                <div class=" col-2 text-left">
+                    <input type="text" name="artist_name" class="form-control border-0" placeholder="Artist name"
+                        value="{{ Request::get('artist_name') }}">
                 </div>
 
-                <div class="form-group col-2">
+
+                <div class=" col-6 text-center">
 
 
                 </div>
 
-                <div class="form-group col-5 text-right">
-                    <button type="button" class="btn btn-outline-dark font-weight-bold add_artwork d-none">ADD
-                        ARTWORK</button>
-
-                        <button type="button" class="btn btn-outline-dark font-weight-bold done_artwork d-none">DONE</button>
-
+                <div class="col-md-2">
+                    @if ( $validator && $validator->errors()->first('artist_name') )
+                    <div class="alert alert-danger mt-2">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ $validator->errors()->first('artist_name') }}
+                    </div>
+                    @endif
                 </div>
             </div>
-        </div>
-        {{-- <button type="button" class="btn btn-success mt-2 save_artist btn-block">Sacuvaj umetnika</button> --}}
 
-    </div>
-    <div class="artist-wraper col-12 d-none">
-        <div class="col-md-12 mt-3">
-            <div class="col-md-10 offset-1">
-                <div class="row ">
-                    <div class="form-group col-2 text-left">
-                        <div class="upload-btn-wrapper">
-                            <button class="my-btn">Upload Cover</button>
-                            <input type="file" name="artist_cover">
-                        </div>
+
+
+
+        </div>
+
+
+
+        <div class="artist-wraper row d-none">
+            <div class="col-12  border-bottom">
+                <div class="row elements-mid-align">
+                    <div class="col-md-1">
                         @if ( $validator && $validator->errors()->first('artist_cover') )
                         <div class="alert alert-danger mt-2">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
-                              </button>
+                            </button>
                             {{ $validator->errors()->first('artist_cover') }}
                         </div>
                         @endif
                     </div>
 
-                    <div class="form-group col-10">
-                        <textarea class="form-control border-0" name="artist_about"
+                    <div class=" col-1 text-left">
+                        <div class="upload-btn-wrapper">
+                            <button class="my-btn">Upload Cover</button>
+                            <input type="file" name="artist_cover">
+                        </div>
+                    </div>
+
+
+                    <div class=" col-8">
+
+                        <textarea class="form-control border-0" name="artist_about" placeholder="About Artist"
                             id="artist_about">{{ Request::get('artist_about') }}</textarea>
-                            @if ( $validator && $validator->errors()->first('artist_about') )
-                            <div class="alert alert-danger mt-2">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                {{ $validator->errors()->first('artist_about') }}
-                            </div>
-                            @endif
+                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+
+
+                    </div>
+
+                    <div class="col-md-2">
+                        @if ( $validator && $validator->errors()->first('artist_about') )
+                        <div class="alert alert-danger mt-2">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            {{ $validator->errors()->first('artist_about') }}
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
 
 
-        </div>
 
-        <div class="col-md-12 mt-3">
-            <div class="col-md-10 offset-1">
-                <div class="row ">
-                    <div class="form-group col-2 text-left">
+            <div class="col-12  border-bottom">
+                <div class="row elements-mid-align">
+                    <div class="col-md-1">
+
+                    </div>
+
+                    <div class=" col-1 text-left">
                         <div class="upload-btn-wrapper">
                             <button class="my-btn">Additional photo#1</button>
                             <input type="file" name="artist_image_1">
                         </div>
                     </div>
 
-                    <div class="form-group col-10">
+
+                    <div class=" col-8">
                         <textarea class="form-control border-0" name="artist_image_1_desc"
+                            placeholder="Additional photo #1 description"
                             id="artist_image_1_desc">{{ Request::get('artist_image_1_desc') }}</textarea>
+                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+
+                    </div>
+
+                    <div class="col-md-2">
+
                     </div>
                 </div>
+
+
+
             </div>
 
+            <div class="col-12  border-bottom">
+                <div class="row elements-mid-align">
+                    <div class="col-md-1">
 
-        </div>
+                    </div>
 
-        <div class="col-md-12 mt-3">
-            <div class="col-md-10 offset-1">
-                <div class="row ">
-                    <div class="form-group col-2 text-left">
+                    <div class=" col-1 text-left">
                         <div class="upload-btn-wrapper">
                             <button class="my-btn">Additional photo#2</button>
                             <input type="file" name="artist_image_2">
                         </div>
                     </div>
 
-                    <div class="form-group col-10">
+
+                    <div class=" col-8">
                         <textarea class="form-control border-0" name="artist_image_2_desc"
+                            placeholder="Additional photo #2 description"
                             id="artist_image_2_desc">{{ Request::get('artist_image_2_desc') }}</textarea>
+                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
                     </div>
+                    <div class="col-md-2"></div>
                 </div>
+
             </div>
 
+            <div class="col-12  border-bottom">
+                <div class="row elements-mid-align">
+                    <div class="col-md-1">
 
-        </div>
+                    </div>
 
-        <div class="col-md-12 mt-3">
-            <div class="col-md-10 offset-1">
-                <div class="row ">
-                    <div class="form-group col-2 text-left">
+                    <div class=" col-1 text-left">
                         <div class="upload-btn-wrapper">
                             <button class="my-btn">Additional photo#3</button>
                             <input type="file" name="artist_image_3">
                         </div>
                     </div>
 
-                    <div class="form-group col-10">
+
+                    <div class=" col-8">
                         <textarea class="form-control border-0" name="artist_image_3_desc"
+                            placeholder="Additional photo #3 description"
                             id="artist_image_3_desc">{{ Request::get('artist_image_3_desc') }}</textarea>
+                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
                     </div>
+                    <div class="col-md-2"></div>
                 </div>
+
             </div>
 
+            <div class="col-12  border-bottom">
+                <div class="row elements-mid-align">
+                    <div class="col-md-1">
 
-        </div>
+                    </div>
 
-        <div class="col-md-12 mt-3">
-            <div class="col-md-10 offset-1">
-                <div class="row ">
-                    <div class="form-group col-4">
-                        <input type="text" name="artist_media"
-                            class="form-control  border-top-0 border-left-0 border-right-0"
-                            placeholder="Paste url" value="{{ Request::get('artist_media') }}">
+                    <div class=" col-4 text-left">
+                        <input type="text" class="form-control  border-top-0 border-left-0 border-right-0"
+                            name="artist_media" placeholder="Paste url" value="{{ Request::get('artist_media') }}">
                     </div>
-                </div>
-                <div class="row">
-                    <label for="">Media file description</label>
-                    <div class="form-group col-4">
-                        <textarea class="form-control border-0" id="artist_media_description"
-                            name="artist_media_description">{{ Request::get('artist_media_description') }}</textarea>
+
+
+                    <div class=" col-5">
+                        <textarea class="form-control border-0" name="artist_media_description"
+                            placeholder="Media file description"
+                            id="artist_media_description">{{ Request::get('artist_media_description') }}</textarea>
+                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
                     </div>
+                    <div class="col-md-2"></div>
                 </div>
+
             </div>
 
+            <div class="col-12  border-bottom">
+                <div class="row elements-mid-align">
+                    <div class="col-md-1">
 
-        </div>
-
-        <div class="col-md-12 mt-3">
-            <div class="col-md-10 offset-1">
-                <div class="row ">
-                    <div class="form-group col-1">
-                        <label for="">Note:</label>
                     </div>
-                    <div class="form-group col-11">
-                        <textarea class="form-control border-0" name="artist_note"
+
+
+                    <div class=" col-9">
+                        <textarea class="form-control border-0" name="artist_note" placeholder="Note"
                             id="artist_note">{{ Request::get('artist_note') }}</textarea>
+                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+
+            </div>
+            <div class="col-12 text-center mt-3">
+
+                <div class="row w-100">
+                    <div class="col-md-6 offset-3">
+                        <div class="next-btn">
+                            <button class="my-btn save_artist">NEXT</button>
+                            {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
+                        </div>
                     </div>
                 </div>
+
             </div>
+
         </div>
+
     </div>
-</div>
 </form>

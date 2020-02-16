@@ -1634,6 +1634,11 @@ input[type=submit]:hover {
   opacity: 0;
 }
 
-#artist-header input { background-color: #cccccc !important; }
+#artist-header input { background-color: #e6e6e6 !important; }
+
+.elements-mid-align {
+  align-items: center; 
+  height:100px;
+}
 
 

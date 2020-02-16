@@ -72,8 +72,8 @@ class EventController extends Controller
             [
                 "event_name.required"               => "Field 'Event Name ' can't be empty",
                 "daterange.required"                => "Please choose date",
-                "event_cover_description.required"  => "Field 'Event description ' can't be empty",
-                "event_cover.required"              => "Please choose cover photo",
+                "event_cover_description.required"  => "Field 'About Event ' can't be empty",
+                "event_cover.required"              => "Choose photo",
 
 
 
@@ -200,7 +200,7 @@ class EventController extends Controller
             [
                 "artist_name.required"  => "Field 'Artist Name ' can't be empty",
                 "artist_about.required" => "Field 'About artist ' can't be empty",
-                "artist_cover.required" => "Please choose cover photo",
+                "artist_cover.required" => "Choose photo",
             ]);
 
             if ($validator->passes()){
@@ -307,9 +307,9 @@ class EventController extends Controller
                 "artwork_cover_description"  => "required",
             ],
             [
-                "artwork_name.required"              => "Field 'Artist Name ' can't be empty",
-                "artist_about.required"              => "Field 'About artist ' can't be empty",
-                "artwork_cover_description.required" => "Please choose cover photo",
+                "artwork_name.required"              => "Field 'Artwork Name ' can't be empty",
+                "artwork_cover.required"              => "Choose photo",
+                "artwork_cover_description.required" => "Field 'About Artwork ' can't be empty",
             ]);
 
             if ($validator->passes()){
@@ -387,7 +387,7 @@ class EventController extends Controller
             $html = View::make('inc.partial.event-form.add-artwork-form', [
                 'validator'  =>$validator,
                 'event_id'   => $event_id,
-                'artist_id'   => $event_id,
+                'artist_id'  => $artist_id,
             ])->render();
 
             return Response::json(["html" => $html, 'success' => false]);

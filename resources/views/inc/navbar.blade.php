@@ -4,7 +4,9 @@
             <div class="row">
                 <div class="col-4">
                     <div class="logo">
-                        <a href="index.html"> <img src="{{ asset('images/logo.png') }}" class="img-fluid logo-img" alt="logo"></a>
+                        <a href="{{ url()->previous() }}">
+                             <img src="{{ asset('images/logo.png') }}" class="img-fluid logo-img" alt="logo">
+                        </a>
                     </div>
 
                     <div class="close-gallery d-none"></div>
@@ -33,9 +35,14 @@
                 <div class="col-8 col-md-6">
                     <div class="row m-35px">
                         <div class="col-10 text-right montserrat-regular login">
-                            <a href="#" class="">LOG IN</a>
+                            @if (Auth::check())
+                                <a href="{{ route('logout') }}" class="">LOGOUT</a>
+                            @else
+                            <a href="{{ route('login') }}" class="">LOG IN</a>
+                            @endif
                             <span class="ml-3 mr-3 menu-span">|</span>
                             <a href="#" class="">BITE MEMBERSHIP</a>
+                            
                         </div>
                     </div>
                 </div>
