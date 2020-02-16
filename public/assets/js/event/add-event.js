@@ -7,7 +7,7 @@ function saveEvent() {
       }
   });
    $.ajax({
-      url: "/test",
+      url: "/gallerist/add-new-event",
       method: 'post',
       contentType: false,
       processData: false,
