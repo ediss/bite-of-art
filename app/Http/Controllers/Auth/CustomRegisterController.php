@@ -39,7 +39,7 @@ class CustomRegisterController extends Controller
                 "cover_letter.required"     => "Field 'Cover Letter' can't be empty",
                 "password.required"         => "Field 'Password' can't be empty",
             ]);
-            
+
 
             if ($validator->passes()){
 
@@ -67,10 +67,11 @@ class CustomRegisterController extends Controller
 
                 if($gallerist->save()) {
                     //send mail to moderator
-                    // print success message
-
-                    return true;
-
+                    $message = ["success", $gallerist->name. " register is succesfully"];
+                    return Response::json(["message" => $message]);
+                }else {
+                    $message = ["error", "Something went wrong"];
+                    return Response::json(["message" => $message]);
                 }
 
             }
