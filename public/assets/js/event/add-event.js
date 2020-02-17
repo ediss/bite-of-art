@@ -15,6 +15,10 @@ function saveEvent() {
 
       data:formData,
       success: function(result){
+        if (typeof result.message != "undefined" && result.message.length) {
+            toastr[result.message[0]](result.message[1]);
+        }
+
           if(result.success === false) {
             $("#event").html(result.html);
           }
@@ -59,6 +63,9 @@ function saveArtist() {
 
       data:formData,
       success: function(result){
+        if (typeof result.message != "undefined" && result.message.length) {
+            toastr[result.message[0]](result.message[1]);
+        }
 
           if(result.success === false) {
               $("#artist").html(result.html);
@@ -100,6 +107,9 @@ function saveArtwork() {
       cache: false,
       data:formData,
       success: function(result){
+        if (typeof result.message != "undefined" && result.message.length) {
+            toastr[result.message[0]](result.message[1]);
+        }
 
           if(result.success === false) {
               $("#artwork").html(result.html);

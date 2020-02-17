@@ -25,6 +25,9 @@ Route::get('/login', 'Auth\CustomLoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\CustomLoginController@login')->name('custom.login.submit');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
+Route::any('register', 'Auth\CustomRegisterController@register')->name('register');
+
+
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
@@ -63,8 +66,12 @@ Route::group([
     'prefix'        => 'moderator',
     'middleware'    => ['auth','moderator'],
 ], function() {
-    Route::get('/', 'ModeratorController@index')->name('moderator.dashboard');
-    Route::get('/get-gallerists', 'ModeratorController@getGallerists');
-    Route::get('/get-events', 'ModeratorController@getEvents');
-    Route::get('/update-event{id}', 'ModeratorController@updateEvent')->name('moderator.event.update');
+    Route::get('/',                         'ModeratorController@index')->name('moderator.dashboard');
+    Route::get('/get-gallerists',           'ModeratorController@getGallerists');
+    Route::get('/get-events',               'ModeratorController@getEvents');
+    Route::get('/update-event/{id}',         'ModeratorController@updateEvent')->name('moderator.event.update');
+    Route::post('/approve-event/{id}',         'ModeratorController@approveEvent')->name('update-event');
+
+    Route::post('/update-gallerist/{id}',    'ModeratorController@updateGallerist')->name('update-gallerist');
+
 });

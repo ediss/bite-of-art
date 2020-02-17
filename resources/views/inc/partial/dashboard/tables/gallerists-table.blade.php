@@ -1,10 +1,14 @@
-<div class="table-responsive"> 
+<div class="table-responsive">
         <table class="table table-striped table-hover">
           <thead>
             <tr>
               <th>#</th>
               <th>Name</th>
               <th>E-mail</th>
+              <th>Gallery Name</th>
+              <th>Gallery Cover</th>
+              <th>About Gallery</th>
+              <th>Cover Letter</th>
               <th>Approved?</th>
             </tr>
           </thead>
@@ -16,7 +20,18 @@
                     <th scope="row">{{ $counter }}</th>
                     <td>{{ $gallerist->name }}</td>
                     <td>{{ $gallerist->email }}</td>
-                    <td>yes/no</td>
+                    <td>{{ $gallerist->gallery_name }} <br> {{ $gallerist->city_country }}</td>
+                    <td> <img src="{{ $gallerist->gallery_cover }}" style="max-width:30%;max-height: 30%;"></td>
+                    <td>{{ $gallerist->about_gallery }}</td>
+                    <td>{{ $gallerist->cover_letter }}</td>
+                    <td>
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input gallerist_id2" name="gallerist_id2"
+                        data-id="{{ $gallerist->id }}" id="customSwitch_{{ $gallerist->id }}" {{ $gallerist->approved == 1 ? 'checked' : '' }}>
+                        <label class="custom-control-label" for="customSwitch_{{ $gallerist->id }}"></label>
+                        {{-- <input type="hidden" class="gallerist_id" name="gallerist_id" value= {{ $gallerist->id }}> --}}
+                      </div>
+                    </td>
                  </tr>
               @endforeach
           </tbody>

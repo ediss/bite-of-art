@@ -33,6 +33,34 @@ class ModeratorController extends Controller
         return Response::json(["html" => $html]);
     }
 
+    public function updateGallerist(Request $request) {
+
+        $gallerist = User::find($request->id);
+
+        if($request->approved == "true") {
+            $gallerist->approved = 1;
+
+            if($gallerist->save()) {
+                $message = ["success", $gallerist->name. " is approved"];
+                return Response::json(["message" => $message]);
+            }else{
+                $message = ["error", "Something went wrong"];
+                return Response::json(["message" => $message]);
+            }
+            
+        }elseif($request->approved == "false") {
+            $gallerist->approved = 0;
+            if($gallerist->save()) {
+                $message = ["success", $gallerist->name. " is unapproved"];
+                return Response::json(["message" => $message]);
+            }else {
+                $message = ["error", "Something went wrong"];
+                return Response::json(["message" => $message]);
+            }
+        }
+
+    }
+
     public function getEvents() {
         $events = new Event;
 
@@ -43,6 +71,33 @@ class ModeratorController extends Controller
         ])->render();
 
         return Response::json(["html" => $html]);
+    }
+
+    public function approveEvent(Request $request) {
+        $event = Event::find($request->id);
+
+        if($request->approved == "true") {
+            $event->approved = 1;
+
+            if($event->save()) {
+                $message = ["success", $event->event_name. " is approved"];
+                return Response::json(["message" => $message]);
+            }
+            else {
+                $message = ["error", "Something went wrong"];
+                return Response::json(["message" => $message]);
+            }
+        }elseif($request->approved == "false") {
+            $event->approved = 0;
+            if($event->save()) {
+                $message = ["success", $event->event_name. " is unapproved"];
+                return Response::json(["message" => $message]);
+            }
+            else {
+                $message = ["error", "Something went wrong"];
+                return Response::json(["message" => $message]);
+            }
+        }
     }
 
     public function updateEvent(Request $request, $event_id) {

@@ -41,7 +41,7 @@
                             <a href="{{ route('login') }}" class="">LOG IN</a>
                             @endif
                             <span class="ml-3 mr-3 menu-span">|</span>
-                            <a href="#" class="">BITE MEMBERSHIP</a>
+                            <a href="{{ route('register') }}" class="">BITE MEMBERSHIP</a>
                             
                         </div>
                     </div>

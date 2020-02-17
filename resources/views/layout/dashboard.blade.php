@@ -8,6 +8,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="{{asset('assets/dashboard/vendor/bootstrap/css/bootstrap.min.css')}}">
     <!-- Font Awesome CSS-->
@@ -21,6 +23,9 @@
     <link rel="stylesheet" href="{{asset('assets/dashboard/css/style.default.css')}}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{asset('assets/dashboard/css/custom.css')}}">
+
+    <link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
+
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{asset('assets/dashboard/img/favicon.ico')}}">
     <!-- Tweaks for older IEs-->
@@ -47,8 +52,11 @@
                 <div class="navbar-header">
                     <!-- Navbar Header--><a href="index.html" class="navbar-brand">
                         <div class="brand-text brand-big visible text-uppercase">
-                            <strong class="text-primary">Bite</strong><strong>Of</strong><strong class="text-primary">Art</strong></div>
-                        <div class="brand-text brand-sm"><strong class="text-primary">B</strong><strong>O</strong><strong class="text-primary">A</strong></div>
+                            <strong class="text-primary">Bite</strong><strong>Of</strong><strong
+                                class="text-primary">Art</strong></div>
+                        <div class="brand-text brand-sm"><strong
+                                class="text-primary">B</strong><strong>O</strong><strong class="text-primary">A</strong>
+                        </div>
                     </a>
                     <!-- Sidebar Toggle Btn-->
                     <button class="sidebar-toggle"><i class="fa fa-long-arrow-left"></i></button>
@@ -362,14 +370,71 @@
 
     <script src=" {{ asset('assets/js/common/ajaxload.js') }}"></script>
     <script src=" {{ asset('assets/js/common/pagination.js') }}"></script>
+    <script src=" {{ asset('plugins/toastr/toastr.min.js') }}"></script>
+
     {{-- <script src=" {{ asset('assets/js/common/global.js') }}"></script> --}}
 
-<script>    AjaxLoad.initialize(); </script>
+    <script>
+        AjaxLoad.initialize();
+    </script>
+    @yield('footer-scripts')
 
 
     <script>
-        $( ".all-gallerists" ).click(function(e) {
-            e.preventDefault();            
+        $(document).on('change', '.gallerist_id2', function(e) {
+            var approved= $(this).prop("checked");
+
+            var gallerist_id = $(this).attr('data-id');
+            e.preventDefault();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{ route('update-gallerist',"gallerist_id") }}",
+                method: 'post',
+                data: {
+                    approved: approved,
+                    id: gallerist_id
+                },
+                success: function(response){
+                    if (typeof response.message != "undefined" && response.message.length) {
+                        toastr[response.message[0]](response.message[1]);
+                    }
+                }
+            });
+        });
+
+        $(document).on('change', '.event_id', function(e) {
+
+            var approved= $(this).prop("checked");
+
+            var event_id = $(this).attr('data-id');
+            e.preventDefault();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{ route('update-event',"event_id") }}",
+                method: 'post',
+                data: {
+                    approved: approved,
+                    id: event_id
+                },
+                success: function(response){
+                  if (typeof response.message != "undefined" && response.message.length) {
+                        toastr[response.message[0]](response.message[1]);
+                    }
+                }
+            });
+        });
+
+    $(document).on('click', '.all-gallerists', function(e) {
+
+            e.preventDefault();
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -386,7 +451,7 @@
         });
 
         $( ".all-events" ).click(function(e) {
-            e.preventDefault();            
+            e.preventDefault();
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -409,6 +474,8 @@
 
         });
     </script>
+
+
 </body>
 
 </html>

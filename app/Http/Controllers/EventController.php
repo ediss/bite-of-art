@@ -9,6 +9,8 @@ use App\Models\Artwork;
 use Validator;
 use Response;
 use View;
+use Auth;
+use Carbon\Carbon;
 
 class EventController extends Controller
 {
@@ -20,10 +22,24 @@ class EventController extends Controller
 
         $event = new Event();
 
-        $events = $event::all();
+        //$today = Carbon::now();
+
+        $today = date('Y-m-d H:i:s');
+
+        $event_in_past = $event::where('approved', '=', 1)
+        ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->first();
+
+        $events_in_past = $event::where('approved', '=', 1)
+        ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->get();
+
+        $feature_events = $event::where('approved', '=', 1)
+        ->where('event_open', '>=', $today)->orderBy('event_open')->get();
+
 
         return view('index', [
-            'events' => $events
+            'event_in_past'  => $event_in_past,
+            'events_in_past' => $events_in_past,
+            'feature_events' => $feature_events
         ]);
     }
 
@@ -63,6 +79,9 @@ class EventController extends Controller
 
         $validator = null;
         if ($request->isMethod('post')) {
+
+
+            //dd(explode(" ", $request->input('daterange')));
             $validator = Validator::make($request->all(), [
                 "event_name"                => "required",
                 "event_cover"                => "required",
@@ -94,7 +113,7 @@ class EventController extends Controller
                 $event_media_desc   = $request->input('event_media_description');
                 $event_note         = $request->input('event_note');
 
-                $gallerist_id       = 1; //@todo id gallerist from auth
+                $gallerist_id       = Auth::user()->id; //@todo id gallerist from auth
 
                 $eventObj = new Event;
 
@@ -102,27 +121,27 @@ class EventController extends Controller
                 if ($request->hasFile('event_cover')) {
                     $event_cover        = $request->file('event_cover');
                     $event_cover_name   = 'cover_'.time().'.'.$event_cover->getClientOriginalExtension();
-                    $event_cover_path   = $event_cover ? $event_cover->move('images/galleries/', $event_cover_name) : null;
+                    $event_cover_path   = $event_cover ? $event_cover->move('images/events/', $event_cover_name) : null;
 
                 }
 
                 if ($request->hasFile('event_image_1')) {
                     $event_image_1        = $request->file('event_image_1');
                     $event_image_1_name   = 'image_1_'.time().'.'.$event_image_1->getClientOriginalExtension();
-                    $event_image_1_path   = $event_image_1 ? $event_image_1->move('images/galleries/', $event_image_1_name) : null;
+                    $event_image_1_path   = $event_image_1 ? $event_image_1->move('images/events/', $event_image_1_name) : null;
 
                 }
                 if ($request->hasFile('event_image_2')) {
                     $event_image_2        = $request->file('event_image_2');
                     $event_image_2_name   = 'image_2_'.time().'.'.$event_image_2->getClientOriginalExtension();
-                    $event_image_2_path   = $event_image_2 ? $event_image_2->move('images/galleries/', $event_image_2_name) : null;
+                    $event_image_2_path   = $event_image_2 ? $event_image_2->move('images/events/', $event_image_2_name) : null;
 
                 }
 
                 if ($request->hasFile('event_image_3')) {
                     $event_image_3        = $request->file('event_image_3');
                     $event_image_3_name   = 'image_3_'.time().'.'.$event_image_3->getClientOriginalExtension();
-                    $event_image_3_path   = $event_image_3 ? $event_image_3->move('images/galleries/', $event_image_3_name) : null;
+                    $event_image_3_path   = $event_image_3 ? $event_image_3->move('images/events/', $event_image_3_name) : null;
 
                 }
 
@@ -133,7 +152,7 @@ class EventController extends Controller
                 $eventObj->event_cover          = $event_cover_path;
 
                 //get from gallery
-                $eventObj->event_place          = "DORCOL!";
+                $eventObj->event_place          = Auth::user()->city_country;
 
                 $eventObj->event_description    = $event_cover_desc;
                 $eventObj->event_img_1          = (isset($event_image_1_path)) ? $event_image_1_path : null;
@@ -146,15 +165,16 @@ class EventController extends Controller
                 $eventObj->event_media_desc     = $event_media_desc;
                 $eventObj->event_note           = $event_note;
                 $eventObj->gallerist_id         = $gallerist_id;
-                $eventObj->nfc_tag              = 'null'; //GaleryName(prva tri slova)+GaleryId+EventName(prva tri slova)+EventID
+                $eventObj->nfc_tag              = 'null';
 
 
 
                 if($eventObj->save()) {
-                    // print success message
+                    $message = ["success", $event_name. " is saved"];
                     $eventLastId = $eventObj->id;
 
-                    $nfc_tag = substr($eventObj->event_name, 0, 3).$eventLastId;
+                    //GaleryName(first 3 char)+GaleryId+EventName(first 3 char)+EventID
+                    $nfc_tag = substr(Auth::user()->gallery_name, 0, 3).Auth::user()->id.substr($eventObj->event_name, 0, 3).$eventLastId;
 
 
                     Event::where('id', $eventLastId)->update(array('nfc_tag' => $nfc_tag));
@@ -165,13 +185,12 @@ class EventController extends Controller
 
                     ])->render();
 
-                    return Response::json(["html" => $html, 'success' => true]);
+                    return Response::json(["html" => $html, 'success' => true, 'message' => $message]);
 
+                }else {
+                    $message = ["error", "OOps! Something went wrong!"];
+                    return Response::json(["message" => $message]);
                 }
-                //@todo errors
-
-
-
 
             }
             $html = View::make('inc.partial.event-form.add-event-form', [
@@ -278,7 +297,10 @@ class EventController extends Controller
 
                     ])->render();
 
-                    return Response::json(["html" => $html, 'success'=>true]);
+                    return Response::json(["html" => $html, 'success' => true, 'message' => $message]);
+                }else {
+                    $message = ["error", "OOps! Something went wrong!"];
+                    return Response::json(["message" => $message]);
                 }
 
 
@@ -325,35 +347,35 @@ class EventController extends Controller
                 $artwork_media        = $request->input('artwork_media');
                 $artwork_media_desc   = $request->input('artwork_media_desc');
                 $artwork_note         = $request->input('artwork_note');
-        
+
                 $gallerist_id        = 1; // id gallerist from auth
-       
+
 
                 if ($request->hasFile('artwork_cover')) {
                     $artwork_cover        = $request->file('artwork_cover');
                     $artwork_cover_name   = 'cover_'.time().'.'.$artwork_cover->getClientOriginalExtension();
                     $artwork_cover_path   = $artwork_cover ? $artwork_cover->move('images/artworks/', $artwork_cover_name) : null;
-        
+
                 }
-        
+
                 if ($request->hasFile('artwork_image_1')) {
                     $artwork_image_1        = $request->file('artwork_image_1');
                     $artwork_image_1_name   = 'artwork_1_'.time().'.'.$artwork_image_1->getClientOriginalExtension();
                     $artwork_image_1_path   = $artwork_image_1 ? $artwork_image_1->move('images/artworks/', $artwork_image_1_name) : null;
-        
+
                 }
                 if ($request->hasFile('artwork_image_2')) {
                     $artwork_image_2        = $request->file('artwork_image_2');
                     $artwork_image_2_name   = 'artwork_2_'.time().'.'.$artwork_image_2->getClientOriginalExtension();
                     $artwork_image_2_path   = $artwork_image_2 ? $artwork_image_2->move('images/artworks/', $artwork_image_2_name) : null;
-        
+
                 }
-        
+
                 if ($request->hasFile('artwork_image_3')) {
                     $artwork_image_3        = $request->file('artwork_image_3');
                     $artwork_image_3_name   = 'artwork_3_'.time().'.'.$artwork_image_3->getClientOriginalExtension();
                     $artwork_image_3_path   = $artwork_image_3 ? $artwork_image_3->move('images/artworks/', $artwork_image_3_name) : null;
-        
+
                 }
 
                  //insert artwork into db
@@ -375,13 +397,17 @@ class EventController extends Controller
                 $artworkObj->event_id               = $event_id;
                 $artworkObj->artist_id              = $artist_id;
                 $artworkObj->nfc_tag                = 'nfc_tag';
-                
-                
+
+
                 if($artworkObj->save()) {
-                    
-                    return Response::json(["result" => $artist_id, 'success' => true]);
+                    return Response::json(["result" => $artist_id, 'success' => true, 'message' => $message]);
                 }
-                
+                else {
+                    $message = ["error", "OOps! Something went wrong!"];
+                    return Response::json(["message" => $message]);
+
+                }
+
             }
 
             $html = View::make('inc.partial.event-form.add-artwork-form', [
@@ -392,11 +418,11 @@ class EventController extends Controller
 
             return Response::json(["html" => $html, 'success' => false]);
         }
-       
 
 
-       
-       
+
+
+
 
 
 
@@ -440,27 +466,27 @@ class EventController extends Controller
         if ($request->hasFile('event_cover')) {
             $event_cover        = $request->file('event_cover');
             $event_cover_name   = time().'.'.$event_cover->getClientOriginalExtension();
-            $event_cover_path   = $event_cover ? $event_cover->move('images/galleries/', $event_cover_name) : null;
+            $event_cover_path   = $event_cover ? $event_cover->move('images/events/', $event_cover_name) : null;
 
         }
 
         if ($request->hasFile('event_image_1')) {
             $event_image_1        = $request->file('event_image_1');
             $event_image_1_name   = time().'.'.$event_image_1->getClientOriginalExtension();
-            $event_image_1_path   = $event_image_1 ? $event_image_1->move('images/galleries/', $event_image_1_name) : null;
+            $event_image_1_path   = $event_image_1 ? $event_image_1->move('images/events/', $event_image_1_name) : null;
 
         }
         if ($request->hasFile('event_image_2')) {
             $event_image_2        = $request->file('event_image_2');
             $event_image_2_name   = time().'.'.$event_image_2->getClientOriginalExtension();
-            $event_image_2_path   = $event_image_2 ? $event_image_2->move('images/galleries/', $event_image_2_name) : null;
+            $event_image_2_path   = $event_image_2 ? $event_image_2->move('images/events/', $event_image_2_name) : null;
 
         }
 
         if ($request->hasFile('event_image_3')) {
             $event_image_3        = $request->file('event_image_3');
             $event_image_3_name   = time().'.'.$event_image_3->getClientOriginalExtension();
-            $event_image_3_path   = $event_image_3 ? $event_image_3->move('images/galleries/', $event_image_3_name) : null;
+            $event_image_3_path   = $event_image_3 ? $event_image_3->move('images/events/', $event_image_3_name) : null;
 
         }
 

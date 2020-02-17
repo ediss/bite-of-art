@@ -4,6 +4,16 @@
 <div class="row">
     <div class="col-md-12 p-0">
 
+        @if($errors->any())
+        <div class="alert alert-success mt-2 text-center">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>{{$errors->first()}}</h4>
+        </div>
+            
+        @endif
+
         <form method="POST" action="{{ route('custom.login.submit') }}">
             @csrf
 

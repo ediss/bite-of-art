@@ -2,7 +2,7 @@
 @section('css')
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/animate.css')}}" />
-
+<link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 @section('content')
@@ -37,6 +37,8 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
 <script src=" {{ asset('assets/js/event/add-event.js') }}"></script>
+<script src=" {{ asset('plugins/toastr/toastr.min.js') }}"></script>
+
 
 <script>
 $(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
@@ -53,7 +55,7 @@ $(document).ready(function(){
     $('.js-datepicker-range').daterangepicker({
             timePicker: true,
             locale: {
-            format: 'YYYY.MM.DD'
+            format: 'YYYY.MM.DD hh:mm:ss'
         },
     });
 

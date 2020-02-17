@@ -24,7 +24,7 @@
 
 
                 <div class=" col-4 text-center">
-                    <input type="text" name="daterange" class="form-control2 js-datepicker-range border-0"
+                    <input type="text" name="daterange" class="form-control text-center js-datepicker-range border-0"
                     value="{{ Request::get('daterange') }}">
 
 
