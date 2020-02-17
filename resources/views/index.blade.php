@@ -13,7 +13,7 @@
             @if($event_in_past)
 
             <div class="carousel-item carousel-item-main  col-4 p-0 active">
-                <div class="card klik" data-id="{{ $event_in_past->id }}">
+                <div class="card" data-id="{{ $event_in_past->id }}">
                     <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}"
                         alt="slide 2">
                 </div>
@@ -384,6 +384,8 @@
 
 
 <script>
+    //$('#carouselExample').find('.active').next().find('.carousel-item').addClass('klik');
+    $('#carouselExample').find('.active').next().find('.card').addClass('klik');
     function openNav() {
         document.getElementById("openedNews").style.width = "100%";
     }

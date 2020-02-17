@@ -52,7 +52,7 @@
             $counter++;
         @endphp
         <div class="card">
-            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->event_cover }}"
+            <img class="img-fluid  d-block gallery-img" src="{{ $data->event_cover }}"
                 alt="slide 2">
 
         </div>
@@ -66,7 +66,7 @@
         @endphp
     <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
         <div class="card">
-            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->event_img_1 }}"
+            <img class="img-fluid  d-block gallery-img" src="{{ $data->event_img_1 }}"
                 alt="slide 2">
 
         </div>
@@ -80,7 +80,7 @@
         @endphp
     <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
         <div class="card">
-            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->event_img_2 }}"
+            <img class="img-fluid  d-block gallery-img" src="{{ $data->event_img_2 }}"
                 alt="slide 2">
 
         </div>
@@ -94,7 +94,7 @@
         @endphp
     <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
         <div class="card">
-            <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/'.$data->event_img_3 }}"
+            <img class="img-fluid  d-block gallery-img" src="{{ $data->event_img_3 }}"
                 alt="slide 2">
 
         </div>
