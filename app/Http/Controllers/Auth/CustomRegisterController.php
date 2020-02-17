@@ -10,6 +10,7 @@ use App\User;
 use Validator;
 use Response;
 use View;
+use Session;
 
 class CustomRegisterController extends Controller
 {
@@ -67,11 +68,12 @@ class CustomRegisterController extends Controller
 
                 if($gallerist->save()) {
                     //send mail to moderator
-                    $message = ["success", $gallerist->name. " register is succesfully"];
-                    return Response::json(["message" => $message]);
+                    Session::flash('alert-class', 'alert-success');
+                    Session::flash('success', 'User: '.$gallerist->name.' and Gallery:'. $gallerist->gallery_name. ' are succesfully registred');
+
                 }else {
-                    $message = ["error", "Something went wrong"];
-                    return Response::json(["message" => $message]);
+                    Session::flash('alert-class', 'alert-danger');
+                    Session::flash('error', 'Something went wrong!');
                 }
 
             }

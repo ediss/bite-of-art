@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="row">
+    @if(Session::has('success'))
+        <div class="col-12 text-center alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('success') }}</div>
+    @elseif(Session::has('error'))
+        <div class="col-12 text-center alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('error') }}</div>
+    @endif
     <form id="register" action="{{ route('register') }}" enctype="multipart/form-data" method="POST">
         @csrf
         <!--Add event-->
