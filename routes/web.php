@@ -21,7 +21,7 @@
 
 // Route::post('/event/{id?}', 'EventController@ajaxLoadEventData');
 // Auth::routes();
-Route::get('/login', 'Auth\CustomLoginController@showLoginForm')->name('login');
+Route::get('/login', 'Auth\CustomLoginController@showLoginForm')->name('login')->middleware('guest');
 Route::post('/login', 'Auth\CustomLoginController@login')->name('custom.login.submit');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -35,15 +35,15 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'EventController@index')->name('home');
 
 Route::get('/',                 'EventController@index');
 Route::group([
     'prefix'        => 'gallerist',
     'middleware'    => ['auth'],
 ], function() {
-    Route::any('/add-new-event',    'EventController@submitEvent')->name('gallerist.dashboard');
-
+    Route::any('/dashboard',        'GalleristController@index')->name('gallerist.dashboard');
+    Route::any('/add-new-event',    'EventController@submitEvent')->name('add.new.event');
     Route::post('/submitArtist',    'EventController@submitArtist');
     Route::post('/submitArtwork',   'EventController@submitArtwork');
 });

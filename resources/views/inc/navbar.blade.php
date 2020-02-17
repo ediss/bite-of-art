@@ -37,11 +37,14 @@
                         <div class="col-10 text-right montserrat-regular login">
                             @if (Auth::check())
                                 <a href="{{ route('logout') }}" class="">LOGOUT</a>
+                                <span class="ml-3 mr-3 menu-span">|</span>
+                            <a href="{{ route('gallerist.dashboard') }}" class="">ACCOUNT</a>
                             @else
                             <a href="{{ route('login') }}" class="">LOG IN</a>
-                            @endif
                             <span class="ml-3 mr-3 menu-span">|</span>
                             <a href="{{ route('register') }}" class="">BITE MEMBERSHIP</a>
+                            @endif
+
                             
                         </div>
                     </div>
