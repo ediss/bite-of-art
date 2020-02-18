@@ -116,8 +116,7 @@ function saveArtwork() {
               $('.artwork-wraper').removeClass('d-none');
             }
             if(result.success === true) {
-              $('.add_artwork').removeClass('d-none');
-              $('.done_artwork').removeClass('d-none');
+              $('#artowrk-button').removeClass('d-none');
               $('#artwork').fadeOut('slow','swing')
             }
 

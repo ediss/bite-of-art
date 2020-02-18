@@ -15,9 +15,10 @@ class UsersTableSeeder extends Seeder
             [
                 'name'          => 'Galerista',
                 'email'         => 'galerista@gmail.com',
-                'password' => bcrypt('12345678'),
+                'password'      => bcrypt('12345678'),
                 'role_id'       => 2,
-                'approved'      => 0
+                'city_country'  => 'Beograd',
+                'approved'      => 1
 
             ],
             
@@ -26,6 +27,7 @@ class UsersTableSeeder extends Seeder
                 'email'         => 'moderator@gmail.com',
                 'password'      => bcrypt('12345678'),
                 'role_id'       => 1,
+                'city_country'  => 'Beograd',
                 'approved'      => 1
             ]
         ]);

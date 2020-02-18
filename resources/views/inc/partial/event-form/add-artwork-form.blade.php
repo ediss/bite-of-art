@@ -212,7 +212,7 @@
                 <div class="row w-100">
                     <div class="col-md-6 offset-3">
                         <div class="next-btn">
-                            <button class="my-btn save_artwork">NEXT</button>
+                            <button class="my-btn save_artwork">SAVE ARTWORK</button>
                             {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
                         </div>
                     </div>

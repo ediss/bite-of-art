@@ -25,8 +25,24 @@
         </div>
         <!--end artwork-->
 
+        {{-- <button class="my-btn add_artist">ADD MORE ARTISTS</button> --}}
+        <div id="artowrk-button" class="row d-none">
+            <div class="col-12 text-center mt-4">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button class="my-btn mr-2 add_artwork">ADD MORE ARTWORKS</button>
+                    <button class="my-btn next-buttons">NEXT</button>
+                </div>
+            </div>
+        </div>
 
-        <div id="artist_artworks" class="row"></div>
+        <div id="artist-button" class="row d-none">
+            <div class="col-12 text-center mt-4">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button class="my-btn mr-2 submit_event">SUBMIT EVENT</button>
+                    <button class="my-btn add_artist">ADD MORE ARTISTS</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
@@ -77,11 +93,11 @@ $(document).ready(function(){
 
     $(document).on('click', '.add_artist', function(e) {
 
-        $('.add_artwork').addClass('d-none');
-        $('.done_artwork').addClass('d-none');
+        $('#artist-button').addClass('d-none');
+        var event_id = $(".event_id").val();
+        $('#artist').find(':input').val('');
+        $('.event_id').val(event_id);
 
-        $('.add_artist').addClass('d-none');
-        $('.done_event').addClass('d-none');
         $('#artist').removeClass('d-none').show().addClass('fadeInDRight animation-duration');
         $('.artist-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
         $('.artist-wraper').animate({
@@ -96,25 +112,24 @@ $(document).ready(function(){
 
         var artist_id = $(".artist_id").val();
         var event_id = $(".event_artwork_id").val();
-        $('.add_artwork').addClass('d-none');
-        $('.done_artwork').addClass('d-none');
+
+
+        $('#artowrk-button').addClass('d-none');
         $('#artwork').find(':input').val('');
         $('.artist_id').val(artist_id);
         $('.event_artwork_id').val(event_id);
-        $('.add_artist').addClass('d-none');
         $('#artwork').show().removeClass('d-none');
         $('.artwork-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
     });
 
+    $(document).on('click', '.next-buttons', function(e) {
+        $('#artowrk-button').addClass('d-none');
+        $('#artist-button').removeClass('d-none');
 
+    });
 
-    $(document).on('click', '.done_artwork', function(e) {
-        $( "#artist" ).hide();
-        $(".add_artist").removeClass('d-none');
-        $(".done_event").removeClass('d-none');
-        var event_id = $('.event_id').val();
-        $('#artist').find(':input').val('');
-        $('.event_id').val(event_id);
+    $(document).on('click', '.submit_event', function(e) {
+        window.location.href = "{{ route('gallerist.dashboard') }}"; 
     });
 
 });
