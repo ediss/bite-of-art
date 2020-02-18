@@ -60,7 +60,8 @@
         $(this).keyup(function(e){
             e.preventDefault();
             var characterCount = el.value.length;
-            $(el).next('span').text(characterCount+"/ 700");
+            $(el).parent().next().text(characterCount+"/ 700");
+            $(el).next().next().next('span')
         });
     }
 

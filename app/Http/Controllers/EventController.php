@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Artist;
 use App\Models\Artwork;
+use App\Models\News;
 use Validator;
 use Response;
 use View;
@@ -66,11 +67,6 @@ class EventController extends Controller
         return Response::json(["html" => $html]);
 
     }
-
-    public function test() {
-        return view('test');
-    }
-
 
 
     public function submitEvent(Request $request) {

@@ -37,6 +37,9 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'EventController@index')->name('home');
 
+Route::any('/news/add-news', 'GalleristController@addNews')->name('add.news');
+
+
 Route::get('/',                 'EventController@index');
 Route::group([
     'prefix'        => 'gallerist',

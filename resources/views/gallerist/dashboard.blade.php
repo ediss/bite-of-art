@@ -114,15 +114,15 @@
                 </div>
 
 
-                <div class=" col-8">
+                <div class=" col-7">
 
                     <textarea class="form-control border-0" name="about_gallery" placeholder="About gallery" maxlength="700" onkeyup="charCount(this)"
                         id="about_gallery">{{ Auth::user()->about_gallery }}</textarea>
-                    <span class="float-right">700</span>
-
-
                 </div>
 
+                <div class="col-1">
+                    <span class="float-left">700</span>
+                </div>
                 <div class="col-md-2">
                     @if ( $validator && $validator->errors()->first('about_gallery') )
                     <div class="alert alert-danger text-center mt-2">
