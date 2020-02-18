@@ -1642,4 +1642,16 @@ input[type=submit]:hover {
   height:100px;
 }
 
+.my-btns-new {
+  border: 2px solid black;
+  color: black;
+  background-color: white;
+  padding: 2px 5px;
+  /* border-radius: 8px; */
+  font-size: 14px;
+  font-weight: bold;
+  width: 135px;
+
+}
+
 

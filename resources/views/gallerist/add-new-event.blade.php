@@ -29,8 +29,8 @@
         <div id="artowrk-button" class="row d-none">
             <div class="col-12 text-center mt-4">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button class="my-btn mr-2 add_artwork">ADD MORE ARTWORKS</button>
-                    <button class="my-btn next-buttons">NEXT</button>
+                    <button class="my-btns-new mr-2 add_artwork">ADD MORE ARTWORKS</button>
+                    <button class="my-btns-new next-buttons">NEXT</button>
                 </div>
             </div>
         </div>
@@ -38,8 +38,8 @@
         <div id="artist-button" class="row d-none">
             <div class="col-12 text-center mt-4">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button class="my-btn mr-2 submit_event">SUBMIT EVENT</button>
-                    <button class="my-btn add_artist">ADD MORE ARTISTS</button>
+                    <button class="my-btns-new mr-2 submit_event">SUBMIT EVENT</button>
+                    <button class="my-btns-new add_artist">ADD MORE ARTISTS</button>
                 </div>
             </div>
         </div>
