@@ -217,8 +217,10 @@
                         </div>
 
                         <div class=" col-8 text-left">
-                            <textarea class="form-control border-0" name="cover_letter" placeholder="Cover letter"
+                            <textarea class="form-control border-0" name="cover_letter" placeholder="Cover letter" maxlength="700" onkeyup="charCount(this)"
                             id="cover_letter">{{ Request::get('cover_letter') }}</textarea>
+                            <span class="float-right">700</span>
+
                         </div>
 
 
