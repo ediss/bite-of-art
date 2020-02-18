@@ -74,7 +74,7 @@ function saveArtist() {
           if(result.success === true) {
               $( ".artist-wraper" ).animate({
                   left: '-100vw'
-              }, 2000, function() {
+              }, 1000, function() {
                   $('.artist-wraper').addClass('d-none');
 
                   $("#artwork").removeClass('d-none').html(result.html).show().addClass('fadeInDRight animation-duration');

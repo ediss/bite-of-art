@@ -56,6 +56,15 @@
 
 
 <script>
+    function charCount(el) {
+        $(this).keyup(function(e){
+            e.preventDefault();
+            var characterCount = el.value.length;
+            $(el).next('span').text(characterCount+"/ 700");
+        });
+    }
+
+
 $('#toggle').click(function () {
     $(this).toggleClass('active');
     $('#overlay').toggleClass('open');

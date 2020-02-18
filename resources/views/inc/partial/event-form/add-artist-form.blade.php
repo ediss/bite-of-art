@@ -65,9 +65,9 @@
 
                     <div class=" col-8">
 
-                        <textarea class="form-control border-0" name="artist_about" placeholder="About Artist"
+                        <textarea class="form-control border-0" name="artist_about" placeholder="About Artist" maxlength="700" onkeyup="charCount(this)"
                             id="artist_about">{{ Request::get('artist_about') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                            <span class="float-right">700</span>
 
 
                     </div>
@@ -102,10 +102,10 @@
 
 
                     <div class=" col-8">
-                        <textarea class="form-control border-0" name="artist_image_1_desc"
+                        <textarea class="form-control border-0" name="artist_image_1_desc" maxlength="700" onkeyup="charCount(this)"
                             placeholder="Additional photo #1 description"
                             id="artist_image_1_desc">{{ Request::get('artist_image_1_desc') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                            <span class="float-right">700</span>
 
                     </div>
 
@@ -133,10 +133,10 @@
 
 
                     <div class=" col-8">
-                        <textarea class="form-control border-0" name="artist_image_2_desc"
+                        <textarea class="form-control border-0" name="artist_image_2_desc" maxlength="700" onkeyup="charCount(this)"
                             placeholder="Additional photo #2 description"
                             id="artist_image_2_desc">{{ Request::get('artist_image_2_desc') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                            <span class="float-right">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -158,10 +158,10 @@
 
 
                     <div class=" col-8">
-                        <textarea class="form-control border-0" name="artist_image_3_desc"
+                        <textarea class="form-control border-0" name="artist_image_3_desc" maxlength="700" onkeyup="charCount(this)"
                             placeholder="Additional photo #3 description"
                             id="artist_image_3_desc">{{ Request::get('artist_image_3_desc') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                            <span class="float-right">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -181,10 +181,10 @@
 
 
                     <div class=" col-5">
-                        <textarea class="form-control border-0" name="artist_media_description"
+                        <textarea class="form-control border-0" name="artist_media_description" maxlength="700" onkeyup="charCount(this)"
                             placeholder="Media file description"
                             id="artist_media_description">{{ Request::get('artist_media_description') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                            <span class="float-right">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -199,9 +199,9 @@
 
 
                     <div class=" col-9">
-                        <textarea class="form-control border-0" name="artist_note" placeholder="Note"
+                        <textarea class="form-control border-0" name="artist_note" placeholder="Note" maxlength="700" onkeyup="charCount(this)"
                             id="artist_note">{{ Request::get('artist_note') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                            <span class="float-right">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>

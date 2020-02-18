@@ -1635,6 +1635,7 @@ input[type=submit]:hover {
 }
 
 #artist-header input { background-color: #e6e6e6 !important; }
+#artwork-header input{ background-color: #cccccc !important; }
 
 .elements-mid-align {
   align-items: center; 

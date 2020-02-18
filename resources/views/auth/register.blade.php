@@ -111,9 +111,9 @@
 
                         <div class=" col-8">
 
-                            <textarea class="form-control border-0" name="about_gallery" placeholder="About gallery"
+                            <textarea class="form-control border-0" name="about_gallery" placeholder="About gallery" maxlength="700" onkeyup="charCount(this)"
                                 id="about_gallery">{{ Request::get('about_gallery') }}</textarea>
-                            {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                            <span class="float-right">700</span>
 
 
                         </div>

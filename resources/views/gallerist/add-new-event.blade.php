@@ -61,12 +61,25 @@ $(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
 
 $(document).ready(function(){
 
+
+    $('.logo').hide();
+
+    $(".close-gallery")
+        .removeClass("d-none")
+        .addClass(" animation-duration2 fadeInDown");
+
+    $(".close-gallery").click(function(e) {
+
+      $(this).removeClass('fadeInDown').addClass('fadeOutUp');
+      setTimeout(function() {
+        window.location.href = "{{url()->previous() }}";
+      });
+  });
+
+
     $(".page-footer").hide();
 
-    i = 700;
-    $("#event_cover_description").keypress(function(){
-        $("#event_desc_count").text(i -= 1);
-    });
+    
 
     $('.js-datepicker-range').daterangepicker({
             timePicker: true,
