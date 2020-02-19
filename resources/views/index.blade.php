@@ -2,6 +2,8 @@
 
 @section('css')
 <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/animate.css')}}" />
+
+<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style2.css')}}" />
 @endsection
 
 @section('content')
@@ -98,144 +100,121 @@
 <div class="row animation-duration2 fadeInRight" id="smallGallery">
     <div id="recipeCarousel" class="carousel slide" data-ride="carousel" data-interval="900000">
         <div class="carousel-inner carousel-inner-news w-100 mini p-0 m-0" role="listbox">
-            <div class="carousel-item carousel-item-news  col-md-20 p-0 active">
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0 active">
                 <div class="card ">
                     <div class="img-opacity">
                         <img class="img-fluid  d-block" src="./images/news/1.jpg" alt="slide 1">
                     </div>
                     <div class="img-description">
-                        <p class="montserrat-bold text-left">Dnevnik Diane Budisavljevic
-                            neprocenjiva istorijska lekcija
-                            Beograd 31.12.2019</p>
+                        <p class="montserrat-bold text-left">1</p>
                     </div>
 
                 </div>
 
             </div>
-            <div class="carousel-item carousel-item-news  col-md-20 p-0">
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
                 <div class="card ">
                     <div class="img-opacity">
                         <img class="img-fluid  d-block" src="./images/news/2.png" alt="slide 2">
                     </div>
                     <div class="img-description">
-                        <p class="montserrat-bold text-left">Dnevnik Diane Budisavljevic
-                            neprocenjiva istorijska lekcija
-                            Beograd 31.12.2019</p>
+                        <p class="montserrat-bold text-left">2</p>
                     </div>
 
                 </div>
             </div>
 
-            <div class="carousel-item carousel-item-news  col-md-20 p-0">
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
                 <div class="card ">
                     <div class="img-opacity">
                         <img class="img-fluid  d-block" src="./images/news/3.jpg" alt="slide 3">
                     </div>
                     <div class="img-description">
-                        <p class="montserrat-bold text-left">Dnevnik Diane Budisavljevic
-                            neprocenjiva istorijska lekcija
-                            Beograd 31.12.2019</p>
+                        <p class="montserrat-bold text-left">3</p>
                     </div>
 
                 </div>
             </div>
 
-            <div class="carousel-item carousel-item-news  col-md-20 p-0">
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
                 <div class="card ">
                     <div class="img-opacity">
                         <img class="img-fluid  d-block" src="./images/news/4.jpg" alt="slide 4">
                     </div>
                     <div class="img-description">
-                        <p class="montserrat-bold text-left">Dnevnik Diane Budisavljevic
-                            neprocenjiva istorijska lekcija
-                            Beograd 31.12.2019</p>
+                        <p class="montserrat-bold text-left">4</p>
                     </div>
 
                 </div>
             </div>
 
-            <div class="carousel-item carousel-item-news  col-md-20 p-0">
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
                 <div class="card ">
                     <div class="img-opacity">
                         <img class="img-fluid  d-block" src="./images/news/5.jpg" alt="slide 5">
                     </div>
                     <div class="img-description">
-                        <p class="montserrat-bold text-left">Dnevnik Diane Budisavljevic
-                            neprocenjiva istorijska lekcija
-                            Beograd 31.12.2019</p>
+                        <p class="montserrat-bold text-left">5</p>
                     </div>
 
                 </div>
             </div>
 
-            <div class="carousel-item carousel-item-news  col-md-20 p-0">
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
                 <div class="card ">
                     <div class="img-opacity">
                         <img class="img-fluid  d-block" src="./images/news/6.png" alt="slide 6">
                     </div>
                     <div class="img-description">
-                        <p class="montserrat-bold text-left">Dnevnik Diane Budisavljevic
-                            neprocenjiva istorijska lekcija
-                            Beograd 31.12.2019</p>
+                        <p class="montserrat-bold text-left">6</p>
                     </div>
 
                 </div>
             </div>
 
-            <div class="carousel-item carousel-item-news  col-md-20 p-0">
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
                 <div class="card ">
                     <div class="img-opacity">
                         <img class="img-fluid  d-block" src="./images/news/7.png" alt="slide 7">
                     </div>
                     <div class="img-description">
-                        <p class="montserrat-bold text-left">Dnevnik Diane Budisavljevic
-                            neprocenjiva istorijska lekcija
-                            Beograd 31.12.2019</p>
+                        <p class="montserrat-bold text-left">7</p>
                     </div>
 
                 </div>
 
             </div>
-            <div class="carousel-item carousel-item-news  col-md-20 p-0">
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
                 <div class="card ">
                     <div class="img-opacity">
                         <img class="img-fluid  d-block" src="./images/news/8.jpg" alt="slide 8">
                     </div>
                     <div class="img-description">
-                        <p class="montserrat-bold text-left">Dnevnik Diane
-                            Budisavljevic
-                            neprocenjiva istorijska lekcija
-                            Beograd 31.12.2019</p>
+                        <p class="montserrat-bold text-left">8</p>
                     </div>
                 </div>
 
 
             </div>
-            <div class="carousel-item carousel-item-news  col-md-20 p-0">
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
                 <div class="card ">
                     <div class="img-opacity">
                         <img class="img-fluid  d-block" src="./images/news/9.jpg" alt="slide 9">
                     </div>
                     <div class="img-description">
-                        <p class="montserrat-bold text-left">Dnevnik Diane
-                            Budisavljevic
-                            neprocenjiva istorijska lekcija
-                            Beograd 31.12.2019</p>
+                        <p class="montserrat-bold text-left">9</p>
                     </div>
                 </div>
 
 
             </div>
-            <div class="carousel-item carousel-item-news  col-md-20 p-0">
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
                 <div class="card ">
                     <div class="img-opacity">
                         <img class="img-fluid  d-block" src="./images/news/10.jpg" alt="slide 10">
                     </div>
                     <div class="img-description">
-                        <p class="montserrat-bold text-left">Dnevnik Diane
-                            Budisavljevic
-                            neprocenjiva istorijska lekcija
-                            Beograd 31.12.2019</p>
+                        <p class="montserrat-bold text-left">10</p>
                     </div>
                 </div>
 
@@ -417,11 +396,11 @@ function flip() {
 
 $(".img-opacity").mouseover(function (e) {
     e.preventDefault();
-    $(this).next('.img-description').addClass('animation-duration fadeOutDown').css('opacity', '0');
+    $(this).next('.img-description').addClass('animation-duration fadeOutDown my-opacity');
 });
 
 $(".img-opacity").mouseout(function () {
-    $(this).next('.img-description').removeClass('animation-duration fadeOutDown').css('opacity', '1').addClass('animation-duration fadeInUp');
+    $(this).next('.img-description').removeClass('animation-duration fadeOutDown my-opacity').addClass('animation-duration fadeInUp');
 });
 
 });

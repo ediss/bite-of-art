@@ -16,6 +16,7 @@
 // });
 
 
+Route::get('/test',                 'EventController@test');
 
 
 
@@ -37,6 +38,9 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'EventController@index')->name('home');
 
+Route::any('/news/add-news', 'GalleristController@addNews')->name('add.news');
+
+
 Route::get('/',                 'EventController@index');
 Route::group([
     'prefix'        => 'gallerist',
@@ -51,7 +55,7 @@ Route::group([
 
 Route::any('/ajax',             'EventController@ajaxTest')->middleware('auth');
 
-Route::post('/event',           'EventController@ajaxLoadEventData')->middleware('auth');
+Route::post('/event',           'EventController@ajaxLoadEventData');
 
 //Route::post('/submitEvent',     'EventController@submitEvent');
 

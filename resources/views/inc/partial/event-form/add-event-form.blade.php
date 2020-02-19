@@ -71,13 +71,12 @@
                     </div>
 
 
-                    <div class=" col-8">
-
-                        <textarea class="form-control border-0" name="event_cover_description" placeholder="About Event"
+                    <div class="col-7">
+                      <textarea class="form-control border-0" name="event_cover_description" placeholder="About Event" maxlength="700" onkeyup="charCount(this)"
                             id="event_cover_description">{{ Request::get('event_cover_description') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
-
-
+                    </div>
+                    <div class="col-1">
+                        <span class="float-left">700</span>
                     </div>
 
                     <div class="col-md-2">
@@ -112,13 +111,13 @@
                     </div>
 
 
-                    <div class=" col-8">
-                        <textarea class="form-control border-0" name="event_image_1_desc" placeholder="Additional photo #1 description"
+                    <div class="col-7">
+                        <textarea class="form-control border-0" name="event_image_1_desc" placeholder="Additional photo #1 description" maxlength="700" onkeyup="charCount(this)"
                         id="event_image_1_desc">{{ Request::get('event_image_1_desc') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
-
                     </div>
-
+                    <div class="col-1">
+                        <span class="float-left">700</span>
+                    </div>
                     <div class="col-md-2">
 
                     </div>
@@ -142,10 +141,12 @@
                     </div>
 
 
-                    <div class=" col-8">
-                        <textarea class="form-control border-0" name="event_image_2_desc" placeholder="Additional photo #2 description"
+                    <div class=" col-7">
+                        <textarea class="form-control border-0" name="event_image_2_desc" placeholder="Additional photo #2 description" maxlength="700" onkeyup="charCount(this)"
                         id="event_image_2_desc">{{ Request::get('event_image_2_desc') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                    </div>
+                    <div class="col-1">
+                        <span class="float-left">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -166,10 +167,12 @@
                     </div>
 
 
-                    <div class=" col-8">
-                        <textarea class="form-control border-0" name="event_image_3_desc" placeholder="Additional photo #3 description"
+                    <div class="col-7">
+                        <textarea class="form-control border-0" name="event_image_3_desc" placeholder="Additional photo #3 description" maxlength="700" onkeyup="charCount(this)"
                         id="event_image_3_desc">{{ Request::get('event_image_3_desc') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                    </div>
+                    <div class="col-1">
+                        <span class="float-left">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -188,10 +191,12 @@
                     </div>
 
 
-                    <div class=" col-5">
-                        <textarea class="form-control border-0" name="event_media_description" placeholder="Media file description"
+                    <div class="col-4">
+                        <textarea class="form-control border-0" name="event_media_description" placeholder="Media file description" maxlength="700" onkeyup="charCount(this)"
                         id="event_media_description">{{ Request::get('event_media_description') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                    </div>
+                    <div class="col-1">
+                        <span class="float-left">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -205,10 +210,12 @@
                     </div>
 
 
-                    <div class=" col-9">
-                        <textarea class="form-control border-0" name="event_note" placeholder="Note"
+                    <div class="col-8">
+                        <textarea class="form-control border-0" name="event_note" placeholder="Note" maxlength="700" onkeyup="charCount(this)"
                         id="event_note">{{ Request::get('event_note') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                    </div>
+                    <div class="col-1">
+                        <span class="float-left">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>

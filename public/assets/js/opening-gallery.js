@@ -1,10 +1,12 @@
 
 
   $("#mainGallery").on("click", ".klik", function() {
-    
+
+    //$("#carouselExample .carousel-inner-main").addClass('w-140-300');
+
 
     var data_id = $(this).attr("data-id");
- 
+
     $('.logo').animate( {
         transition: "top 4.4s ease-in-out",
         'top' : '-100px',
@@ -13,14 +15,14 @@
     $('.live').css('visibility', 'hidden');
 
     $('#carouselExample .carousel-controls-main').hide();
-    
+
 
 
     $("#smallGallery").animate({
-      right: '150%'
+      right: '250%'
     },1000);
 
-    
+
 
     $("#carouselExample")
       .find(".card-body")
@@ -35,7 +37,7 @@
                 $(this).animate({
                   transition: "visibility 1s ease-in-out",
                   'visibility' : 'hidden'
-                 
+
                 });
             },
             duration : 2000,
@@ -53,13 +55,27 @@
       {
         step: function() {
 
+          if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            $(this).css({
+              
+              "transform-origin": "0 0",
+              transition: "transform 1.9s ease-in-out, width 1.9s ease-in-out",
+              transform: "scale(1.6) translate3d(0, 0, 0)",
+              width: "300%"
+            });
+          }else {
+            $(this).css({
+              "transform-origin": "0 0",
+              transition: "transform 1.9s ease-in-out, width 1.9s ease-in-out",
+              transform: "scale(1.6) translate3d(0, 0, 0)",
+              width: "140%"
+            });
+          }
+          
 
-          $(this).css({
-            "transform-origin": "0 0",
-            transition: "transform 1.9s ease-in-out, width 1.9s ease-in-out",
-            transform: "scale(1.6) translate3d(0, 0, 0)",
-            width: "140%"
-          });
+          
+
+          // $(this).addClass('w-140-300');
 
           $(this)
           .find(".active")
@@ -72,17 +88,14 @@
           $(this)
           .find(".active")
           .next()
-          .find("img")
-          .css({
-              "transform": "translate3d(31.5%, 0, 0)",
-              transition: "transform 2.5s ease-in-out",
-          });
+          .find("img").addClass('new-transform');
+
 
           $(this)
           .find(".p-0")
           .removeClass("p-0");
 
-        
+
         },
         duration: 3000,
 
@@ -90,26 +103,26 @@
 
 
           $.ajax({
-   
+
             type:'POST',
               url:'/event',
               // url:"{{ url('/event/{id?}') }}",
               headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
               data : { id : data_id},
-              
+
               success:function(data) {
-                $('#carouselExample2').prepend(data.html);               
+                $('#carouselExample2').prepend(data.html);
                 $('#carouselExample').replaceWith($('#carouselExample2'));
                }
             });
 
-          
+
           $('#carouselExample2').css('display', 'block');
           $('.close-gallery').removeClass('d-none').addClass('d-block animation-duration2 fadeInDown');
           $('.page-footer').hide();
 
-          
-          
+
+
         }
       }
     );

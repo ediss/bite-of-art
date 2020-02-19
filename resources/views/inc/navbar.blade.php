@@ -4,25 +4,33 @@
             <div class="row">
                 <div class="col-4">
                     <div class="logo">
-                        <a href="{{ url()->previous() }}">
-                             <img src="{{ asset('images/logo.png') }}" class="img-fluid logo-img" alt="logo">
-                        </a>
+                    <a class="navbar-brand m-auto" href="{{ url('/') }}">
+                        <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">
+                    </a>
+
                     </div>
 
                     <div class="close-gallery d-none"></div>
                 </div>
 
                 <div class="col-4 text-center">
-                    <div class="live">
+
+                    <a class="navbar-brand m-auto" href="#">
                         <img src="{{ asset('images/live.png') }}" class="img-fluid" alt="live" id="flip">
+                    </a>
+                    <div class="live">
+
                     </div>
                 </div>
 
-                <div class="col-4 button_container" id="toggle">
-                    <span class="top"></span>
-                    <span class="middle"></span>
-                    <span class="bottom"></span>
+                <div class="col-4">
+                    <div class="button_container" id="toggle">
+                        <span class="top"></span>
+                        <span class="middle"></span>
+                        <span class="bottom"></span>
+                    </div>
                 </div>
+
             </div>
         </div>
 
@@ -36,8 +44,8 @@
                     <div class="row m-35px">
                         <div class="col-10 text-right montserrat-regular login">
                             @if (Auth::check())
-                                <a href="{{ route('logout') }}" class="">LOGOUT</a>
-                                <span class="ml-3 mr-3 menu-span">|</span>
+                            <a href="{{ route('logout') }}" class="">LOGOUT</a>
+                            <span class="ml-3 mr-3 menu-span">|</span>
                             <a href="{{ route('gallerist.dashboard') }}" class="">ACCOUNT</a>
                             @else
                             <a href="{{ route('login') }}" class="">LOG IN</a>
@@ -45,7 +53,7 @@
                             <a href="{{ route('register') }}" class="">BITE MEMBERSHIP</a>
                             @endif
 
-                            
+
                         </div>
                     </div>
                 </div>

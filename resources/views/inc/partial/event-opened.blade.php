@@ -2,15 +2,14 @@
     @php
         $counter = 0;
         // $next_id=$next->id;
-
     @endphp
 
-<div class="carousel-inner carousel-inner-gallery w-140 transform-img p-0 m-0 next-id" role="listbox" next-id = {{ $next->id }}>
+<div class="carousel-inner carousel-inner-gallery w-140-300 transform-img p-0 m-0 next-id" role="listbox" {{ $next ? 'next_id='.$next->id : '' }}>
 
 
 
 
-    <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4 active" style="visibility: hidden">
+    <div class="carousel-item carousel-item-gallery col-1 col-md-4 col-lg-4 active" style="visibility: hidden">
         
         <div class="card">
             <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/logo.png' }}" alt="slide 1">
@@ -18,12 +17,12 @@
     </div>
 
 
-    <div class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-md-4 col-lg-4">
+    <div class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12 col-md-4 col-lg-4">
         @php
             $counter ++;
         @endphp
         <div class="card">
-            <div class="gallery-first-slide montserrat-regular">
+            <div class="gallery-first-slide montserrat-regular text-center text-md-left">
                 <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
                     {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p>
                 <p>
@@ -47,7 +46,7 @@
     </div>
 
 
-    <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
+    <div class="carousel-item carousel-item-gallery  col-12 col-md-4 col-lg-4">
         @php
             $counter++;
         @endphp
@@ -64,7 +63,7 @@
         @php
             $counter++;
         @endphp
-    <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
+    <div class="carousel-item carousel-item-gallery  col-12 col-md-4 col-lg-4">
         <div class="card">
             <img class="img-fluid  d-block gallery-img" src="{{ $data->event_img_1 }}"
                 alt="slide 2">
@@ -78,7 +77,7 @@
         @php
             $counter++;
         @endphp
-    <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
+    <div class="carousel-item carousel-item-gallery  col-12 col-md-4 col-lg-4">
         <div class="card">
             <img class="img-fluid  d-block gallery-img" src="{{ $data->event_img_2 }}"
                 alt="slide 2">
@@ -92,7 +91,7 @@
         @php
             $counter++;
         @endphp
-    <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
+    <div class="carousel-item carousel-item-gallery  col-12 col-md-4 col-lg-4">
         <div class="card">
             <img class="img-fluid  d-block gallery-img" src="{{ $data->event_img_3 }}"
                 alt="slide 2">
@@ -102,7 +101,7 @@
     </div>
     @endif
 
-    <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
+    <div class="carousel-item carousel-item-gallery  col-12 col-md-4 col-lg-4">
         @php
             $counter++;
         @endphp

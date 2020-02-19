@@ -3,7 +3,7 @@
 
     <div class="row">
 
-        <div class="col-md-12" id="artwork-header" style="background-color:#e6e6e6">
+        <div class="col-md-12" id="artwork-header" style="background-color:#cccccc">
 
             <div class="row elements-mid-align">
                 <div class="col-md-2">
@@ -63,14 +63,14 @@
                     </div>
 
 
-                    <div class=" col-8">
+                    <div class="col-7">
 
-                        <textarea class="form-control border-0" name="artwork_cover_description"
+                        <textarea class="form-control border-0" name="artwork_cover_description" maxlength="700" onkeyup="charCount(this)"
                             placeholder="About Artwork"
                             id="artwork_cover_description">{{ Request::get('artwork_cover_description') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
-
-
+                    </div>
+                    <div class="col-1">
+                        <span class="float-left">700</span>
                     </div>
 
                     <div class="col-md-2">
@@ -102,12 +102,13 @@
                     </div>
 
 
-                    <div class=" col-8">
-                        <textarea class="form-control border-0" name="artwork_image_1_desc"
+                    <div class="col-7">
+                        <textarea class="form-control border-0" name="artwork_image_1_desc" maxlength="700" onkeyup="charCount(this)"
                             placeholder="Additional photo #1 description"
                             id="artwork_image_1_desc">{{ Request::get('artwork_image_1_desc') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
-
+                    </div>
+                    <div class="col-1">
+                        <span class="float-left">700</span>
                     </div>
 
                     <div class="col-md-2">
@@ -133,11 +134,13 @@
                     </div>
 
 
-                    <div class=" col-8">
-                        <textarea class="form-control border-0" name="artwork_image_2_desc"
+                    <div class="col-7">
+                        <textarea class="form-control border-0" name="artwork_image_2_desc" maxlength="700" onkeyup="charCount(this)"
                             placeholder="Additional photo #2 description"
                             id="artwork_image_2_desc">{{ Request::get('artwork_image_2_desc') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                    </div>
+                    <div class="col-1">
+                        <span class="float-left">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -158,11 +161,13 @@
                     </div>
 
 
-                    <div class=" col-8">
-                        <textarea class="form-control border-0" name="artwork_image_3_desc"
+                    <div class="col-7">
+                        <textarea class="form-control border-0" name="artwork_image_3_desc" maxlength="700" onkeyup="charCount(this)"
                             placeholder="Additional photo #3 description"
                             id="artwork_image_3_desc">{{ Request::get('artwork_image_3_desc') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                    </div>
+                    <div class="col-1">
+                        <span class="float-left">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -181,11 +186,13 @@
                     </div>
 
 
-                    <div class=" col-5">
-                        <textarea class="form-control border-0" name="artwork_media_desc"
+                    <div class="col-4">
+                        <textarea class="form-control border-0" name="artwork_media_desc" maxlength="700" onkeyup="charCount(this)"
                             placeholder="Media file description"
                             id="artwork_media_desc">{{ Request::get('artwork_media_desc') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                    </div>
+                    <div class="col-1">
+                        <span class="float-left">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -198,10 +205,12 @@
                     </div>
 
 
-                    <div class=" col-9">
-                        <textarea class="form-control border-0" name="artwork_note" placeholder="Note"
+                    <div class="col-8">
+                        <textarea class="form-control border-0" name="artwork_note" placeholder="Note" maxlength="700" onkeyup="charCount(this)"
                             id="artwork_note">{{ Request::get('artwork_note') }}</textarea>
-                        {{-- <span class="float-right" id="event_desc_count">700</span> --}}
+                    </div>
+                    <div class="col-1">
+                        <span class="float-left">700</span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -212,7 +221,7 @@
                 <div class="row w-100">
                     <div class="col-md-6 offset-3">
                         <div class="next-btn">
-                            <button class="my-btn save_artwork">NEXT</button>
+                            <button class="my-btn save_artwork">SAVE ARTWORK</button>
                             {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
                         </div>
                     </div>

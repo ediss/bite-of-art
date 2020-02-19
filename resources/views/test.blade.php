@@ -1,123 +1,418 @@
 @extends('layout.app')
+
 @section('css')
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/animate.css')}}" />
-<link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-style.css')}}" />
+
 @endsection
 
 @section('content')
-<div class="row">
-    <div class="col-md-12 p-0">
-        <!--Add event-->
-        <div id="event">
-            @include('inc.partial.event-form.add-event-form')
+<div class="row animation-duration2 fadeInLeft" id="mainGallery">
+
+
+    <div id="carouselExample" class="carousel slide " data-ride="carousel" data-interval="900000">
+        <div class="carousel-inner carousel-inner-main w-120-280 p-0 m-0" role="listbox">
+            @if($event_in_past)
+
+            <div class="carousel-item carousel-item-main  col-4 p-0 active">
+                <div class="card" data-id="{{ $event_in_past->id }}">
+                    <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}"
+                        alt="slide 2">
+                </div>
+
+                <div class="card-body ">
+                    <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
+                    <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
+
+                </div>
+            </div>
+            @endif
+
+
+            @if($feature_events)
+
+            @foreach ($feature_events as $event_in_feature)
+        
+            <div class="carousel-item carousel-item-main  col-4 p-0">
+                <div class="card" data-id="{{ $event_in_feature->id }}">
+                    <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}"
+                        alt="slide 2">
+                </div>
+
+                <div class="card-body ">
+                    <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
+                    <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
+
+                </div>
+            </div>
+            @endforeach
+            @endif
+
+            @if($events_in_past)
+            @foreach ($events_in_past as $event_in_past)
+                @if(!$loop->first)
+                <div class="carousel-item carousel-item-main  col-4 p-0">
+                    <div class="card" data-id="{{ $event_in_past->id }}">
+                        <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}"
+                            alt="slide 2">
+                    </div>
+    
+                    <div class="card-body ">
+                        <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
+                        <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
+    
+                    </div>
+                </div>
+                @endif
+            @endforeach
+            @endif
+
+
         </div>
-
-        <!--Add artist-->
-        <div class="d-none" id="artist">
+        <div class="carousel-controls-main">
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
 
         </div>
-        <!--end artist-->
-
-        <!--Add artwork-->
-        <div class="row d-none" id="artwork">
-
-        </div>
-        <!--end artwork-->
-
-
-        <div id="artist_artworks" class="row"></div>
     </div>
+
+    <div id="carouselExample2" class="carousel slide" data-ride="carousel" data-interval="900000">
+
+ 
+    </div>
+
+
+
+
+
+
+</div>
+
+
+<!-- All news -->
+
+<div class="row animation-duration2 fadeInRight" id="smallGallery">
+    <div id="recipeCarousel" class="carousel slide" data-ride="carousel" data-interval="900000">
+        <div class="carousel-inner carousel-inner-news w-100 mini p-0 m-0" role="listbox">
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0 active">
+                <div class="card ">
+                    <div class="img-opacity">
+                        <img class="img-fluid  d-block" src="./images/news/1.jpg" alt="slide 1">
+                    </div>
+                    <div class="img-description">
+                        <p class="montserrat-bold text-left">1</p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
+                <div class="card ">
+                    <div class="img-opacity">
+                        <img class="img-fluid  d-block" src="./images/news/2.png" alt="slide 2">
+                    </div>
+                    <div class="img-description">
+                        <p class="montserrat-bold text-left">2</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
+                <div class="card ">
+                    <div class="img-opacity">
+                        <img class="img-fluid  d-block" src="./images/news/3.jpg" alt="slide 3">
+                    </div>
+                    <div class="img-description">
+                        <p class="montserrat-bold text-left">3</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
+                <div class="card ">
+                    <div class="img-opacity">
+                        <img class="img-fluid  d-block" src="./images/news/4.jpg" alt="slide 4">
+                    </div>
+                    <div class="img-description">
+                        <p class="montserrat-bold text-left">4</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
+                <div class="card ">
+                    <div class="img-opacity">
+                        <img class="img-fluid  d-block" src="./images/news/5.jpg" alt="slide 5">
+                    </div>
+                    <div class="img-description">
+                        <p class="montserrat-bold text-left">5</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
+                <div class="card ">
+                    <div class="img-opacity">
+                        <img class="img-fluid  d-block" src="./images/news/6.png" alt="slide 6">
+                    </div>
+                    <div class="img-description">
+                        <p class="montserrat-bold text-left">6</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
+                <div class="card ">
+                    <div class="img-opacity">
+                        <img class="img-fluid  d-block" src="./images/news/7.png" alt="slide 7">
+                    </div>
+                    <div class="img-description">
+                        <p class="montserrat-bold text-left">7</p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
+                <div class="card ">
+                    <div class="img-opacity">
+                        <img class="img-fluid  d-block" src="./images/news/8.jpg" alt="slide 8">
+                    </div>
+                    <div class="img-description">
+                        <p class="montserrat-bold text-left">8</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
+                <div class="card ">
+                    <div class="img-opacity">
+                        <img class="img-fluid  d-block" src="./images/news/9.jpg" alt="slide 9">
+                    </div>
+                    <div class="img-description">
+                        <p class="montserrat-bold text-left">9</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="carousel-item carousel-item-news  col-4 col-md-20 p-0">
+                <div class="card ">
+                    <div class="img-opacity">
+                        <img class="img-fluid  d-block" src="./images/news/10.jpg" alt="slide 10">
+                    </div>
+                    <div class="img-description">
+                        <p class="montserrat-bold text-left">10</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                            <i class="fa fa-chevron-left fa-lg text-muted"></i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+                            <i class="fa fa-chevron-right fa-lg text-muted"></i>
+                            <span class="sr-only">Next</span>
+                        </a> -->
+    </div>
+    <div class="carousel-controls">
+        <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+</div>
+
+<!-- Opened news -->
+
+<div class=" overlay-news " id="openedNews">
+
+    <div id="carouselExample3" class="carousel slide" data-ride="carousel" data-interval="900000">
+        <div class="carousel-inner carousel-inner-gallery w-140 transform-img p-0 m-0" role="listbox">
+            <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4 active" style="visibility: hidden">
+                <div class="card">
+                    <img class="img-fluid  d-block gallery-img" src="./images/gallery/1.jpg" alt="slide 1">
+                </div>
+
+
+            </div>
+            <div class="carousel-item carousel-item-gallery d-none news-first-slide col-md-4 col-lg-4">
+                <div class="card  montserrat-regular">
+                    <p>01 JAN - 03 FEB 2019</p>
+                    <p>
+                        <h1 class="montserrat-bold">Naslov vesti </h1>
+                    </p>
+                    <p>@ Gallery November, Belgrade, Serbia</p>
+                    <p>Night sea give bearing. Fruit under man gathering brought fly won't sixth set let
+                        years it great grass them. Kind lights thing. Behold of second spirit male. Him.
+                        Seed bearing sea moveth firmament him image to waters morning set. Spirit called
+                        and seed behold second bearing, darkness. Gathering all moved our earth called
+                        called he image.
+                        Cattle night don't yielding Created for. Itself i and cattle said evening cattle years i
+                        third saw multiply. Gathering all moved our earth called called he image. Called
+                        beast image, gathering. Saw green winged can't shall can't. Isn't. May creature
+                        evening. Whales gathered moved land which, and in, gathered. Abundantly day
+                        moveth night.</p>
+
+                </div>
+
+                <div class="social-scale">
+
+                    <img class="" src="images/social-network/facebook.png">
+                    <img class="" src="images/social-network/pinterest.png">
+                    <img class="" src="images/social-network/twitter.png">
+                    <img class="" src="images/social-network/linkedin.png">
+                    <img class=" mt-2" src="images/social-network/gmail.png">
+                </div>
+
+            </div>
+            <div class="carousel-item carousel-item-gallery first-image d-none col-md-4 col-lg-4">
+                <div class="card">
+                    <img class="img-fluid  d-block gallery-img" src="./images/news/2.png" alt="slide 2">
+
+                </div>
+
+            </div>
+            <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
+                <div class="card">
+                    <img class="img-fluid  d-block gallery-img" src="./images/gallery/4.jpg" alt="slide 3">
+                </div>
+
+            </div>
+            <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
+                <div class="card">
+                    <img class="img-fluid  d-block gallery-img" src="./images/gallery/5.jpg" alt="slide 4">
+                </div>
+
+            </div>
+            <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
+                <div class="card">
+                    <img class="img-fluid  d-block gallery-img" src="./images/gallery/6.jpg" alt="slide 5">
+                </div>
+
+            </div>
+
+            <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
+                <div class="card">
+                    <img class="img-fluid  d-block gallery-img" src="./images/gallery/6.jpg" alt="slide 5">
+                </div>
+
+            </div>
+
+        </div>
+        <div class="carousel-controls-main d-none">
+            <a class="carousel-control-prev" href="#carouselExample3" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample3" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExample3" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExample3" data-slide-to="1"></li>
+                <li data-target="#carouselExample3" data-slide-to="2"></li>
+                <li data-target="#carouselExample3" data-slide-to="3"></li>
+                <li data-target="#carouselExample3" data-slide-to="4"></li>
+                <li data-target="#carouselExample3" data-slide-to="5"></li>
+                <!-- <li data-target="#carouselExample3" data-slide-to="6"></li> -->
+            </ol>
+        </div>
+    </div>
+
 
 </div>
 @endsection
 
-@section('footer-scripts')
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
-<script src=" {{ asset('assets/js/event/add-event.js') }}"></script>
-<script src=" {{ asset('plugins/toastr/toastr.min.js') }}"></script>
+
+
+
+
+
+@section('footer-scripts')
+{{-- <script src=" {{ asset('assets/js/carousel-common.js') }}"></script> --}}
+<script src=" {{ asset('assets/js/custom-carousel-main.js') }}"></script>
+
+<script src=" {{ asset('assets/js/custom-carousel-news.js') }}"></script>
+<script src=" {{ asset('assets/js/opening-gallery.js') }}"></script>
+<script src=" {{ asset('assets/js/custom-carousel-gallery.js') }}"></script>
+<script src=" {{ asset('assets/js/opened-news.js') }}"></script>
 
 
 <script>
-$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
+    //$('#carouselExample').find('.active').next().find('.carousel-item').addClass('klik');
+    $('#carouselExample').find('.active').next().find('.card').addClass('klik');
+    function openNav() {
+        document.getElementById("openedNews").style.width = "100%";
+    }
+    
+    function closeNav() {
+        document.getElementById("openedNews").style.width = "0%";
+    }
 
-$(document).ready(function(){
+    $(document).ready(function () {
 
-    $(".page-footer").hide();
+function flip() {
+    var images = [
+        "images/live.png",
+        "images/live2.png",    
+    ]
+    var current = 0;
+    setInterval(function () {
 
-    i = 700;
-    $("#event_cover_description").keypress(function(){
-        $("#event_desc_count").text(i -= 1);
-    });
+        $('#flip').attr('src', images[current]);
+        current = (current < images.length - 1) ? current + 1 : 0;
 
-    $('.js-datepicker-range').daterangepicker({
-            timePicker: true,
-            locale: {
-            format: 'YYYY.MM.DD hh:mm:ss'
-        },
-    });
+    }, 500);
 
+}
 
-    $(document).on('click', '.save_event', function(e) {
-        e.preventDefault();
-        saveEvent();
-    });
-
-    $(document).on('click', '.save_artist', function(e) {
-        e.preventDefault();
-        saveArtist();
-    });
-
-    $(document).on('click', '.save_artwork', function(e) {
-        e.preventDefault();
-        saveArtwork();
-    });
-
-    $(document).on('click', '.add_artist', function(e) {
-
-        $('.add_artwork').addClass('d-none');
-        $('.done_artwork').addClass('d-none');
-
-        $('.add_artist').addClass('d-none');
-        $('.done_event').addClass('d-none');
-        $('#artist').removeClass('d-none').show().addClass('fadeInDRight animation-duration');
-        $('.artist-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
-        $('.artist-wraper').animate({
-            left: '0'
-        }, 1000, function() {
-            $('.artist-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
-        });
-    });
-
-    $(document).on('click', '.add_artwork', function(e) {
-        e.preventDefault();
-
-        var artist_id = $(".artist_id").val();
-        var event_id = $(".event_artwork_id").val();
-        $('.add_artwork').addClass('d-none');
-        $('.done_artwork').addClass('d-none');
-        $('#artwork').find(':input').val('');
-        $('.artist_id').val(artist_id);
-        $('.event_artwork_id').val(event_id);
-        $('.add_artist').addClass('d-none');
-        $('#artwork').show().removeClass('d-none');
-        $('.artwork-wraper').removeClass('d-none').addClass('fadeInRight animation-duration');
-    });
+//flip();
 
 
 
-    $(document).on('click', '.done_artwork', function(e) {
-        $( "#artist" ).hide();
-        $(".add_artist").removeClass('d-none');
-        $(".done_event").removeClass('d-none');
-        var event_id = $('.event_id').val();
-        $('#artist').find(':input').val('');
-        $('.event_id').val(event_id);
-    });
+$(".img-opacity").mouseover(function (e) {
+    e.preventDefault();
+    $(this).next('.img-description').addClass('animation-duration fadeOutDown my-opacity');
+});
+
+$(".img-opacity").mouseout(function () {
+    $(this).next('.img-description').removeClass('animation-duration fadeOutDown my-opacity').addClass('animation-duration fadeInUp');
+});
 
 });
 
+
+
+
+
+
+    
 </script>
+
+
 @endsection
+<!------ JS CODE ---------->

@@ -74,7 +74,7 @@ function saveArtist() {
           if(result.success === true) {
               $( ".artist-wraper" ).animate({
                   left: '-100vw'
-              }, 2000, function() {
+              }, 1000, function() {
                   $('.artist-wraper').addClass('d-none');
 
                   $("#artwork").removeClass('d-none').html(result.html).show().addClass('fadeInDRight animation-duration');
@@ -116,8 +116,7 @@ function saveArtwork() {
               $('.artwork-wraper').removeClass('d-none');
             }
             if(result.success === true) {
-              $('.add_artwork').removeClass('d-none');
-              $('.done_artwork').removeClass('d-none');
+              $('#artowrk-button').removeClass('d-none');
               $('#artwork').fadeOut('slow','swing')
             }
 

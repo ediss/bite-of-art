@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Artist;
 use App\Models\Artwork;
+use App\Models\News;
 use Validator;
 use Response;
 use View;
@@ -17,6 +18,31 @@ class EventController extends Controller
     // public function __construct() {
     //     $this->middleware('auth');
     // }
+
+    public function test() {
+
+        $event = new Event();
+
+        //$today = Carbon::now();
+
+        $today = date('Y-m-d H:i:s');
+
+        $event_in_past = $event::where('approved', '=', 1)
+        ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->first();
+
+        $events_in_past = $event::where('approved', '=', 1)
+        ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->get();
+
+        $feature_events = $event::where('approved', '=', 1)
+        ->where('event_open', '>=', $today)->orderBy('event_open')->get();
+
+
+        return view('test', [
+            'event_in_past'  => $event_in_past,
+            'events_in_past' => $events_in_past,
+            'feature_events' => $feature_events
+        ]);
+    }
 
     public function index() {
 
@@ -66,11 +92,6 @@ class EventController extends Controller
         return Response::json(["html" => $html]);
 
     }
-
-    public function test() {
-        return view('test');
-    }
-
 
 
     public function submitEvent(Request $request) {
@@ -200,7 +221,7 @@ class EventController extends Controller
             return Response::json(["html" => $html, 'success' => false]);
         }
 
-        return view('test', ['validator' => $validator]);
+        return view('gallerist.add-new-event', ['validator' => $validator]);
 
 
     }
@@ -235,9 +256,6 @@ class EventController extends Controller
                 $artist_media        = $request->input('artist_media');
                 $artist_media_desc   = $request->input('artist_media_desc');
                 $artist_note         = $request->input('artist_note');
-
-                $gallerist_id        = 1; // id gallerist from auth
-
 
                 if ($request->hasFile('artist_cover')) {
                     $artist_cover        = $request->file('artist_cover');
@@ -283,6 +301,7 @@ class EventController extends Controller
                 $artistObj->artist_note           = $artist_note;
                 $artistObj->event_id              = $event_id;
                 $artistObj->nfc_tag               = 'nfc_tag';
+                $artistObj->gallerist_id          = Auth::user()->id;
 
 
 
@@ -296,6 +315,7 @@ class EventController extends Controller
                         'validator'  => $validator
 
                     ])->render();
+                    $message = ["success", $artist_name. " is saved"];
 
                     return Response::json(["html" => $html, 'success' => true, 'message' => $message]);
                 }else {
@@ -348,8 +368,6 @@ class EventController extends Controller
                 $artwork_media_desc   = $request->input('artwork_media_desc');
                 $artwork_note         = $request->input('artwork_note');
 
-                $gallerist_id        = 1; // id gallerist from auth
-
 
                 if ($request->hasFile('artwork_cover')) {
                     $artwork_cover        = $request->file('artwork_cover');
@@ -396,10 +414,18 @@ class EventController extends Controller
                 $artworkObj->artwork_note           = $artwork_note;
                 $artworkObj->event_id               = $event_id;
                 $artworkObj->artist_id              = $artist_id;
-                $artworkObj->nfc_tag                = 'nfc_tag';
-
+                $artworkObj->nfc_tag                = 'nfc_tag';//event_nfc_tag+artwork(prva tri slova)+artworkID
 
                 if($artworkObj->save()) {
+                    
+                    $event_tag = Event::find($event_id);
+
+                    $artwork_nfc_tag = $event_tag->nfc_tag.substr($artwork_name, 0, 3).$artworkObj->id;
+                    
+
+                    Artwork::where('id', $artworkObj->id)->update(array('nfc_tag' => $artwork_nfc_tag));
+
+                    $message = ["success", $artwork_name. " is saved"];
                     return Response::json(["result" => $artist_id, 'success' => true, 'message' => $message]);
                 }
                 else {
