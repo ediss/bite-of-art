@@ -21,8 +21,29 @@
 
 
 <div class="container-fluid">
+    {{-- <div class="row">
+        <div class="col-4">
+            <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">
+        </div>
 
-    @include('inc.navbar')
+        <div class="col-4 text-center">
+            <img src="{{ asset('images/live.png') }}" class="img-fluid" alt="">
+        </div>
+
+
+        <div class="col-4 ">
+            <div class="button_container" id="toggle">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+
+        </div>
+    </div> --}}
+
+        @include('inc.navbar')
+
+    
 
     @yield('content')
 
