@@ -3,12 +3,12 @@
         <div class="col-12 p-0">
             <div class="row">
                 <div class="col-4">
-                    {{-- <div class="logo"> --}}
+                    <div class="logo">
                     <a class="navbar-brand m-auto" href="{{ url('/') }}">
                         <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">
                     </a>
 
-                    {{-- </div> --}}
+                    </div>
 
                     <div class="close-gallery d-none"></div>
                 </div>

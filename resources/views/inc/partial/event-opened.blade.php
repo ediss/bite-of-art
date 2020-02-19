@@ -2,10 +2,9 @@
     @php
         $counter = 0;
         // $next_id=$next->id;
-
     @endphp
 
-<div class="carousel-inner carousel-inner-gallery w-140 transform-img p-0 m-0 next-id" role="listbox" next-id = {{ $next->id }}>
+<div class="carousel-inner carousel-inner-gallery w-140-300 transform-img p-0 m-0 next-id" role="listbox" next-id = {{ $next->id }}>
 
 
 

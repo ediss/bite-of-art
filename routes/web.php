@@ -54,7 +54,7 @@ Route::group([
 
 Route::any('/ajax',             'EventController@ajaxTest')->middleware('auth');
 
-Route::post('/event',           'EventController@ajaxLoadEventData')->middleware('auth');
+Route::post('/event',           'EventController@ajaxLoadEventData');
 
 //Route::post('/submitEvent',     'EventController@submitEvent');
 

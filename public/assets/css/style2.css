@@ -210,9 +210,14 @@ body {
     width:280%;
   }
 
-  #carouselExample .w-140-300 {
+
+  .w-140-300 {
     width:240%;
   }
+
+  /* #carouselExample2 .w-140-300 {
+    width:240%;
+  } */
   
   #carouselExample .carousel-inner-main {
     left: -90%;
@@ -622,7 +627,12 @@ body {
     width: 120%;
   }
 
+
   #carouselExample .w-140-300 {
+    width: 140%;
+  }
+
+  #carouselExample2 .w-140-300 {
     width: 140%;
   }
 
@@ -1665,7 +1675,7 @@ input[type=submit]:hover {
   width: 140%;
 }
 
-#mainGallery .w-140 {
+#mainGallery .w-140-300 {
   
   left: -62%;
 }
@@ -1732,9 +1742,7 @@ input[type=submit]:hover {
 }
 
 .logo {
-  /* position: absolute; */
-  position: fixed;
-  top:0;
+
 }
 
 .klik:hover {

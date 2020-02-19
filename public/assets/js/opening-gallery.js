@@ -19,7 +19,7 @@
 
 
     $("#smallGallery").animate({
-      right: '150%'
+      right: '250%'
     },1000);
 
     
