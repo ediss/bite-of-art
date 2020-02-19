@@ -1,6 +1,8 @@
 
 
   $("#mainGallery").on("click", ".klik", function() {
+
+    $("#carouselExample .carousel-inner-main").addClass('w-140-300');
     
 
     var data_id = $(this).attr("data-id");
@@ -58,7 +60,7 @@
             "transform-origin": "0 0",
             transition: "transform 1.9s ease-in-out, width 1.9s ease-in-out",
             transform: "scale(1.6) translate3d(0, 0, 0)",
-            width: "140%"
+            // width: "140%"
           });
 
           $(this)
