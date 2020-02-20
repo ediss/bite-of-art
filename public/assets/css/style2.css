@@ -370,9 +370,9 @@ body {
 
   /*MAIN GALLERY*/
   /* show 3rd of 3 item slide */
-  .carousel-inner-main .active + .carousel-item-main + .carousel-item-main {
+  /* .carousel-inner-main .active + .carousel-item-main + .carousel-item-main {
     display: block;
-  }
+  } */
 
   .carousel-inner-main
     .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
@@ -386,15 +386,6 @@ body {
     transform: translate3d(0, 0, 0);
   }
 
-  /* left or forward direction */
-  .carousel-item-next.carousel-item-left
-    + .carousel-item-main
-    + .carousel-item-main
-    + .carousel-item-main {
-    position: relative;
-    transform: translate3d(-100%, 0, 0);
-    visibility: visible;
-  }
 
   /* right or prev direction */
   .carousel-item-prev.carousel-item-right
@@ -453,31 +444,10 @@ body {
 @media (min-width: 320px) {
   /*MAIN GALLERY*/
 
-  /* show 3th item */
-  .carousel-inner-main .active + .carousel-item-main + .carousel-item-main {
-    display: block;
-  }
+/* 
 
-  .carousel-inner-main
-    .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left)
-    + .carousel-item-main
-    + .carousel-item-main
-    + .carousel-item-main {
-    transition: none;
-  }
 
-  /* right or prev direction //t - previous slide direction last item animation fix */
-  /* .carousel-item-prev.carousel-item-right
-    + .carousel-item-main
-    + .carousel-item-main
-    + .carousel-item-main
-    + .carousel-item-main {
-    position: relative;
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-    display: block;
-    visibility: visible;
-  } */
+
 
   /*OPENED GALLERY*/
 
@@ -500,26 +470,11 @@ body {
 @media (min-width: 320px) {
   /*MAIN GALLERY*/
   /* show 5th and 6th item */
-  .carousel-inner-main .active + .carousel-item-main + .carousel-item-main,
   .carousel-inner-main .active + .carousel-item-main + .carousel-item-main {
     display: block;
   }
 
-  .carousel-inner-main
-    .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left)
-    + .carousel-item-main
-    + .carousel-item-main
-    + .carousel-item-main
-    + .carousel-item-main,
-  .carousel-inner-main
-    .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left)
-    + .carousel-item-main
-    + .carousel-item-main
-    + .carousel-item-main
-    + .carousel-item-main
-    + .carousel-item-main {
-    transition: none;
-  }
+
 
   /*show 7th slide for animation when its a 6 slides carousel */
   .carousel-inner-main
@@ -1226,9 +1181,9 @@ body {
     /* display: none; */
   }
 
-  .carousel-inner .carousel-item > div:first-child {
+  /* .carousel-inner .carousel-item > div:first-child {
     display: block;
-  }
+  } */
 
   .carousel-controls-main {
     left: 3%;

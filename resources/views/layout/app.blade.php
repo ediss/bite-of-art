@@ -10,7 +10,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-menu.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style2.css')}}" />
+    {{-- <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style2.css')}}" /> --}}
 
     @yield('css')
 
@@ -20,7 +20,7 @@
 </head>
 
 
-<div class="container-fluid">
+<div class="container-fluid p-0">
     {{-- <div class="row">
         <div class="col-4">
             <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">

@@ -37,7 +37,7 @@ class EventController extends Controller
         ->where('event_open', '>=', $today)->orderBy('event_open')->get();
 
 
-        return view('test', [
+        return view('test-index', [
             'event_in_past'  => $event_in_past,
             'events_in_past' => $events_in_past,
             'feature_events' => $feature_events

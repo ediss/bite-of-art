@@ -1,4 +1,4 @@
-<div class="row h-100px">
+<div class="row h-80px h-100px">
     <nav class="navbar navbar-light  lighten-4  w-100 p-0 h-100">
         <div class="col-12 p-0">
             <div class="row">
