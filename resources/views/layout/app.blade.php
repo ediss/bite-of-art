@@ -21,64 +21,70 @@
 
 <body>
 
-<div class="container-fluid p-0">
-    {{-- <div class="row">
+    <div class="container-fluid p-0">
+        {{-- <div class="row">
         <div class="col-4">
             <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">
+    </div>
+
+    <div class="col-4 text-center">
+        <img src="{{ asset('images/live.png') }}" class="img-fluid" alt="">
+    </div>
+
+
+    <div class="col-4 ">
+        <div class="button_container" id="toggle">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
         </div>
 
-        <div class="col-4 text-center">
-            <img src="{{ asset('images/live.png') }}" class="img-fluid" alt="">
-        </div>
-
-
-        <div class="col-4 ">
-            <div class="button_container" id="toggle">
-                <span class="top"></span>
-                <span class="middle"></span>
-                <span class="bottom"></span>
-            </div>
-
-        </div>
+    </div>
     </div> --}}
 
-        @include('inc.navbar')
+    @include('inc.navbar')
 
-    
+
 
     @yield('content')
 
-</div>
 
 
-<!-- Footer -->
-<div class="row">
-    <footer class="page-footer footer">
+    <!-- Footer -->
+    <div class="row">
+        <div class="col-12">
+            <footer class="page-footer footer">
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center ">All rights reserved © BITE of art 2020
+                <!-- Copyright -->
+                <div class="footer-copyright text-center ">All rights reserved © BITE of art 2020
+                </div>
+                <!-- Copyright -->
+
+            </footer>
         </div>
-        <!-- Copyright -->
 
-    </footer>
-</div>
+    </div>
 
-<!-- Footer -->
+    <!-- Footer -->
 
-<!--Scripts-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-</script>
-
-<script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
-<script src="/plugins/jquery.blockUI.js"></script>
-<script src="/assets/js/common/global.js"></script>
+    </div>
 
 
-<script>
-    function charCount(el) {
+
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/plugins/jquery.blockUI.js"></script>
+    <script src="/assets/js/common/global.js"></script>
+
+
+    <script>
+        function charCount(el) {
         $(this).keyup(function(e){
             e.preventDefault();
             var characterCount = el.value.length;
@@ -93,9 +99,9 @@ $('#toggle').click(function () {
     $('#overlay').toggleClass('open');
 
 });
-</script>
+    </script>
 
-@yield('footer-scripts')
+    @yield('footer-scripts')
 
 
 </body>

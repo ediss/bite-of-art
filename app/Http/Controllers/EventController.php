@@ -72,9 +72,6 @@ class EventController extends Controller
     public function ajaxLoadEventData(Request $request) {
 
         $id     = $request->input('id');
-        $slides = $request->input('slides');
-
-
 
         $event = new Event();
 

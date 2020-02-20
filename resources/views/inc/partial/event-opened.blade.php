@@ -4,7 +4,7 @@
         // $next_id=$next->id;
     @endphp
 
-<div class="carousel-inner carousel-inner-gallery w-140-300 transform-img p-0 m-0 next-id" role="listbox" {{ $next ? 'next_id='.$next->id : '' }}>
+<div class="carousel-inner carousel-inner-gallery transform-img p-0 m-0 next-id" role="listbox" {{ $next ? 'next_id='.$next->id : '' }}>
 
 
 
@@ -22,7 +22,7 @@
             $counter ++;
         @endphp
         <div class="card">
-            <div class="gallery-first-slide montserrat-regular text-center text-md-left">
+            <div class="gallery-first-slide montserrat-regular text-left">
                 <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
                     {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p>
                 <p>

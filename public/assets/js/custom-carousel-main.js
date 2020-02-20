@@ -1,4 +1,17 @@
 $(document).ready(function() {
+  // mobile
+
+  $("#carouselExampleIndicators").on("slide.bs.carousel", function(e) {
+    var active = $(e.relatedTarget);
+
+    $.each($(".carousel-item"), function(key, val) {
+      $(this).removeClass("klik");
+    });
+  
+    $(active).addClass("klik");
+
+  });
+
   $("#carouselExample .card-body").css({ opacity: 0 });
 
   $("#carouselExample .active")
@@ -28,6 +41,9 @@ $(document).ready(function() {
       $(this).carousel("prev");
     }
   });
+  
+  
+  
   
   
   

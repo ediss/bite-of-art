@@ -2,6 +2,8 @@ $(document).ready(function() {
 
     /*opening news*/
   $(".img-opacity").click(function() {
+
+    // alert('kliknuo');
     openNav();
 
     setTimeout(function() {

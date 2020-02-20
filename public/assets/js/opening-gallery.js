@@ -1,6 +1,7 @@
 $("#mainGallery").on("click", ".klik", function() {
     //$("#carouselExample .carousel-inner-main").addClass('w-140-300');
 
+    //event id
     var data_id = $(this).attr("data-id");
 
     $(".logo").animate({
@@ -47,6 +48,48 @@ $("#mainGallery").on("click", ".klik", function() {
             2000
         );
 
+    //for mobile
+
+    $("#carouselExampleIndicators .carousel-inner").animate(
+        { opacity: 1 },
+        {
+            step: function() {
+
+              $(this).find(".active").animate({ left: "100%"});
+              $(".page-footer").fadeOut('slow');
+            },
+            duration: 1000,
+
+            complete: function() {
+                $.ajax({
+                    type: "POST",
+                    url: "/event",
+                    // url:"{{ url('/event/{id?}') }}",
+                    headers: {
+                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+                            "content"
+                        )
+                    },
+                    data: { id: data_id },
+
+                    success: function(data) {
+                        $("#carouselExample2").prepend(data.html);
+                        $("#carouselExampleIndicators").replaceWith(
+                            $("#carouselExample2")
+                        );
+                    }
+                });
+
+                $("#carouselExample2").css("display", "block");
+                $(".close-gallery")
+                    .removeClass("d-none")
+                    .addClass("d-block animation-duration2 fadeInDown");
+                
+            }
+        }
+    );
+
+    //end of mobile animation
     $("#carouselExample .carousel-inner-main").animate(
         { opacity: 1 },
         {
@@ -59,12 +102,16 @@ $("#mainGallery").on("click", ".klik", function() {
                     // alert('radi');
                     $(this).css({
                         "transform-origin": "50% 0",
-                        transition: "transform 4.9s ease-in-out, width 1.9s ease-in-out",
-                        transform: "scale(2.2) translate3d(0, 0, 0)",
+                        transition:
+                            "transform 4.9s ease-in-out, width 1.9s ease-in-out",
+                        transform: "scale(2.2) translate3d(0, 0, 0)"
                         // width: "140%"
                     });
 
-                    $(this).find('.active').next().fadeOut('slow');
+                    $(this)
+                        .find(".active")
+                        .next()
+                        .fadeOut("slow");
                 } else {
                     $(this).css({
                         "transform-origin": "0 0",
@@ -80,7 +127,7 @@ $("#mainGallery").on("click", ".klik", function() {
                         .find("img")
                         .addClass("new-transform");
 
-                        $(this)
+                    $(this)
                         .find(".p-0")
                         .removeClass("p-0");
                 }
@@ -102,8 +149,6 @@ $("#mainGallery").on("click", ".klik", function() {
                 //   transform: "translate3d(0.5%, 0, 0)",
                 //   transition: "transform 2.5s ease-in-out"
                 // });
-
-               
             },
             duration: 3000,
 
@@ -120,12 +165,14 @@ $("#mainGallery").on("click", ".klik", function() {
                     data: { id: data_id },
 
                     success: function(data) {
-                        $('#carouselExample2').prepend(data.html);
-                        $('#carouselExample').replaceWith($('#carouselExample2'));
+                        $("#carouselExample2").prepend(data.html);
+                        $("#carouselExample").replaceWith(
+                            $("#carouselExample2")
+                        );
                     }
                 });
 
-                $('#carouselExample2').css('display', 'block');
+                $("#carouselExample2").css("display", "block");
                 $(".close-gallery")
                     .removeClass("d-none")
                     .addClass("d-block animation-duration2 fadeInDown");
