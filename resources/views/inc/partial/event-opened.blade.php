@@ -4,20 +4,23 @@
         // $next_id=$next->id;
     @endphp
 
+
+
+
 <div class="carousel-inner carousel-inner-gallery transform-img p-0 m-0 next-id" role="listbox" {{ $next ? 'next_id='.$next->id : '' }}>
 
 
 
 
-    <div class="carousel-item carousel-item-gallery col-1 col-md-4 col-lg-4 active" style="visibility: hidden">
+    {{-- <div class="carousel-item carousel-item-gallery d-none d-lg-block col-1 col-md-4 col-lg-4 active" style="visibility: hidden">
         
         <div class="card">
             <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/logo.png' }}" alt="slide 1">
         </div>
-    </div>
+    </div> --}}
 
 
-    <div class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12 col-md-4 col-lg-4">
+    <div class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12 col-md-4 col-lg-4 active">
         @php
             $counter ++;
         @endphp
@@ -46,7 +49,7 @@
     </div>
 
 
-    <div class="carousel-item carousel-item-gallery  col-12 col-md-4 col-lg-4">
+    <div class="carousel-item carousel-item-gallery  p-0 p-lg-2 col-12 col-md-4 col-lg-4">
         @php
             $counter++;
         @endphp
@@ -63,7 +66,7 @@
         @php
             $counter++;
         @endphp
-    <div class="carousel-item carousel-item-gallery  col-12 col-md-4 col-lg-4">
+    <div class="carousel-item carousel-item-gallery p-0 p-lg-2 col-12 col-md-4 col-lg-4">
         <div class="card">
             <img class="img-fluid  d-block gallery-img" src="{{ $data->event_img_1 }}"
                 alt="slide 2">
@@ -77,7 +80,7 @@
         @php
             $counter++;
         @endphp
-    <div class="carousel-item carousel-item-gallery  col-12 col-md-4 col-lg-4">
+    <div class="carousel-item carousel-item-gallery p-0 p-lg-2  col-12 col-md-4 col-lg-4">
         <div class="card">
             <img class="img-fluid  d-block gallery-img" src="{{ $data->event_img_2 }}"
                 alt="slide 2">
@@ -91,7 +94,7 @@
         @php
             $counter++;
         @endphp
-    <div class="carousel-item carousel-item-gallery  col-12 col-md-4 col-lg-4">
+    <div class="carousel-item carousel-item-gallery p-0 p-lg-2 col-12 col-md-4 col-lg-4">
         <div class="card">
             <img class="img-fluid  d-block gallery-img" src="{{ $data->event_img_3 }}"
                 alt="slide 2">

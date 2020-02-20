@@ -45,6 +45,10 @@ body {
     height: 80px;
 }
 
+.animation-duration2 {
+   animation-duration: 2.8s;
+}
+
 #mainGallery,
 #smallGallery {
     position: relative;
@@ -152,15 +156,70 @@ body {
     visibility: visible;
 }
 
-/*news*/
 
-@media (min-width: 576px) {
-    #smallGallery .w-100 {
-        width: 100% !important;
-    }
+/*
+ *
+ *OPENED EVENT
+ *
+**/
+
+.carousel-indicators{
+    /* top:35px; */
+  }
+  .carousel-indicators li {
+    background-color: #cccccc;
+    width: 10px;
+    height:10px;
+    border-radius: 100%;
+  }
+  .carousel-indicators .active{
+    background-color: #000000;
+  }
+
+  .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 20px !important;
+  height: 20px !important;
+  cursor: pointer;
+  position: absolute;
+  bottom: 30px;
+
 }
 
-@media (min-width: 320px) {
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23c2c3c5' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+    -webkit-transition: background-image 0.5s; /* Safari */
+    -webkit-transition-delay: 0.5s;
+    transition: background-image 0.5s;
+    position: absolute;
+    bottom: 30px;
+  }
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23c2c3c5' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+
+    -webkit-transition: background-image 0.5s; /* Safari */
+    -webkit-transition-delay: 0.5s;
+    transition: background-image 0.5s;
+    transition-delay: 0.5s;
+    position: absolute;
+    bottom: 30px;
+  }
+
+
+  .carousel-control-prev-icon:hover {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/></svg>");
+  }
+
+  .carousel-control-next-icon:hover {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+  }
+
+
+/* .carousel-item-gallery {
+    margin-right: 0;
+} */
+/*news*/
     .carousel-item-news {
         margin-right: 0;
     }
@@ -233,7 +292,7 @@ body {
         display: block;
         visibility: visible;
     }
-}
+
 
 
 /*opened news*/
