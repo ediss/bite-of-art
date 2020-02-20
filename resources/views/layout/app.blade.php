@@ -19,6 +19,7 @@
 
 </head>
 
+<body>
 
 <div class="container-fluid p-0">
     {{-- <div class="row">
