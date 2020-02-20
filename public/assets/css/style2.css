@@ -221,7 +221,9 @@ body {
   /*main gallery*/
 
   #carouselExample .w-120 {
-    width:280%;
+    width:120%;
+    transform:scale(2.2);
+    transform-origin:50% 0;
   }
 
 
@@ -237,7 +239,7 @@ body {
   } */
   
   #carouselExample .carousel-inner-main {
-    left: -90%;
+    left: -10%;
   }
   #smallGallery .w-100 {
     width: 200% !important;
@@ -642,6 +644,7 @@ body {
   
   #carouselExample .w-120 {
     width: 120%;
+    transform: none;
   }
 
 
