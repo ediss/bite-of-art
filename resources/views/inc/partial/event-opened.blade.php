@@ -7,7 +7,7 @@
 
 
 
-<div class="carousel-inner carousel-inner-gallery transform-img p-0 m-0 next-id" role="listbox" {{ $next ? 'next_id='.$next->id : '' }}>
+<div class="carousel-inner carousel-inner-gallery transform-img p-0 m-0 next-id" role="listbox" {{ $next ? 'next-id='.$next->id : '' }}>
 
 
 

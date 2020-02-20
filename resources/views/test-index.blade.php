@@ -18,7 +18,7 @@
                 </ol> --}}
             <div class="carousel-inner">
                 @if($event_in_past)
-                <div class="carousel-item active" data-id="{{ $event_in_past->id }}"> 
+                <div class="carousel-item active" data-id="{{ $event_in_past->id }}">
 
                     <div class="card">
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
