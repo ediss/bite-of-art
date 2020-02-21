@@ -49,19 +49,13 @@ function openingEventAjax(carousel_div, event_id) {
         data: { id: event_id },
 
         success: function(data) {
+            $("#carouselExample2").html(data.html);
+            
             carousel_div.replaceWith(
                 $("#carouselExample2")
             );
 
-            $("#carouselExample2").css({
-                transform: "scale(1.6)",
-                "transform-origin": "50% 0%"
-            });
-
-            $("#carouselExample2").html(data.html);
-            
-         
-         
+             $("#carouselExample2").css("display", "block");
             
         }
     });
