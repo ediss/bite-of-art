@@ -10,7 +10,7 @@
 <div class="row animation-duration2 fadeInLeft m-auto" id="mainGallery">
 
     <div class="col-12 p-0">
-        <div id="carouselExampleIndicators" class="carousel slide d-md-none" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide d-lg-none" data-ride="carousel">
             {{-- <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -79,6 +79,78 @@
             </a>
         </div>
 
+
+        <div id="carouselExample" class="carousel slide d-none d-lg-block " data-ride="carousel" data-interval="900000">
+                <div class="carousel-inner carousel-inner-main w-120 p-0 m-0" role="listbox">
+                    @if($event_in_past)
+        
+                    <div class="carousel-item carousel-item-main  col-4 p-0 active">
+                        <div class="card" data-id="{{ $event_in_past->id }}">
+                            <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}"
+                                alt="slide 2">
+                        </div>
+        
+                        <div class="card-body ">
+                            <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
+                            <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
+        
+                        </div>
+                    </div>
+                    @endif
+        
+        
+                    @if($feature_events)
+        
+                    @foreach ($feature_events as $event_in_feature)
+                
+                    <div class="carousel-item carousel-item-main  col-4 p-0">
+                        <div class="card" data-id="{{ $event_in_feature->id }}">
+                            <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}"
+                                alt="slide 2">
+                        </div>
+        
+                        <div class="card-body ">
+                            <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
+                            <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
+        
+                        </div>
+                    </div>
+                    @endforeach
+                    @endif
+        
+                    @if($events_in_past)
+                    @foreach ($events_in_past as $event_in_past)
+                        @if(!$loop->first)
+                        <div class="carousel-item carousel-item-main  col-4 p-0">
+                            <div class="card" data-id="{{ $event_in_past->id }}">
+                                <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}"
+                                    alt="slide 2">
+                            </div>
+            
+                            <div class="card-body ">
+                                <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
+                                <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
+            
+                            </div>
+                        </div>
+                        @endif
+                    @endforeach
+                    @endif
+        
+        
+                </div>
+                <div class="carousel-controls-main">
+                    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+        
+                </div>
+            </div>
 
 
         <div id="carouselExample2" class="carousel slide" data-ride="carousel" data-interval="900000">
@@ -245,14 +317,14 @@
 
     <div id="carouselExample3" class="carousel slide" data-ride="carousel" data-interval="900000">
         <div class="carousel-inner carousel-inner-gallery w-140 transform-img p-0 m-0" role="listbox">
-            <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4 active" style="visibility: hidden">
+            {{-- <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4 active" style="visibility: hidden">
                 <div class="card">
                     <img class="img-fluid  d-block gallery-img" src="./images/gallery/1.jpg" alt="slide 1">
                 </div>
 
 
-            </div>
-            <div class="carousel-item carousel-item-gallery d-none news-first-slide col-md-4 col-lg-4">
+            </div> --}}
+            <div class="carousel-item carousel-item-gallery d-none news-first-slide col-md-4 col-lg-4 active">
                 <div class="card  montserrat-regular">
                     <p>01 JAN - 03 FEB 2019</p>
                     <p>
@@ -282,6 +354,8 @@
                 </div>
 
             </div>
+
+
             <div class="carousel-item carousel-item-gallery first-image d-none col-md-4 col-lg-4">
                 <div class="card">
                     <img class="img-fluid  d-block gallery-img" src="./images/news/2.png" alt="slide 2">
@@ -291,29 +365,23 @@
             </div>
             <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
                 <div class="card">
-                    <img class="img-fluid  d-block gallery-img" src="./images/gallery/4.jpg" alt="slide 3">
+                    <img class="img-fluid  d-block gallery-img" src="./images/news/3.jpg" alt="slide 3">
                 </div>
 
             </div>
             <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
                 <div class="card">
-                    <img class="img-fluid  d-block gallery-img" src="./images/gallery/5.jpg" alt="slide 4">
+                    <img class="img-fluid  d-block gallery-img" src="./images/news/4.jpg" alt="slide 4">
                 </div>
 
             </div>
             <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
                 <div class="card">
-                    <img class="img-fluid  d-block gallery-img" src="./images/gallery/6.jpg" alt="slide 5">
+                    <img class="img-fluid  d-block gallery-img" src="./images/news/8.jpg" alt="slide 5">
                 </div>
 
             </div>
 
-            <div class="carousel-item carousel-item-gallery  col-md-4 col-lg-4">
-                <div class="card">
-                    <img class="img-fluid  d-block gallery-img" src="./images/gallery/6.jpg" alt="slide 5">
-                </div>
-
-            </div>
 
         </div>
         <div class="carousel-controls-main d-none">
@@ -350,12 +418,15 @@
 
 
 @section('footer-scripts')
-<script src=" {{ asset('assets/js/carousel-common.js') }}"></script>
+{{-- <script src=" {{ asset('assets/js/carousel-common.js') }}"></script> --}}
 <script src=" {{ asset('assets/js/custom-carousel-main.js') }}"></script>
 
 <script src=" {{ asset('assets/js/custom-carousel-news.js') }}"></script>
 <script src=" {{ asset('assets/js/opening-gallery.js') }}"></script>
 <script src=" {{ asset('assets/js/custom-carousel-gallery.js') }}"></script>
+
+{{-- <script src=" {{ asset('assets/js/new.js') }}"></script> --}}
+
 <script src=" {{ asset('assets/js/opened-news.js') }}"></script>
 
 

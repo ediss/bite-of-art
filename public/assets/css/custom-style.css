@@ -46,20 +46,20 @@ body {
 }
 
 .animation-duration2 {
-   animation-duration: 2.8s;
+    animation-duration: 2.8s;
 }
 
-#mainGallery,
+/* #mainGallery,
 #smallGallery {
     position: relative;
-}
+} */
 
 .card {
     border: none !important;
 }
 .card-body {
     line-height: 35px;
-    padding-top:2%;
+    padding-top: 2%;
 }
 .card-title {
     margin-bottom: 0 !important;
@@ -72,118 +72,32 @@ body {
  *
  */
 
-#mainGallery .w-120 {
-    width: 120%;
-    /* transform: scale(2.2);
-    transform-origin: 50% 0; */
-}
-
-#carouselExample .carousel-inner-main {
-    left: -10%;
-}
-.carousel-item-main {
-    margin-right: 0;
-}
-
-.carousel-inner-main .active {
-    display: block;
-}
-
-.carousel-inner-main
-    .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left),
-.carousel-inner-main {
-    transition: none;
-}
-
-.carousel-inner-main .carousel-item-next {
-    position: relative;
-    transform: translate3d(0, 0, 0);
-}
-
-/* left or forward direction */
-#carouselExample
-    .active.carousel-item-left
-    + .carousel-item-next.carousel-item-left,
-#carouselExample .carousel-item-next.carousel-item-left {
-    position: relative;
-    transform: translate3d(-100%, 0, 0);
-    visibility: visible;
-}
-
-/* farthest right hidden item must be abso position for animations */
-.carousel-inner-main .carousel-item-prev.carousel-item-right {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    display: block;
-    visibility: visible;
-}
-
-/* right or prev direction */
-#carouselExample
-    .active.carousel-item-right
-    + .carousel-item-prev.carousel-item-right,
-#carouselExample .carousel-item-prev.carousel-item-right + .carousel-item-main,
-#carouselExample
-    .carousel-item-prev.carousel-item-right
-    + .carousel-item-main
-    + .carousel-item-main {
-    position: relative;
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-    display: block;
-    visibility: visible;
-}
-
-/* left or forward direction */
-#carouselExample
-    .carousel-item-next.carousel-item-left
-    + .carousel-item-main
-    + .carousel-item-main
-    + .carousel-item-main {
-    position: relative;
-    transform: translate3d(-100%, 0, 0);
-    visibility: visible;
-}
-
-/* right or prev direction */
-#carouselExample .carousel-item-prev.carousel-item-right + .carousel-item-main {
-    position: relative;
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-    display: block;
-    visibility: visible;
-}
-
-
 /*
  *
  *OPENED EVENT
  *
 **/
 
-.carousel-indicators{
+.carousel-indicators {
     /* top:35px; */
-  }
-  .carousel-indicators li {
+}
+.carousel-indicators li {
     background-color: #cccccc;
     width: 10px;
-    height:10px;
+    height: 10px;
     border-radius: 100%;
-  }
-  .carousel-indicators .active{
+}
+.carousel-indicators .active {
     background-color: #000000;
-  }
+}
 
-  .carousel-control-prev-icon,
+.carousel-control-prev-icon,
 .carousel-control-next-icon {
-  width: 20px !important;
-  height: 20px !important;
-  cursor: pointer;
-  position: absolute;
-  bottom: 30px;
-
+    width: 20px !important;
+    height: 20px !important;
+    cursor: pointer;
+    position: absolute;
+    bottom: 30px;
 }
 
 .carousel-control-prev-icon {
@@ -193,7 +107,7 @@ body {
     transition: background-image 0.5s;
     position: absolute;
     bottom: 30px;
-  }
+}
 
 .carousel-control-next-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23c2c3c5' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
@@ -204,28 +118,227 @@ body {
     transition-delay: 0.5s;
     position: absolute;
     bottom: 30px;
-  }
+}
 
-
-  .carousel-control-prev-icon:hover {
+.carousel-control-prev-icon:hover {
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/></svg>");
-  }
+}
 
-  .carousel-control-next-icon:hover {
+.carousel-control-next-icon:hover {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
-  }
-
+}
 
 /* .carousel-item-gallery {
     margin-right: 0;
 } */
 /*news*/
-    .carousel-item-news {
+
+.carousel-item-news {
+    margin-right: 0;
+}
+
+/* show 2 items */
+#smallGallery .carousel-inner-news .active + .carousel-item-news {
+    display: block;
+}
+
+.carousel-inner-news
+    .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left),
+.carousel-inner-news
+    .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left)
+    + .carousel-item-news {
+    transition: none;
+}
+
+.carousel-inner-news .carousel-item-next {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+}
+
+/* left or forward direction */
+#smallGallery
+    .active.carousel-item-left
+    + .carousel-item-next.carousel-item-left,
+.carousel-item-next.carousel-item-left + .carousel-item-news,
+#smallGallery
+    .carousel-item-next.carousel-item-left
+    + .carousel-item-news
+    + .carousel-item-news {
+    position: relative;
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+}
+
+/* farthest right hidden item must be abso position for animations */
+.carousel-inner-news .carousel-item-prev.carousel-item-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+}
+
+/* right or prev direction */
+#smallGallery
+    .active.carousel-item-right
+    + .carousel-item-prev.carousel-item-right,
+#smallGallery .carousel-item-prev.carousel-item-right + .carousel-item-news,
+#smallGallery
+    .carousel-item-prev.carousel-item-right
+    + .carousel-item-news
+    + .carousel-item-news {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+}
+
+.carousel-inner-news
+    .active.col-6.carousel-item-news
+    + .carousel-item-news
+    + .carousel-item-news {
+    position: absolute;
+    top: 0;
+    right: -50%; /*change this with javascript in the future*/
+    z-index: -1;
+    display: block;
+    visibility: visible;
+}
+
+/*opened news*/
+
+.overlay-news {
+    height: calc(100% - (80px));
+    margin-top: 80px;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 1);
+    overflow-x: hidden;
+    transition: 1.5s;
+}
+
+@media (min-width: 990px) {
+    #mainGallery .w-120 {
+        width: 120%;
+        /* transform: scale(2.2);
+        transform-origin: 50% 0; */
+    }
+
+    #carouselExample .carousel-inner-main {
+        left: -10%;
+    }
+    .carousel-item-main {
         margin-right: 0;
     }
 
-    /* show 2 items */
-    #smallGallery .carousel-inner-news .active + .carousel-item-news {
+    .col-md-20 {
+        flex: 0 0 20% !important;
+        max-width: 20% !important;
+    }
+
+    .carousel-inner-main .active,
+    .carousel-inner-main .active + .carousel-item-main,
+    .carousel-inner-main .active + .carousel-item-main + .carousel-item-main {
+        display: block;
+    }
+
+    .carousel-inner-main
+        .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner-main
+        .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left)
+        + .carousel-item-main,
+    .carousel-inner-main
+        .carousel-item-main.active:not(.carousel-item-right):not(.carousel-item-left)
+        + .carousel-item-main
+        + .carousel-item-main {
+        transition: none;
+    }
+
+    .carousel-inner-main .carousel-item-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item-main,
+    .carousel-item-next.carousel-item-left
+        + .carousel-item-main
+        + .carousel-item-main,
+    .carousel-item-next.carousel-item-left
+        + .carousel-item-main
+        + .carousel-item-main
+        + .carousel-item-main {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item-main,
+    .carousel-item-prev.carousel-item-right
+        + .carousel-item-main
+        + .carousel-item-main,
+    .carousel-item-prev.carousel-item-right
+        + .carousel-item-main
+        + .carousel-item-main
+        + .carousel-item-main {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner-main .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    .carousel-inner-main
+        .active.carousel-item-main
+        + .carousel-item-main
+        + .carousel-item-main
+        + .carousel-item-main {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /*opened event*/
+
+    /*end opened event*/
+
+    /*news*/
+    .carousel-inner-news .active,
+    .carousel-inner-news .active + .carousel-item-news,
+    .carousel-inner-news .active + .carousel-item-news + .carousel-item-news,
+    .carousel-inner-news
+        .active
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news,
+    .carousel-inner-news
+        .active
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news {
         display: block;
     }
 
@@ -233,6 +346,21 @@ body {
         .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left),
     .carousel-inner-news
         .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left)
+        + .carousel-item-news,
+    .carousel-inner-news
+        .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left)
+        + .carousel-item-news
+        + .carousel-item-news,
+    .carousel-inner-news
+        .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left)
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news,
+    .carousel-inner-news
+        .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left)
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
         + .carousel-item-news {
         transition: none;
     }
@@ -243,16 +371,56 @@ body {
     }
 
     /* left or forward direction */
-    #smallGallery
-        .active.carousel-item-left
-        + .carousel-item-next.carousel-item-left,
+    #smallGallery .active.carousel-item-left + .carousel-item-next.carousel-item-left,
     .carousel-item-next.carousel-item-left + .carousel-item-news,
-    #smallGallery
+    .carousel-item-next.carousel-item-left
+        + .carousel-item-news
+        + .carousel-item-news,
+    .carousel-item-next.carousel-item-left
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news,
         .carousel-item-next.carousel-item-left
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news,
+        .carousel-item-next.carousel-item-left
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
         + .carousel-item-news
         + .carousel-item-news {
         position: relative;
         transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    /* right or prev direction */
+    #smallGallery .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item-news,
+    .carousel-item-prev.carousel-item-right
+        + .carousel-item-news
+        + .carousel-item-news,
+    .carousel-item-prev.carousel-item-right
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news,
+    .carousel-item-prev.carousel-item-right
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news,
+        .carousel-item-prev.carousel-item-right
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
         visibility: visible;
     }
 
@@ -266,47 +434,29 @@ body {
         visibility: visible;
     }
 
-    /* right or prev direction */
-    #smallGallery
-        .active.carousel-item-right
-        + .carousel-item-prev.carousel-item-right,
-    #smallGallery
-        .carousel-item-prev.carousel-item-right
-        + .carousel-item-news,
-        #smallGallery
-        .carousel-item-prev.carousel-item-right
-        + .carousel-item-news + .carousel-item-news  {
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-        display: block;
-        visibility: visible;
+    .carousel-inner-news
+        .active.carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news {
+        position: relative !important;
+        display: block !important;
+        right: 0 !important;
+        visibility: visible !important;
     }
 
-
-    .carousel-inner-news .active.col-6.carousel-item-news + .carousel-item-news + .carousel-item-news {
+    .carousel-inner-news
+        .active.carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news {
         position: absolute;
         top: 0;
-        right: -50%;  /*change this with javascript in the future*/
+        right: -20%;
         z-index: -1;
         display: block;
         visibility: visible;
     }
-
-
-
-/*opened news*/
-
-.overlay-news {
-    height: calc(100% - (80px));
-    margin-top: 80px;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(255,255,255);
-    background-color: rgba(255,255,255, 1);
-    overflow-x: hidden;
-    transition: 1.5s;
-  }
+    /*end of news slider*/
+}

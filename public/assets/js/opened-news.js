@@ -38,7 +38,7 @@ $(document).ready(function() {
     ).attr("src"),
     lastSrc = $(
       "#carouselExample3 .carousel-inner-gallery .carousel-item-gallery:nth-child(" +
-        (count - 1) +
+        (count + 1) +
         ") img"
     ).attr("src");
 
@@ -80,16 +80,16 @@ $(document).ready(function() {
     $(".first-image").removeClass("animation-duration2 fadeInRight");
 
     
-    if ($("#carouselExample3 .active img").attr("src") != lastSrc) {
+    
       if (e.originalEvent.wheelDelta / 120 < 0) {
         $(this).carousel("next");
       }
-    }
-    if ($("#carouselExample3 .active img").attr("src") != firstSrc) {
+    
+    
       if (e.originalEvent.wheelDelta / 120 > 0) {
         $(this).carousel("prev");
       }
-    }
-    showHideButtons();
+    
+    // showHideButtons();
   });
 });

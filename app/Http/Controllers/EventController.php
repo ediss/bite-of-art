@@ -77,9 +77,8 @@ class EventController extends Controller
 
         $event_data = $event->where('id', $id)->first();
 
-        $all = $event::where('id', '>=', $id)->get();
-
-        $next = $event::where('id', '>', $id)->first();
+        $next = $event::where('id', '>', $id)
+                        ->where('approved', '=', 1)->first();
 
         $html = View::make('inc.partial.event-opened',[
             'data'  => $event_data,
