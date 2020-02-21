@@ -60,82 +60,91 @@ function openingEventAjax(carousel_div, event_id) {
         }
     });
 }
-$("#mainGallery").on("click", ".click", function() {
-    //event id
-    var event_id = $(this).attr("data-id");
 
-    openingEventAnimations();
-
-    $("#carouselExample .carousel-inner-main").animate(
-        { opacity: 1 },
-        {
-            step: function() {
-                $(this).css({
-                    "transform-origin": "0 0",
-                    transition:
-                        "transform 1.9s ease-in-out, width 1.9s ease-in-out",
-                    // transform: "scale(1.6) translate3d(18%, 0, 0)",
-                    transform: "scale(1.6) translate(14.5%, 0px)",
-                    // width: "140%"
-                });
-
-                //$(this).find(".active").next().find("img").addClass("new-transform");
-
-                $(this).find(".p-0").removeClass("p-0");
-
-                $(this).find(".active").next().next().animate({
-                    left: "55%",
-                    "transform-origin": "0 0",
-                    transition: "transform .1s ease-in-out"
-                });
-       
-            },
-            duration: 3000,
-
-            complete: function() {
-                var carouselDiv = $("#carouselExample");
-                //$("#carouselExample2").css("display", "block");
-                //call Ajax
-                openingEventAjax(carouselDiv, event_id);
-
-                alert("cekaj");
-
-                
-            $(".close-gallery")
-                .removeClass("d-none")
-                .addClass("d-block animation-duration2 fadeInDown");
-            $(".page-footer").hide();
-            }
-        }
-    );
-});
-
-$("#mainGallery").on("click", ".mobile-click", function() {
+$(document).ready(function(){
+    $("#mainGallery").on("click", ".click", function() {
+        //event id
+        var event_id = $(this).attr("data-id");
     
-    openingEventAnimations();
-
-    //event id
-    var event_id = $(this).attr("data-id");
-
-    $("#smallGallery").addClass("moveRight");
-
-    $("#smallGallery").animate({ right: "130%" }, 1500);
-
-    $("#carouselExampleIndicators .active").animate({
-        left: "100%" 
-    }, 1000,
-    function(){
-        var carouselDiv = $("#carouselExampleIndicators");
-        //call Ajax
-        openingEventAjax(carouselDiv, event_id);
-
-        $("#smallGallery").hide();
-
+        openingEventAnimations();
+    
+        $("#carouselExample .carousel-inner-main").animate(
+            { opacity: 1 },
+            {
+                step: function() {
+                    $(this).css({
+                        "transform-origin": "0 0",
+                        transition:
+                            "transform 1.9s ease-in-out, width 1.9s ease-in-out",
+                        // transform: "scale(1.6) translate3d(18%, 0, 0)",
+                        transform: "scale(1.6) translate(14.5%, 0px)",
+                        // width: "140%"
+                    });
+    
+                    //$(this).find(".active").next().find("img").addClass("new-transform");
+    
+                    $(this).find(".p-0").removeClass("p-0");
+    
+                    $(this).find(".active").next().next().animate({
+                        left: "55%",
+                        "transform-origin": "0 0",
+                        transition: "transform .1s ease-in-out"
+                    });
+           
+                },
+                duration: 3000,
+    
+                complete: function() {
+                    var carouselDiv = $("#carouselExample");
+                    //$("#carouselExample2").css("display", "block");
+                    //call Ajax
+                    openingEventAjax(carouselDiv, event_id);
+    
+                    alert("cekaj");
+    
+                    
+                $(".close-gallery")
+                    .removeClass("d-none")
+                    .addClass("d-block animation-duration2 fadeInDown");
+                $(".page-footer").hide();
+                }
+            }
+        );
     });
     
+    $("#mainGallery").on("click", ".mobile-click", function() {
+        
+        openingEventAnimations();
     
-    $(".page-footer").fadeOut("slow");
-
-
-
+        //event id
+        var event_id = $(this).attr("data-id");
+    
+        $("#smallGallery").addClass("moveRight");
+    
+        $("#smallGallery").animate({ right: "130%" }, 1500);
+    
+        $("#carouselExampleIndicators .active").animate({
+            left: "100%" 
+        }, 1000,
+        function(){
+            var carouselDiv = $("#carouselExampleIndicators");
+            //call Ajax
+            openingEventAjax(carouselDiv, event_id);
+    
+            
+    
+            $("#smallGallery").hide();
+    
+        });
+    
+    
+        $("#carouselExample2").find(".d-lg-block").removeClass("active");
+        
+        
+        $(".page-footer").fadeOut("slow");
+    
+    
+    
+    });
+    
 });

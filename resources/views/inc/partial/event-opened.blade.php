@@ -12,7 +12,7 @@
 
 
 
-    <div class="carousel-item carousel-item-gallery d-none d-lg-block col-1  col-lg-4 active" style="visibility: hidden">
+    <div class="carousel-item carousel-item-gallery d-none d-lg-block col-1  col-lg-4  active">
         
         <div class="card">
             <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/logo.png' }}" alt="slide 1">
@@ -138,7 +138,8 @@
 @section('footer-scripts')
     <script>
         $(document).ready(function() {
-            $("#carouselExample2").carousel();
+            $("#carouselExample2 .carousel-inner-gallery").css('border', '2px solid red');
+
         });
         
 

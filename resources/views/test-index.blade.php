@@ -450,6 +450,7 @@
 
     $(document).ready(function () {
 
+
 function flip() {
     var images = [
         "images/live.png",
