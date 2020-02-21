@@ -30,7 +30,7 @@ body {
     transform: scale(1.6);
    }
   .new-transform {
-    transform: translate3d(31.5%, 0, 0);
+    transform: translate(25%, 0, 0);
     transition: transform 2.5s ease-in-out;
   }
   .col-sm-20 {
@@ -610,8 +610,8 @@ body {
     width: 140%;
   }
 
-  #carouselExample2 .w-140-300 {
-    width: 140%;
+  #carouselExample2 .carousel-inner-gallery {
+    width: 130%;
   }
 
   #smallGallery .w-100 {
@@ -1716,7 +1716,7 @@ input[type=submit]:hover {
 
 }
 
-.klik:hover {
+.mobile-click, .click:hover {
   cursor: pointer;
 }
 

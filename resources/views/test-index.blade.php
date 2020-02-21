@@ -4,6 +4,7 @@
 <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/animate.css')}}" />
 
 <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-style.css')}}" />
+{{-- <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style2.css')}}" /> --}}
 @endsection
 
 @section('content')
@@ -24,7 +25,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body h-80px text-center">
+                    <div class="card-body text-center h-80px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
@@ -41,7 +42,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body h-80px text-center">
+                    <div class="card-body text-center h-80px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
 
@@ -59,7 +60,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body h-80px text-center">
+                    <div class="card-body text-center h-80px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
@@ -90,7 +91,7 @@
                                 alt="slide 2">
                         </div>
         
-                        <div class="card-body ">
+                        <div class="card-body text-center h-100px">
                             <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                             <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
         
@@ -109,7 +110,7 @@
                                 alt="slide 2">
                         </div>
         
-                        <div class="card-body ">
+                        <div class="card-body text-center h-100px">
                             <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
                             <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
         
@@ -127,7 +128,7 @@
                                     alt="slide 2">
                             </div>
             
-                            <div class="card-body ">
+                            <div class="card-body text-center h-100px">
                                 <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                                 <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
             
@@ -436,9 +437,9 @@
 })
 
     //$('#carouselExample').find('.active').next().find('.carousel-item').addClass('klik');
-    $('#carouselExampleIndicators').find('.active').addClass('klik');
+    $('#carouselExampleIndicators').find('.active').addClass('mobile-click');
 
-    $('#carouselExample').find('.active').next().find('.card').addClass('klik');
+    $('#carouselExample').find('.active').next().find('.card').addClass('click');
     function openNav() {
         document.getElementById("openedNews").style.width = "100%";
     }
