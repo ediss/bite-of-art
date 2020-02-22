@@ -22,7 +22,7 @@ class NewsTableSeeder extends Seeder
             
             [
                 'article_name'          => 'Vest 2',
-                'article_cover'         => '/images/news/2.jpg',
+                'article_cover'         => '/images/news/2.png',
                 'article_description'   => 'neki opis',
                 'user_id'               => 1
             ],
@@ -55,7 +55,7 @@ class NewsTableSeeder extends Seeder
                 'user_id'               => 1
             ],
             [
-                'article_name'          => 'Vest 1',
+                'article_name'          => 'Vest 7',
                 'article_cover'         => '/images/news/7.png',
                 'article_description'   => 'neki opis',
                 'user_id'               => 1
