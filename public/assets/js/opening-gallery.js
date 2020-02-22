@@ -100,7 +100,10 @@ $(document).ready(function(){
                     var carouselDiv = $("#carouselExample");
                     //$("#carouselExample2").css("display", "block");
                     //call Ajax
-                    openingEventAjax(carouselDiv, event_id, null);
+
+                    window.location.href = "/event/"+event_id;
+
+                    // openingEventAjax(carouselDiv, event_id, null);
 
                     alert("cekaj");
 

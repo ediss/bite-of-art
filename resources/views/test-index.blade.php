@@ -216,7 +216,7 @@
 
 <script src=" {{ asset('assets/js/custom-carousel-news.js') }}"></script>
 <script src=" {{ asset('assets/js/opening-gallery.js') }}"></script>
-<script src=" {{ asset('assets/js/custom-carousel-gallery.js') }}"></script>
+
 
 {{-- <script src=" {{ asset('assets/js/new.js') }}"></script> --}}
 

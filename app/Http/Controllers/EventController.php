@@ -87,21 +87,25 @@ class EventController extends Controller
 
     public function ajaxLoadEventData(Request $request) {
 
-        $id     = $request->input('id');
+        $id     = $request->id;
 
         $event = new Event();
 
         $event_data = $event->where('id', $id)->first();
 
-        $next = $event::where('id', '>', $id)
-                        ->where('approved', '=', 1)->first();
+        $next = $event::where('id', '>', $id)->where('approved', '=', 1)->first();
 
-        $html = View::make('inc.partial.event-opened',[
-            'data'  => $event_data,
-            'next'   => $next
-        ])->render();
+        return view('event-opened',[
+            'data'=> $event_data,
+            'next' => $next
+        ]);
 
-        return Response::json(["html" => $html]);
+        // $html = View::make('inc.partial.event-opened',[
+        //     'data'  => $event_data,
+        //     'next'   => $next
+        // ])->render();
+
+        // return Response::json(["html" => $html]);
 
     }
 
