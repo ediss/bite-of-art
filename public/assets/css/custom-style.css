@@ -5,6 +5,9 @@ body {
     padding: 0px;
     overflow-x: hidden;
 }
+.navbar{
+    height: 100%;
+}
 
 @font-face {
     font-family: montserrat-bold;
@@ -44,6 +47,9 @@ body {
 .h-80px {
     height: 80px;
 }
+.m-35px{
+  /*margin:35px;*/
+}
 
 .animation-duration2 {
     animation-duration: 2.8s;
@@ -76,12 +82,10 @@ body {
  *
  *
  */
-
-/*
- *
- *OPENED EVENT
- *
-**/
+ .carousel-control-prev,.carousel-control-next {
+     height: calc(100% -(80px));
+     top:80px !important;
+ }
 
 .display-visibility {
     display: none;
@@ -144,8 +148,9 @@ body {
     background-repeat: no-repeat;
     height:100%;
     width:30px;
-    margin-left: 35px;
+    margin-left: 20px;
     cursor: pointer;
+    margin-top: 20px;
   }
   
   .close-gallery:hover {
@@ -249,10 +254,17 @@ body {
 
 @media (min-width: 990px) {
 
-    /* .new-transform {
-        transform: translate(50%, 0);
-        transition: transform 2.5s ease-in-out;
-      } */
+    .close-gallery {
+        height:100%;
+        width:30px;
+        margin-left: 35px;
+        margin-top: 20px;
+      }
+
+    .carousel-control-prev,.carousel-control-next {
+        height: calc(100% - (100px));
+        top:100px !important;
+    }
 
     #carouselExample2 .carousel-inner-gallery {
         width: 120%;
@@ -367,6 +379,8 @@ body {
 
     .carousel-item-gallery {
         margin-right: 0;
+        padding-right: 15px !important;
+        padding-left: 15px !important;
     }
 
     .carousel-inner-gallery .active,

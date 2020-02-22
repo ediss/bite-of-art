@@ -98,20 +98,7 @@ $(document).ready(function(){
 
                 complete: function() {
                     var carouselDiv = $("#carouselExample");
-                    //$("#carouselExample2").css("display", "block");
-                    //call Ajax
-
                     window.location.href = "/event/"+event_id;
-
-                    // openingEventAjax(carouselDiv, event_id, null);
-
-                    alert("cekaj");
-
-
-                $(".close-gallery")
-                    .removeClass("d-none")
-                    .addClass("d-block animation-duration2 fadeInDown");
-                $(".page-footer").hide();
                 }
             }
         );

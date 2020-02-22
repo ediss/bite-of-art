@@ -17,6 +17,16 @@ $(document).on("wheel", '#carouselExample2', function (e) {
     }
 });
 
+$(document).on("slide.bs.carousel", '#carouselExample2', function (e) {
+
+    if (e.direction == "left") {
+      $('.carousel-indicators').find('.active').removeClass('active').next().addClass('active');
+    } else {
+      $('.carousel-indicators').find('.active').removeClass('active').prev().addClass('active');
+    }
+
+  });
+
 var ww = document.body.clientWidth;
 if (ww < 990) {
     $(".mobile-hidden").remove();

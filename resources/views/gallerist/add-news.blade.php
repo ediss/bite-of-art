@@ -5,6 +5,10 @@
 <link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
+@section('logo-img')
+    <div class="close-gallery"></div>
+@endsection
+
 @section('content')
 <form id="articleSubmit" action="" enctype="multipart/form-data" method="POST">
     @csrf

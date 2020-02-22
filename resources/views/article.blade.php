@@ -7,6 +7,10 @@
 {{-- <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style2.css')}}" /> --}}
 @endsection
 
+@section('logo-img')
+    <div class="close-gallery"></div>
+@endsection
+
 @section('content')
 <div class="row">
 
@@ -66,23 +70,24 @@
 
                 </div>
             </div>
-            <div class="carousel-controls-main animation-duration2 fadeInUp">
-                <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExample2" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-                <ol class="carousel-indicators">
-                    @for ($i = 0; $i < $counter; $i++) <li data-target="#carouselExample2" data-slide-to="{{ $i }}"
-                        {{ ($i == 0) ? "class=active" : ""}}>
-                        </li>
-                        @endfor
-                </ol>
-            </div>
+     
         </div>
+    </div>
+    <div class="carousel-controls-main animation-duration2 fadeInUp">
+        <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <ol class="carousel-indicators">
+            @for ($i = 0; $i < $counter; $i++) <li data-target="#carouselExample2" data-slide-to="{{ $i }}"
+                {{ ($i == 0) ? "class=active" : ""}}>
+                </li>
+                @endfor
+        </ol>
     </div>
 </div>
 @endsection

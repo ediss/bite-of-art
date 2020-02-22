@@ -5,6 +5,11 @@
 <link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
+@section('logo-img')
+    <div class="close-gallery"></div>
+@endsection
+
+
 @section('content')
 <div class="row">
     <div class="col-md-12 p-0">

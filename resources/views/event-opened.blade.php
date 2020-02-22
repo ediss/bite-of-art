@@ -7,6 +7,10 @@
 {{-- <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style2.css')}}" /> --}}
 @endsection
 
+@section('logo-img')
+    <div class="close-gallery"></div>
+@endsection
+
 @section('content')
 <div class="row">
     @if(isset($data))
@@ -15,7 +19,7 @@
     $counter = 0;
     @endphp
 
-<div class="col-12">
+<div class="col-12 p-0">
     <div id="carouselExample2" class="carousel slide" data-ride="carousel" data-interval="900000">
         <div class="carousel-inner carousel-inner-gallery transform-img p-0 m-0 next-id" role="listbox"
         {{ $next ? 'next-id='.$next->id : '' }}>
@@ -57,7 +61,7 @@
         </div>
 
 
-        <div class="carousel-item carousel-item-gallery  col-12  col-lg-4 ">
+        <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 ">
             @php
             $counter++;
             @endphp
@@ -73,7 +77,7 @@
         @php
         $counter++;
         @endphp
-        <div class="carousel-item carousel-item-gallery   col-12  col-lg-4">
+        <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4">
             <div class="card">
                 <img class="img-fluid  d-block gallery-img" src="{{ url($data->event_img_1) }}" alt="slide 2">
 
@@ -86,7 +90,7 @@
         @php
         $counter++;
         @endphp
-        <div class="carousel-item carousel-item-gallery    col-12  col-lg-4">
+        <div class="carousel-item carousel-item-gallery p-0   col-12  col-lg-4">
             <div class="card">
                 <img class="img-fluid  d-block gallery-img" src="{{ url($data->event_img_2) }}" alt="slide 2">
 
@@ -99,7 +103,7 @@
         @php
         $counter++;
         @endphp
-        <div class="carousel-item carousel-item-gallery   col-12  col-lg-4">
+        <div class="carousel-item carousel-item-gallery p-0  col-12  col-lg-4">
             <div class="card">
                 <img class="img-fluid  d-block gallery-img" src="{{ url($data->event_img_3) }}" alt="slide 2">
 
@@ -108,23 +112,12 @@
         </div>
         @endif
 
-        <div class="carousel-item carousel-item-gallery  col-12  col-lg-4">
-            @php
-            // $counter++;
-            @endphp
-            <div class="card">
-                {{-- <p>NEXT <b>{{ $counter}}</b></p> --}}
-
-            </div>
-
-        </div>
-
     </div>
 
     </div>
     
 </div>
-<div class="carousel-controls-main animation-duration2 fadeInUp">
+<div class="carousel-controls-main">
     <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>

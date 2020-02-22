@@ -19,12 +19,9 @@ class EventController extends Controller
     //     $this->middleware('auth');
     // }
 
-    public function test() {
+    public function index() {
 
         $event = new Event();
-        
-
-        //$today = Carbon::now();
 
         $today = date('Y-m-d H:i:s');
 
@@ -37,10 +34,10 @@ class EventController extends Controller
         $feature_events = $event::where('approved', '=', 1)
         ->where('event_open', '>=', $today)->orderBy('event_open')->get();
 
-        
 
 
-        return view('test-index', [
+
+        return view('index', [
             'event_in_past'  => $event_in_past,
             'events_in_past' => $events_in_past,
             'feature_events' => $feature_events,
@@ -57,33 +54,9 @@ class EventController extends Controller
         //dd($article);
         return view ('article', ['article' => $article]);
 
-        
+
     }
 
-    public function index() {
-
-        $event = new Event();
-
-        //$today = Carbon::now();
-
-        $today = date('Y-m-d H:i:s');
-
-        $event_in_past = $event::where('approved', '=', 1)
-        ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->first();
-
-        $events_in_past = $event::where('approved', '=', 1)
-        ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->get();
-
-        $feature_events = $event::where('approved', '=', 1)
-        ->where('event_open', '>=', $today)->orderBy('event_open')->get();
-
-
-        return view('index', [
-            'event_in_past'  => $event_in_past,
-            'events_in_past' => $events_in_past,
-            'feature_events' => $feature_events
-        ]);
-    }
 
     public function ajaxLoadEventData(Request $request) {
 
@@ -433,11 +406,11 @@ class EventController extends Controller
                 $artworkObj->nfc_tag                = 'nfc_tag';//event_nfc_tag+artwork(prva tri slova)+artworkID
 
                 if($artworkObj->save()) {
-                    
+
                     $event_tag = Event::find($event_id);
 
                     $artwork_nfc_tag = $event_tag->nfc_tag.substr($artwork_name, 0, 3).$artworkObj->id;
-                    
+
 
                     Artwork::where('id', $artworkObj->id)->update(array('nfc_tag' => $artwork_nfc_tag));
 

@@ -56,16 +56,10 @@ Route::group([
 });
 
 
-Route::any('/ajax',             'EventController@ajaxTest')->middleware('auth');
+Route::any('/ajax',         'EventController@ajaxTest')->middleware('auth');
 
-Route::get('/event/{id}',           'EventController@ajaxLoadEventData');
+Route::get('/event/{id}',   'EventController@ajaxLoadEventData');
 
-//Route::post('/submitEvent',     'EventController@submitEvent');
-
-
-
-
-//Route::get('/gallerist',        'GalleristController@index')->name('gallerist.dashboard');
 
 
 

@@ -1437,19 +1437,6 @@ body {
 
 
 
-.languages {
-  
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  margin-bottom: 100px;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
-.active-language {
-  font-family: montserrat-bold;
-  src: url(../fonts/montserrat/Montserrat-Bold.otf); 
-}
 
 
 
