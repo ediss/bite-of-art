@@ -596,3 +596,10 @@ body {
 .b-red {
     border:2px solid red;
 }
+
+.social-scale {
+    bottom: 0;
+  }
+  .social-scale img{
+    transform: scale(0.625);
+  }

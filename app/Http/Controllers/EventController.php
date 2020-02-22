@@ -22,6 +22,7 @@ class EventController extends Controller
     public function test() {
 
         $event = new Event();
+        
 
         //$today = Carbon::now();
 
@@ -36,12 +37,27 @@ class EventController extends Controller
         $feature_events = $event::where('approved', '=', 1)
         ->where('event_open', '>=', $today)->orderBy('event_open')->get();
 
+        
+
 
         return view('test-index', [
             'event_in_past'  => $event_in_past,
             'events_in_past' => $events_in_past,
-            'feature_events' => $feature_events
+            'feature_events' => $feature_events,
+            'news'           => News::all(),
         ]);
+    }
+
+    public function getArticle(Request $request) {
+
+        $articles = new News();
+
+        $article = $articles->where('id', '=', $request->id)->first();
+
+        //dd($article);
+        return view ('article', ['article' => $article]);
+
+        
     }
 
     public function index() {

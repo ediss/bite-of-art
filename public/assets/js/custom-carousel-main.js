@@ -55,7 +55,7 @@ $(document).ready(function() {
     //hide event name
     $("#carouselExample .card-body").css({ opacity: 0 });
 
-    var active = $(".active");
+    var active = $("#carouselExample .active");
 
     carouselItemStyle(active, null)
 

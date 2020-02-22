@@ -1,95 +1,24 @@
-$(document).ready(function() {
+$(document).on("wheel", '#carouselExample2', function (e) {
 
-    /*opening news*/
-  $(".img-opacity").click(function() {
+    var first_slide = $('.news-first-slide');
 
-    // alert('kliknuo');
-    openNav();
+    var last_slide = $('.carousel-inner-gallery .carousel-item-gallery:last');
 
-    setTimeout(function() {
-      $(".logo").animate({
-        transition: "top 4.4s ease-in-out",
-        top: "-100px"
-      });
+    if (e.originalEvent.wheelDelta / 120 < 0) {
+        if (!last_slide.prev().hasClass('active')) {
+            $(this).carousel("next");
+        }
+    }
 
-      $(".live").css("visibility", "hidden");
-      $(".close-gallery")
-        .removeClass("d-none")
-        .addClass(" animation-duration2 fadeInDown");
-
-      $(".news-first-slide")
-        .removeClass("d-none")
-        .addClass("animation-duration2 fadeInUp");
-      $("#carouselExample3")
-        .find(".carousel-controls-main")
-        .removeClass("d-none")
-        .addClass("animation-duration2 fadeInUp");
-      $(".first-image")
-        .removeClass("d-none")
-        .addClass("animation-duration2 fadeInRight");
-    }, 1500);
-  });
-
-
-
-  var count = $("#carouselExample3 .carousel-inner-gallery").children().length;
-  var firstSrc = $(
-      "#carouselExample3 .carousel-inner-gallery .carousel-item-gallery:first-child img"
-    ).attr("src"),
-    lastSrc = $(
-      "#carouselExample3 .carousel-inner-gallery .carousel-item-gallery:nth-child(" +
-        (count + 1) +
-        ") img"
-    ).attr("src");
-
-  function showHideButtons() {
-    setTimeout(function() {
-      if ($("#carouselExample3 .active img").attr("src") == lastSrc) {
-        $(".carousel-controls-main .carousel-control-next").css({
-          opacity: 0,
-          "pointer-events": "none"
-        });
-      } else {
-        $(".carousel-controls-main .carousel-control-next").css({
-          opacity: 1,
-          "pointer-events": "auto"
-        });
-      }
-      if ($("#carouselExample3 .active img").attr("src") == firstSrc) {
-        $(".carousel-controls-main .carousel-control-prev").css({
-          opacity: 0,
-          "pointer-events": "none"
-        });
-      } else {
-        $(".carousel-controls-main .carousel-control-prev").css({
-          opacity: 1,
-          "pointer-events": "auto"
-        });
-      }
-    }, 700);
-  }
-
-  $(
-    ".carousel-controls-main .carousel-control-prev,.carousel-controls-main .carousel-control-next"
-  ).bind("click", function(e) {
-    showHideButtons();
-  });
-
-  $("#carouselExample3").bind("wheel", function(e) {
-    $('.news-first-slide').removeClass('fadeInUp');
-    $(".first-image").removeClass("animation-duration2 fadeInRight");
-
-    
-    
-      if (e.originalEvent.wheelDelta / 120 < 0) {
-        $(this).carousel("next");
-      }
-    
-    
-      if (e.originalEvent.wheelDelta / 120 > 0) {
-        $(this).carousel("prev");
-      }
-    
-    // showHideButtons();
-  });
+    if (!first_slide.prev().hasClass('active')) {
+        if (e.originalEvent.wheelDelta / 120 > 0) {
+            $(this).carousel("prev");
+        }
+    }
 });
+
+var ww = document.body.clientWidth;
+if (ww < 990) {
+    $(".mobile-hidden").remove();
+    $('.mobile-first').addClass('active');
+}

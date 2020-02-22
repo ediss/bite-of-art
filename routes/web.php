@@ -38,7 +38,10 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'EventController@index')->name('home');
 
+//need to be protected
 Route::any('/news/add-news', 'GalleristController@addNews')->name('add.news');
+
+Route::get('/news/{id}', 'EventController@getArticle');
 
 
 Route::get('/',                 'EventController@index');
