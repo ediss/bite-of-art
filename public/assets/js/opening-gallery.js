@@ -36,7 +36,7 @@ function openingEventAnimations() {
 }
 
 
-function openingEventAjax(carousel_div, event_id) {
+function openingEventAjax(carousel_div, event_id, mobile) {
     $.ajax({
         type: "POST",
         url: "/event",
@@ -50,13 +50,15 @@ function openingEventAjax(carousel_div, event_id) {
 
         success: function(data) {
             $("#carouselExample2").html(data.html);
-            
+
+            if(mobile) {
+                $("#carouselExample2").find('.mobile-hidden').remove();
+                $("#carouselExample2").find('.mobile-first').addClass('active');
+            }
+
             carousel_div.replaceWith(
                 $("#carouselExample2")
             );
-
-             $("#carouselExample2").css("display", "block");
-            
         }
     });
 }
@@ -65,9 +67,9 @@ $(document).ready(function(){
     $("#mainGallery").on("click", ".click", function() {
         //event id
         var event_id = $(this).attr("data-id");
-    
+
         openingEventAnimations();
-    
+
         $("#carouselExample .carousel-inner-main").animate(
             { opacity: 1 },
             {
@@ -80,29 +82,29 @@ $(document).ready(function(){
                         transform: "scale(1.6) translate(14.5%, 0px)",
                         // width: "140%"
                     });
-    
+
                     //$(this).find(".active").next().find("img").addClass("new-transform");
-    
+
                     $(this).find(".p-0").removeClass("p-0");
-    
+
                     $(this).find(".active").next().next().animate({
                         left: "55%",
                         "transform-origin": "0 0",
                         transition: "transform .1s ease-in-out"
                     });
-           
+
                 },
                 duration: 3000,
-    
+
                 complete: function() {
                     var carouselDiv = $("#carouselExample");
                     //$("#carouselExample2").css("display", "block");
                     //call Ajax
-                    openingEventAjax(carouselDiv, event_id);
-    
+                    openingEventAjax(carouselDiv, event_id, null);
+
                     alert("cekaj");
-    
-                    
+
+
                 $(".close-gallery")
                     .removeClass("d-none")
                     .addClass("d-block animation-duration2 fadeInDown");
@@ -111,40 +113,44 @@ $(document).ready(function(){
             }
         );
     });
-    
+
     $("#mainGallery").on("click", ".mobile-click", function() {
-        
+
         openingEventAnimations();
-    
+
         //event id
         var event_id = $(this).attr("data-id");
-    
+
         $("#smallGallery").addClass("moveRight");
-    
+
         $("#smallGallery").animate({ right: "130%" }, 1500);
-    
+
         $("#carouselExampleIndicators .active").animate({
-            left: "100%" 
+            left: "100%"
         }, 1000,
         function(){
             var carouselDiv = $("#carouselExampleIndicators");
             //call Ajax
-            openingEventAjax(carouselDiv, event_id);
-    
-            
-    
+            openingEventAjax(carouselDiv, event_id, "mobile");
+
+
+
             $("#smallGallery").hide();
-    
+
         });
-    
-    
+
+
         $("#carouselExample2").find(".d-lg-block").removeClass("active");
-        
-        
+
+
+
         $(".page-footer").fadeOut("slow");
-    
-    
-    
+
+
+
     });
+
     
+
+
 });

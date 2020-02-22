@@ -82,76 +82,73 @@
 
 
         <div id="carouselExample" class="carousel slide d-none d-lg-block " data-ride="carousel" data-interval="900000">
-                <div class="carousel-inner carousel-inner-main w-120 p-0 m-0" role="listbox">
-                    @if($event_in_past)
-        
-                    <div class="carousel-item carousel-item-main  col-4 p-0 active">
-                        <div class="card" data-id="{{ $event_in_past->id }}">
-                            <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}"
-                                alt="slide 2">
-                        </div>
-        
-                        <div class="card-body text-center h-100px">
-                            <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
-                            <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
-        
-                        </div>
+            <div class="carousel-inner carousel-inner-main w-120 p-0 m-0" role="listbox">
+                @if($event_in_past)
+
+                <div class="carousel-item carousel-item-main  col-4 p-0 active">
+                    <div class="card" data-id="{{ $event_in_past->id }}">
+                        <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
-                    @endif
-        
-        
-                    @if($feature_events)
-        
-                    @foreach ($feature_events as $event_in_feature)
-                
-                    <div class="carousel-item carousel-item-main  col-4 p-0">
-                        <div class="card" data-id="{{ $event_in_feature->id }}">
-                            <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}"
-                                alt="slide 2">
-                        </div>
-        
-                        <div class="card-body text-center h-100px">
-                            <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
-                            <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
-        
-                        </div>
+
+                    <div class="card-body text-center h-100px">
+                        <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
+                        <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
+
                     </div>
-                    @endforeach
-                    @endif
-        
-                    @if($events_in_past)
-                    @foreach ($events_in_past as $event_in_past)
-                        @if(!$loop->first)
-                        <div class="carousel-item carousel-item-main  col-4 p-0">
-                            <div class="card" data-id="{{ $event_in_past->id }}">
-                                <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}"
-                                    alt="slide 2">
-                            </div>
-            
-                            <div class="card-body text-center h-100px">
-                                <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
-                                <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
-            
-                            </div>
-                        </div>
-                        @endif
-                    @endforeach
-                    @endif
-        
-        
                 </div>
-                <div class="carousel-controls-main">
-                    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-        
+                @endif
+
+
+                @if($feature_events)
+
+                @foreach ($feature_events as $event_in_feature)
+
+                <div class="carousel-item carousel-item-main  col-4 p-0">
+                    <div class="card" data-id="{{ $event_in_feature->id }}">
+                        <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
+                    </div>
+
+                    <div class="card-body text-center h-100px">
+                        <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
+                        <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
+
+                    </div>
                 </div>
+                @endforeach
+                @endif
+
+                @if($events_in_past)
+                @foreach ($events_in_past as $event_in_past)
+                @if(!$loop->first)
+                <div class="carousel-item carousel-item-main  col-4 p-0">
+                    <div class="card" data-id="{{ $event_in_past->id }}">
+                        <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
+                    </div>
+
+                    <div class="card-body text-center h-100px">
+                        <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
+                        <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
+
+                    </div>
+                </div>
+                @endif
+                @endforeach
+                @endif
+
+
             </div>
+            <div class="carousel-controls-main">
+                <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            </div>
+        </div>
 
 
         <div id="carouselExample2" class="carousel slide" data-ride="carousel" data-interval="900000">
@@ -436,6 +433,8 @@
   interval: false
 })
 
+
+
     //$('#carouselExample').find('.active').next().find('.carousel-item').addClass('klik');
     $('#carouselExampleIndicators').find('.active').addClass('mobile-click');
 
@@ -447,11 +446,7 @@
     function closeNav() {
         document.getElementById("openedNews").style.width = "0%";
     }
-
-    $(document).ready(function () {
-
-
-function flip() {
+    function flip() {
     var images = [
         "images/live.png",
         "images/live2.png",    
@@ -465,6 +460,8 @@ function flip() {
     }, 500);
 
 }
+    $(document).ready(function () {
+
 
 //flip();
 

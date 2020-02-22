@@ -21,7 +21,7 @@
 
 <body>
 
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 b-red">
         {{-- <div class="row">
         <div class="col-4">
             <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">

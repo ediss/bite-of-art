@@ -3,7 +3,7 @@
         <nav class="navbar navbar-light  lighten-4  w-100 p-0">
             <div class="col-12 p-0">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-4 p-0">
                         <div class="logo">
                             <a class="navbar-brand m-auto p-0" href="{{ url('/') }}">
                                 <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">

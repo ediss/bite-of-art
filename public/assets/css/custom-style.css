@@ -444,7 +444,7 @@ body {
         + .carousel-item-gallery {
         position: absolute;
         top: 0;
-        right: -33.3333%;
+        right: -43.3333%;
         z-index: -1;
         display: block;
         visibility: visible;
@@ -591,4 +591,8 @@ body {
         visibility: visible;
     }
     /*end of news slider*/
+}
+
+.b-red {
+    border:2px solid red;
 }
