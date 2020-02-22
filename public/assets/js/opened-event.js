@@ -56,4 +56,10 @@ $(document).ready(function () {
     }
 
   });
+
+  var ww = document.body.clientWidth;
+  if (ww < 990) {
+    $(".mobile-hidden").remove();
+    $('.mobile-first').addClass('active');
+  }
 });

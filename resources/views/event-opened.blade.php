@@ -148,5 +148,5 @@
 
 @section('footer-scripts')
 <script>$('.footer').css('display', 'none');</script>
-<script src=" {{ asset('assets/js/custom-carousel-gallery.js') }}"></script>
+<script src=" {{ asset('assets/js/opened-event.js') }}"></script>
 @endsection
