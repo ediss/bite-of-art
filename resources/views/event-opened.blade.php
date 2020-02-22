@@ -110,6 +110,13 @@
             </div>
 
         </div>
+
+        <div class="carousel-item carousel-item-gallery p-0  col-12  col-lg-4">
+            <div class="card">
+
+            </div>
+
+        </div>
         @endif
 
     </div>

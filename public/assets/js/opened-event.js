@@ -50,12 +50,6 @@ $(document).ready(function () {
     } else {
       $('.carousel-indicators').find('.active').removeClass('active').prev().addClass('active');
     }
-    if (ww < 990) {
-      if ($("#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:last").hasClass('active')) {
-        var next = $('.next-id').attr('next-id');
-        window.location.href = "/event/" + next;
-      }
-    }
     
     if ($("#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:last").prev().hasClass('active')) {
       var next = $('.next-id').attr('next-id');
