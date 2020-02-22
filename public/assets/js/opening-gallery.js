@@ -132,10 +132,8 @@ $(document).ready(function(){
             left: "100%"
         }, 1000,
         function(){
-            var carouselDiv = $("#carouselExampleIndicators");
-            //call Ajax
-            openingEventAjax(carouselDiv, event_id, "mobile");
 
+            window.location.href = "/event/"+event_id;
 
 
             $("#smallGallery").hide();
