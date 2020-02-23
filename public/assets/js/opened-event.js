@@ -69,7 +69,11 @@ $(document).ready(function () {
 
     if ($("#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:last").prev().hasClass('active')) {
       var next = $('.next-id').attr('next-id');
-      window.location.href = "/event/" + next;
+
+      setTimeout(function () {
+        window.location.href = "/event/" + next;
+      }, 1000);
+      
     }
 
   });
