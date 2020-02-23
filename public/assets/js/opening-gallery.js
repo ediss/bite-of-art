@@ -1,12 +1,9 @@
 function openingEventAnimations() {
-    //move logo up dontwork
-    $(".logo").css({
-        position: "absolute",
-        transform: "translate(0,-100px)",
-        transition: "transform 3.4s ease-in-out"
-    });
 
-    $(".live").css("visibility", "hidden");
+     $(".logo").css({
+         transform: "translate(0,-100px)",
+         transition: "transform 3.4s ease-in-out"
+     });
 
     $("#carouselExample .carousel-controls-main").hide();
 
@@ -117,14 +114,10 @@ $(document).ready(function(){
 
         $("#carouselExampleIndicators .active").animate({
             left: "100%"
-        }, 1000,
-        function(){
+        });
 
+        openingEventAnimations().done(function(){
             window.location.href = "/event/"+event_id;
-
-
-            $("#smallGallery").hide();
-
         });
 
 
@@ -138,7 +131,7 @@ $(document).ready(function(){
 
     });
 
-    
+
 
 
 });
