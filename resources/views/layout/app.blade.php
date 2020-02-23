@@ -27,37 +27,37 @@
         @yield('content')
 
 
-    <!-- Footer -->
-    <div class="row page-footer">
-        <div class="col-12">
-            <footer class=" footer">
+        <!-- Footer -->
+        <div class="row page-footer">
+            <div class="col-12">
+                <footer class=" footer">
 
-                <!-- Copyright -->
-                <div class="footer-copyright text-center montserrat-regular ">All rights reserved © BITE of art 2020
-                </div>
-                <!-- Copyright -->
+                    <!-- Copyright -->
+                    <div class="footer-copyright text-center montserrat-regular ">All rights reserved © BITE of art 2020
+                    </div>
+                    <!-- Copyright -->
 
-            </footer>
+                </footer>
+            </div>
+
         </div>
 
-    </div>
+        <!-- Footer -->
 
-    <!-- Footer -->
+        <!--Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-     <!--Scripts-->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
 
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-     </script>
- 
-     <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
-     <script src="/plugins/jquery.blockUI.js"></script>
-     <script src="/assets/js/common/global.js"></script>
- 
- 
-     <script>
-         function charCount(el) {
+        <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <script src="/plugins/jquery.blockUI.js"></script>
+        <script src="/assets/js/common/global.js"></script>
+
+
+        <script>
+            function charCount(el) {
          $(this).keyup(function(e){
              e.preventDefault();
              var characterCount = el.value.length;
@@ -66,22 +66,46 @@
          });
      }
  
- 
- $('#toggle').click(function () {
+     $('.carousel').carousel({
+  interval: false
+})
+
+
+
+    function flip() {
+    var images = [
+        "images/live.png",
+        "images/live2.png",
+    ]
+    var current = 0;
+    setInterval(function () {
+
+        $('#flip').attr('src', images[current]);
+        current = (current < images.length - 1) ? current + 1 : 0;
+
+    }, 500);
+
+}
+$(document).ready(function () {
+    flip();
+
+    $('#toggle').click(function () {
      $(this).toggleClass('active');
      $('#overlay').toggleClass('open');
  
  });
-     </script>
- 
-     @yield('footer-scripts')
- 
+});
+
+        </script>
+
+        @yield('footer-scripts')
+
 
     </div>
 
 
 
-   
+
 
 </body>
 

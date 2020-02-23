@@ -205,40 +205,8 @@
 
 
 <script>
-    $('.carousel').carousel({
-  interval: false
-})
-
-
-
     $('#carouselExampleIndicators').find('.active').addClass('mobile-click');
-
     $('#carouselExample').find('.active').next().find('.card').addClass('click');
-
-    function flip() {
-    var images = [
-        "images/live.png",
-        "images/live2.png",
-    ]
-    var current = 0;
-    setInterval(function () {
-
-        $('#flip').attr('src', images[current]);
-        current = (current < images.length - 1) ? current + 1 : 0;
-
-    }, 500);
-
-}
-$(document).ready(function () {
-    flip();
-});
-
-
-
-
-
-
-
 </script>
 
 <!------ JS CODE ---------->

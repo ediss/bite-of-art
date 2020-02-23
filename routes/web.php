@@ -60,6 +60,10 @@ Route::any('/ajax',         'EventController@ajaxTest')->middleware('auth');
 
 Route::get('/event/{id}',   'EventController@ajaxLoadEventData');
 
+Route::get('/news',         'NewsController@index')->name('all.news');
+Route::any('/contact',      'ContactController@index')->name('contact');
+
+
 
 
 

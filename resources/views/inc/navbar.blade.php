@@ -94,7 +94,7 @@
                 <div class="menu-links">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link h-100px text-center" href="news.html">
+                            <a class="nav-link h-100px text-center" href="{{ route('all.news') }}">
                                 <span class="sr-only">(current)</span>NEWS
                             </a>
                         </li>
@@ -108,7 +108,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link h-100px text-center" href="contact.html">CONTACT</a>
+                            <a class="nav-link h-100px text-center" href="{{ route('contact') }}">CONTACT</a>
                         </li>
 
                     </ul>

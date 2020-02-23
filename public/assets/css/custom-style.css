@@ -203,7 +203,9 @@ body {
     margin-right: 0;
 } */
 /*news*/
-
+.page-heading {
+    font-size: 24pt;
+}
 .carousel-item-news {
     margin-right: 0;
 }
@@ -686,3 +688,56 @@ body {
       color: #d4d4d4;
       font-size: 0.9em;
   }
+
+
+/*
+ *--------
+ *CONTACT
+ *--------
+*/
+
+.md-form {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.md-form input:not([type]), .md-form input[type="text"]:not(.browser-default), .md-form input[type="password"]:not(.browser-default), .md-form input[type="email"]:not(.browser-default), .md-form input[type="url"]:not(.browser-default), .md-form input[type="time"]:not(.browser-default), .md-form input[type="date"]:not(.browser-default), .md-form input[type="datetime"]:not(.browser-default), .md-form input[type="datetime-local"]:not(.browser-default), .md-form input[type="tel"]:not(.browser-default), .md-form input[type="number"]:not(.browser-default), .md-form input[type="search"]:not(.browser-default), .md-form input[type="search-md"], .md-form textarea.md-textarea {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #000000;
+    border-radius: 0;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.btn-sbm-mt {
+    margin-top: 17%;
+}
+.contact-submit {
+    background-color: #cccccc;
+    border: none;
+    color: white;
+    font-family: montserrat-bold;
+    src: url(../../font/montserrat/Montserrat-Bold.otf);
+    font-size: 24pt;
+    text-decoration: none;
+    width: 260px;
+    height: 100px;
+    cursor: pointer;
+    transition: background-color 1.5s;
+}
+
+.contact-textarea {
+    height: calc(1.5em + .75rem + 2px) !important;
+}
+
+
+
