@@ -200,7 +200,7 @@
 @section('footer-scripts')
 <script src=" {{ asset('assets/js/custom-carousel-main.js') }}"></script>
 <script src=" {{ asset('assets/js/custom-carousel-news.js') }}"></script>
-<script src=" {{ asset('assets/js/opening-gallery.js') }}"></script>
+<script src=" {{ asset('assets/js/opening-event.js') }}"></script>
 <script src=" {{ asset('assets/js/opening-news.js') }}"></script>
 
 

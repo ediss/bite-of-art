@@ -23,7 +23,9 @@ $('#recipeCarousel').on('slide.bs.carousel', function (e) {
 
 
 $(document).ready(function () {
-
+    $('#recipeCarousel .carousel-control-prev').css({
+        opacity: 0
+    });
 
     $(".img-opacity").mouseover(function (e) {
         e.preventDefault();
@@ -36,8 +38,6 @@ $(document).ready(function () {
 
     $('#recipeCarousel').bind('wheel', function (e) {
 
-
-        var last = $("#recipeCarousel .carousel-inner-news .carousel-item-news:last");
         var first = $("#recipeCarousel .carousel-inner-news .carousel-item-news:first");
 
         if (e.originalEvent.wheelDelta / 120 < 0) {

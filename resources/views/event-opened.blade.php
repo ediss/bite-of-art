@@ -8,7 +8,7 @@
 @endsection
 
 @section('logo-img')
-    <div class="close-gallery"></div>
+    <div class="close-gallery animation-duration2 fadeInDown"></div>
 @endsection
 
 @section('content')

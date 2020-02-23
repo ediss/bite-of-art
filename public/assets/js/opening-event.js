@@ -116,9 +116,9 @@ $(document).ready(function(){
             left: "100%"
         });
 
-        openingEventAnimations().done(function(){
+        setTimeout(function () {
             window.location.href = "/event/"+event_id;
-        });
+          }, 2100);
 
 
         $("#carouselExample2").find(".d-lg-block").removeClass("active");

@@ -12,13 +12,13 @@ $(document).ready(function () {
 
   $(".close-gallery").click(function (e) {
     e.preventDefault();
-    $("#carouselExample2, #carouselExample3").animate({
+    $("#carouselExample2").animate({
       right: "10%",
 
       "transform-origin": "0 0",
       transition: "right .3s linear"
     }),
-      $("#carouselExample2, #carouselExample3").animate({
+      $("#carouselExample2").animate({
         left: "200%",
         "transform-origin": "0 0",
       }),
