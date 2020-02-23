@@ -15,11 +15,6 @@
 
     <div class="col-12 p-0">
         <div id="carouselExampleIndicators" class="carousel slide d-lg-none" data-ride="carousel">
-            {{-- <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol> --}}
             <div class="carousel-inner">
                 @if($event_in_past)
                 <div class="carousel-item active" data-id="{{ $event_in_past->id }}">
@@ -28,7 +23,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-80px">
+                    <div class="card-body text-center h-80px h-100px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
@@ -45,7 +40,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-80px">
+                    <div class="card-body text-center h-80px h-100px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
 
@@ -63,7 +58,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-80px">
+                    <div class="card-body text-center h-80px h-100px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
@@ -169,7 +164,8 @@
                             <img class="img-fluid  d-block" src="{{ $n->article_cover}}" alt="slide 1">
                         </div>
                         <div class="img-description" >
-                            <p class="montserrat-bold text-left">{{ $n->article_name }}</p>
+                            <p class="montserrat-bold text-left">
+                                Dnevnik Diane Budisavljevic neprocenjiva istorijska lekcija Beograd 31.12.2019 {{ $n->article_name }}</p>
                         </div>
 
                     </div>
@@ -178,8 +174,6 @@
                 @endforeach
 
             </div>
-        </div>
-        <div class="carousel-controls">
             <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -189,35 +183,24 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+
     </div>
-
-
+    {{-- <div class="carousel-controls">
+       
+    </div> --}}
 </div>
 
-<!-- Opened news -->
-
-<div class="row overlay-news " id="openedNews">
-
-
-
-
-
-</div>
+<!-- div for animation for opening news-->
+<div class="row overlay-news" id="openedNews"></div>
 
 
 @endsection
 
 
 @section('footer-scripts')
-{{-- <script src=" {{ asset('assets/js/carousel-common.js') }}"></script> --}}
 <script src=" {{ asset('assets/js/custom-carousel-main.js') }}"></script>
-
 <script src=" {{ asset('assets/js/custom-carousel-news.js') }}"></script>
-<script src=" {{ asset('assets/js/opening-gallery.js') }}"></script>
-
-
-{{-- <script src=" {{ asset('assets/js/new.js') }}"></script> --}}
-
+<script src=" {{ asset('assets/js/opening-event.js') }}"></script>
 <script src=" {{ asset('assets/js/opening-news.js') }}"></script>
 
 
@@ -246,22 +229,8 @@
     }, 500);
 
 }
-    $(document).ready(function () {
-
-
-//flip();
-
-
-
-$(".img-opacity").mouseover(function (e) {
-    e.preventDefault();
-    $(this).next('.img-description').addClass('animation-duration fadeOutDown my-opacity');
-});
-
-$(".img-opacity").mouseout(function () {
-    $(this).next('.img-description').removeClass('animation-duration fadeOutDown my-opacity').addClass('animation-duration fadeInUp');
-});
-
+$(document).ready(function () {
+    flip();
 });
 
 

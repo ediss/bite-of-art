@@ -12,8 +12,8 @@
                     </div>
 
                     <div class="col-4 text-center m-auto">
-                        <div class="live">
-                            <a class="navbar-brand m-auto" href="#">
+                        <div class="live infinite pulse animated">
+                            <a class="navbar-brand m-auto" href="https://www.youtube.com" target="_blank">
                                 <img src="{{ asset('images/live.png') }}" class="img-fluid" alt="live" id="flip">
                             </a>
                         </div>
@@ -36,7 +36,7 @@
                         <div class="row h-80px">
                             <div class="col-4 m-auto p-0">
                                 <div class="logo">
-                                    <a class="navbar-brand m-auto p-0" href="{{ url('/') }}">
+                                    <a class="navbar-brand m-auto p-0 h-80px h-100px" href="{{ url('/') }}">
                                         <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">
                                     </a>
                                 </div>

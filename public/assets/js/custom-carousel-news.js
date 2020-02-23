@@ -21,56 +21,38 @@ $('#recipeCarousel').on('slide.bs.carousel', function (e) {
     }
 });
 
-$('.carousel-controls .carousel-control-prev').css({
-    opacity: 0
-});
+
 $(document).ready(function () {
-    var count = $('#recipeCarousel .carousel-inner').children().length
-    var firstSrc = $('#recipeCarousel .carousel-inner .carousel-item:first-child img').attr('src'),
-        lastSrc = $('#recipeCarousel .carousel-inner .carousel-item:nth-child(' + (count - 1) + ') img').attr('src');
+    $('#recipeCarousel .carousel-control-prev').css({
+        opacity: 0
+    });
 
+    $(".img-opacity").mouseover(function (e) {
+        e.preventDefault();
+        $(this).next('.img-description').addClass('animation-duration fadeOutDown my-opacity');
+    });
 
-
-    function showHideButtons() {
-        setTimeout(function () {
-            if ($('#smallGallery .active img').attr('src') == lastSrc) {
-                $('.carousel-controls .carousel-control-next').css({
-                    opacity: 0,
-                    'pointer-events': 'none'
-                });
-            } else {
-                $('.carousel-controls .carousel-control-next').css({
-                    opacity: 1,
-                    'pointer-events': 'auto'
-                });
-            }
-            if ($('#smallGallery .active img').attr('src') == firstSrc) {
-                $('.carousel-controls .carousel-control-prev').css({
-                    opacity: 0,
-                    'pointer-events': 'none'
-                });
-            } else {
-                $('.carousel-controls .carousel-control-prev').css({
-                    opacity: 1,
-                    'pointer-events': 'auto'
-                });
-            }
-        }, 700)
-    }
-
+    $(".img-opacity").mouseout(function () {
+        $(this).next('.img-description').removeClass('animation-duration fadeOutDown my-opacity').addClass('animation-duration fadeInUp');
+    });
 
     $('#recipeCarousel').bind('wheel', function (e) {
-        if ($('#smallGallery .active img').attr('src') != lastSrc) {
-            if (e.originalEvent.wheelDelta / 120 < 0) {
-                $(this).carousel('next');
-            }
+
+        var first = $("#recipeCarousel .carousel-inner-news .carousel-item-news:first");
+
+        if (e.originalEvent.wheelDelta / 120 < 0) {
+            $('#recipeCarousel .carousel-control-prev').css({
+                opacity: 1
+            });
+            $(this).carousel('next');
+
         }
-        if ($('#smallGallery .active img').attr('src') != firstSrc) {
-            if (e.originalEvent.wheelDelta / 120 > 0) {
-                $(this).carousel('prev');
+
+        if (e.originalEvent.wheelDelta / 120 > 0) {
+            if (!first.hasClass('active')) {
+              $(this).carousel('prev');
             }
-        }
-        showHideButtons()
+          }
     });
 
 
