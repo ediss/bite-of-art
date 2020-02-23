@@ -74,8 +74,8 @@
 
     function flip() {
     var images = [
-        "images/live.png",
-        "images/live2.png",
+        "../images/live.png",
+        "../images/live2.png",
     ]
     var current = 0;
     setInterval(function () {

@@ -65,13 +65,17 @@ $(document).ready(function () {
       $('.carousel-indicators').find('.active').removeClass('active').prev().addClass('active');
     }
 
+
+
     if ($("#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:last").prev().hasClass('active')) {
       var next = $('.next-id').attr('next-id');
       window.location.href = "/event/" + next;
     }
 
   });
+  var vr_height = $(".virtual-toure").parent().parent().parent().height();
 
+  $(".virtual-toure").height(vr_height);
   if (ww < 990) {
     $(".mobile-hidden").remove();
     $('.mobile-first').addClass('active');

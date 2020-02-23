@@ -113,9 +113,17 @@
        
         @endif
  
+        <div class="carousel-item carousel-item-gallery carousel-item-vr p-0  col-12  col-lg-4">
+            <div class="card">
+                <iframe height="" width="100%" allowfullscreen="true" src="https://momento360.com/e/u/05229c8cb82e4420abdf794b5f7ded1b?utm_campaign=embed&utm_source=other&utm_medium=other&heading=0&pitch=0&field-of-view=75" class="virtual-toure"> </iframe>
+                
+            </div>
+
+        </div>
         <div class="carousel-item carousel-item-gallery p-0  col-12  col-lg-4">
             <div class="card">
-
+              
+                
             </div>
 
         </div>
