@@ -293,6 +293,12 @@ body {
     overflow-x: hidden;
     transition: 1.5s;
 }
+@media (min-width: 760px) {
+    .h-100px {
+        height:100px;
+    }
+}
+
 
 @media (min-width: 990px) {
 

@@ -15,11 +15,6 @@
 
     <div class="col-12 p-0">
         <div id="carouselExampleIndicators" class="carousel slide d-lg-none" data-ride="carousel">
-            {{-- <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol> --}}
             <div class="carousel-inner">
                 @if($event_in_past)
                 <div class="carousel-item active" data-id="{{ $event_in_past->id }}">
@@ -28,7 +23,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-80px">
+                    <div class="card-body text-center h-80px h-100px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
@@ -45,7 +40,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-80px">
+                    <div class="card-body text-center h-80px h-100px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
 
@@ -63,7 +58,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-80px">
+                    <div class="card-body text-center h-80px h-100px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
