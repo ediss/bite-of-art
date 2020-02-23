@@ -28,12 +28,12 @@
 
 
     <!-- Footer -->
-    <div class="row">
+    <div class="row page-footer">
         <div class="col-12">
-            <footer class="page-footer footer">
+            <footer class=" footer">
 
                 <!-- Copyright -->
-                <div class="footer-copyright text-center ">All rights reserved © BITE of art 2020
+                <div class="footer-copyright text-center montserrat-regular ">All rights reserved © BITE of art 2020
                 </div>
                 <!-- Copyright -->
 
