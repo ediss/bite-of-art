@@ -28,8 +28,7 @@
                     style="visibility:hidden">
 
                     <div class="card">
-                        <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/logo.png' }}"
-                            alt="slide 1">
+                        <p>first_news_slide</p>
                     </div>
                 </div>
                 @php
@@ -73,7 +72,7 @@
      
         </div>
     </div>
-    <div class="carousel-controls-main animation-duration2 fadeInUp">
+    <div class="carousel-controls-main animation-duration2">
         <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>

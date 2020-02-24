@@ -28,7 +28,7 @@
             style="visibility:hidden">
 
             <div class="card">
-                <img class="img-fluid  d-block gallery-img" src="{{ 'images/galleries/logo.png' }}" alt="slide 1">
+                <p>first_slide</p>
             </div>
         </div>
         @php
