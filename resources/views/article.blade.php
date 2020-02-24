@@ -58,7 +58,7 @@
                     </div>
 
                 </div>
-                <div class="carousel-item carousel-item-gallery col-md-4 col-lg-4">
+                <div class="carousel-item carousel-item-gallery col-md-4 col-lg-4 animation-duration2 fadeInRight">
                     @php
                     $counter++;
                     @endphp
