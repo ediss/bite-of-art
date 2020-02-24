@@ -64,6 +64,8 @@ class CustomRegisterController extends Controller
                 $gallerist->about_gallery   = $request->input('about_gallery');
                 $gallerist->website         = $request->input('website');
                 $gallerist->cover_letter    = $request->input('cover_letter');
+                $gallerist->media_link      = $request->input('media_link');
+
                 $gallerist->approved        = 0;
 
                 if($gallerist->save()) {

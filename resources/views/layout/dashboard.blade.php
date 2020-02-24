@@ -50,7 +50,7 @@
             </div>
             <div class="container-fluid d-flex align-items-center justify-content-between">
                 <div class="navbar-header">
-                    <!-- Navbar Header--><a href="index.html" class="navbar-brand">
+                    <!-- Navbar Header--><a href="#" class="navbar-brand">
                         <div class="brand-text brand-big visible text-uppercase">
                             <strong class="text-primary">Bite</strong><strong>Of</strong><strong
                                 class="text-primary">Art</strong></div>
@@ -67,41 +67,21 @@
                     <div class="list-inline-item dropdown"><a id="navbarDropdownMenuLink1" href="#"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                             class="nav-link messages-toggle"><i class="icon-email"></i><span
-                                class="badge dashbg-1">5</span></a>
-                        <div aria-labelledby="navbarDropdownMenuLink1" class="dropdown-menu messages"><a href="#"
-                                class="dropdown-item message d-flex align-items-center">
+                                class="badge dashbg-1">1</span></a>
+                        <div aria-labelledby="navbarDropdownMenuLink1" class="dropdown-menu messages">
+                            <a href="#" class="dropdown-item message d-flex align-items-center">
                                 <div class="profile"><img src="img/avatar-3.jpg" alt="..." class="img-fluid">
                                     <div class="status online"></div>
                                 </div>
-                                <div class="content"> <strong class="d-block">Nadia Halsey</strong><span
-                                        class="d-block">lorem ipsum dolor sit amit</span><small
-                                        class="date d-block">9:30am</small></div>
-                            </a><a href="#" class="dropdown-item message d-flex align-items-center">
-                                <div class="profile"><img src="img/avatar-2.jpg" alt="..." class="img-fluid">
-                                    <div class="status away"></div>
+                                <div class="content"> <strong class="d-block">Notification system</strong>
+                                    <span class="d-block">lorem ipsum dolor sit amit</span>
+                                    <small class="date d-block">9:30am</small>
                                 </div>
-                                <div class="content"> <strong class="d-block">Peter Ramsy</strong><span
-                                        class="d-block">lorem ipsum dolor sit amit</span><small
-                                        class="date d-block">7:40am</small></div>
-                            </a><a href="#" class="dropdown-item message d-flex align-items-center">
-                                <div class="profile"><img src="img/avatar-1.jpg" alt="..." class="img-fluid">
-                                    <div class="status busy"></div>
-                                </div>
-                                <div class="content"> <strong class="d-block">Sam Kaheil</strong><span
-                                        class="d-block">lorem ipsum dolor sit amit</span><small
-                                        class="date d-block">6:55am</small></div>
-                            </a><a href="#" class="dropdown-item message d-flex align-items-center">
-                                <div class="profile"><img src="img/avatar-5.jpg" alt="..." class="img-fluid">
-                                    <div class="status offline"></div>
-                                </div>
-                                <div class="content"> <strong class="d-block">Sara Wood</strong><span
-                                        class="d-block">lorem ipsum dolor sit amit</span><small
-                                        class="date d-block">10:30pm</small></div>
-                            </a><a href="#" class="dropdown-item text-center message"> <strong>See All Messages <i
-                                        class="fa fa-angle-right"></i></strong></a></div>
+                            </a>
+                           </div>
                     </div>
                     <!-- Tasks-->
-                    <div class="list-inline-item dropdown"><a id="navbarDropdownMenuLink2" href="#"
+                    {{-- <div class="list-inline-item dropdown"><a id="navbarDropdownMenuLink2" href="#"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                             class="nav-link tasks-toggle"><i class="icon-new-file"></i><span
                                 class="badge dashbg-3">9</span></a>
@@ -144,89 +124,14 @@
                             </a><a href="#" class="dropdown-item text-center"> <strong>See All Tasks <i
                                         class="fa fa-angle-right"></i></strong></a>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- Tasks end-->
-                    <!-- Megamenu-->
-                    <div class="list-inline-item dropdown menu-large"><a href="#" data-toggle="dropdown"
-                            class="nav-link">Mega <i class="fa fa-ellipsis-v"></i></a>
-                        <div class="dropdown-menu megamenu">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6"><strong class="text-uppercase">Elements Heading</strong>
-                                    <ul class="list-unstyled mb-3">
-                                        <li><a href="#">Lorem ipsum dolor</a></li>
-                                        <li><a href="#">Sed ut perspiciatis</a></li>
-                                        <li><a href="#">Voluptatum deleniti</a></li>
-                                        <li><a href="#">At vero eos</a></li>
-                                        <li><a href="#">Consectetur adipiscing</a></li>
-                                        <li><a href="#">Duis aute irure</a></li>
-                                        <li><a href="#">Necessitatibus saepe</a></li>
-                                        <li><a href="#">Maiores alias</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-6"><strong class="text-uppercase">Elements Heading</strong>
-                                    <ul class="list-unstyled mb-3">
-                                        <li><a href="#">Lorem ipsum dolor</a></li>
-                                        <li><a href="#">Sed ut perspiciatis</a></li>
-                                        <li><a href="#">Voluptatum deleniti</a></li>
-                                        <li><a href="#">At vero eos</a></li>
-                                        <li><a href="#">Consectetur adipiscing</a></li>
-                                        <li><a href="#">Duis aute irure</a></li>
-                                        <li><a href="#">Necessitatibus saepe</a></li>
-                                        <li><a href="#">Maiores alias</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-6"><strong class="text-uppercase">Elements Heading</strong>
-                                    <ul class="list-unstyled mb-3">
-                                        <li><a href="#">Lorem ipsum dolor</a></li>
-                                        <li><a href="#">Sed ut perspiciatis</a></li>
-                                        <li><a href="#">Voluptatum deleniti</a></li>
-                                        <li><a href="#">At vero eos</a></li>
-                                        <li><a href="#">Consectetur adipiscing</a></li>
-                                        <li><a href="#">Duis aute irure</a></li>
-                                        <li><a href="#">Necessitatibus saepe</a></li>
-                                        <li><a href="#">Maiores alias</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-6"><strong class="text-uppercase">Elements Heading</strong>
-                                    <ul class="list-unstyled mb-3">
-                                        <li><a href="#">Lorem ipsum dolor</a></li>
-                                        <li><a href="#">Sed ut perspiciatis</a></li>
-                                        <li><a href="#">Voluptatum deleniti</a></li>
-                                        <li><a href="#">At vero eos</a></li>
-                                        <li><a href="#">Consectetur adipiscing</a></li>
-                                        <li><a href="#">Duis aute irure</a></li>
-                                        <li><a href="#">Necessitatibus saepe</a></li>
-                                        <li><a href="#">Maiores alias</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row megamenu-buttons text-center">
-                                <div class="col-lg-2 col-md-4"><a href="#"
-                                        class="d-block megamenu-button-link dashbg-1"><i
-                                            class="fa fa-clock-o"></i><strong>Demo 1</strong></a></div>
-                                <div class="col-lg-2 col-md-4"><a href="#"
-                                        class="d-block megamenu-button-link dashbg-2"><i
-                                            class="fa fa-clock-o"></i><strong>Demo 2</strong></a></div>
-                                <div class="col-lg-2 col-md-4"><a href="#"
-                                        class="d-block megamenu-button-link dashbg-3"><i
-                                            class="fa fa-clock-o"></i><strong>Demo 3</strong></a></div>
-                                <div class="col-lg-2 col-md-4"><a href="#"
-                                        class="d-block megamenu-button-link dashbg-4"><i
-                                            class="fa fa-clock-o"></i><strong>Demo 4</strong></a></div>
-                                <div class="col-lg-2 col-md-4"><a href="#"
-                                        class="d-block megamenu-button-link bg-danger"><i
-                                            class="fa fa-clock-o"></i><strong>Demo 5</strong></a></div>
-                                <div class="col-lg-2 col-md-4"><a href="#"
-                                        class="d-block megamenu-button-link bg-info"><i
-                                            class="fa fa-clock-o"></i><strong>Demo 6</strong></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Megamenu end     -->
+
 
                     <!-- Log out               -->
                     <div class="list-inline-item logout">
-                        <a id="logout" href="login.html" class="nav-link"> <span class="d-none d-sm-inline">Logout
+                        <a id="logout" href="{{route('logout')}}" class="nav-link"> <span
+                                class="d-none d-sm-inline">Logout
                             </span><i class="icon-logout"></i></a>
                     </div>
                 </div>
@@ -241,15 +146,15 @@
                 <div class="avatar"></div>
                 <div class="title">
                     <h1 class="h5">{{Auth::user()->name}}</h1>
-                    <p>Web Designer</p>
+                    <p>Moderator</p>
                 </div>
             </div>
             <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
             <ul class="list-unstyled">
-                <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
-                <li><a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
-                <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
-                <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
+                <li class="active"><a href="#"> <i class="icon-home"></i>Home </a></li>
+                <li><a href="#"> <i class="icon-grid"></i>Tables </a></li>
+                <li><a href="#"> <i class="fa fa-bar-chart"></i>Charts </a></li>
+                <li><a href="#"> <i class="icon-padnote"></i>Forms </a></li>
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i
                             class="icon-windows"></i>Example dropdown </a>
                     <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
@@ -258,7 +163,7 @@
                         <li><a href="#">Page</a></li>
                     </ul>
                 </li>
-                <li><a href="login.html"> <i class="icon-logout"></i>Login page </a></li>
+                <li><a href="#"> <i class="icon-logout"></i>Login page </a></li>
             </ul><span class="heading">Extras</span>
             <ul class="list-unstyled">
                 <li> <a href="#"> <i class="icon-settings"></i>Demo </a></li>
@@ -281,7 +186,8 @@
                             <div class="statistic-block block">
                                 <div class="progress-details d-flex align-items-end justify-content-between">
                                     <div class="title">
-                                        <div class="icon"><i class="icon-user-1"></i></div><strong>All
+                                        <div class="icon"><i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                                        </div><strong>All
                                             Gallerists</strong>
                                     </div>
                                     <div class="number dashtext-1">27</div>
@@ -295,8 +201,8 @@
                             <div class="statistic-block block">
                                 <div class="progress-details d-flex align-items-end justify-content-between">
                                     <div class="title">
-                                        <div class="icon"><i class="icon-contract"></i></div><strong>All
-                                            Events</strong>
+                                        <div class="icon"><i class="fa fa-2x fa-calendar" aria-hidden="true"></i></div>
+                                        <strong>All Events</strong>
                                     </div>
                                     <div class="number dashtext-2">375</div>
                                 </div>
@@ -310,8 +216,8 @@
                             <div class="statistic-block block">
                                 <div class="progress-details d-flex align-items-end justify-content-between">
                                     <div class="title">
-                                        <div class="icon"><i class="icon-paper-and-pencil"></i></div><strong>New
-                                            Invoices</strong>
+                                        <div class="icon"><i class="fa fa-2x fa-newspaper-o" aria-hidden="true"></i></div>
+                                        <strong>News</strong>
                                     </div>
                                     <div class="number dashtext-3">140</div>
                                 </div>
@@ -444,7 +350,7 @@
                 url: "{{ url('/moderator/get-gallerists') }}",
                 method: 'get',
                 success: function(data){
-                    $('#content').html(data.html)
+                    $('#content').html(data.html);
                 }
             });
 
@@ -461,7 +367,7 @@
                 url: "{{ url('/moderator/get-events') }}",
                 method: 'get',
                 success: function(data){
-                    $('#content').html(data.html)
+                    $('#content').html(data.html);
                 }
             });
 

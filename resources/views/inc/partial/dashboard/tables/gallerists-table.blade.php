@@ -8,6 +8,7 @@
               <th>Gallery Name</th>
               <th>Gallery Cover</th>
               <th>About Gallery</th>
+              <th>Media link</th>
               <th>Cover Letter</th>
               <th>Approved?</th>
             </tr>
@@ -23,6 +24,7 @@
                     <td>{{ $gallerist->gallery_name }} <br> {{ $gallerist->city_country }}</td>
                     <td> <img src="{{ $gallerist->gallery_cover }}" style="max-width:30%;max-height: 30%;"></td>
                     <td>{{ $gallerist->about_gallery }}</td>
+                    <td>{{ $gallerist->media_link }}</td>
                     <td>{{ $gallerist->cover_letter }}</td>
                     <td>
                       <div class="custom-control custom-switch">

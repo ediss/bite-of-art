@@ -199,8 +199,25 @@
                         </div>
 
                         <div class=" col-8 text-left">
-                            <input type="input" class="form-control border-0" name="website" placeholder="Website"
+                            <input type="text" class="form-control border-0" name="website" placeholder="Website"
                                 value="{{ Request::get('website') }}">
+                        </div>
+
+
+                        <div class="col-2">
+
+                        </div>
+                    </div>
+
+                    <!--Gallery media link -->
+                    <div class="row elements-mid-align h-80px h-100px border-bottom">
+                        <div class="col-2">
+
+                        </div>
+
+                        <div class=" col-8 text-left">
+                            <input type="text" class="form-control border-0" name="media_link" placeholder="Media link"
+                                value="{{ Request::get('media_link') }}">
                         </div>
 
 
@@ -237,6 +254,8 @@
                         </div>
                     </div>
 
+
+
                 </div>
 
 
@@ -250,11 +269,6 @@
 
 
             </div>
-
-
-
-
-            <!--end event-->
         </form>
     </div>
 </div>
@@ -262,6 +276,8 @@
 
 @section('footer-scripts')
 <script>
+
+    $(".footer").hide();
     $(".close-gallery").click(function(e) {
 
       $(this).removeClass('fadeInDown').addClass('fadeOutUp');
