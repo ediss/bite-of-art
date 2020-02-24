@@ -1,5 +1,16 @@
 @extends('layout.app')
 
+@section('css')
+<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/animate.css')}}" />
+
+<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-style.css')}}" />
+{{-- <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style2.css')}}" /> --}}
+@endsection
+
+@section('logo-img')
+    <div class="close-gallery animation-duration2 fadeInDown"></div>
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-md-12 p-0">
@@ -19,7 +30,7 @@
 
             <div class="col-md-12 border-bottom border-top ">
 
-                <div class="row elements-mid-align">
+                <div class="row elements-mid-align h-80px h-100px">
 
                     <div class=" col-12 text-center">
                         <input id="email" type="email"
@@ -38,7 +49,7 @@
             </div>
 
             <div class="col-12  border-bottom">
-                <div class="row elements-mid-align">
+                <div class="row elements-mid-align h-80px h-100px">
                     <div class=" col-12">
                         <input id="password" type="password"
                             class="form-control text-center border-0 @error('password') is-invalid @enderror" name="password" required
@@ -76,7 +87,7 @@
                     </div>
 
                     @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                    <a class="btn btn-link" href="{{ route('password.request') }}" style="color:#cccccc">
                         {{ __('Forgot Your Password?') }}
                     </a>
                     @endif
@@ -89,17 +100,12 @@
 
 @section('footer-scripts')
 <script>
-    $('.logo').hide();
-
-    $(".close-gallery")
-        .removeClass("d-none")
-        .addClass(" animation-duration2 fadeInDown");
 
     $(".close-gallery").click(function(e) {
 
       $(this).removeClass('fadeInDown').addClass('fadeOutUp');
       setTimeout(function() {
-        window.location.href = "{{url()->previous() }}";
+        window.location.href = "{{url('/') }}";
       });
   });
 </script>

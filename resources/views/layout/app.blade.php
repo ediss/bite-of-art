@@ -2,6 +2,10 @@
 
 <head>
 
+    <noscript>
+    <meta http-equiv="refresh" content="0; url={{ url('/warning')}}" />
+    </noscript>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -9,7 +13,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-menu.css')}}" />
-    {{-- <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style2.css')}}" /> --}}
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-style.css')}}" />
 
     @yield('css')
 
@@ -99,7 +103,6 @@ $(document).ready(function () {
         </script>
 
         @yield('footer-scripts')
-
 
     </div>
 

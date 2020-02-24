@@ -158,7 +158,7 @@
             <div class="carousel-inner carousel-inner-news w-100 mini p-0 m-0" role="listbox">
 
                 @foreach ($news as $n)
-                <div class="carousel-item carousel-item-news  col-6 col-md-20 p-0 {{ $loop->first ? 'active' : '' }}">
+                <div class="carousel-item carousel-item-news  col-6 col-md-20 p-0 {{ $loop->first ? 'active first-news' : '' }}">
                     <div class="card ">
                         <div class="img-opacity" news-id = {{ $n->id }}>
                             <img class="img-fluid  d-block" src="{{ $n->article_cover}}" alt="slide 1">

@@ -3,6 +3,9 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/animate.css')}}" />
 <link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
+
+<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-style.css')}}" />
+
 @endsection
 
 @section('logo-img')
@@ -25,7 +28,7 @@
         <!--end artist-->
 
         <!--Add artwork-->
-        <div class="row d-none" id="artwork">
+        <div class="d-none" id="artwork">
 
         </div>
         <!--end artwork-->
@@ -66,8 +69,6 @@ $(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
 
 $(document).ready(function(){
 
-
-    $('.logo').hide();
 
     $(".close-gallery")
         .removeClass("d-none")
@@ -151,6 +152,11 @@ $(document).ready(function(){
     });
 
 });
+
+var ww = document.body.clientWidth;
+if (ww < 760) {
+    window.location.href = "{{ url('warning/mobile') }}"; 
+}
 
 </script>
 @endsection

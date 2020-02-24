@@ -26,7 +26,7 @@ Route::get('/login', 'Auth\CustomLoginController@showLoginForm')->name('login')-
 Route::post('/login', 'Auth\CustomLoginController@login')->name('custom.login.submit');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::any('register', 'Auth\CustomRegisterController@register')->name('register');
+Route::any('membership', 'Auth\CustomRegisterController@register')->name('register');
 
 
 // Password Reset Routes...
@@ -80,3 +80,6 @@ Route::group([
     Route::post('/update-gallerist/{id}',    'ModeratorController@updateGallerist')->name('update-gallerist');
 
 });
+
+Route::get('/warning/{mobile?}',                 'Controller@redirectUser');
+
