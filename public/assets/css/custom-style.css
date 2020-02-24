@@ -44,6 +44,9 @@ body {
 .montserrat-regular {
     font-family: montserrat-regular;
 }
+/* .m-35px {
+    margin-top:35px;
+} */
 
 .h-80px {
     height: 80px;
@@ -753,6 +756,8 @@ body {
     position: relative;
     overflow: hidden;
     display: inline-block;
+    cursor: pointer;
+
   }
   
   .my-btn {
@@ -762,18 +767,27 @@ body {
     padding: 13px 5px;
     /* border-radius: 8px; */
     font-size: 14px;
-    font-weight: bold;
+    /* font-weight: bold; */
     width:130px;
+    font-family: montserrat-bold;
+    cursor: pointer;
+
+    
   }
   
   .upload-btn-wrapper input[type=file] {
     font-size: 100px;
     position: absolute;
     left: 0;
-    top: 0;
+    
     opacity: 0;
+    cursor: pointer;
+    font-family: montserrat-regular;
+
   }
-  
+  .upload-btn-wrapper:hover {
+      cursor: pointer;
+  }
   /***/
   #artist-header input { background-color: #e6e6e6 !important; }
   #artwork-header input{ background-color: #cccccc !important; }
@@ -788,7 +802,18 @@ body {
     font-size: 14px;
     font-weight: bold;
     width: 135px;
-  
+    font-family: montserrat-regular;
+
+    cursor: pointer;
+
+  }
+  .my-btn:hover {
+    /* cursor:pointer; */
+    cursor: pointer;
+
+  }
+  .my-btns-new:hover {
+      cursor:pointer;
   }
 
   .virtual-toure {

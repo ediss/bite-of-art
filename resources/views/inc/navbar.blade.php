@@ -65,7 +65,7 @@
                             <div class="col-8 d-none d-lg-block">
                                 <div class="row m-35px">
                                     @if (Auth::check())
-                                        <div class="col-12 text-right montserrat-regular login">
+                                        <div class="col-12 text-right montserrat-regular login-membership login">
                                             <a href="{{ route('logout') }}" class="">LOGOUT</a>
                                                 <span class="ml-3 mr-3 menu-span">|</span>
                                             <a href="{{ route('gallerist.dashboard') }}" class="">ACCOUNT</a>
