@@ -278,7 +278,7 @@ body {
     position: absolute;
     top: 0;
     right: -50%; /*change this with javascript in the future*/
-    z-index: -1;
+    /* z-index: -1; */
     display: block;
     visibility: visible;
 }
