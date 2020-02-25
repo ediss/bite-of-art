@@ -23,11 +23,11 @@
         <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
             <div class="carousel-inner p-5 ml-4">
-                <div class="carousel-item  ">
+                <div class="carousel-item active ">
                     <h1 class="montserrat-bold pl-4">About BITE of art</h1>
                     <div class="row mt-5">
                         <div class="col-8">
-                            <p class="montserrat-regular  pl-4 pr-4" style="font-size:25px; text-align: justify;
+                            <p class="montserrat-regular  pl-4 pr-4" style="font-size:15px; text-align: justify;
                             text-justify: inter-word;">
                                 The BITE of Art initiative represents a joint vision of cultural and artistic
                                 institutions and organizations coming from Spain, Slovenia and Serbia to bring
@@ -68,7 +68,7 @@
 
                     <div class="row mt-5">
                         <div class="col-8">
-                            <p class="montserrat-regular  pl-4 pr-4" style="font-size:25px; text-align: justify;
+                            <p class="montserrat-regular  pl-4 pr-4" style="font-size:20px; text-align: justify;
                             text-justify: inter-word;">
                                 BITE of Art project is running by the consortium of organization and companies from 4
                                 countries:
@@ -93,7 +93,7 @@
                     </div>
 
                 </div>
-                <div class="carousel-item active text-center">
+                <div class="carousel-item  text-center">
                     <div class="row mt-5">
                         <div class="col-12 text-center">
                             <h3 class="montserrat-bold">Experience unique BITE of Art content:</h3>
