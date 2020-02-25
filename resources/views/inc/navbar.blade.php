@@ -100,11 +100,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link h-100px text-center" href="about-bite.html">ABOUT BITE </a>
+                            <a class="nav-link h-100px text-center" href="{{ route('about.bite') }}">ABOUT BITE </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link h-100px text-center" href="bitenetwork.html">BITE NETWORK</a>
+                            <a class="nav-link h-100px text-center" href="#">BITE NETWORK</a>
                         </li>
 
                         <li class="nav-item">

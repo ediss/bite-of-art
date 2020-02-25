@@ -18,7 +18,9 @@
 
 Route::get('/test',                 'EventController@test');
 
-
+Route::get("/about-us", function(){
+    return View::make("about");
+ })->name('about.bite');
 
 // Route::post('/event/{id?}', 'EventController@ajaxLoadEventData');
 // Auth::routes();

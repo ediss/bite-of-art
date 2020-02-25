@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-12 p-0 m-0 h-80px h-100px">
         <h1 class="page-heading text-center montserrat-bold pt-4 mb-0">
-            {{ $tag ? "Access only allowed for devices bigger than smartphones" : "YOU NEED TO ENABLE JAVASCRIPT IN YOUR BROWSER!"}}
+            {{ $tag ? "Access allowed only for devices bigger than smartphones" : "YOU NEED TO ENABLE JAVASCRIPT IN YOUR BROWSER!"}}
             
         </h1>
     </div>
