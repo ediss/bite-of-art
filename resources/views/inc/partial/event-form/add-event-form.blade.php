@@ -70,11 +70,11 @@
 
                 <div class="col-7">
                     <textarea class="form-control border-0" name="event_cover_description" placeholder="About Event"
-                        maxlength="700" onkeyup="charCount(this)"
+                        maxlength="2000" onkeyup="charCount(this)"
                         id="event_cover_description">{{ Request::get('event_cover_description') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
 
                 <div class="col-2 d-md-none d-lg-block">
@@ -105,11 +105,11 @@
 
                 <div class="col-7">
                     <textarea class="form-control border-0" name="event_image_1_desc"
-                        placeholder="Additional photo #1 description" maxlength="700" onkeyup="charCount(this)"
+                        placeholder="Additional photo #1 description" maxlength="2000" onkeyup="charCount(this)"
                         id="event_image_1_desc">{{ Request::get('event_image_1_desc') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
                 <div class="col-2">
 
@@ -132,11 +132,11 @@
 
                 <div class=" col-7">
                     <textarea class="form-control border-0" name="event_image_2_desc"
-                        placeholder="Additional photo #2 description" maxlength="700" onkeyup="charCount(this)"
+                        placeholder="Additional photo #2 description" maxlength="2000" onkeyup="charCount(this)"
                         id="event_image_2_desc">{{ Request::get('event_image_2_desc') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
                 <div class="col-2"></div>
             </div>
@@ -157,11 +157,11 @@
 
                 <div class="col-7">
                     <textarea class="form-control border-0" name="event_image_3_desc"
-                        placeholder="Additional photo #3 description" maxlength="700" onkeyup="charCount(this)"
+                        placeholder="Additional photo #3 description" maxlength="2000" onkeyup="charCount(this)"
                         id="event_image_3_desc">{{ Request::get('event_image_3_desc') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
                 <div class="col-2"></div>
             </div>
@@ -180,11 +180,11 @@
 
                 <div class="col-4">
                     <textarea class="form-control border-0" name="event_media_description"
-                        placeholder="Media file description" maxlength="700" onkeyup="charCount(this)"
+                        placeholder="Media file description" maxlength="2000" onkeyup="charCount(this)"
                         id="event_media_description">{{ Request::get('event_media_description') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
                 <div class="col-2"></div>
             </div>
@@ -197,11 +197,11 @@
 
 
                 <div class="col-8">
-                    <textarea class="form-control border-0" name="event_note" placeholder="Note" maxlength="700"
+                    <textarea class="form-control border-0" name="event_note" placeholder="Note" maxlength="2000"
                         onkeyup="charCount(this)" id="event_note">{{ Request::get('event_note') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
                 <div class="col-2"></div>
             </div>

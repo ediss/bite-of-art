@@ -122,12 +122,12 @@
                         <div class=" col-7">
 
                             <textarea class="form-control border-0" name="about_gallery" placeholder="About gallery"
-                                maxlength="700" onkeyup="charCount(this)"
+                                maxlength="2000" onkeyup="charCount(this)"
                                 id="about_gallery">{{ Auth::user()->about_gallery }}</textarea>
                         </div>
 
                         <div class="col-1">
-                            <span class="float-left">700</span>
+                            <span class="float-left"></span>
                         </div>
                         <div class="col-2">
                             @if ( $validator && $validator->errors()->first('about_gallery') )
@@ -217,12 +217,12 @@
                         <div class=" col-7">
 
                             <textarea class="form-control border-0" name="about_gallery" placeholder="About gallery"
-                                maxlength="700" onkeyup="charCount(this)"
+                                maxlength="2000" onkeyup="charCount(this)"
                                 id="about_gallery">{{ Auth::user()->about_gallery }}</textarea>
                         </div>
 
                         <div class="col-1">
-                            <span class="float-left">700</span>
+                            <span class="float-left"></span>
                         </div>
                         <div class="col-2">
                             @if ( $validator && $validator->errors()->first('about_gallery') )

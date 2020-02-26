@@ -65,12 +65,12 @@
 
                 <div class="col-7">
 
-                    <textarea class="form-control border-0" name="artwork_cover_description" maxlength="700"
+                    <textarea class="form-control border-0" name="artwork_cover_description" maxlength="2000"
                         onkeyup="charCount(this)" placeholder="About Artwork"
                         id="artwork_cover_description">{{ Request::get('artwork_cover_description') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
 
                 <div class="col-2 d-md-none d-lg-block">
@@ -100,12 +100,12 @@
 
 
                 <div class="col-7">
-                    <textarea class="form-control border-0" name="artwork_image_1_desc" maxlength="700"
+                    <textarea class="form-control border-0" name="artwork_image_1_desc" maxlength="2000"
                         onkeyup="charCount(this)" placeholder="Additional photo #1 description"
                         id="artwork_image_1_desc">{{ Request::get('artwork_image_1_desc') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
 
                 <div class="col-2">
@@ -128,12 +128,12 @@
 
 
                 <div class="col-7">
-                    <textarea class="form-control border-0" name="artwork_image_2_desc" maxlength="700"
+                    <textarea class="form-control border-0" name="artwork_image_2_desc" maxlength="2000"
                         onkeyup="charCount(this)" placeholder="Additional photo #2 description"
                         id="artwork_image_2_desc">{{ Request::get('artwork_image_2_desc') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
                 <div class="col-2"></div>
             </div>
@@ -153,12 +153,12 @@
 
 
                 <div class="col-7">
-                    <textarea class="form-control border-0" name="artwork_image_3_desc" maxlength="700"
+                    <textarea class="form-control border-0" name="artwork_image_3_desc" maxlength="2000"
                         onkeyup="charCount(this)" placeholder="Additional photo #3 description"
                         id="artwork_image_3_desc">{{ Request::get('artwork_image_3_desc') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
                 <div class="col-2"></div>
             </div>
@@ -176,12 +176,12 @@
 
 
                 <div class="col-4">
-                    <textarea class="form-control border-0" name="artwork_media_desc" maxlength="700"
+                    <textarea class="form-control border-0" name="artwork_media_desc" maxlength="2000"
                         onkeyup="charCount(this)" placeholder="Media file description"
                         id="artwork_media_desc">{{ Request::get('artwork_media_desc') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
                 <div class="col-2"></div>
             </div>
@@ -193,11 +193,11 @@
 
 
                 <div class="col-8">
-                    <textarea class="form-control border-0" name="artwork_note" placeholder="Note" maxlength="700"
+                    <textarea class="form-control border-0" name="artwork_note" placeholder="Note" maxlength="2000"
                         onkeyup="charCount(this)" id="artwork_note">{{ Request::get('artwork_note') }}</textarea>
                 </div>
                 <div class="col-1">
-                    <span class="float-left">700</span>
+                    <span class="float-left"></span>
                 </div>
                 <div class="col-2"></div>
             </div>

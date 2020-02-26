@@ -87,12 +87,12 @@
 
                     <div class=" col-7">
                         <textarea class="form-control border-0" name="article_cover_description"
-                            placeholder="About article" maxlength="700" onkeyup="charCount(this)"
+                            placeholder="About article" maxlength="2000" onkeyup="charCount(this)"
                             id="article_cover_description">{{ Request::get('article_cover_description') }}</textarea>
 
                     </div>
                     <div class="col-1">
-                        <span class="float-left">700</span>
+                        <span class="float-left"></span>
                     </div>
 
                     <div class="col-md-2">
@@ -123,11 +123,11 @@
 
                     <div class=" col-4">
                         <textarea class="form-control border-0" name="article_media_description"
-                            placeholder="Media file description" maxlength="700" onkeyup="charCount(this)"
+                            placeholder="Media file description" maxlength="2000" onkeyup="charCount(this)"
                             id="article_media_description">{{ Request::get('article_media_description') }}</textarea>
                     </div>
                     <div class="col-1">
-                        <span class="float-left">700</span>
+                        <span class="float-left"></span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -142,12 +142,12 @@
 
 
                     <div class=" col-8">
-                        <textarea class="form-control border-0" name="article_note" placeholder="Note" maxlength="700"
+                        <textarea class="form-control border-0" name="article_note" placeholder="Note" maxlength="2000"
                             onkeyup="charCount(this)" id="article_note">{{ Request::get('article_note') }}</textarea>
 
                     </div>
                     <div class="col-1">
-                        <span class="float-left">700</span>
+                        <span class="float-left"></span>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
