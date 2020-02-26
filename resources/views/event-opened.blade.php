@@ -71,8 +71,12 @@
                             <img class="" src="{{ asset('images/social-network/pinterest.png') }}">
                         </a>
                         
+                        <a target="_blank" href="http://twitter.com/share?&url={{url()->current()}}&hashtags=bite,of,art">
+                            <img class="" src="{{ asset('images/social-network/twitter.png') }}">
+                        </a>
+
                         
-                        <img class="" src="{{ asset('images/social-network/twitter.png') }}">
+                        
                         <img class="" src="{{ asset('images/social-network/linkedin.png') }}">
                         <img class="mt-2" src="{{ asset('images/social-network/gmail.png') }}">
                     </div>
