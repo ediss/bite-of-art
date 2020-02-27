@@ -76,7 +76,7 @@ $(document).ready(function(){
                         transition:
                             "transform 1.9s ease-in-out, width 1.9s ease-in-out",
                         // transform: "scale(1.6) translate3d(18%, 0, 0)",
-                        transform: "scale(1.6) translate(14.5%, 0px)",
+                        transform: "scale(1.8) translate(11.1%, 0px)",
                         // width: "140%"
                     });
 
