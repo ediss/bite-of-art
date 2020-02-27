@@ -93,14 +93,16 @@ $(document).ready(function() {
 
     
     });
-    var vr_height = $(".carousel-inner-gallery").height();
+    var vr_height = $("#event_cover").height();
+
+    
 
     $(".virtual-toure").height(vr_height);
 
     if (ww < 990) {
         $(".mobile-hidden").remove();
         $(".mobile-first").addClass("active");
-        var vr_height = $(".carousel-inner-gallery").height();
+        var vr_height = $("#event_cover").height();
 
         $(".virtual-toure").height(vr_height);
     }
