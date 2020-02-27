@@ -678,6 +678,15 @@ body {
     /*end of news slider*/
 }
 
+@media(max-width :1140px) {
+    .gallery-first-slide h1 {
+        font-size:0.8rem;
+    }
+    .fadeInUp p {
+        font-size:0.1rem;
+    }
+}
+
 .b-red {
     border:2px solid red;
 }
