@@ -678,7 +678,7 @@ body {
     /*end of news slider*/
 }
 
-@media(max-width :1140px) {
+@media(max-width :1440px) {
     .gallery-first-slide h1 {
         font-size:0.8rem;
     }
