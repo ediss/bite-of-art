@@ -34,51 +34,63 @@
                 @php
                 $counter ++;
                 @endphp
-                <div class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
+                <div
+                    class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
 
                     <div class="card">
                         <div class="row">
-                        <div class="col-12">
+                            <div class="col-12 text-center">
                                 <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
-                                        {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p>
-    
-    
-                                    <p>@ {{ $data->event_place }}</p>
-                        </div>
+                                    {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p>
+
+
+                                <p>@ {{ $data->event_place }}</p>
+                            </div>
                         </div>
                         <div class="row">
                             @php $desc = explode('Our', $data->event_description);
-                                
+
                             @endphp
                             <div class="col-6 gallery-first-slide montserrat-regular text-left">
-                                
+
 
                                 <p>{{ $desc[0] }}</p>
                             </div>
                             <div class="col-6  montserrat-regular ">
-                                    <p>{{ $desc[1] }}</p>
+                                <p>{{ $desc[1] }}</p>
                             </div>
                         </div>
-                        
+
                     </div>
 
                     <div class=" social-scale">
-                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}" class="fb-xfbml-parse-ignore">
+                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
+                            class="fb-xfbml-parse-ignore">
                             <img class="" src="{{ asset('images/social-network/facebook.png') }}">
                         </a>
 
-                        <a target="_blank" href="http://pinterest.com/pin/create/button/?url={{url()->current()}}&media={{ url($data->event_cover) }}" class="pin-it-button" count-layout="horizontal">
+                        <a target="_blank"
+                            href="http://pinterest.com/pin/create/button/?url={{url()->current()}}&media={{ url($data->event_cover) }}"
+                            class="pin-it-button" count-layout="horizontal">
                             <img class="" src="{{ asset('images/social-network/pinterest.png') }}">
                         </a>
-                        
-                        <a target="_blank" href="http://twitter.com/share?&url={{url()->current()}}&hashtags=bite,of,art">
+
+                        <a target="_blank"
+                            href="http://twitter.com/share?&url={{url()->current()}}&hashtags=bite,of,art">
                             <img class="" src="{{ asset('images/social-network/twitter.png') }}">
                         </a>
 
-                        
-                        
-                        <img class="" src="{{ asset('images/social-network/linkedin.png') }}">
-                        <img class="mt-2" src="{{ asset('images/social-network/gmail.png') }}">
+
+                        <a target="_blank"
+                            href="http://www.linkedin.com/shareArticle?mini=true&url={{ url()->current() }}&title={{ $data->event_name }}&summary={{ url($data->event_cover) }}">
+                            <img class="" src="{{ asset('images/social-network/linkedin.png') }}">
+                        </a>
+
+                        <a href="mailto:?subject=I wanted you to see this site&amp;body={{url()->current()}}"
+                            title="Event: {{ $data->event_name }}">
+                            <img class="mt-2" src="{{ asset('images/social-network/gmail.png') }}">
+                        </a>
+
                     </div>
 
                 </div>

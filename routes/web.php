@@ -76,10 +76,10 @@ Route::group([
     Route::get('/',                         'ModeratorController@index')->name('moderator.dashboard');
     Route::get('/get-gallerists',           'ModeratorController@getGallerists');
     Route::get('/get-events',               'ModeratorController@getEvents');
-    Route::get('/update-event/{id}',         'ModeratorController@updateEvent')->name('moderator.event.update');
-    Route::post('/approve-event/{id}',         'ModeratorController@approveEvent')->name('update-event');
+    Route::any('/update-event/{id}',        'ModeratorController@updateEvent')->name('moderator.event.update');
+    Route::post('/approve-event/{id}',      'ModeratorController@approveEvent')->name('update-event');
 
-    Route::post('/update-gallerist/{id}',    'ModeratorController@updateGallerist')->name('update-gallerist');
+    Route::post('/update-gallerist/{id}',   'ModeratorController@updateGallerist')->name('update-gallerist');
 
 });
 

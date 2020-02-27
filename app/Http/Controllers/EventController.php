@@ -94,7 +94,7 @@ class EventController extends Controller
             //dd(explode(" ", $request->input('daterange')));
             $validator = Validator::make($request->all(), [
                 "event_name"                => "required",
-                "event_cover"                => "required",
+                "event_cover"               => "required",
                 "daterange"                 => "required",
                 "event_cover_description"   => "required",
             ],
@@ -214,6 +214,9 @@ class EventController extends Controller
 
 
     }
+
+
+
 
     public function submitArtist(Request $request) {
 

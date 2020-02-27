@@ -676,7 +676,9 @@ body {
 .b-red {
     border:2px solid red;
 }
-
+.b-green {
+    border:2px solid green;
+}
 .social-scale {
     bottom: 0;
   }
@@ -820,6 +822,43 @@ body {
       border: none !important;
   }
 
+  /*
+   *---------
+   *ABOUT US
+   *---------
+  */
+
+.about-carousel h1 {
+    font-size:1.5rem;
+}
+
+.about-carousel h3 {
+    font-size:0.8rem;
+}
+
+.about-carousel p {
+    font-size:0.8rem;
+}
+.about-carousel ul li {
+    list-style-type:none;
+}
+.about-carousel ul li:before {
+    content: '-';
+    
+    margin-right: 10px;
+}
+.about-carousel ul li a {
+    font-size:0.6rem;
+    font-family: montserrat-regular;
+}
+
+.resize-img {
+    max-width: 60%;
+}
+
+.about-carousel span {
+    font-size:0.6rem;
+}
 
 
 

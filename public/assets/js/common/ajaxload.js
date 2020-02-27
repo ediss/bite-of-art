@@ -31,23 +31,23 @@ var AjaxLoad = {
     },
     initializeEvents: function(){
         var self = this;
-        $(document).on('click', '.js-submit', function(e) {
-           e.preventDefault();
+        // $(document).on('click', '.js-submit', function(e) {
+        //    e.preventDefault();
 
-           var formElem = self.getFormElem($(this));
-           var containerElem = self.getContainerElem($(this));
-           self.initializePagination(formElem);
-           self.paginations[formElem.attr('js-container')].page = 1;
+        //    var formElem = self.getFormElem($(this));
+        //    var containerElem = self.getContainerElem($(this));
+        //    self.initializePagination(formElem);
+        //    self.paginations[formElem.attr('js-container')].page = 1;
 
-           var additional_data = self.paginations[formElem.attr('js-container')].getData();
-           if ($(this).closest('.modal').length){
-               additional_data["is_modal"] = true;
-           }
+        //    var additional_data = self.paginations[formElem.attr('js-container')].getData();
+        //    if ($(this).closest('.modal').length){
+        //        additional_data["is_modal"] = true;
+        //    }
 
-           self.submit(containerElem, formElem, formElem.attr('action'),
-               "POST",additional_data);
+        //    self.submit(containerElem, formElem, formElem.attr('action'),
+        //        "POST",additional_data);
 
-        });
+        // });
 
         /**
          * Initialization of modal, for now is used: data-modalid, data-url, data-modaltitle, data-savetext, data-maxwidth

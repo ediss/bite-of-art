@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{asset('assets/dashboard/css/custom.css')}}">
 
     <link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{asset('assets/dashboard/img/favicon.ico')}}">
     <!-- Tweaks for older IEs-->
@@ -278,7 +278,7 @@
     <script src=" {{ asset('assets/js/common/pagination.js') }}"></script>
     <script src=" {{ asset('plugins/toastr/toastr.min.js') }}"></script>
 
-    {{-- <script src=" {{ asset('assets/js/common/global.js') }}"></script> --}}
+    <script src=" {{ asset('assets/js/common/global.js') }}"></script>
 
     <script>
         AjaxLoad.initialize();
@@ -286,7 +286,59 @@
     @yield('footer-scripts')
 
 
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script>
+    $('.js-datepicker-range').daterangepicker({
+        timePicker: true,
+        locale: {
+        format: 'YYYY.MM.DD hh:mm:ss'
+    },
+    });
+    </script>
+    
+    <script>
+
+function updateEvent(event_id) {
+    
+alert(event_id);
+    
+    var form = document.getElementById('updateEvent');
+    var formData = new FormData(form);
+   $.ajaxSetup({
+      headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+  });
+   $.ajax({
+
+      url: "moderator/update-event/"+event_id,
+      method: 'post',
+      contentType: false,
+      processData: false,
+      cache: false,
+
+      data:formData,
+      success: function(result){
+        if (typeof result.message != "undefined" && result.message.length) {
+            toastr[result.message[0]](result.message[1]);
+        }
+
+      },
+      error: function(xhr, status, error) {
+
+      }
+
+   });
+}
+
+$(document).on('click', '.js-submit', function(e) {
+        e.preventDefault();
+        var event_id = $('#event_id').val();
+        updateEvent(event_id);
+    });
+
         $(document).on('change', '.gallerist_id2', function(e) {
             var approved= $(this).prop("checked");
 

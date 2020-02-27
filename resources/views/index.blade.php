@@ -89,7 +89,7 @@
                     </div>
 
                     <div class="card-body text-center h-100px">
-                        <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }} <p>first in past</p></h4>
+                        <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
                     </div>
@@ -107,7 +107,7 @@
                     </div>
 
                     <div class="card-body text-center h-100px">
-                        <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }} <p>buduci</p></h4>
+                        <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
 
                     </div>
@@ -117,17 +117,14 @@
 
                 @if($events_in_past)
                 @foreach ($events_in_past as $event_in_past)
-                {{-- @php dd( $loop->first) @endphp --}}
                 @if(!$loop->last)
-
-                
                 <div class="carousel-item carousel-item-main  col-4 p-0">
                     <div class="card" data-id="{{ $event_in_past->id }}">
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
 
                     <div class="card-body text-center h-100px">
-                        <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }} <p>prosli</p></h4>
+                        <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
                     </div>
