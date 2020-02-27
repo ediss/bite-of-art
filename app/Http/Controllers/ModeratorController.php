@@ -114,23 +114,23 @@ class ModeratorController extends Controller
         $validator = null;
         if ($request->isMethod('post')) {
 
-            
-
-            //dd(explode(" ", $request->input('daterange')));
-            // $validator = Validator::make($request->all(), [
-            //     "new_event_description"   => "required",
-            // ],
-            // [
+            $validator = Validator::make($request->all(), [
+                "new_event_description"   => "required",
+                "new_event_name"          => "required",
+            ],
+            [
                 
                 
-            //     "new_event_description.required"  => "Field 'Event Description ' can't be empty",
-                
+                "new_event_description.required"  => "Field 'Event Description ' can't be empty",
+                "new_event_name.required"         => "Field 'Name ' can't be empty",
 
 
 
-            // ]);
+            ]);
 
-            // if ($validator->passes()){
+            if ($validator->passes()){
+                $vr_tour            = $request->input('virtual_tour');
+                $img_360            = $request->input('img_360');
                 $event_name         = $request->input('new_event_name');
                 $event_date         = explode(" - ", $request->input('new_daterange'));
                 $event_cover        = $request->input('new_event_cover');
@@ -183,8 +183,8 @@ class ModeratorController extends Controller
 
                 //Inserting in DB
                 $event->event_name           = $event_name;
-                // $event->event_open           = $event_date[0];
-                // $event->event_closed         = $event_date[1];
+                $event->event_open           = $event_date[0];
+                $event->event_closed         = $event_date[1];
                 $event->event_cover          = (isset($event_cover_path)) ? $event_cover_path : $event->event_cover;
 
                 
@@ -202,6 +202,8 @@ class ModeratorController extends Controller
                 $event->event_media              = $event_media;
                 $event->event_media_desc         = $event_media_desc;
                 $event->event_note               = $event_note;
+                $event->vr_tour                  = $vr_tour;
+                $event->img_360                  = $img_360;
                 
 
                 if($event->save()) {
@@ -219,16 +221,19 @@ class ModeratorController extends Controller
                     $message = ["error", "OOps! Something went wrong!"];
                     return Response::json(["message" => $message]);
                 }
+            }else {
+
+                $html = View::make('moderator.modals.update-event', [
+                    'event' => $event,
+                    'validator'=>$validator
+                ])->render();
+
+                return Response::json(["html" => $html, 'success' => false]);
+            }
 
         
-            // $html = View::make('inc.partial.event-form.add-event-form', [
-            //     'validator'=>$validator
-            // ])->render();
-
-            // return Response::json(["html" => $html, 'success' => false]);
+            
         }
-
-        
 
         
         $html = View::make('moderator.modals.update-event', [

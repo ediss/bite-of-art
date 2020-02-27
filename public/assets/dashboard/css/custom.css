@@ -81,3 +81,11 @@
   .slider.round:before {
     border-radius: 50%;
   }
+
+  .js-datepicker-range{
+    z-index: 12000;
+  }
+
+  .modal-open .modal {
+    z-index: 3000 !important;
+  }

@@ -38,21 +38,19 @@
                     class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
 
                     <div class="card">
+                        
                         <div class="row">
-                            <div class="col-12 text-center">
-                                <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
-                                    {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p>
-
-
-                                <p>@ {{ $data->event_place }}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            @php $desc = explode('Our', $data->event_description);
-
-                            @endphp
+                            
                             <div class="col-6 gallery-first-slide montserrat-regular text-left">
-
+                                    <h1 class="montserrat-bold"> {{ $data->event_name }}</h1>
+                                    <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
+                                        {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p>
+        
+        
+                                    <p>@ {{ $data->event_place }}</p>
+                                    @php $desc = explode('~', $data->event_description);
+        
+                                    @endphp
 
                                 <p>{{ $desc[0] }}</p>
                             </div>
@@ -150,15 +148,26 @@
                 @php
                 $counter++;
                 @endphp
+
+                @if(isset($data->vr_tour))
                 <div class="carousel-item carousel-item-gallery carousel-item-vr p-0  col-12  col-lg-4">
                     <div class="card">
-                        <iframe height="" width="100%" allowfullscreen="true"
-                            src="https://momento360.com/e/u/05229c8cb82e4420abdf794b5f7ded1b?utm_campaign=embed&utm_source=other&utm_medium=other&heading=0&pitch=0&field-of-view=75"
-                            class="virtual-toure"> </iframe>
+                        <iframe height="" width="100%" allowfullscreen="true"src="{{ $data->vr_tour }}" class="virtual-toure"> </iframe>
 
                     </div>
 
                 </div>
+                @endif
+
+                @if(isset($data->img_360))
+                <div class="carousel-item carousel-item-gallery carousel-item-vr p-0  col-12  col-lg-4">
+                    <div class="card">
+                        <iframe height="" width="100%" allowfullscreen="true"src="{{ $data->img_360 }}" class="virtual-toure"> </iframe>
+
+                    </div>
+
+                </div>
+                @endif
                 <div class="carousel-item carousel-item-gallery p-0 d-lg-none col-12  col-lg-4">
                     <div class="card">
 
@@ -181,11 +190,10 @@
             <span class="sr-only">Next</span>
         </a>
         <ol class="carousel-indicators">
-            <h1 class="montserrat-bold"> {{ $data->event_name }}</h1>
-
-            {{-- @for ($i = 0; $i < $counter; $i++)
-            <li data-target="#carouselExample2" data-slide-to="{{ $i }}"{{ ($i == 0) ? "class=active" : ""}}></li>
-            @endfor --}}
+            @for ($i = 0; $i < $counter; $i++) <li data-target="#carouselExample2" data-slide-to="{{ $i }}"
+                {{ ($i == 0) ? "class=active" : ""}}>
+                </li>
+                @endfor
 
         </ol>
     </div>

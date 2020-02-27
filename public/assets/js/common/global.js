@@ -13,19 +13,16 @@ $.blockUI.defaults.css = {
     border: 'none'
  };
 
-// function initializeDatepickerRange() {
+function initializeDatepickerRange() {
     
-//         $('.js-datepicker-range').daterangepicker({
-//             // opens: 'left',
-//             locale: {
-//             format: 'YYYY-MM-DD'
-//         },
-
-//         }, function(start, end, label) {
-//             start.format('YYYY-MM-DD');
-//         });
+    $('.js-datepicker-range').daterangepicker({
+        timePicker: true,
+        locale: {
+        format: 'YYYY.MM.DD hh:mm:ss'
+    },
+    });
     
-// }
+}
 
 // function initializeDatepicker(){
 //     $('.js-datepicker').datepicker({
@@ -74,10 +71,10 @@ $.blockUI.defaults.css = {
 //     div_succes.html("Cashiertoken copied to clipboard"+ " "+ "<b>"+copyText+"<b/>");;
 
 // });
-
+initializeDatepickerRange();
 function reloadPage(){
     location.reload();
 }
 
 
-// AjaxLoad.initialize();
+//AjaxLoad.initialize();

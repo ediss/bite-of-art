@@ -1,16 +1,43 @@
-<form id = "updateEvent" method = "POST"  enctype="multipart/form-data">
+<form id="updateEvent" method="POST" action={{ route('moderator.event.update', ['id' => $event->id]) }}
+    enctype="multipart/form-data">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-control-label"><b>Virtual tour link</b></label>
+                <input type="text" class="form-control" name="virtual_tour" value="{{ $event->vr_tour }}">
+
+            </div>
+            <div class="col-md-6">
+                <label class="form-control-label"><b>360&#176; img</b></label>
+                <input type="text" class="form-control" name="img_360" value="{{ $event->img_360 }}">
+            </div>
+        </div>
+
+    </div>
+
+
     <div class="form-group">
         <div class="row">
             <div class="col-md-6">
                 <label class="form-control-label"><b>Name</b></label>
                 <input type="text" class="form-control" name="new_event_name" value="{{ $event->event_name }}">
 
-                <input type="hidden" name="event_id" id="event_id"class="event_id" value="{{ $event->id }}">
+                <input type="hidden" name="event_id" id="event_id" class="event_id" value="{{ $event->id }}">
+
+                @if ( $validator && $validator->errors()->first('new_event_name') )
+                <div class="alert alert-danger mt-2">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ $validator->errors()->first('new_event_name') }}
+                </div>
+                @endif
 
             </div>
             <div class="col-md-6">
                 <label class="form-control-label"><b>Event place</b></label>
-                <input type="text" class="form-control" name="new_event_place" value="{{ $event->event_place }}" disabled>
+                <input type="text" class="form-control" name="new_event_place" value="{{ $event->event_place }}"
+                    disabled>
             </div>
         </div>
 
@@ -19,8 +46,8 @@
 
         <div class="row">
             <div class="col-12">
-                    <input type="text" name="new_daterange" class="form-control text-center js-datepicker-range"
-                    value="{{ Request::get('new_daterange') }}">
+                <input type="text" name="new_daterange" class="form-control text-center js-datepicker-range"
+                    value="{{ $event->event_open }} - {{ $event->event_closed }}">
             </div>
         </div>
 
@@ -33,11 +60,11 @@
                 <p><img src="{{ $event->event_cover }}" class="img-fluid"></p>
             </div>
             <div class="col-md-4">
-                    <label class="form-control-label"><b>New cover image </b></label>
-                    <p><input type="file" name="new_event_cover" id="new_event_cover" /></p>
+                <label class="form-control-label"><b>New cover image </b></label>
+                <p><input type="file" name="new_event_cover" id="new_event_cover" /></p>
             </div>
             <div class="col-md-4">
-             
+
             </div>
         </div>
 
@@ -52,6 +79,14 @@
                 <label class="form-control-label"><b>Event description</b></label>
                 <textarea name="new_event_description" id="new_event_description" cols="30" rows="10"
                     class="form-control">{{ $event->event_description }}</textarea>
+                @if ( $validator && $validator->errors()->first('new_event_description') )
+                <div class="alert alert-danger mt-2">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ $validator->errors()->first('new_event_description') }}
+                </div>
+                @endif
             </div>
             <div class="col-md-3">
                 <label class="form-control-label"><b>Event description(SRB)</b></label>
@@ -158,8 +193,27 @@
     <div class="form-group">
         <label class="form-control-label"><b>Gallerist</b></label>
 
-        <input type="text" class="form-control" name="new_event_media" value="{{ $event->gallerist_id }}" disable>
+        <input type="text" class="form-control" name="gallerist_id" value="{{ $event->gallerist_id }}" disable>
 
     </div>
-
+    <script>
+        $('.js-datepicker-range').daterangepicker({
+            opens:"center",
+            timePicker: true,
+            locale: {
+            format: 'YYYY.MM.DD hh:mm:ss'
+        },
+        });  
+    </script>
 </form>
+
+
+
+@section('footer-scripts')
+<script>
+    $( document ).ready(function() {
+    alert( "ready!" );
+});
+</script>
+
+@endsection

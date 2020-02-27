@@ -432,7 +432,9 @@ body {
     }
 
     /*opened event*/
-
+    .gallery-first-slide h1 {
+        font-size:1.5rem;
+    }
     .transform-img {
         transform: scale(1.6);
         transform-origin: 50% 0%;

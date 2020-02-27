@@ -2,21 +2,13 @@
         <table class="table table-striped table-hover" style="table-layout:fixed;">
           <thead>
             <tr>
-              <th>#</th>
+              <th style="width:2%">#</th>
+              <th></th>
               <th>Name</th>
-              <th>Date open</th>
-              <th>Date closed</th>
+              <th>From - To</th>
               <th>Event place</th>
-              <th>Event description</th>
-              {{-- <th>Event description (SRB)</th>
-              <th>Event description (ESP)</th>
-              <th>Event description (SLO)</th> --}}
-              <th>Cover photo</th>
-              {{-- <th>Event images</th> --}}
               <th>Event media link</th>
-              {{-- <th>Event note</th> --}}
               <th>Gallerist</th>
-              {{-- <th>NFC Tag</th> --}}
               <th>Approved</th>
               <th>Actions</th>
             </tr>
@@ -26,16 +18,12 @@
               @foreach($events as $event)
                 @php $counter++; @endphp
                 <tr>
-                    <th scope="row">{{ $counter }}</th>
-                    <td>{{ $event->event_name }}</td>
-                    <td>{{ $event->event_open }}</td>
-                    <td>{{ $event->event_closed }}</td>
-                    <td>{{ $event->event_place }}</td>
-                    <td>{{ substr($event->event_description, 0, 50) }}...</td>
-                    {{-- <td>{{ $event->srb_event_description }}</td>
-                    <td>{{ $event->esp_event_description }}</td>
-                    <td>{{ $event->slo_event_description }}</td> --}}
+                    <td>{{ $counter }}</td>
                     <td><img src = "{{ $event->event_cover }}" class="img-fluid"></td>
+                    <td>{{ $event->event_name }}</td>
+                    <td>{{ $event->event_open }} <br/> {{ $event->event_closed }}</td>
+                    <td>{{ $event->event_place }}</td>
+                    
                     {{-- if isset --}}
                     {{-- <td>
 
