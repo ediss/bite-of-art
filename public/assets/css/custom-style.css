@@ -433,7 +433,10 @@ body {
 
     /*opened event*/
     .gallery-first-slide h1 {
-        font-size:1.5rem;
+        font-size:1rem;
+    }
+    .fadeInUp p {
+        font-size:0.8rem;
     }
     .transform-img {
         transform: scale(1.8);
