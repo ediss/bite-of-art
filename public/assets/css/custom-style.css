@@ -435,7 +435,7 @@ body {
     .gallery-first-slide h1 {
         font-size:1rem;
     }
-    .fadeInUp p {
+    .mobile-first p {
         font-size:0.8rem;
     }
     .transform-img {
@@ -678,11 +678,11 @@ body {
     /*end of news slider*/
 }
 
-@media(min-width:760 and max-width :1440px) {
+@media(min-width:760) and (max-width :1440px) {
     .gallery-first-slide h1 {
         font-size:0.8rem;
     }
-    .fadeInUp p {
+    .mobile-first p {
         font-size:0.1rem;
     }
 }
