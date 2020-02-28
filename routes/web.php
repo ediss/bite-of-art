@@ -41,7 +41,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/home', 'EventController@index')->name('home');
 
 //need to be protected
-Route::any('/news/add-news', 'GalleristController@addNews')->name('add.news');
+
 
 Route::get('/news/{id}', 'EventController@getArticle');
 
@@ -58,12 +58,13 @@ Route::group([
 });
 
 
-Route::any('/ajax',         'EventController@ajaxTest')->middleware('auth');
+Route::any('/ajax',             'EventController@ajaxTest')->middleware('auth');
 
-Route::get('/event/{id}',   'EventController@ajaxLoadEventData');
+Route::get('/event/{id}',       'EventController@ajaxLoadEventData');
 
-Route::get('/news',         'NewsController@index')->name('all.news');
-Route::any('/contact',      'ContactController@index')->name('contact');
+Route::get('/news',             'NewsController@index')->name('all.news');
+Route::any('/news/add/article', 'NewsController@addArticle')->name('add.new.article')->middleware('auth');
+Route::any('/contact',          'ContactController@index')->name('contact');
 
 
 
@@ -76,10 +77,13 @@ Route::group([
     Route::get('/',                         'ModeratorController@index')->name('moderator.dashboard');
     Route::get('/get-gallerists',           'ModeratorController@getGallerists');
     Route::get('/get-events',               'ModeratorController@getEvents');
+    Route::get('/get-news',                 'ModeratorController@getNews');
     Route::any('/update-event/{id}',        'ModeratorController@updateEvent')->name('moderator.event.update');
-    Route::post('/approve-event/{id}',      'ModeratorController@approveEvent')->name('update-event');
-
-    Route::post('/update-gallerist/{id}',   'ModeratorController@updateGallerist')->name('update-gallerist');
+    Route::post('/approve-event/{id}',      'ModeratorController@approveEvent')->name('approve.event');
+    Route::post('/update-gallerist/{id}',   'ModeratorController@approveGallerist')->name('approve.gallerist');
+    Route::post('/approve-article/{id}',    'ModeratorController@approveArticle')->name('approve.article');
+    Route::any('/update-article/{id}',      'ModeratorController@updateArticle')->name('moderator.article.update');
+    Route::any('/article-additional/{id}',  'ModeratorController@articleAdditional')->name('moderator.article.additional');
 
 });
 

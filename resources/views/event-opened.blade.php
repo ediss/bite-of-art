@@ -34,8 +34,7 @@
                 @php
                 $counter ++;
                 @endphp
-                <div
-                    class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
+                <div class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
 
                     <div class="card">
                         

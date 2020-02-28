@@ -7,6 +7,7 @@ use App\Models\Event;
 use App\Models\Artist;
 use App\Models\Artwork;
 use App\Models\News;
+use App\Models\ArticleAdditionals;
 use Validator;
 use Response;
 use View;
@@ -34,25 +35,27 @@ class EventController extends Controller
         $feature_events = $event::where('approved', '=', 1)
         ->where('event_open', '>=', $today)->orderBy('event_open')->get();
 
-
+        $news = News::where('approved', '=', 1)->get();
 
 
         return view('index', [
             'event_in_past'  => $event_in_past,
             'events_in_past' => $events_in_past,
             'feature_events' => $feature_events,
-            'news'           => News::all(),
+            'news'           => $news
         ]);
     }
 
     public function getArticle(Request $request) {
 
         $articles = new News();
-
+        $articles_additionals = new ArticleAdditionals();
         $article = $articles->where('id', '=', $request->id)->first();
 
-        //dd($article);
-        return view ('article', ['article' => $article]);
+        
+
+        $article_additionals = $articles_additionals->where('article_id', '=', $request->id)->get();
+        return view ('news.article', ['article' => $article, 'additionals' => $article_additionals]);
 
 
     }

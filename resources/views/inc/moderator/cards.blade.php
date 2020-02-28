@@ -4,7 +4,7 @@
                 <div class="progress-details d-flex align-items-end justify-content-between">
                     <div class="title">
                         <div class="icon"><i class="fa fa-users fa-2x" aria-hidden="true"></i></div>
-                        <strong>AllGallerists</strong>
+                        <strong>All Gallerists</strong>
                     </div>
                     <div class="number dashtext-1">27</div>
                 </div>
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-3 col-sm-6 all-news">
             <div class="statistic-block block">
                 <div class="progress-details d-flex align-items-end justify-content-between">
                     <div class="title">

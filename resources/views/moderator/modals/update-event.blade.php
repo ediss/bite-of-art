@@ -8,7 +8,7 @@
 
             </div>
             <div class="col-md-6">
-                <label class="form-control-label"><b>360&#176; img</b></label>
+                <label class="form-control-label"><b>360&#176; image</b></label>
                 <input type="text" class="form-control" name="img_360" value="{{ $event->img_360 }}">
             </div>
         </div>
@@ -210,10 +210,6 @@
 
 
 @section('footer-scripts')
-<script>
-    $( document ).ready(function() {
-    alert( "ready!" );
-});
-</script>
+
 
 @endsection

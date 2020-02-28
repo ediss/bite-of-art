@@ -3,8 +3,24 @@
     cursor: pointer;
 }
 
+.all-gallerists:hover .fa-users{
+  color:#864DD9;
+}
+
 .all-events:hover {
     cursor: pointer;
+}
+
+.all-events:hover .fa-calendar{
+  color:#CF53F9;
+}
+
+.all-news:hover {
+  cursor: pointer;
+}
+
+.all-news:hover  .fa-newspaper-o {
+  color: #e95f71;
 }
 
 .fa-times-circle {

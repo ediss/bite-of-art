@@ -67,10 +67,6 @@
     </script>
     @yield('footer-scripts')
 
-
-    
-    
-   
     
     <script>
 
@@ -87,7 +83,7 @@
                 }
             });
             $.ajax({
-                url: "{{ route('update-gallerist',"gallerist_id") }}",
+                url: "{{ route('approve.gallerist',"gallerist_id") }}",
                 method: 'post',
                 data: {
                     approved: approved,
@@ -113,7 +109,7 @@
                 }
             });
             $.ajax({
-                url: "{{ route('update-event',"event_id") }}",
+                url: "{{ route('approve.event',"event_id") }}",
                 method: 'post',
                 data: {
                     approved: approved,
@@ -127,9 +123,38 @@
             });
         });
 
+
+        $(document).on('change', '.article_id', function(e) {
+            var approved= $(this).prop("checked");
+
+            var article_id = $(this).attr('data-id');
+            e.preventDefault();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{ route('approve.article',"article_id") }}",
+                method: 'post',
+                data: {
+                    approved: approved,
+                    id: article_id
+                },
+                success: function(response){
+                    if (typeof response.message != "undefined" && response.message.length) {
+                        toastr[response.message[0]](response.message[1]);
+                    }
+                }
+            });
+        });
+
     $(document).on('click', '.all-gallerists', function(e) {
 
             e.preventDefault();
+            $('.fa-users').css("color", "#864DD9");
+            $('.fa-newspaper-o').css("color", "inherit");
+            $('.fa-calendar').css("color", "inherit");
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -147,6 +172,9 @@
 
         $( ".all-events" ).click(function(e) {
             e.preventDefault();
+            $('.fa-users').css("color", "inherit");
+            $('.fa-newspaper-o').css("color", "inherit");
+            $('.fa-calendar').css("color", "#CF53F9");
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -154,6 +182,27 @@
             });
             $.ajax({
                 url: "{{ url('/moderator/get-events') }}",
+                method: 'get',
+                success: function(data){
+                    $('#content').html(data.html);
+                }
+            });
+
+        });
+
+        $( ".all-news" ).click(function(e) {
+            e.preventDefault();
+
+            $('.fa-newspaper-o').css("color", "#e95f71");
+            $('.fa-users').css("color", "inherit");
+            $('.fa-calendar').css("color", "inherit");
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{ url('/moderator/get-news') }}",
                 method: 'get',
                 success: function(data){
                     $('#content').html(data.html);
