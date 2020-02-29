@@ -1,4 +1,6 @@
+<a target="_blank"href="{{route('add.new.article')}}" class="btn btn-primary">Add article <i class="fa fa-plus"></i></a>
 <div class="table-responsive">
+    
     <table class="table table-striped table-hover" style="table-layout:fixed;">
         <thead>
             <tr>
