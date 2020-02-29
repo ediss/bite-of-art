@@ -41,6 +41,7 @@
                 <td>
                     <a class="text-dark btn btn-info  js-modal mb-5" data-modalid='add_images_or_video_to_article'
                         data-modaltitle="Update Article: {{$article->article_name}}"
+                        submit_button='my-js-submit'
                         data-url="{{ route('moderator.article.additional', ['id' => $article->id]) }}" data-savetext="Save">
                         Additional
                     </a>
@@ -51,6 +52,7 @@
                 <td>
                     <a class="text-primary  js-modal mb-5" data-modalid='edit_news'
                         data-modaltitle="Update Article: {{$article->article_name}}"
+                        submit_button='js-submit'
                         data-url="{{ route('moderator.article.update', ['id' => $article->id]) }}" data-savetext="Save">
                         <i class="fa fa-2x fa-edit"></i>
                     </a>

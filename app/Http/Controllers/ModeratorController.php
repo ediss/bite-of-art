@@ -384,17 +384,20 @@ class ModeratorController extends Controller
             $article_additional = new ArticleAdditionals();
             $video      = $request->input('video_url');
             $img_360    = $request->input('img_360');
-            
-            
-            if ($request->hasFile('article_images')) {
 
-                $article_images = $request->file('article_images');
-    
+
+            if ($request->hasFile('new_article_images')) {
+
+                $article_images = $request->file('new_article_images');
+
+                //dd($article_images);
+
                 foreach($article_images as $article_image) {
-    
-                    $article_image_name  = Str::random(5)."-".date('his')."-".Str::random(3).".".$article_image->getClientOriginalExtension();
+                    $article_additional = new ArticleAdditionals();
+
+                $article_image_name  = Str::random(5)."-".date('his')."-".Str::random(3).".".$article_image->getClientOriginalExtension();
                     $article_image_path = $article_image ? $article_image->move('images/articles/', $article_image_name) : null;
-    
+
 
                     $article_additional->article_id = $article_id;
 
@@ -403,25 +406,20 @@ class ModeratorController extends Controller
                     $article_additional->save();
 
 
+
+
                 }
-                    
+
             }
-            
-            
-            
-            
-
-
-
             $article_additional->article_video  = $video;
             $article_additional->img_360        = $img_360;
             $article_additional->article_id     = $article_id;
-            
-            // if ($article_additional->save()) {
-     
-            //     $message = ["success", " Succesfully added adtitionals data for article:" . $article->article_name];
-            //     return Response::json(['success' => true, 'message' => $message]);
-            // }
+
+            if ($article_additional->save()) {
+
+                $message = ["success", " Succesfully added adtitionals data for article:" . $article->article_name];
+                return Response::json(['success' => true, 'message' => $message]);
+            }
         }
 
         $html = View::make('moderator.modals.article-additional', ['article_id' => $article_id])->render();
