@@ -164,7 +164,7 @@
                             <img class="img-fluid  d-block" src="{{ $n->article_cover}}" alt="slide 1">
                         </div>
                         <div class="img-description" >
-                            <p class="montserrat-bold text-left"> {{$n->article_name}} <br/> {{ $n->article_open }}</p>
+                            <p class="montserrat-bold text-left"> {{$n->article_name}}</p>
                         </div>
 
                     </div>
