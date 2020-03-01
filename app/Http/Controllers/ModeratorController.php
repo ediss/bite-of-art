@@ -71,7 +71,7 @@ class ModeratorController extends Controller
     {
         $events = new Event;
 
-        $data = $events->all();
+        $data = $events->get();
 
         $html = View::make('inc.partial.dashboard.tables.events-table', [
             'events'  => $data,

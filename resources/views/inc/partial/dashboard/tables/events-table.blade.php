@@ -16,9 +16,12 @@
           <tbody>
               @php $counter = 0; @endphp
               @foreach($events as $event)
+              
                 @php $counter++; @endphp
                 <tr>
-                    <td>{{ $counter }}</td>
+                    <td>{{ $counter }}
+                      
+                    </td>
                     <td><img src = "{{ $event->event_cover }}" class="img-fluid"></td>
                     <td>{{ $event->event_name }}</td>
                     <td>{{ $event->event_open }} <br/> {{ $event->event_closed }}</td>
@@ -35,7 +38,7 @@
                     <td><a href= "{{ $event->event_media }}">{{ substr($event->event_media, 0, 45) }}</a> <br/> {{ $event->event_media_des }}</td>
                     {{-- <td>{{ $event->event_note }}</td> --}}
 
-                    <td> {{ $event->gallerist_id }}</td>
+                    <td> {{ $event->users->name }}<br> {{ $event->users->gallery_name }}</td>
 
 
                       <td>
