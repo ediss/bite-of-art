@@ -79,6 +79,7 @@ Route::group([
     Route::get('/get-events',               'ModeratorController@getEvents');
     Route::get('/get-news',                 'ModeratorController@getNews');
     Route::any('/update-event/{id}',        'ModeratorController@updateEvent')->name('moderator.event.update');
+    Route::any('/update-whole/event/{id}',  'ModeratorController@updateEventAllData')->name('moderator.event.artist.update');
     Route::post('/approve-event/{id}',      'ModeratorController@approveEvent')->name('approve.event');
     Route::post('/update-gallerist/{id}',   'ModeratorController@approveGallerist')->name('approve.gallerist');
     Route::post('/approve-article/{id}',    'ModeratorController@approveArticle')->name('approve.article');

@@ -8,6 +8,8 @@ use App\User;
 use App\Models\Event;
 use App\Models\News;
 use App\Models\ArticleAdditionals;
+use App\Models\Artist;
+
 use Response;
 use View;
 use Validator;
@@ -71,7 +73,7 @@ class ModeratorController extends Controller
     {
         $events = new Event;
 
-        $data = $events->get();
+        $data = $events->all();
 
         $html = View::make('inc.partial.dashboard.tables.events-table', [
             'events'  => $data,
@@ -236,6 +238,31 @@ class ModeratorController extends Controller
 
 
         $html = View::make('moderator.modals.update-event', [
+
+            'event' => $event,
+            'validator' => $validator
+        ])->render();
+
+        return Response::json(["html" => $html, "success" => $success]);
+    }
+
+    public function updateEventAllData(Request $request) {
+
+        $success = null;
+        $validator = null;
+        $event_id = $request->id;
+
+        $artists = Artist::where('event_id', '=',$event_id)->get();
+
+        dd($artists);
+
+
+
+        $validator = null;
+        if ($request->isMethod('post')) { 
+
+        }
+        $html = View::make('moderator.modals.update-all-event-data', [
 
             'event' => $event,
             'validator' => $validator

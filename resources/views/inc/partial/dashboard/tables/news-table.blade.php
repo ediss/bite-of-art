@@ -25,7 +25,11 @@
                 <td><img src="{{ $article->article_cover }}" class="img-fluid"></td>
                 <td>{{ $article->article_name }}</td>
                 <td>{{ $article->article_open }}</td>
-                <td>{{ $article->article_description }}</td>
+                @php $article_desc = explode(' ', $article->article_description);
+                    $first_part = implode(" ", array_splice($article_desc, 0, 2));
+                    
+                @endphp
+                <td>{{ $first_part }}</td>
                 <td>{{ $article->article_media }}</td>
                 <td>{{ $article->article_note }}</td>
                 <td>{{ $article->user_id }}</td>
