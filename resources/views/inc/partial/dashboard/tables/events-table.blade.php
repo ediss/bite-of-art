@@ -53,8 +53,9 @@
 
                     <td>
 
-                      <a class="text-primary  js-modal mb-5" data-modalid='add_backoffice_user'
+                      <a class="text-primary  js-modal mb-5" data-modalid='update_event'
                       data-modaltitle="Update Event: {{$event->event_name}}"
+                      submit_button='js-submit'
                       data-url="{{ route('moderator.event.update', ['id' => $event->id]) }}" data-savetext="Save">
                       <i class="fa fa-2x fa-edit"></i>
                   </a>
