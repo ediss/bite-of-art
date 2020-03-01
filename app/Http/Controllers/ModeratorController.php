@@ -254,7 +254,7 @@ class ModeratorController extends Controller
 
         $artists = Artist::where('event_id', '=',$event_id)->get();
 
-        dd($artists);
+        //dd($artists);
 
 
 
@@ -264,7 +264,8 @@ class ModeratorController extends Controller
         }
         $html = View::make('moderator.modals.update-all-event-data', [
 
-            'event' => $event,
+            'artists' => $artists,
+            'event_id'      =>  $event_id,
             'validator' => $validator
         ])->render();
 

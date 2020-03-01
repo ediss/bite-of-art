@@ -1,4 +1,4 @@
-<form id="updateEventAll" method="POST" action={{ route('moderator.event.artist.update', ['id' => $event->id]) }}
+<form id="updateEventAll" method="POST" action={{ route('moderator.event.artist.update', ['id' => $event_id]) }}
     enctype="multipart/form-data">
 
   

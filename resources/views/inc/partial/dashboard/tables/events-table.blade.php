@@ -71,7 +71,7 @@
                       data-url="{{ route('moderator.event.artist.update', ['id' => $event->id]) }}" data-savetext="Save">
                       <i class="fa fa-2x fa-expand"></i>
                   </a>
-                      <a href="" class="dashtext-2 js-delete-patient ml-2" data-id="{{ 1 }}"> </a>
+                      {{-- <a href="" class="dashtext-2 js-delete-patient ml-2" data-id="{{ 1 }}"> </a> --}}
                   </td>
 
                  </tr>
