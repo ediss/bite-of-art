@@ -251,15 +251,10 @@ class ModeratorController extends Controller
         $success = null;
         $validator = null;
         $event_id = $request->id;
-<<<<<<< HEAD
         $event_name = Event::where('id', '=', $event_id)->first()->event_name;
 
 
         $artists = Artist::where('event_id', '=', $event_id)->get();
-=======
-
-        $artists = Artist::where('event_id', '=',$event_id)->get();
->>>>>>> 13fe8cda4cabe2390a0a367b3d596331221ca69a
 
         //dd($artists);
 
@@ -267,7 +262,6 @@ class ModeratorController extends Controller
 
         $validator = null;
         if ($request->isMethod('post')) { 
-<<<<<<< HEAD
             //dd($request->all());
         }
         $html = View::make('inc.partial.dashboard.update-all-event-data', [
@@ -276,15 +270,6 @@ class ModeratorController extends Controller
             'event_id'   =>  $event_id,
             'event_name' => $event_name,
             'validator'  => $validator
-=======
-
-        }
-        $html = View::make('moderator.modals.update-all-event-data', [
-
-            'artists' => $artists,
-            'event_id'      =>  $event_id,
-            'validator' => $validator
->>>>>>> 13fe8cda4cabe2390a0a367b3d596331221ca69a
         ])->render();
 
         return Response::json(["html" => $html, "success" => $success]);
