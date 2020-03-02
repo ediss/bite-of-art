@@ -50,7 +50,7 @@ var AjaxLoad = {
         });
 
         /**
-         * Initialization of modal, for now is used: data-modalid, data-url, data-modaltitle, data-savetext, data-maxwidth
+         * Initialization of modal, for now is used: data-modalid, data-url, data-modaltitle, data-savetext, data-maxwidth, submit_button
          * But any kind of data can be passed through DOM
          *
          */
@@ -63,6 +63,8 @@ var AjaxLoad = {
             var title = $(this).attr('data-modaltitle');
             var savetext = $(this).attr('data-savetext');
             var maxwidth = $(this).attr('data-maxwidth') ? $(this).attr('data-maxwidth') : 1500;
+            var submit_button = $(this).attr('submit_button');
+
 
             // if there is no modal create it and append to body
             if (modalElem.length == 0){
@@ -77,7 +79,7 @@ var AjaxLoad = {
                                       '<p>Modal body text goes here.</p>' +
                                     '</div>' +
                                     '<div class="modal-footer">' +
-                                      '<button js-container=".js-modal-container" type="button" class="btn btn-primary js-submit">Save changes</button>' +
+                                      '<button js-container=".js-modal-container" type="button" class="btn btn-primary '+ submit_button+ '">Save changes</button>' +
                                       '<button type="button" class="btn btn-secondary js-modal-cancel" data-dismiss="modal">Close</button>' +
                                     '</div>' +
                                   '</div>' +
@@ -123,6 +125,8 @@ var AjaxLoad = {
                 }
             });
         });
+
+ 
 
         /**
          * Pagination click is submitting the form which wrapps the table

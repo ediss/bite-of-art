@@ -211,6 +211,31 @@
 
         });
 
+
+        $(document).on('click', '.all-event-data', function(e) {
+
+            var event_id = $(this).attr('event_id');
+
+            
+
+            e.preventDefault();
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                
+                url: "/moderator/update-whole/event/"+event_id,
+                method: 'get',
+                success: function(data){
+                    $('#content').html(data.html);
+                }
+            });
+
+        });
+
         $(document).on('click', '.custom-control-input', function(e) {
             // e.preventDefault();
 

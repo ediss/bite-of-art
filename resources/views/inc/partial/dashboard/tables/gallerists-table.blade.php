@@ -16,7 +16,7 @@
           <tbody>
               @php $counter = 0; @endphp
               @foreach($gallerists as $gallerist)
-                @php $counter++; @endphp
+                @php $counter++;@endphp
                 <tr>
                     <th scope="row">{{ $counter }}</th>
                     <td>{{ $gallerist->name }}</td>

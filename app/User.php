@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role_id', 'gallery_name', 'city_country', 'gallery_cover', 'about_gallery', 'website', 'cover_letter', 'approved'
+        'name', 'email', 'password', 'role_id', 'gallery_name', 'city_country', 'gallery_cover', 'about_gallery', 'website', 'cover_letter','approved'
     ];
 
     /**
@@ -38,4 +38,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function events() {
+        return $this->hasMany('App\Models\Event', 'gallerist_id');
+    }
 }

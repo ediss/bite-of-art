@@ -16,7 +16,12 @@
           <tbody>
               @php $counter = 0; @endphp
               @foreach($events as $event)
+
                 @php $counter++; @endphp
+                {{-- @php dd($event->artworks) @endphp --}}
+
+                {{-- @php dd($event->artists) @endphp --}}
+
                 <tr>
                     <td>{{ $counter }}</td>
                     <td><img src = "{{ $event->event_cover }}" class="img-fluid"></td>
@@ -35,8 +40,7 @@
                     <td><a href= "{{ $event->event_media }}">{{ substr($event->event_media, 0, 45) }}</a> <br/> {{ $event->event_media_des }}</td>
                     {{-- <td>{{ $event->event_note }}</td> --}}
 
-                    <td> {{ $event->gallerist_id }}</td>
-
+                    <td> {{ $event->user->name }}<br> {{ $event->user->gallery_name }}</td>
 
                       <td>
                         <div class="custom-control custom-switch">
@@ -50,8 +54,9 @@
 
                     <td>
 
-                      <a class="text-primary  js-modal mb-5" data-modalid='add_backoffice_user'
+                      <a class="text-primary  js-modal mb-5" data-modalid='update_event'
                       data-modaltitle="Update Event: {{$event->event_name}}"
+                      submit_button='js-submit'
                       data-url="{{ route('moderator.event.update', ['id' => $event->id]) }}" data-savetext="Save">
                       <i class="fa fa-2x fa-edit"></i>
                   </a>
@@ -60,7 +65,17 @@
                           data-url="" data-savetext="Sačuvaj">
                           <i class="fa fa-2x fa-edit"></i>
                       </a> --}}
-                      <a href="" class="dashtext-2 js-delete-patient ml-2" data-id="{{ 1 }}"> <i class="fa fa-2x fa-expand"></i></i> </a>
+                      {{-- <a class="text-primary  js-modal mb-5" data-modalid='update_event'
+                      data-modaltitle="Update Event: {{$event->event_name}} |Gallery: {{ $event->user->gallery_name }} | Gallerist: {{ $event->user->name }}"
+                      submit_button='js-submit'
+                      data-url="{{ route('moderator.event.artist.update', ['id' => $event->id]) }}" data-savetext="Save">
+                      <i class="fa fa-2x fa-expand"></i>
+                  </a> --}}
+
+                    <a class="text-primary all-event-data" event_id= {{ $event->id }}>
+                      <i class="fa fa-2x fa-expand"></i>
+                  </a>
+                      
                   </td>
 
                  </tr>

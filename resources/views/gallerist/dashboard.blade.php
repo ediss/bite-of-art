@@ -299,7 +299,9 @@
             <a href="{{ route('add.new.event') }}">
                 <button class="my-btn">ADD EVENT</button>
             </a>
-            <button class="my-btn ml-2">ADD ARTICLE</button>
+            <a href="{{ route('add.new.article') }}">
+                <button class="my-btn ml-2">ADD ARTICLE</button>
+            </a>
         </div>
     </div>
 </div>
