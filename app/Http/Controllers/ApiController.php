@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Artist;
 use App\Models\Artwork;
+use App\User;
 use Response;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -70,6 +71,23 @@ class ApiController extends Controller
             }
         }else{
             $response = Artwork::all();
+        }
+        
+
+        return Response::json($response, 200, [], JSON_PRETTY_PRINT);
+    }
+
+    public function getGallerists(Request $request) {
+
+        if($request->id) {
+            $response = User::where('id', '=', $request->id)
+                        ->where('role_id', '=', 2)->get();
+
+            if($response->count() == 0) {
+                $response = "No Gallerist exist with id: '$request->id'";
+            }
+        }else{
+            $response = User::where('role_id', '=', 2)->get();
         }
         
 
