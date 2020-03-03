@@ -167,7 +167,7 @@ class EventController extends Controller
                 //get from gallery
                 $eventObj->event_place          = Auth::user()->city_country;
 
-                $eventObj->event_description    = $event_cover_desc;
+                $eventObj->event_description    = $event_cover_desc.'~';
                 $eventObj->event_img_1          = (isset($event_image_1_path)) ? $event_image_1_path : null;
                 $eventObj->event_img_2          = (isset($event_image_2_path)) ? $event_image_2_path : null;
                 $eventObj->event_img_3          = (isset($event_image_3_path)) ? $event_image_3_path : null;

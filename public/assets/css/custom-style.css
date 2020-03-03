@@ -140,8 +140,8 @@ body {
     display: none;
 }
 
-.carousel-indicators {
-    /* top:35px; */
+.gallery-first-slide h1 {
+    font-size:1rem;
 }
 .carousel-indicators li {
     background-color: #cccccc;

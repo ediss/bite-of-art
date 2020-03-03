@@ -33,29 +33,22 @@
                 </div>
                 @php
                 $counter ++;
+
+                $desc = explode('~', $data->event_description);
                 @endphp
-                <div class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
+                <div
+                    class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
 
                     <div class="card">
-                        
-                        <div class="row">
-                            
-                            <div class="col-6 gallery-first-slide montserrat-regular text-left">
-                                    <h1 class="montserrat-bold"> {{ $data->event_name }}</h1>
-                                    <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
-                                        {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p>
-        
-        
-                                    <p>@ {{ $data->event_place }}</p>
-                                    @php $desc = explode('~', $data->event_description);
-        
-                                    @endphp
+                        <div class="col-10 gallery-first-slide">
+                            <div class="h-80px h-100px">
+                                <h1 class="montserrat-bold"> {{ $data->event_name }}</h1>
+                                <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
+                                    {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p>
+                                <p>@ {{ $data->event_place }}</p>
+                            </div>
 
-                                <p>{{ $desc[0] }}</p>
-                            </div>
-                            <div class="col-6  montserrat-regular ">
-                                <p>{{ $desc[1] }}</p>
-                            </div>
+                            <p>{{ $desc[0] }}</p>
                         </div>
 
                     </div>
@@ -92,7 +85,24 @@
 
                 </div>
 
+                @if($desc[1])
+                <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 ">
+                    @php
+                    $counter++;
+                    @endphp
+                    <div class="card">
+                        <div class="col-10">
+                            <div class="h-80px h-100px">
 
+                            </div>
+                            <p style="font-size:0.8rem">{{ $desc[1] }}</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                @endif
                 <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 " id="event_cover">
                     @php
                     $counter++;
@@ -151,7 +161,8 @@
                 @if(isset($data->vr_tour))
                 <div class="carousel-item carousel-item-gallery carousel-item-vr p-0  col-12  col-lg-4">
                     <div class="card">
-                        <iframe height="" width="100%" allowfullscreen="true"src="{{ $data->vr_tour }}" class="virtual-toure"> </iframe>
+                        <iframe height="" width="100%" allowfullscreen="true" src="{{ $data->vr_tour }}"
+                            class="virtual-toure"> </iframe>
 
                     </div>
 
@@ -161,7 +172,8 @@
                 @if(isset($data->img_360))
                 <div class="carousel-item carousel-item-gallery carousel-item-vr p-0  col-12  col-lg-4">
                     <div class="card">
-                        <iframe height="" width="100%" allowfullscreen="true"src="{{ $data->img_360 }}" class="virtual-toure"> </iframe>
+                        <iframe height="" width="100%" allowfullscreen="true" src="{{ $data->img_360 }}"
+                            class="virtual-toure"> </iframe>
 
                     </div>
 

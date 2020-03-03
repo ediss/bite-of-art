@@ -130,13 +130,8 @@ class ModeratorController extends Controller
                     "new_event_name"          => "required",
                 ],
                 [
-
-
                     "new_event_description.required"  => "Field 'Event Description ' can't be empty",
                     "new_event_name.required"         => "Field 'Name ' can't be empty",
-
-
-
                 ]
             );
 
@@ -214,13 +209,17 @@ class ModeratorController extends Controller
                 $event->img_360                  = $img_360;
 
 
+
                 if ($event->save()) {
                     $message = ["success", $event->event_name . " is updated"];
 
 
                     //GaleryName(first 3 char)+GaleryId+EventName(first 3 char)+EventID
-                    //$nfc_tag = substr(Auth::user()->gallery_name, 0, 3).Auth::user()->id.substr($event->event_name, 0, 3).$eventLastId;
+                    $nfc_tag = substr($event->user->gallery_name, 0, 3).$event->user->id.substr($event->event_name, 0, 3).$event->id;
 
+                    $event->nfc_tag = $nfc_tag;
+
+                    $event->save();
 
                     return Response::json(['success' => true, 'message' => $message]);
                 } else {
@@ -437,14 +436,15 @@ class ModeratorController extends Controller
     
     
                     if ($artwork->save()) {
-                        $message = ["success", $artwork->artwork_name . " is updated"];
+                        
+                        $artwork_nfc_tag = $artwork->event->nfc_tag.substr($artwork_name, 0, 3).$artwork->id;
+                        $artwork->nfc_tag = $artwork_nfc_tag;
+
+                        $artwork->save();
+                        
                         return Redirect::back()->with('success', $artwork->artwork_name . " is updated");
     
-    
-                        //GaleryName(first 3 char)+GaleryId+EventName(first 3 char)+EventID
-                        //$nfc_tag = substr(Auth::user()->gallery_name, 0, 3).Auth::user()->id.substr($event->event_name, 0, 3).$eventLastId;
-    
-                        return Response::json(['success' => true, 'message' => $message]);
+
                     } else {
                         $message = ["error", "OOps! Something went wrong!"];
                         return Response::json(["message" => $message]);

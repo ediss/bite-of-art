@@ -70,7 +70,7 @@ class GalleristController extends Controller
                 $articleObj->article_closed         = $article_date[1];
                 $articleObj->article_cover          = $article_cover_path;
 
-                $articleObj->article_description    = $article_cover_desc;
+                $articleObj->article_description    = $article_cover_desc.'~';
                 
                 $articleObj->article_media          = $article_media;
                 $articleObj->article_media_desc     = $article_media_desc;

@@ -33,39 +33,23 @@
                 </div>
                 @php
                 $counter ++;
+                $desc = explode('~', $article->article_description);
                 @endphp
 
-                <div class="carousel-item carousel-item-gallery news-first-slide animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
+                <div
+                    class="carousel-item carousel-item-gallery news-first-slide animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
+
 
                     <div class="card">
-
-                        <div class="row">
-
-                            <div class="col-6 news-first-slide montserrat-regular text-left">
+                        <div class="col-10 news-first-slide montserrat-regular text-left">
+                            <div class="h-80px h-100px">
                                 <h1 class="montserrat-bold">{{ $article->article_name }} </h1>
                                 <p>{{date('Y-d-M',strtotime($article->article_open))}}</p>
 
-                                <p>@ Gallery November, Belgrade, Serbia</p>
-                                {{-- <h1 class="montserrat-bold"> {{ $data->event_name }}</h1>
-                                <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
-                                    {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p> --}}
-
-
-                                {{-- <p>@ {{ $data->event_place }}</p> --}}
-
-
-
-                                @php $desc = explode('~', $article->article_description);
-
-                                @endphp
-
-                                <p>{{ $desc[0] }}</p>
                             </div>
-                            <div class="col-6  montserrat-regular ">
-                                <p>{{ $desc[1] }}</p>
-                            </div>
+
+                            <p>{{ $desc[0] }}</p>
                         </div>
-
                     </div>
 
                     <div class=" social-scale">
@@ -100,6 +84,24 @@
 
                 </div>
 
+                @if($desc[1])
+                <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 ">
+                    @php
+                    $counter++;
+                    @endphp
+                    <div class="card">
+                        <div class="col-10">
+                            <div class="h-80px h-100px">
+
+                            </div>
+                            <p style="font-size:0.8rem">{{ $desc[1] }}</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                @endif
 
                 <!-- had fadeInRight class -->
                 <div class="carousel-item carousel-item-gallery col-md-4 col-lg-4 animation-duration2 ">
@@ -107,7 +109,8 @@
                     $counter++;
                     @endphp
                     <div class="card">
-                        <img class="img-fluid  d-block gallery-img" src="{{ url($article->article_cover) }}" alt="slide 2">
+                        <img class="img-fluid  d-block gallery-img" src="{{ url($article->article_cover) }}"
+                            alt="slide 2">
 
                     </div>
 
@@ -115,18 +118,19 @@
 
                 @if(isset($additionals))
 
-                    @foreach ($additionals as $article_data)
-                    <div class="carousel-item carousel-item-gallery col-md-4 col-lg-4 animation-duration2">
-                            @php
-                            $counter++;
-                            @endphp
-                            <div class="card">
-                                <img class="img-fluid  d-block gallery-img" src="{{ url($article_data->article_img) }}" alt="slide 2">
-        
-                            </div>
-        
-                        </div>
-                    @endforeach
+                @foreach ($additionals as $article_data)
+                <div class="carousel-item carousel-item-gallery col-md-4 col-lg-4 animation-duration2">
+                    @php
+                    $counter++;
+                    @endphp
+                    <div class="card">
+                        <img class="img-fluid  d-block gallery-img" src="{{ url($article_data->article_img) }}"
+                            alt="slide 2">
+
+                    </div>
+
+                </div>
+                @endforeach
 
                 @endif
             </div>
