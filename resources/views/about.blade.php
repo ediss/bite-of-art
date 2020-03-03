@@ -95,6 +95,12 @@
     </div>
 
 </div>
+
+
+
+
+</div>
+
 <div class="carousel-controls-main">
     <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -112,10 +118,6 @@
             @endfor
 
     </ol>
-</div>
-
-
-
 </div>
 @endsection
 
