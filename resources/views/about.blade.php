@@ -35,28 +35,13 @@
                     class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
 
                         <div class="row">
-                            <div class="col-6 gallery-first-slide  text-left">
+                            <div class="col-10 gallery-first-slide  text-left">
                                 <h1 class="montserrat-bold">About BITE of art</h1>
 
-                                <p class="montserrat-regular">The BITE of Art initiative represents a joint vision of
-                                    cultural and artistic institutions and organizations
-                                    coming from Spain, Slovenia and Serbia to bring
-                                    innovative practices into work of cultural operators,
-                                    and indirectly to contemporary artists, shaping a path
-                                    for mainstreaming contemporary art among young
-                                    citizens. Our aim is to transform promotion and
-                                    attractiveness of the contemporary art among
-                                    audience by application of the digital communication
-                                    technologies and the new approaches in informing
-                                    and attracting audience, as well as in enhancing
-                                    artwork presentation.
-                                    Under the BITE of Art umbrella, we are gathering all
-                                    those who can contribute to this goal, on the first
-                                    place cultural operators, individuals, various
-                                    organisations and companies. We started from Serbia,
-                                    Spain and Slovenia, with the strong intention to
-                                    further expand this initiative in Europe.
+                                <p class="montserrat-regular">The <b>BITE of Art </b> initiative represents a joint vision of cultural and artistic institutions and organizations coming from Spain, Slovenia and Serbia to bring innovative practices into work of cultural operators, and indirectly to contemporary artists, shaping a path for mainstreaming contemporary art among young citizens. Our aim is to transform promotion and attractiveness of the contemporary art among audience by application of the digital communication technologies and the new approaches in informing and attracting audience, as well as in enhancing artwork presentation.
                                 </p>
+                                <p class="montserrat-regular">Under the <i>BITE of Art </i> umbrella, we are gathering all those who can contribute to this goal, on the first place cultural operators, individuals, various organisations and companies. We started from Serbia, Spain and Slovenia, with the strong intention to further expand this initiative in Europe.</p>
+                                <p class="montserrat-regular">The European Union supported BITE of Art initiative by co-financing project for development and piloting unique BITE communication model through the Creative Europe 2019 programme.</p>
                                 {{-- <div class=" social-scale">
                         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
                                 class="fb-xfbml-parse-ignore">
@@ -87,94 +72,7 @@
 
                             </div> --}}
                         </div>
-                        <div class="col-6  montserrat-regular">
-                            <p class="mb-0">The European Union supported BITE of Art initiative by
-                                co-financing project for development and piloting
-                                unique BITE communication model through the
-                                Creative Europe 2019 programme.
-                                BITE of Art project is running by the consortium of
-                                organization and companies from 4 countries:
-                            </p>
-                                <ul class="montserrat-regular p-0 mb-0">
-                                    <li><a target="_blank" class="text-dark" href="http://bum.org.rs/">Balkan Urban Movement (RS) (lead organization),</a></li>
-                                    <li><a target="_blank" class="text-dark" href="http://communications.rs/">Color Media Communications (RS),</a></li>
-                                    <li><a target="_blank" class="text-dark" href="https://www.kcb.org.rs/">Belgrade Cultural Center (RS),</a></li>
-                                    <li><a target="_blank" class="text-dark" href="https://www.consorcimuseus.gva.es/?lang=es">Consorci de Museus de la Comunitat Valenciana (ES),</a></li>
-                                    <li><a target="_blank" class="text-dark" href="http://www.backslash.es/">Backslash (ES),</a></li>
-                                    <li><a target="_blank" class="text-dark" href="https://www.mladizmaji.si/">Javni Zavod Mladi Zmaji (SL),</a></li>
-                                    <li><a target="_blank" class="text-dark" href="https://www.tipovej.org/">TiPovej! (SL),</a></li>
-                                    <li><a target="_blank" class="text-dark" href="http://connect-international.org/en/">CONNECT International (BE).</a></li>
-                                </ul>    
-                            
 
-
-
-
-                            <div class="col-12 p-0  montserrat-bold">
-                                <h3>Experience unique BITE of Art content:</h3>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="row">
-                                            <div class="col-4 pr-0">
-                                                <img src="{{ asset('images/about/virtual_curator.png') }}"
-                                                    class="img-fluid" alt="">
-                                            </div>
-                                            <div class="col-8 d-flex pl-1">
-                                                <span class="d-flex align-items-center ">Your private <br> virtual
-                                                    curator</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-6">
-                                            <div class="row">
-                                                <div class="col-4 pr-0">
-                                                        <img src="{{ asset('images/about/news.png') }}" class="img-fluid" alt="">
-                                                </div>
-                                                <div class="col-8 d-flex pl-1 ">
-                                                    <span class="d-flex align-items-center ">News</span>
-                                                </div>
-                                            </div>
-    
-                                        </div>
-
-
-                                  
-                                </div>
-
-                                <div class="row mt-2">
-                                        <div class="col-6">
-                                            <div class="row">
-                                                <div class="col-4 pr-0">
-                                                    <img src="{{ asset('images/about/virtual_tour.png') }}"
-                                                        class="img-fluid" alt="">
-                                                </div>
-                                                <div class="col-8 d-flex pl-1">
-                                                    <span class="d-flex align-items-center ">360&#176; tour</span>
-                                                </div>
-                                            </div>
-    
-                                        </div>
-    
-                                        <div class="col-6">
-                                                <div class="row">
-                                                    <div class="col-4 pr-0">
-                                                            <img src="{{ asset('images/about/events.png') }}" class="img-fluid" alt="">
-                                                    </div>
-                                                    <div class="col-8 d-flex pl-1 ">
-                                                        <span class="d-flex align-items-center ">Events</span>
-                                                    </div>
-                                                </div>
-        
-                                            </div>
-    
-    
-                                      
-                                    </div>
-                            </div>
-
-                        </div>
                     </div>
 
             </div>
@@ -185,7 +83,7 @@
                 $counter++;
                 @endphp
                 <div class="card">
-                    <img class="img-fluid  d-block gallery-img" src="{{ asset('images/events/cover_1581948087.jpg') }}"
+                    <img class="img-fluid  d-block gallery-img" src="{{ asset('images/about/BITEAB.jpg') }}"
                         alt="slide 2">
 
                 </div>
