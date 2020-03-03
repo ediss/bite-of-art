@@ -81,15 +81,13 @@ class ApiController extends Controller
 
         if($request->id) {
             $response = User::where('id', '=', $request->id)
-                        ->where('role_id', '=', 2)
-                        ->where('approved', '=', 1)->get();
+                        ->where('role_id', '=', 2)->get();
 
             if($response->count() == 0) {
                 $response = "No Gallerist exist with id: '$request->id'";
             }
         }else{
-            $response = User::where('role_id', '=', 2)
-                        ->where('approved', '=', 1)->get();
+            $response = User::where('role_id', '=', 2)->get();
         }
         
 

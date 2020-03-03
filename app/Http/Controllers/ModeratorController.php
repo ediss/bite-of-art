@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use App\User;
+use App\Models\ArticleAdditionals;
+use App\Models\Artwork;
+use App\Models\Artist;
 use App\Models\Event;
 use App\Models\News;
-use App\Models\ArticleAdditionals;
-use App\Models\Artist;
-
-use Response;
-use View;
+use App\User;
 use Validator;
+use Response;
+use Redirect;
+use Session;
+use View;
 
 
 
@@ -199,9 +201,9 @@ class ModeratorController extends Controller
                 $event->srb_event_description    = $event_desc_srb;
                 $event->esp_event_description    = $event_desc_esp;
                 $event->slo_event_description    = $event_desc_slo;
-                $event->event_img_1              = (isset($event_image_1_path)) ? $event_image_1_path : null;
-                $event->event_img_2              = (isset($event_image_2_path)) ? $event_image_2_path : null;
-                $event->event_img_3              = (isset($event_image_3_path)) ? $event_image_3_path : null;
+                $event->event_img_1              = (isset($event_image_1_path)) ? $event_image_1_path : $event->event_img_1;
+                $event->event_img_2              = (isset($event_image_2_path)) ? $event_image_2_path : $event->event_img_2;
+                $event->event_img_3              = (isset($event_image_3_path)) ? $event_image_3_path : $event->event_img_3;
                 $event->event_img_1_desc         = $event_image_1_desc;
                 $event->event_img_2_desc         = $event_image_2_desc;
                 $event->event_img_3_desc         = $event_image_3_desc;
@@ -246,7 +248,8 @@ class ModeratorController extends Controller
         return Response::json(["html" => $html, "success" => $success]);
     }
 
-    public function updateEventAllData(Request $request) {
+    /* Updating artist which belong to Event*/
+    public function updateEventArtistData(Request $request) {
 
         $success = null;
         $validator = null;
@@ -255,14 +258,97 @@ class ModeratorController extends Controller
 
 
         $artists = Artist::where('event_id', '=', $event_id)->get();
-
-        //dd($artists);
-
-
-
+  
+        
         $validator = null;
         if ($request->isMethod('post')) { 
-            //dd($request->all());
+            
+
+            $validator = Validator::make(
+                $request->all(),
+                [
+                    "new_artist_about"   => "required",
+                    "new_artist_name"    => "required",
+                ],
+                [
+                    "new_artist_about.required"  => "Field 'About Artist ' can't be empty",
+                    "new_artist_name.required"   => "Field 'Artist Name ' can't be empty",
+                ]
+            );
+
+            if ($validator->passes()) {
+                $artist_name        = $request->input('new_artist_name');
+                $artist_about       = $request->input('new_artist_about');
+                $artist_cover       = $request->input('new_artist_cover');
+                $artist_img_1       = $request->input('new_artist_img_1');
+                $artist_img_2       = $request->input('new_artist_img_2');
+                $artist_img_3       = $request->input('new_artist_img_3');
+                $artist_img_desc    = $request->input('new_artist_img_1_desc');
+                $artist_img_desc_2  = $request->input('new_artist_img_2_desc');
+                $artist_img_desc_3  = $request->input('new_artist_img_3_desc');
+
+                if ($request->hasFile('new_artist_cover')) {
+                    $artist_cover        = $request->file('new_artist_cover');
+                    $artist_cover_name   = 'cover_' . time() . '.' . $artist_cover->getClientOriginalExtension();
+                    $artist_cover_path   = $artist_cover ? $artist_cover->move('images/artists/', $artist_cover_name) : null;
+                }
+
+                if ($request->hasFile('new_artist_img_1')) {
+                    $artist_img_1        = $request->file('new_artist_img_1');
+                    $artist_img_1_name   = 'artist_img_1_' . time() . '.' . $artist_img_1->getClientOriginalExtension();
+                    $artist_img_1_path   = $artist_img_1 ? $artist_img_1->move('images/artists/', $artist_img_1_name) : null;
+                }
+
+                if ($request->hasFile('new_artist_img_2')) {
+                    $artist_img_2        = $request->file('new_artist_img_2');
+                    $artist_img_2_name   = 'artist_img_2_' . time() . '.' . $artist_img_2->getClientOriginalExtension();
+                    $artist_img_2_path   = $artist_img_2 ? $artist_img_2->move('images/artists/', $artist_img_2_name) : null;
+                }
+
+                if ($request->hasFile('new_artist_img_3')) {
+                    $artist_img_3        = $request->file('new_artist_img_3');
+                    $artist_img_3_name   = 'artist_img_3_' . time() . '.' . $artist_img_3->getClientOriginalExtension();
+                    $artist_img_3_path   = $artist_img_3 ? $artist_img_3->move('images/artists/', $artist_img_3_name) : null;
+                }
+
+                $artistObj = Artist::find($request->input('artist_id_hidden'));
+
+                $artistObj->artist_name       = $artist_name;
+                $artistObj->artist_about      = $artist_about;
+                                                   
+                if(isset($artist_cover_path)){
+                    $artistObj->artist_cover      = $artist_cover_path;
+                }
+                
+                $artistObj->artist_img_1      = (isset($artist_img_1_path)) ? $artist_img_1_path : $artistObj->artist_img_1;
+                $artistObj->artist_img_2      = (isset($artist_img_2_path)) ? $artist_img_2_path : $artistObj->artist_img_2;
+                $artistObj->artist_img_3      = (isset($artist_img_3_path)) ? $artist_img_3_path : $artistObj->artist_img_3;
+                $artistObj->artist_img_1_desc = $artist_img_desc;
+                $artistObj->artist_img_2_desc = $artist_img_desc_2;
+                $artistObj->artist_img_3_desc = $artist_img_desc_3;
+
+
+
+                if ($artistObj->save()) {
+                    $message = ["success", $artistObj->artist_name . " is updated"];
+                    return Redirect::back()->with('success', $artistObj->artist_name . " is updated");
+
+
+                    //GaleryName(first 3 char)+GaleryId+EventName(first 3 char)+EventID
+                    //$nfc_tag = substr(Auth::user()->gallery_name, 0, 3).Auth::user()->id.substr($event->event_name, 0, 3).$eventLastId;
+
+                    return Response::json(['success' => true, 'message' => $message]);
+                } else {
+                    $message = ["error", "OOps! Something went wrong!"];
+                    return Response::json(["message" => $message]);
+                }
+            } else {
+
+                return Redirect::back()->withErrors($validator);
+
+            }
+
+
         }
         $html = View::make('inc.partial.dashboard.update-all-event-data', [
 
@@ -274,6 +360,104 @@ class ModeratorController extends Controller
 
         return Response::json(["html" => $html, "success" => $success]);
     }
+
+
+        /* Updating artwork which belong to Event*/
+        public function updateEventArtworkData(Request $request, $artwork_id) {
+
+            $artwork = Artwork::find($artwork_id);
+            
+            $validator = null;
+            if ($request->isMethod('post')) { 
+                
+    
+                $validator = Validator::make(
+                    $request->all(),
+                    [
+                        "new_artwork_name"   => "required",
+                        "new_artwork_about"    => "required",
+                    ],
+                    [
+                        "new_artwork_name.required"   => "Field 'Artwork Name ' can't be empty",
+                        "new_artwork_about.required"  => "Field 'About Artwork ' can't be empty",
+                    ]
+                );
+    
+                if ($validator->passes()) {
+                    $artwork_name        = $request->input('new_artwork_name');
+                    $artwork_about       = $request->input('new_artwork_about');
+                    $artwork_cover       = $request->input('new_artwork_cover');
+                    $artwork_img_1       = $request->input('new_artwork_img_1');
+                    $artwork_img_2       = $request->input('new_artwork_img_2');
+                    $artwork_img_3       = $request->input('new_artwork_img_3');
+                    $artwork_img_desc    = $request->input('new_artwork_img_1_desc');
+                    $artwork_img_desc_2  = $request->input('new_artwork_img_2_desc');
+                    $artwork_img_desc_3  = $request->input('new_artwork_img_3_desc');
+    
+                    if ($request->hasFile('new_artwork_cover')) {
+                        $artwork_cover        = $request->file('new_artwork_cover');
+                        $artwork_cover_name   = 'cover_' . time() . '.' . $artwork_cover->getClientOriginalExtension();
+                        $artwork_cover_path   = $artwork_cover ? $artwork_cover->move('images/artworks/', $artwork_cover_name) : null;
+                    }
+    
+                    if ($request->hasFile('new_artwork_img_1')) {
+                        $artwork_img_1        = $request->file('new_artwork_img_1');
+                        $artwork_img_1_name   = 'artwork_img_1_' . time() . '.' . $artwork_img_1->getClientOriginalExtension();
+                        $artwork_img_1_path   = $artwork_img_1 ? $artwork_img_1->move('images/artworks/', $artwork_img_1_name) : null;
+                    }
+    
+                    if ($request->hasFile('new_artwork_img_2')) {
+                        $artwork_img_2        = $request->file('new_artwork_img_2');
+                        $artwork_img_2_name   = 'artwork_img_2_' . time() . '.' . $artwork_img_2->getClientOriginalExtension();
+                        $artwork_img_2_path   = $artwork_img_2 ? $artwork_img_2->move('images/artworks/', $artwork_img_2_name) : null;
+                    }
+    
+                    if ($request->hasFile('new_artwork_img_3')) {
+                        $artwork_img_3        = $request->file('new_artwork_img_3');
+                        $artwork_img_3_name   = 'artwork_img_3_' . time() . '.' . $artwork_img_3->getClientOriginalExtension();
+                        $artwork_img_3_path   = $artwork_img_3 ? $artwork_img_3->move('images/artworks/', $artwork_img_3_name) : null;
+                    }
+    
+                    
+    
+                    $artwork->artwork_name       = $artwork_name;
+                    $artwork->artwork_about      = $artwork_about;
+                                                       
+                    if(isset($artwork_cover_path)){
+                        $artwork->artwork_cover      = $artwork_cover_path;
+                    }
+                    
+                    $artwork->artwork_img_1      = (isset($artwork_img_1_path)) ? $artwork_img_1_path : $artwork->artwork_img_1;
+                    $artwork->artwork_img_2      = (isset($artwork_img_2_path)) ? $artwork_img_2_path : $artwork->artwork_img_2;
+                    $artwork->artwork_img_3      = (isset($artwork_img_3_path)) ? $artwork_img_3_path : $artwork->artwork_img_3;
+                    $artwork->artwork_img_1_desc = $artwork_img_desc;
+                    $artwork->artwork_img_2_desc = $artwork_img_desc_2;
+                    $artwork->artwork_img_3_desc = $artwork_img_desc_3;
+    
+    
+    
+                    if ($artwork->save()) {
+                        $message = ["success", $artwork->artwork_name . " is updated"];
+                        return Redirect::back()->with('success', $artwork->artwork_name . " is updated");
+    
+    
+                        //GaleryName(first 3 char)+GaleryId+EventName(first 3 char)+EventID
+                        //$nfc_tag = substr(Auth::user()->gallery_name, 0, 3).Auth::user()->id.substr($event->event_name, 0, 3).$eventLastId;
+    
+                        return Response::json(['success' => true, 'message' => $message]);
+                    } else {
+                        $message = ["error", "OOps! Something went wrong!"];
+                        return Response::json(["message" => $message]);
+                    }
+                } else {
+    
+                    return Redirect::back()->withErrors($validator);
+    
+                }
+    
+    
+            }
+        }
 
     public function getNews()
     {

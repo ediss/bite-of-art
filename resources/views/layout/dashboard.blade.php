@@ -2,12 +2,12 @@
 <html>
 
 <head>
-   @include('inc.moderator.head')
+    @include('inc.moderator.head')
 </head>
 
 <body>
     <header class="header">
-     @include('inc.moderator.nav')
+        @include('inc.moderator.nav')
     </header>
     <div class="d-flex align-items-stretch">
         <!-- Sidebar Navigation-->
@@ -27,6 +27,21 @@
             </section>
             <section class="no-padding-bottom">
                 <div class="container-fluid" id="content">
+                    @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger mt-2">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ $error }}
+                    </div>
+
+                    @endforeach
+
+                    @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div>
+                    @endif
                     @yield('content')
                 </div>
             </section>
@@ -55,7 +70,7 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    
+
     <script src=" {{ asset('assets/js/common/ajaxload.js') }}"></script>
     <script src=" {{ asset('assets/js/common/pagination.js') }}"></script>
     <script src=" {{ asset('plugins/toastr/toastr.min.js') }}"></script>
@@ -67,11 +82,8 @@
     </script>
     @yield('footer-scripts')
 
-    
+
     <script>
-
-
-
         $(document).on('change', '.gallerist_id2', function(e) {
             var approved= $(this).prop("checked");
 
@@ -235,6 +247,48 @@
             });
 
         });
+
+
+//         $(document).on('click', '.update-artist-event', function(e) {
+
+//         var event_id = $('.hidden_event_id').val();
+//         var artist_id = $('.artist_id_hidden').val();
+
+//         var form = document.getElementById('updateEventArtist_'+artist_id);
+//         var formData = new FormData(form);
+
+
+
+
+//         e.preventDefault();
+
+//         $.ajaxSetup({
+//             headers: {
+//                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//             }
+//         });
+//         $.ajax({
+            
+//             url: "/moderator/update-whole/event/"+event_id,
+//             method: 'post',
+//             contentType: false,
+//             processData: false,
+//             cache: false,
+//             data:formData,
+//             success: function(result){
+//                 if (typeof result.message != "undefined" && result.message.length) {
+//                     toastr[result.message[0]](result.message[1]);
+//                 }
+
+//                     alert("usao");
+//             if(result.success === false) {
+//               $("#content").html(result.html);
+              
+//             }
+//             }
+//         });
+
+// });
 
         $(document).on('click', '.custom-control-input', function(e) {
             // e.preventDefault();

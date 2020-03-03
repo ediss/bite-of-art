@@ -58,6 +58,10 @@ body {
     animation-duration: 2.8s;
 }
 
+#carouselExampleIndicators .card-body h4 {
+    font-size:1rem;
+}
+
 .img-description {
     position: absolute;
     bottom: 0px;
