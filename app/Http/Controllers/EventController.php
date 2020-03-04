@@ -35,7 +35,7 @@ class EventController extends Controller
         $feature_events = $event::where('approved', '=', 1)
         ->where('event_open', '>=', $today)->orderBy('event_open')->get();
 
-        dd($feature_events);
+        
         $news = News::where('approved', '=', 1)->get();
 
 
