@@ -73,7 +73,7 @@ $(document).ready(function() {
 
     $("#carouselExample").bind("wheel", function(e) {
         var event = e.originalEvent.wheelDelta;
-        wheelCarousel(event, $(this));
+       // wheelCarousel(event, $(this));
     });
 
     $("#carouselExample").on("slide.bs.carousel", function(e) {
