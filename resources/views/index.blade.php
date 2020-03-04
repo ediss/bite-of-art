@@ -38,7 +38,7 @@
 
 
 
-                @if($events_in_past)
+                {{-- @if($events_in_past)
                 @foreach ($events_in_past as $event_in_past)
                 @if(!$loop->first)
                 <div class="carousel-item" data-id="{{ $event_in_past->id }}">
@@ -69,7 +69,7 @@
 
                     </div>
                 </div>
-                @endif
+                @endif --}}
 
 
 
