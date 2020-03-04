@@ -18,6 +18,7 @@
     <div class="col-12 p-0">
         <div id="carouselExampleIndicators" class="carousel slide d-lg-none" data-ride="carousel">
             <div class="carousel-inner">
+                @php dd($feature_events) @endphp
                 @if($feature_events)
 
 
