@@ -90,6 +90,8 @@ function saveArtist() {
   });
 }
 
+//get locale
+
 function saveArtwork() {
   var form = document.getElementById('artworkSubmit');
   var formData = new FormData(form);
