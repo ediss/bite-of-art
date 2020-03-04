@@ -40,7 +40,7 @@
                     class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
 
                     <div class="card">
-                        <div class="col-10 gallery-first-slide">
+                        <div class="col-lg-10 gallery-first-slide">
                             <div class=" h-100px">
                                 <h1 class="montserrat-bold"> {{ $data->event_name }}</h1>
                                 <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
@@ -53,7 +53,7 @@
 
                     </div>
 
-                    <div class="col-10 social-scale">
+                    <div class="col-lg-10 social-scale">
                         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
                             class="fb-xfbml-parse-ignore">
                             <img class="" src="{{ asset('images/social-network/facebook.png') }}">
