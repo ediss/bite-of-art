@@ -17,7 +17,8 @@ class ApiController extends Controller
     public function getEvents(Request $request) {
 
         if($request->nfc) {
-            $response = Event::where('nfc_tag','=', $request->nfc)->get();
+            $response = Event::where('nfc_tag','=', $request->nfc)
+                              ->where('approved', '=', 1)->get();
             if($response->count()==0) {
                 $response="No events data with '$request->nfc' tag";
             }
@@ -25,13 +26,13 @@ class ApiController extends Controller
 
             $now = Carbon::now();     
 
-            $response = (DB::select("select * from events where event_closed >= '$now' order by event_open "));
+            $response = (DB::select("select * from events where event_closed >= '$now' AND approved = '1' order by event_open "));
 
             if(!$response) {
                 $response="No events data where event closed: '$request->event_closed'";
             }
         }else {
-            $response = Event::all();
+            $response = Event::where('approved', '=', 1)->get();
         }
         
 
