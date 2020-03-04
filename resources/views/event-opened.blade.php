@@ -53,7 +53,7 @@
 
                     </div>
 
-                    <div class=" social-scale">
+                    <div class="col-10 social-scale">
                         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
                             class="fb-xfbml-parse-ignore">
                             <img class="" src="{{ asset('images/social-network/facebook.png') }}">
