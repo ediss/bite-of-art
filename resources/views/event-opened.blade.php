@@ -41,7 +41,7 @@
 
                     <div class="card">
                         <div class="col-10 gallery-first-slide">
-                            <div class="h-80px h-100px">
+                            <div class=" h-100px">
                                 <h1 class="montserrat-bold"> {{ $data->event_name }}</h1>
                                 <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
                                     {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p>
