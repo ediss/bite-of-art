@@ -38,7 +38,7 @@
 
 
 
-                {{-- @if($events_in_past)
+                @if($events_in_past)
                 @foreach ($events_in_past as $event_in_past)
                 @if(!$loop->first)
                 <div class="carousel-item" data-id="{{ $event_in_past->id }}">
@@ -53,7 +53,9 @@
                     </div>
                 </div>
                 @endif
-
+                @endforeach
+                @endif
+                
                 @if($event_in_past)
                 <div class="carousel-item active" data-id="{{ $event_in_past->id }}">
 
@@ -67,13 +69,10 @@
 
                     </div>
                 </div>
-                @endif --}}
-
-
-
-
-                @endforeach
                 @endif
+
+
+
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
