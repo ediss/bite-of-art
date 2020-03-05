@@ -24,7 +24,7 @@ class EventController extends Controller
 
         $event = new Event();
 
-        $today = date('Y-m-d H:i:s');
+        $today = date('Y-m-d');
 
         $event_in_past = $event::where('approved', '=', 1)
         ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->first();
