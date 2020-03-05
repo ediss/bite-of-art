@@ -104,7 +104,7 @@
                 @endif
 
                 <!-- had fadeInRight class -->
-                <div class="carousel-item carousel-item-gallery col-md-4 col-lg-4 animation-duration2 ">
+                <div class="carousel-item carousel-item-gallery col-md-4 p-0 col-lg-4 animation-duration2 ">
                     @php
                     $counter++;
                     @endphp
@@ -119,7 +119,7 @@
                 @if(isset($additionals))
 
                 @foreach ($additionals as $article_data)
-                <div class="carousel-item carousel-item-gallery col-md-4 col-lg-4 animation-duration2">
+                <div class="carousel-item carousel-item-gallery p-0 col-md-4 col-lg-4 animation-duration2">
                     @php
                     $counter++;
                     @endphp
