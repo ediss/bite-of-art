@@ -143,6 +143,10 @@ body {
 .gallery-first-slide h1 {
     font-size:1rem;
 }
+
+.news-first-slide h1{
+    font-size:1rem;
+}
 .carousel-indicators li {
     background-color: #cccccc;
     width: 10px;
@@ -684,6 +688,10 @@ body {
 
 @media(min-width:760) and (max-width :1440px) {
     .gallery-first-slide h1 {
+        font-size:0.8rem;
+    }
+
+    .news-first-slide h1 {
         font-size:0.8rem;
     }
     .mobile-first p {
