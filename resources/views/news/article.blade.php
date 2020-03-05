@@ -42,7 +42,7 @@
 
                     <div class="card">
                         <div class="col-10 news-first-slide montserrat-regular text-left">
-                            <div class="h-80px h-100px">
+                            <div class="h-100px">
                                 <h1 class="montserrat-bold">{{ $article->article_name }} </h1>
                                 <p>{{date('Y-d-M',strtotime($article->article_open))}}</p>
 
