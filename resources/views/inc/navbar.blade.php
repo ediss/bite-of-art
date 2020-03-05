@@ -105,9 +105,9 @@
                             <a class="nav-link h-100px text-center" href="{{ route('about.bite') }}">ABOUT BITE </a>
                         </li>
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link h-100px text-center" href="#">BITE NETWORK</a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a class="nav-link h-100px text-center" href="{{ route('contact') }}">CONTACT</a>
@@ -116,7 +116,7 @@
                     </ul>
                 </div>
 
-                <div class="row languages">
+                <div class="row languages d-none">
                     <div class="col-6 offset-3 col-md-4 offset-md-4 montserrat-regular">
                         <div class="menu-footer text-center login">
                             <a href="#" class=" active-language">ENG</a> <span class="ml-1 mr-1 menu-span">|</span>
