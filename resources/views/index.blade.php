@@ -18,7 +18,7 @@
     <div class="col-12 p-0">
         <div id="carouselExampleIndicators" class="carousel slide d-lg-none" data-ride="carousel">
             <div class="carousel-inner">
-                
+                {{-- @php dd($feature_events->count()); @endphp --}}
                 @if($feature_events)
 
 
@@ -42,7 +42,7 @@
                 @if($events_in_past)
                 @foreach ($events_in_past as $event_in_past)
                 @if(!$loop->first)
-                <div class="carousel-item {{ !$feature_events ?  'active' : ''}}" data-id="{{ $event_in_past->id }}">
+                <div class="carousel-item {{ ($feature_events->count() == 0) ?  'active' : ''}}" data-id="{{ $event_in_past->id }}">
                     <div class="card">
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
