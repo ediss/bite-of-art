@@ -13,7 +13,8 @@
 @section('content')
 
 {{-- @php dd(app()->getLocale()); @endphp --}}
-<div class="row animation-duration2 fadeInLeft" id="mainGallery">
+<div class="row animation-duration2 fadeInLeft" id="mainGallery" data-language="{{ app()->getLocale() }}">
+
 
     <div class="col-12 p-0">
         <div id="carouselExampleIndicators" class="carousel slide d-lg-none" data-ride="carousel">
@@ -113,7 +114,7 @@
                 @foreach ($feature_events as $event_in_feature)
 
                 <div class="carousel-item carousel-item-main  col-4 p-0">
-                    <div class="card" data-id="{{ $event_in_feature->id }}">
+                    <div class="card" data-id="{{ $event_in_feature->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_feature->id, app()->getLocale() ]) }}">
                         <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
                     </div>
 

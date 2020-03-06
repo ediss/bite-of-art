@@ -24,7 +24,7 @@
 
                 <tr>
                     <td>{{ $counter }}</td>
-                    <td><img src = "{{ $event->event_cover }}" class="img-fluid"></td>
+                    <td><img src = "{{ url($event->event_cover) }}" class="img-fluid"></td>
                     <td>{{ $event->event_name }}</td>
                     <td>{{ $event->event_open }} <br/> {{ $event->event_closed }}</td>
                     <td>{{ $event->event_place }}</td>
@@ -57,7 +57,7 @@
                       <a class="text-primary  js-modal mb-5" data-modalid='update_event'
                       data-modaltitle="Update Event: {{$event->event_name}}"
                       submit_button='js-submit'
-                      data-url="{{ route('moderator.event.update', ['id' => $event->id]) }}" data-savetext="Save">
+                      data-url="{{ route('moderator.event.update', ['id' => $event->id,  app()->getLocale()]) }}" data-savetext="Save">
                       <i class="fa fa-2x fa-edit"></i>
                   </a>
                       {{-- <a class="text-primary  js-modal mb-5" data-modalid='add_backoffice_user'

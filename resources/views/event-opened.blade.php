@@ -16,6 +16,7 @@
     @if(isset($data))
 
     @php
+    
     $counter = 0;
     @endphp
 
@@ -33,8 +34,9 @@
                 </div>
                 @php
                 $counter ++;
+                $langdesc = app()->getLocale();
 
-                $desc = explode('~', $data->event_description);
+                
                 @endphp
                 <div
                     class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
@@ -48,6 +50,21 @@
                                 <p>@ {{ $data->event_place }}</p>
                             </div>
 
+                            @switch(app()->getLocale())
+                                @case('slo')
+                                @php $desc = explode('~', $data->event_description_slo); @endphp
+                                    @break
+                                @case('srb')
+                                @php $desc = explode('~', $data->event_description_srb  ); @endphp
+                                    @break
+                                @case('esp')
+                                @php $desc = explode('~', $data->event_description_esp); @endphp
+                                    @break
+                                @default
+                                
+                                @php $desc = explode('~', $data->event_description_en); @endphp
+                                
+                            @endswitch
                             <p>{{ $desc[0] }}</p>
                         </div>
 
@@ -89,6 +106,7 @@
                 <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 ">
                     @php
                     $counter++;
+                    
                     @endphp
                     <div class="card">
                         <div class="col-10">
@@ -182,7 +200,6 @@
                 <div class="carousel-item carousel-item-gallery p-0 d-lg-none col-12  col-lg-4">
                     <div class="card">
 
-
                     </div>
 
                 </div>
@@ -208,10 +225,9 @@
 
         </ol>
     </div>
-
-
     @endif
 </div>
+
 @endsection
 
 @section('footer-scripts')
@@ -219,4 +235,5 @@
     $('.footer').css('display', 'none');
 </script>
 <script src=" {{ asset('assets/js/opened-event.js') }}"></script>
+
 @endsection

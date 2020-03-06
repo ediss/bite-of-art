@@ -64,8 +64,8 @@ class EventController extends Controller
 
     public function ajaxLoadEventData(Request $request) {
 
-        $id     = $request->id;
-
+        $id    = $request->id;
+        
         $event = new Event();
 
         $event_data = $event->where('id', $id)->first();
@@ -76,6 +76,8 @@ class EventController extends Controller
             'data'=> $event_data,
             'next' => $next
         ]);
+
+        
 
         // $html = View::make('inc.partial.event-opened',[
         //     'data'  => $event_data,
@@ -168,7 +170,7 @@ class EventController extends Controller
                 //get from gallery
                 $eventObj->event_place          = Auth::user()->city_country;
 
-                $eventObj->event_description    = $event_cover_desc.'~';
+                $eventObj->event_description_en    = $event_cover_desc.'~';
                 $eventObj->event_img_1          = (isset($event_image_1_path)) ? $event_image_1_path : null;
                 $eventObj->event_img_2          = (isset($event_image_2_path)) ? $event_image_2_path : null;
                 $eventObj->event_img_3          = (isset($event_image_3_path)) ? $event_image_3_path : null;

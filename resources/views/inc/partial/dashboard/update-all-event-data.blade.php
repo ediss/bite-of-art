@@ -1,5 +1,5 @@
 @foreach ($artists as $artist)
-<form method="POST" action={{ route('moderator.event.artist.update', ['id' => $event_id]) }} class="mt-5"
+<form method="POST" action={{ route('moderator.event.artist.update', ['id' => $event_id], app()->getLocale()) }} class="mt-5"
     enctype="multipart/form-data">
     @csrf
     <h1 class="text-center">{{$event_name}}</h1>
@@ -174,7 +174,7 @@
 
         {{-- @php dd($artist->artworks) @endphp --}}
         @foreach ($artist->artworks as $artwork)
-        <form method="POST" action={{ route('moderator.event.artwork.update', ['id' => $artwork->id]) }} class="mt-5"
+        <form method="POST" action={{ route('moderator.event.artwork.update', ['id' => $artwork->id], app()->getLocale()) }} class="mt-5"
             enctype="multipart/form-data">
             @csrf
 

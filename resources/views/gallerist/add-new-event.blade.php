@@ -97,17 +97,20 @@ $(document).ready(function(){
 
     $(document).on('click', '.save_event', function(e) {
         e.preventDefault();
-        saveEvent();
+        var route = "{{route('add.new.event', app()->getLocale())}}";
+        saveEvent(route);
     });
 
     $(document).on('click', '.save_artist', function(e) {
         e.preventDefault();
-        saveArtist();
+        var route = "{{route('add.artist', app()->getLocale())}}";
+        saveArtist(route);
     });
 
     $(document).on('click', '.save_artwork', function(e) {
         e.preventDefault();
-        saveArtwork();
+        var route = "{{route('add.artwork', app()->getLocale())}}";
+        saveArtwork(route);
     });
 
     $(document).on('click', '.add_artist', function(e) {
@@ -148,7 +151,7 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.submit_event', function(e) {
-        window.location.href = "{{ route('gallerist.dashboard') }}"; 
+        window.location.href = "{{ route('gallerist.dashboard', app()->getLocale()) }}"; 
     });
 
 });

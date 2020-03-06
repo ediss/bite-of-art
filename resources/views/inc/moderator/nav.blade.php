@@ -92,7 +92,7 @@
 
                 <!-- Log out               -->
                 <div class="list-inline-item logout">
-                    <a id="logout" href="{{route('logout')}}" class="nav-link"> <span
+                    <a id="logout" href="{{route('logout', app()->getLocale())}}" class="nav-link"> <span
                             class="d-none d-sm-inline">Logout
                         </span><i class="icon-logout"></i></a>
                 </div>

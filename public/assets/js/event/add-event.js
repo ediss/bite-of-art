@@ -1,4 +1,4 @@
-function saveEvent() {
+function saveEvent(route) {
     var form = document.getElementById('eventSubmit');
     var formData = new FormData(form);
    $.ajaxSetup({
@@ -7,7 +7,8 @@ function saveEvent() {
       }
   });
    $.ajax({
-      url: "/gallerist/add-new-event",
+      // url: language+"/gallerist/add-new-event",
+      url: route,
       method: 'post',
       contentType: false,
       processData: false,
@@ -38,14 +39,16 @@ function saveEvent() {
           }
 
       },
-      error: function(xhr, status, error) {
-
+      error: function(request, status, error) {
+        alert("error! Call developer! Email: skenderi.e94@gmail.com");
+    
+        alert(request.responseText);
       }
 
    });
 }
 
-function saveArtist() {
+function saveArtist(route) {
 
   var form = document.getElementById('artistSubmit');
   var formData = new FormData(form);
@@ -55,7 +58,7 @@ function saveArtist() {
       }
   });
   $.ajax({
-      url: "/gallerist/submitArtist",
+      url: route,
       method: 'post',
       contentType: false,
       processData: false,
@@ -86,13 +89,18 @@ function saveArtist() {
 
 
 
-      }
+      },
+      error: function (request, status, error) {
+        alert("error! Call developer! Email: skenderi.e94@gmail.com");
+        alert(request.responseText);
+    }
+
   });
 }
 
 //get locale
 
-function saveArtwork() {
+function saveArtwork(route) {
   var form = document.getElementById('artworkSubmit');
   var formData = new FormData(form);
 
@@ -102,7 +110,7 @@ function saveArtwork() {
       }
   });
   $.ajax({
-      url: "/gallerist/submitArtwork",
+      url: route,
       method: 'post',
       contentType: false,
       processData: false,
@@ -124,6 +132,10 @@ function saveArtwork() {
 
 
 
-      }
+      },
+      error: function (request, status, error) {
+        alert("error! Call developer! Email: skenderi.e94@gmail.com");
+        alert(request.responseText);
+    }
   });
 }

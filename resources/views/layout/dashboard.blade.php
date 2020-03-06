@@ -86,8 +86,13 @@
     <script>
         $(document).on('change', '.gallerist_id2', function(e) {
             var approved= $(this).prop("checked");
-
+            
             var gallerist_id = $(this).attr('data-id');
+
+            var route = "{{ route('approve.gallerist',["gallerist_id+", 'app()->getLocale()']) }}"
+
+            //alert('route');
+
             e.preventDefault();
             $.ajaxSetup({
                 headers: {
@@ -95,7 +100,8 @@
                 }
             });
             $.ajax({
-                url: "{{ route('approve.gallerist',"gallerist_id") }}",
+
+                url: route,
                 method: 'post',
                 data: {
                     approved: approved,
@@ -114,6 +120,10 @@
             var approved= $(this).prop("checked");
 
             var event_id = $(this).attr('data-id');
+
+            
+            var route = "{{ route('approve.event', ['id' =>"event_id",  app()->getLocale()]) }}"
+            //  var route = "{{ route('approve.gallerist',["event_id+", 'app()->getLocale()']) }}";
             e.preventDefault();
             $.ajaxSetup({
                 headers: {
@@ -121,7 +131,7 @@
                 }
             });
             $.ajax({
-                url: "{{ route('approve.event',"event_id") }}",
+                url: route,
                 method: 'post',
                 data: {
                     approved: approved,
@@ -140,6 +150,8 @@
             var approved= $(this).prop("checked");
 
             var article_id = $(this).attr('data-id');
+            var route = "{{ route('approve.gallerist',["article_id+", 'app()->getLocale()']) }}"
+
             e.preventDefault();
             $.ajaxSetup({
                 headers: {
@@ -147,7 +159,7 @@
                 }
             });
             $.ajax({
-                url: "{{ route('approve.article',"article_id") }}",
+                url: route,
                 method: 'post',
                 data: {
                     approved: approved,
@@ -193,7 +205,7 @@
                 }
             });
             $.ajax({
-                url: "{{ url('/moderator/get-events') }}",
+                url: "{{ route('get.all.events', app()->getLocale()) }}",
                 method: 'get',
                 success: function(data){
                     $('#content').html(data.html);

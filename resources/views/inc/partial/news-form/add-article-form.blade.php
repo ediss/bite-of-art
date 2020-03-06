@@ -1,4 +1,4 @@
-<form id="articleSubmit" action="{{ route('add.new.article') }}" enctype="multipart/form-data" method="POST">
+<form id="articleSubmit" action="{{ route('add.new.article', app()->getLocale()) }}" enctype="multipart/form-data" method="POST">
     @csrf
     <!--Add article-->
     <div class="row">

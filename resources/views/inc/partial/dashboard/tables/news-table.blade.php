@@ -1,4 +1,4 @@
-<a target="_blank"href="{{route('add.new.article')}}" class="btn btn-primary">Add article <i class="fa fa-plus"></i></a>
+<a target="_blank"href="{{route('add.new.article', app()->getLocale())}}" class="btn btn-primary">Add article <i class="fa fa-plus"></i></a>
 <div class="table-responsive">
     
     <table class="table table-striped table-hover" style="table-layout:fixed;">
@@ -48,7 +48,7 @@
                     <a class="text-dark btn btn-info  js-modal mb-5" data-modalid='add_images_or_video_to_article'
                         data-modaltitle="Update Article: {{$article->article_name}}"
                         submit_button='my-js-submit'
-                        data-url="{{ route('moderator.article.additional', ['id' => $article->id]) }}" data-savetext="Save">
+                        data-url="{{ route('moderator.article.additional', ['id' => $article->id], app()->getLocale()) }}" data-savetext="Save">
                         Additional
                     </a>
 
@@ -59,7 +59,7 @@
                     <a class="text-primary  js-modal mb-5" data-modalid='edit_news'
                         data-modaltitle="Update Article: {{$article->article_name}}"
                         submit_button='js-submit'
-                        data-url="{{ route('moderator.article.update', ['id' => $article->id]) }}" data-savetext="Save">
+                        data-url="{{ route('moderator.article.update', ['id' => $article->id], app()->getLocale()) }}" data-savetext="Save">
                         <i class="fa fa-2x fa-edit"></i>
                     </a>
 

@@ -1,4 +1,4 @@
-<form id="updateEvent" method="POST" action={{ route('moderator.event.update', ['id' => $event->id]) }}
+<form id="updateEvent" method="POST" action={{ route('moderator.event.update', ['id' => $event->id,  app()->getLocale()]) }}
     enctype="multipart/form-data">
     <div class="form-group">
         <div class="row">
@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col-md-6">
                 <label class="form-control-label"><b>Cover image</b></label>
-                <p><img src="{{ $event->event_cover }}" class="img-fluid"></p>
+                <p><img src="{{ url($event->event_cover) }}" class="img-fluid"></p>
             </div>
             <div class="col-md-4">
                 <label class="form-control-label"><b>New cover image </b></label>
@@ -78,7 +78,7 @@
             <div class="col-md-3">
                 <label class="form-control-label"><b>Event description</b></label>
                 <textarea name="new_event_description" id="new_event_description" cols="30" rows="10"
-                    class="form-control">{{ $event->event_description }}</textarea>
+                    class="form-control">{{ $event->event_description_en }}</textarea>
                 @if ( $validator && $validator->errors()->first('new_event_description') )
                 <div class="alert alert-danger mt-2">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -91,17 +91,17 @@
             <div class="col-md-3">
                 <label class="form-control-label"><b>Event description(SRB)</b></label>
                 <textarea name="new_event_description_srb" id="new_event_description_srb" cols="30" rows="10"
-                    class="form-control">{{ $event->srb_event_description }}</textarea>
+                    class="form-control">{{ $event->event_description_srb }}</textarea>
             </div>
             <div class="col-md-3">
                 <label class="form-control-label"><b>Event description(ESP)</b></label>
                 <textarea name="new_event_description_esp" id="new_event_description_esp" cols="30" rows="10"
-                    class="form-control">{{ $event->esp_event_description }}</textarea>
+                    class="form-control">{{ $event->event_description_esp }}</textarea>
             </div>
             <div class="col-md-3">
                 <label class="form-control-label"><b>Event description(SLO)</b></label>
                 <textarea name="new_event_description_slo" id="new_event_description_slo" cols="30" rows="10"
-                    class="form-control">{{ $event->slo_event_description }}</textarea>
+                    class="form-control">{{ $event->event_description_slo }}</textarea>
             </div>
         </div>
 
@@ -112,7 +112,7 @@
             <div class="col-md-4">
                 <label class="form-control-label"><b>Event image 1</b></label>
                 @if($event->event_img_1)
-                <p> <img src="{{ $event->event_img_1 }}" class="img-fluid"></p>
+                <p> <img src="{{ url($event->event_img_1) }}" class="img-fluid"></p>
                 @else
                 <p class="text-primary"> Not set</p>
                 @endif
@@ -124,7 +124,7 @@
             <div class="col-md-4">
                 <label class="form-control-label"><b>Event image 2</b></label>
                 @if($event->event_img_2)
-                <p><img src="{{ $event->event_img_2 }}" class="img-fluid"></p>
+                <p><img src="{{ url($event->event_img_2) }}" class="img-fluid"></p>
                 @else
                 <p class="text-primary"> Not set</p>
                 @endif
@@ -133,7 +133,7 @@
             <div class="col-md-4">
                 <label class="form-control-label"><b>Event image 3</b></label>
                 @if($event->event_img_3)
-                <p><img src="{{ $event->event_img_3 }}" class="img-fluid"></p>
+                <p><img src="{{ url($event->event_img_3) }}" class="img-fluid"></p>
                 @else
                 <p class="text-primary"> Not set</p>
                 @endif

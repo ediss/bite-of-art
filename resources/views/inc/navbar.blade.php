@@ -44,20 +44,25 @@
                                 </div>
                             </div>
                             <div class="col-6 text-center m-auto d-lg-none">
-                                    <div class="row montserrat-regular login">
-                                        @if (Auth::check())
-                                            <div class="col-6 m-auto p-0">
-                                                <a href="{{ route('logout') }}" class="">LOGOUT <span class="ml-3 mr-3 d-none d-md-block menu-span">|</span></a>
-                                            </div>
-                                            <div class="col-6 m-auto p-0"> <a href="{{ route('gallerist.dashboard') }}" class="">ACCOUNT</a></div>
-                                        @else
-                                            <div class="col-6 m-auto p-0">
-                                                <a href="{{ route('login') }}" class="">LOG IN <span class="ml-3 mr-3 d-none d-md-block menu-span">|</span></a>
-                                            </div>
-                                            <div class="col-6 m-auto p-0"><a href="{{ route('register') }}" class="">BITE MEMBERSHIP</a></div>
-
-                                        @endif
+                                <div class="row montserrat-regular login">
+                                    @if (Auth::check())
+                                    <div class="col-6 m-auto p-0">
+                                        <a href="{{ route('logout', app()->getLocale()) }}" class="">LOGOUT <span
+                                                class="ml-3 mr-3 d-none d-md-block menu-span">|</span></a>
                                     </div>
+                                    <div class="col-6 m-auto p-0"> <a
+                                            href="{{ route('gallerist.dashboard', app()->getLocale()) }}"
+                                            class="">ACCOUNT</a></div>
+                                    @else
+                                    <div class="col-6 m-auto p-0">
+                                        <a href="{{ route('login', app()->getLocale()) }}" class="">LOG IN <span
+                                                class="ml-3 mr-3 d-none d-md-block menu-span">|</span></a>
+                                    </div>
+                                    <div class="col-6 m-auto p-0"><a href="{{ route('register', app()->getLocale()) }}"
+                                            class="">BITE MEMBERSHIP</a></div>
+
+                                    @endif
+                                </div>
                                 {{-- <div class="col-10 text-right montserrat-regular login">
 
 
@@ -67,17 +72,19 @@
                             <div class="col-8 d-none d-lg-block">
                                 <div class="row m-35px">
                                     @if (Auth::check())
-                                        <div class="col-12 text-right montserrat-regular login-membership login">
-                                            <a href="{{ route('logout') }}" class="">LOGOUT</a>
-                                                <span class="ml-3 mr-3 menu-span">|</span>
-                                            <a href="{{ route('gallerist.dashboard') }}" class="">ACCOUNT</a>
-                                        </div>
+                                    <div class="col-12 text-right montserrat-regular login-membership login">
+                                        <a href="{{ route('logout', app()->getLocale()) }}" class="">LOGOUT</a>
+                                        <span class="ml-3 mr-3 menu-span">|</span>
+                                        <a href="{{ route('gallerist.dashboard', app()->getLocale()) }}"
+                                            class="">ACCOUNT</a>
+                                    </div>
                                     @else
-                                        <div class="col-12 text-right montserrat-regular login-membership login">
-                                            <a href="{{ route('login') }}" class="">LOG IN</a>
-                                                <span class="ml-3 mr-3 menu-span">|</span>
-                                            <a href="{{ route('register') }}" class="">BITE MEMBERSHIP</a>
-                                        </div>
+                                    <div class="col-12 text-right montserrat-regular login-membership login">
+                                        <a href="{{ route('login', app()->getLocale()) }}" class="">LOG IN</a>
+                                        <span class="ml-3 mr-3 menu-span">|</span>
+                                        <a href="{{ route('register', app()->getLocale()) }}" class="">BITE
+                                            MEMBERSHIP</a>
+                                    </div>
                                     @endif
                                 </div>
                             </div>
@@ -96,13 +103,14 @@
                 <div class="menu-links">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link h-100px text-center" href="{{ route('all.news') }}">
+                            <a class="nav-link h-100px text-center" href="{{ route('all.news', app()->getLocale()) }}">
                                 <span class="sr-only">(current)</span>NEWS
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link h-100px text-center" href="{{ route('about.bite') }}">ABOUT BITE </a>
+                            <a class="nav-link h-100px text-center"
+                                href="{{ route('about.bite', app()->getLocale()) }}">ABOUT BITE </a>
                         </li>
 
                         {{-- <li class="nav-item">
@@ -110,19 +118,29 @@
                         </li> --}}
 
                         <li class="nav-item">
-                            <a class="nav-link h-100px text-center" href="{{ route('contact') }}">CONTACT</a>
+                            <a class="nav-link h-100px text-center"
+                                href="{{ route('contact', app()->getLocale()) }}">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h-100px text-center"
+                                href="{{ route('opened.event', ['language' => app()->getLocale(), 'id' => 25]) }}">TEST</a>
                         </li>
 
                     </ul>
                 </div>
 
-                <div class="row languages d-none">
+                <div class="row languages">
                     <div class="col-6 offset-3 col-md-4 offset-md-4 montserrat-regular">
                         <div class="menu-footer text-center login">
-                            <a href="#" class=" active-language">ENG</a> <span class="ml-1 mr-1 menu-span">|</span>
-                            <a href="#" class="">SPAN</a> <span class="ml-1 mr-1 menu-span">|</span>
-                            <a href="#" class="">SERB</a> <span class="ml-1 mr-1 menu-span">|</span>
-                            <a href="#" class="">SLN</a> <span class="ml-1 mr-1 menu-span">|</span>
+                           
+                            @foreach (config('app.available_languages') as $language)
+                            <a href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $language ) }}"
+                            class=" {{(app()->getLocale() == $language) ? 'active-language' : ''}} ">
+                            {{strtoupper($language)}}
+                            </a>
+                            <span class="ml-1 mr-1 menu-span">|</span>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>

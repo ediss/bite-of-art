@@ -44,7 +44,7 @@ class ModeratorController extends Controller
         return Response::json(["html" => $html]);
     }
 
-    public function approveGallerist(Request $request)
+    public function approveGallerist(Request $request, $id, $lang)
     {
 
         $gallerist = User::find($request->id);
@@ -84,7 +84,7 @@ class ModeratorController extends Controller
         return Response::json(["html" => $html]);
     }
 
-    public function approveEvent(Request $request)
+    public function approveEvent(Request $request,  $id, $lang)
     {
         $event = Event::find($request->id);
 
@@ -192,10 +192,10 @@ class ModeratorController extends Controller
 
 
 
-                $event->event_description        = $event_desc;
-                $event->srb_event_description    = $event_desc_srb;
-                $event->esp_event_description    = $event_desc_esp;
-                $event->slo_event_description    = $event_desc_slo;
+                $event->event_description_en     = $event_desc;
+                $event->event_description_srb    = $event_desc_srb;
+                $event->event_description_esp    = $event_desc_esp;
+                $event->event_description_slo    = $event_desc_slo;
                 $event->event_img_1              = (isset($event_image_1_path)) ? $event_image_1_path : $event->event_img_1;
                 $event->event_img_2              = (isset($event_image_2_path)) ? $event_image_2_path : $event->event_img_2;
                 $event->event_img_3              = (isset($event_image_3_path)) ? $event_image_3_path : $event->event_img_3;

@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 use App\User;
 use Validator;
-use Response;
-use View;
+
 use Session;
 
 class CustomRegisterController extends Controller

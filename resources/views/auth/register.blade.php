@@ -23,7 +23,7 @@
 </div>
 <div class="row">
     <div class="col-12">
-        <form id="register" action="{{ route('register') }}" enctype="multipart/form-data" method="POST">
+        <form id="register" action="{{ route('register', app()->getLocale()) }}" enctype="multipart/form-data" method="POST">
             @csrf
 
             <div class="row">

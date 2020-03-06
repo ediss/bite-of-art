@@ -33,10 +33,10 @@ function openingEventAnimations() {
 }
 
 
-function openingEventAjax(carousel_div, event_id, mobile) {
+function openingEventAjax(carousel_div, event_id, mobile, route) {
     $.ajax({
         type: "POST",
-        url: "/event",
+        // url: "{{route('opened.event',)}}",
         // url:"{{ url('/event/{id?}') }}",
         headers: {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
@@ -64,6 +64,10 @@ $(document).ready(function(){
     $("#mainGallery").on("click", ".click", function() {
         //event id
         var event_id = $(this).attr("data-id");
+        var language = $("#mainGallery").attr("data-language");
+        var route = $(this).attr("data-href");
+        
+        
 
         openingEventAnimations();
 
@@ -95,7 +99,7 @@ $(document).ready(function(){
 
                 complete: function() {
                     var carouselDiv = $("#carouselExample");
-                    window.location.href = "/event/"+event_id;
+                    window.location.href = route;
                 }
             }
         );
@@ -117,7 +121,7 @@ $(document).ready(function(){
         });
 
         setTimeout(function () {
-            window.location.href = "/event/"+event_id;
+            window.location.href = "/event112/"+event_id;
           }, 2100);
 
 

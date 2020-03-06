@@ -1,4 +1,4 @@
-<form id="articleAdditional" method="POST" action={{ route('moderator.article.additional', ['id' => $article_id]) }}
+<form id="articleAdditional" method="POST" action={{ route('moderator.article.additional', ['id' => $article_id], app()->getLocale()) }}
     enctype="multipart/form-data">
 @csrf
     <div class="form-group">

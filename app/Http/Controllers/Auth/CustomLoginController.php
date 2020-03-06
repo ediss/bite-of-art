@@ -24,9 +24,9 @@ class CustomLoginController extends Controller
         // Attempt to log the user in
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             if(Auth::user()->role_id == 1) {
-                return redirect()->intended(route('moderator.dashboard'));
+                return redirect()->intended(route('moderator.dashboard', app()->getLocale()));
             } elseif(Auth::user()->role_id == 2 && Auth::user()->approved == 1){
-                return redirect()->intended(route('gallerist.dashboard'));
+                return redirect()->intended(route('gallerist.dashboard', app()->getLocale()));
             }elseif(Auth::user()->role_id == 2 && Auth::user()->approved == 0){
                 return redirect()->back()->withErrors(['msg' => 'You are not approved yet!']);
             }

@@ -25,7 +25,7 @@
             
         @endif
 
-        <form method="POST" action="{{ route('custom.login.submit') }}">
+        <form method="POST" action="{{ route('custom.login.submit', app()->getLocale()) }}">
             @csrf
 
             <div class="col-md-12 border-bottom border-top ">
@@ -87,7 +87,7 @@
                     </div>
 
                     @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}" style="color:#cccccc">
+                    <a class="btn btn-link" href="{{ route('password.request', app()->getLocale()) }}" style="color:#cccccc">
                         {{ __('Forgot Your Password?') }}
                     </a>
                     @endif
