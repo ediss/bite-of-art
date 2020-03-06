@@ -42,7 +42,7 @@
                 @if($events_in_past)
                 @foreach ($events_in_past as $event_in_past)
                 @if(!$loop->first)
-                <div class="carousel-item {{ !$fefeature_events ?  'active' : ''}}" data-id="{{ $event_in_past->id }}">
+                <div class="carousel-item {{ !$feature_events ?  'active' : ''}}" data-id="{{ $event_in_past->id }}">
                     <div class="card">
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
