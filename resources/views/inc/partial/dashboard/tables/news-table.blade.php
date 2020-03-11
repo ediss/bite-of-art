@@ -22,7 +22,7 @@
             @php $counter++; @endphp
             <tr>
                 <td scope="row">{{ $counter }}</td>
-                <td><img src="{{ $article->article_cover }}" class="img-fluid"></td>
+                <td><img src="{{ url($article->article_cover) }}" class="img-fluid"></td>
                 <td>{{ $article->article_name }}</td>
                 <td>{{ $article->article_open }}</td>
                 @php $article_desc = explode(' ', $article->article_description);
