@@ -56,7 +56,7 @@ Route::group([
     //need to be protected
     
     
-    Route::get('/news/{id}', 'EventController@getArticle');
+    Route::get('/news/{id?}', 'EventController@getArticle');
     
     Route::group([
         'prefix'        => 'gallerist',
@@ -71,7 +71,7 @@ Route::group([
     
     Route::any('/ajax',             'EventController@ajaxTest')->middleware('auth');
     
-    Route::any('/event/{id}',       'EventController@ajaxLoadEventData')->name('opened.event');
+    Route::any('/event/{id?}',       'EventController@ajaxLoadEventData')->name('opened.event');
     
     Route::get('/news',             'NewsController@index')->name('all.news');
     Route::any('/news/add/article', 'NewsController@addArticle')->name('add.new.article')->middleware('auth');
