@@ -25,7 +25,7 @@
 
                 @foreach ($feature_events as $event_in_feature)
                 <div class="carousel-item active" data-id="{{ $event_in_feature->id }}">
-                    <div class="card">
+                    <div class="card" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
                         <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
                     </div>
 

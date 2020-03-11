@@ -110,6 +110,7 @@ $(document).ready(function(){
 
         //event id
         var event_id = $(this).attr("data-id");
+        var route = $(this).attr("data-href");
 
         $("#smallGallery").addClass("moveRight");
 
@@ -120,7 +121,7 @@ $(document).ready(function(){
         });
 
         setTimeout(function () {
-            window.location.href = "/event112/"+event_id;
+            window.location.href = route;
           }, 2100);
 
 
