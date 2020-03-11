@@ -44,7 +44,7 @@
       }
   });
   $.ajax({
-      url: "/moderator/article-additional/"+new_article_id,
+      url: "/en/moderator/article-additional/"+new_article_id,
       method: 'post',
       contentType: false,
       processData: false,
