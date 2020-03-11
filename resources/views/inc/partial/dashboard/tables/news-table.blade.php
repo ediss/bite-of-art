@@ -59,7 +59,7 @@
                     <a class="text-primary  js-modal mb-5" data-modalid='edit_news'
                         data-modaltitle="Update Article: {{$article->article_name}}"
                         submit_button='js-submit'
-                        data-url="{{ route('moderator.article.update', ['id' => $article->id], app()->getLocale()) }}" data-savetext="Save">
+                        data-url="{{ route('moderator.article.update', ['language' =>  app()->getLocale(),'id' => $article->id]) }}" data-savetext="Save">
                         <i class="fa fa-2x fa-edit"></i>
                     </a>
 
