@@ -185,7 +185,8 @@
                 }
             });
             $.ajax({
-                url: "{{ url('/moderator/get-gallerists') }}",
+                url: "{{ route('get.all.gallerists', app()->getLocale()) }}",
+
                 method: 'get',
                 success: function(data){
                     $('#content').html(data.html);
@@ -226,7 +227,8 @@
                 }
             });
             $.ajax({
-                url: "{{ url('/moderator/get-news') }}",
+                url: "{{ route('get.all.news', app()->getLocale()) }}",
+
                 method: 'get',
                 success: function(data){
                     $('#content').html(data.html);
