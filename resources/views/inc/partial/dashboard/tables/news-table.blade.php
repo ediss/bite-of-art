@@ -48,7 +48,7 @@
                     <a class="text-dark btn btn-info  js-modal mb-5" data-modalid='add_images_or_video_to_article'
                         data-modaltitle="Update Article: {{$article->article_name}}"
                         submit_button='my-js-submit'
-                        data-url="{{ route('moderator.article.additional', ['id' => $article->id], app()->getLocale()) }}" data-savetext="Save">
+                        data-url="{{ route('moderator.article.additional', ['language' =>  app()->getLocale(), 'id' => $article->id]) }}" data-savetext="Save">
                         Additional
                     </a>
 
