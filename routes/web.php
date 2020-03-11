@@ -56,7 +56,7 @@ Route::group([
     //need to be protected
     
     
-    Route::get('/news/{id?}', 'EventController@getArticle');
+    Route::get('/news/{id?}', 'EventController@getArticle')->name("opened.news");
     
     Route::group([
         'prefix'        => 'gallerist',
