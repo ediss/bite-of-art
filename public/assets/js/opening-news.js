@@ -13,6 +13,7 @@ $(document).ready(function () {
   $(".img-opacity").click(function () {
 
     var news_id = $(this).attr("news-id");
+    var route = $(this).attr("data-href");
 
 
     $(".logo").animate({
@@ -23,7 +24,7 @@ $(document).ready(function () {
     $(".live").css("visibility", "hidden");
     openNews();
     setTimeout(function () {
-      window.location.href = "/news/"+news_id;
+      window.location.href = route;
     }, 1500);
 
     $(".close-gallery")
