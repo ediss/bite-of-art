@@ -65,10 +65,10 @@ $(document).ready(function(){
         //event id
         var event_id = $(this).attr("data-id");
         var language = $("#mainGallery").attr("data-language");
-        var route = $(this).attr("data-href");
+        var route = $("#carouselExample .card").attr("data-href");
         
         
-
+        alert(route);
         openingEventAnimations();
 
         $("#carouselExample .carousel-inner-main").animate(
