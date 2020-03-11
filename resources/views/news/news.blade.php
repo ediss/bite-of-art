@@ -28,8 +28,7 @@
                             <img class="img-fluid  d-block" src="{{ $n->article_cover}}" alt="slide 1">
                         </div>
                         <div class="img-description" >
-                            <p class="montserrat-bold text-left">
-                                Dnevnik Diane Budisavljevic neprocenjiva istorijska lekcija Beograd 31.12.2019 {{ $n->article_name }}</p>
+                            <p class="montserrat-bold text-left">{{$n->article_name}}</p>
                         </div>
 
                     </div>
