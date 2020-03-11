@@ -121,10 +121,10 @@
                             <a class="nav-link h-100px text-center"
                                 href="{{ route('contact', app()->getLocale()) }}">CONTACT</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link h-100px text-center"
                                 href="{{ route('opened.event', ['language' => app()->getLocale(), 'id' => 25]) }}">TEST</a>
-                        </li>
+                        </li> --}}
 
                     </ul>
                 </div>
