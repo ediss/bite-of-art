@@ -295,12 +295,12 @@
 <div class="row mt-5">
     <div class="col-12 text-center mt">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button class="my-btn mr-2">SAVE CHANGES</button>
+            <button class="my-btn-2 mr-2">SAVE CHANGES</button>
             <a href="{{ route('add.new.event', app()->getLocale()) }}">
-                <button class="my-btn">ADD EVENT</button>
+                <button class="my-btn-2">ADD EVENT</button>
             </a>
             <a href="{{ route('add.new.article', app()->getLocale()) }}">
-                <button class="my-btn ml-2">ADD ARTICLE</button>
+                <button class="my-btn-2 ml-2">ADD ARTICLE</button>
             </a>
         </div>
     </div>

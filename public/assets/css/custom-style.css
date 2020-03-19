@@ -89,7 +89,7 @@ body {
     background: rgba(0,0,0,0.5);
     transition:  background 1s linear;
   }
-  
+
   .img-opacity:hover::before{
     cursor: pointer;
     background: rgba(0,0,0,0);
@@ -205,7 +205,7 @@ body {
     cursor: pointer;
     margin-top: 20px;
   }
-  
+
   .close-gallery:hover {
     background-image: url("../../images/iconic/close-gallery-black.png");
   }
@@ -314,6 +314,7 @@ body {
 
 
 @media (min-width: 990px) {
+
 
     .carousel-control-prev,.carousel-control-next {
         height: calc(100% - (100px));
@@ -685,8 +686,23 @@ body {
     }
     /*end of news slider*/
 }
+@media(min-width:760px) and (max-width: 1160px) {
+    
+    .my-btn {
+        border: 2px solid black;
+        color: black;
+        background-color: white;
+        padding: 13px 5px;
+        /* border-radius: 8px; */
+        font-size: 10px;
+        /* font-weight: bold; */
+        width:90px;
+        font-family: montserrat-bold;
+        cursor: pointer;
+    }
+}
 
-@media(min-width:760) and (max-width :1440px) {
+@media(min-width:760px) and (max-width :1440px) {
     .gallery-first-slide h1 {
         font-size:0.8rem;
     }
@@ -698,6 +714,36 @@ body {
         font-size:0.1rem;
     }
 }
+
+@media(min-width:1165px) {
+    .my-btn {
+        border: 2px solid black;
+        color: black;
+        background-color: white;
+        padding: 13px 5px;
+        /* border-radius: 8px; */
+        font-size: 14px;
+        /* font-weight: bold; */
+        width:130px;
+        font-family: montserrat-bold;
+        cursor: pointer;
+    }
+}
+
+.my-btn-2 {
+    border: 2px solid black;
+    color: black;
+    background-color: white;
+    padding: 13px 5px;
+    /* border-radius: 8px; */
+    font-size: 14px;
+    /* font-weight: bold; */
+    width:130px;
+    font-family: montserrat-bold;
+    cursor: pointer;
+}
+
+
 
 .b-red {
     border:2px solid red;
@@ -787,22 +833,9 @@ body {
     cursor: pointer;
 
   }
-  
-  .my-btn {
-    border: 2px solid black;
-    color: black;
-    background-color: white;
-    padding: 13px 5px;
-    /* border-radius: 8px; */
-    font-size: 14px;
-    /* font-weight: bold; */
-    width:130px;
-    font-family: montserrat-bold;
-    cursor: pointer;
 
-    
-  }
-  
+
+
   .upload-btn-wrapper input[type=file] {
     font-size: 100px;
     position: absolute;
@@ -819,8 +852,8 @@ body {
   /***/
   #artist-header input { background-color: #e6e6e6 !important; }
   #artwork-header input{ background-color: #cccccc !important; }
-  
-  
+
+
   .my-btns-new {
     border: 2px solid black;
     color: black;
@@ -870,7 +903,7 @@ body {
 }
 .about-carousel ul li:before {
     content: '-';
-    
+
     margin-right: 10px;
 }
 .about-carousel ul li a {
