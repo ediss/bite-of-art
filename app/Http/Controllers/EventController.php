@@ -63,6 +63,7 @@ class EventController extends Controller
 
 
     public function ajaxLoadEventData(Request $request) {
+        
 
         $id    = $request->id;
         

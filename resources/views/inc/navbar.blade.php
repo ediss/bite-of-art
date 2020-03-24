@@ -131,7 +131,8 @@
                 <div class="row languages">
                     <div class="col-6 offset-3 col-md-4 offset-md-4 montserrat-regular">
                         <div class="menu-footer text-center login">
-                           
+                            @if(\Illuminate\Support\Facades\Route::currentRouteName() != "opened.event" && \Illuminate\Support\Facades\Route::currentRouteName() != "opened.news")
+                            
                             @foreach (config('app.available_languages') as $language)
                             <a href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $language ) }}"
                             class=" {{(app()->getLocale() == $language) ? 'active-language' : ''}} ">
@@ -139,6 +140,7 @@
                             </a>
                             <span class="ml-1 mr-1 menu-span">|</span>
                             @endforeach
+                            @endif
 
                         </div>
                     </div>
