@@ -18,7 +18,7 @@
                 </div>
 
                 <div class=" col-2 offset-md-1 offset-lg-0 text-left">
-                    <input type="text" class="form-control border-0" name="article_name" placeholder="article name"
+                    <input type="text" class="form-control border-0" name="article_name" placeholder="{{__("article_name") }}"
                         value="{{ Request::get('article_name') }}">
                 </div>
 
@@ -67,14 +67,14 @@
 
             <div class=" col-1 col-md-2 offset-md-1 offset-lg-0 col-lg-1 text-left">
                 <div class="upload-btn-wrapper">
-                    <button class="my-btn">Upload Cover</button>
+                    <button class="my-btn">{{__("upload_cover") }}</button>
                     <input type="file" name="article_cover" id="article_cover" />
                 </div>
             </div>
 
 
             <div class=" col-7">
-                <textarea class="form-control border-0" name="article_cover_description" placeholder="About article"
+                <textarea class="form-control border-0 pl-0" name="article_cover_description" placeholder="{{__("about_article") }}"
                     maxlength="2000" onkeyup="charCount(this)"
                     id="article_cover_description">{{ Request::get('article_cover_description') }}</textarea>
 
@@ -113,7 +113,7 @@
 
             <div class=" col-4">
                 <textarea class="form-control border-0" name="article_media_description"
-                    placeholder="Media file description" maxlength="2000" onkeyup="charCount(this)"
+                    placeholder="{{__("media_file")}} {{__("description") }}" maxlength="2000" onkeyup="charCount(this)"
                     id="article_media_description">{{ Request::get('article_media_description') }}</textarea>
             </div>
             <div class="col-1">
@@ -133,7 +133,7 @@
             
             <div class=" col-8">
                 @if(Auth::user()->role_id == 2)
-                <textarea class="form-control border-0" name="article_note" placeholder="Note" maxlength="2000"
+                <textarea class="form-control border-0" name="article_note" placeholder="{{__("note")}}" maxlength="2000"
                     onkeyup="charCount(this)" id="article_note">{{ Request::get('article_note') }}</textarea>
                 @elseif(Auth::user()->role_id == 1)
                 <input type="file" class="form-control" name="article_images[]" placeholder="address" multiple>
@@ -152,7 +152,7 @@
         <div class="row text-center mt-3">
                 <div class="col-12">
                     <div class="next-btn">
-                        <button class="my-btn save_article">SUBMIT ARTICLE</button>
+                        <button class="my-btn save_article">{{__("submit")}}</button>
                         {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
                     </div>
                 </div>

@@ -12,7 +12,7 @@
                 </div>
 
                 <div class=" col-2 text-left">
-                    <input type="text" name="artist_name" class="form-control border-0" placeholder="Artist name"
+                    <input type="text" name="artist_name" class="form-control border-0" placeholder="{{__("artist_name")}}"
                         value="{{ Request::get('artist_name') }}">
                 </div>
 
@@ -54,14 +54,14 @@
 
                 <div class=" col-1 col-md-2 offset-md-1 offset-lg-0 col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
-                        <button class="my-btn">Upload Cover</button>
+                        <button class="my-btn">{{__("upload_cover")}}</button>
                         <input type="file" name="artist_cover">
                     </div>
                 </div>
 
 
                 <div class="col-7">
-                    <textarea class="form-control border-0" name="artist_about" placeholder="About Artist"
+                    <textarea class="form-control border-0" name="artist_about" placeholder="{{__("about_artist")}}"
                         maxlength="2000" onkeyup="charCount(this)"
                         id="artist_about">{{ Request::get('artist_about') }}</textarea>
                 </div>
@@ -89,7 +89,7 @@
 
                 <div class=" col-1 col-md-2 col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
-                        <button class="my-btn">Additional photo#1</button>
+                        <button class="my-btn">{{__("additional_photo") }}#1</button>
                         <input type="file" name="artist_image_1">
                     </div>
                 </div>
@@ -97,7 +97,7 @@
 
                 <div class="col-7">
                     <textarea class="form-control border-0" name="artist_image_1_desc" maxlength="2000"
-                        onkeyup="charCount(this)" placeholder="Additional photo #1 description"
+                        onkeyup="charCount(this)" placeholder="{{__("additional_photo") }}#1 {{__("description") }}"
                         id="artist_image_1_desc">{{ Request::get('artist_image_1_desc') }}</textarea>
                 </div>
                 <div class="col-1">
@@ -115,7 +115,7 @@
 
                 <div class=" col-1 col-md-2  col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
-                        <button class="my-btn">Additional photo#2</button>
+                        <button class="my-btn">{{__("additional_photo") }}#2</button>
                         <input type="file" name="artist_image_2">
                     </div>
                 </div>
@@ -123,7 +123,7 @@
 
                 <div class="col-7">
                     <textarea class="form-control border-0" name="artist_image_2_desc" maxlength="2000"
-                        onkeyup="charCount(this)" placeholder="Additional photo #2 description"
+                        onkeyup="charCount(this)" placeholder="{{__("additional_photo") }}#2 {{__("description") }}"
                         id="artist_image_2_desc">{{ Request::get('artist_image_2_desc') }}</textarea>
                 </div>
 
@@ -141,7 +141,7 @@
 
                 <div class=" col-1 col-md-2  col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
-                        <button class="my-btn">Additional photo#3</button>
+                        <button class="my-btn">{{__("additional_photo") }}#3</button>
                         <input type="file" name="artist_image_3">
                     </div>
                 </div>
@@ -149,7 +149,7 @@
 
                 <div class="col-7">
                     <textarea class="form-control border-0" name="artist_image_3_desc" maxlength="2000"
-                        onkeyup="charCount(this)" placeholder="Additional photo #3 description"
+                        onkeyup="charCount(this)" placeholder="{{__("additional_photo") }}#3 {{__("description") }}"
                         id="artist_image_3_desc">{{ Request::get('artist_image_3_desc') }}</textarea>
                 </div>
                 <div class="col-1">
@@ -172,7 +172,7 @@
 
                 <div class=" col-5">
                     <textarea class="form-control border-0" name="artist_media_description" maxlength="2000"
-                        onkeyup="charCount(this)" placeholder="Media file description"
+                        onkeyup="charCount(this)" placeholder="{{__("media_file")}} {{__("description") }}"
                         id="artist_media_description">{{ Request::get('artist_media_description') }}</textarea>
                     <span class="float-left"></span>
                 </div>
@@ -187,7 +187,7 @@
 
 
                 <div class=" col-8">
-                    <textarea class="form-control border-0" name="artist_note" placeholder="Note" maxlength="2000"
+                    <textarea class="form-control border-0" name="artist_note" placeholder="{{__("note")}}" maxlength="2000"
                         onkeyup="charCount(this)" id="artist_note">{{ Request::get('artist_note') }}</textarea>
                 </div>
                 <div class="col-1">
@@ -199,7 +199,7 @@
             <div class="row text-center mt-3">
                 <div class="col-12">
                     <div class="next-btn">
-                        <button class="my-btn save_artist">ADD ARTWORK</button>
+                        <button class="my-btn save_artist">{{__("add_artwork")}}</button>
                         {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
                     </div>
                 </div>

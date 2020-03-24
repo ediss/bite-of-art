@@ -1,0 +1,44 @@
+{
+    "news"              : "NEWS",
+    "about_bite"        : "ABOUT BITE",
+    "bite_network"      : "BITE NETWORK",
+    "contact"           : "CONTACT",
+    "bite_membership"   : "BITE MEMBERSHIP",
+    "login"             : "LOG IN",
+    "logout"            : "LOGOUT",
+    "account"           : "ACCOUNT",
+
+    "e-mail"            : "E-mail address",
+    "password"          : "Password",
+    "remember_me"       : "Remember Me",
+
+    "gallery_name"      : "Gallery name",
+    "curator"           : "Curator",
+    "upload_cover"      : "Upload cover photo",
+    "about_gallery"     : "About gallery",
+    "website"           : "Website",
+    "media_link"        : "Media link",
+    "cover_letter"      : "Cover letter",
+    "submit"            : "SUBMIT",
+
+    "save_changes"      : "SAVE CHANGES",
+    "add_event"         : "ADD EVENT",
+    "add_article"       : "ADD ARTICLE",
+
+    "event_name"        : "Event name",
+    "about_event"       : "About event",
+    "additional_photo"  : "Additional photo",
+    "description"       : "description",
+    "note"              : "Note",
+    "next"              : "NEXT",
+
+    "artist_name"       : "Artist name",
+    "about_artist"      : "About Artist",
+    "add_artwork"       : "ADD ARTWORK",
+
+    "article_name"      : "Article name",
+    "about_article"     : "About article",
+
+    "full_name"         : "Full name",
+    "text_message"      : "Text message"
+}

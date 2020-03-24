@@ -73,17 +73,16 @@
                                 <div class="row m-35px">
                                     @if (Auth::check())
                                     <div class="col-12 text-right montserrat-regular login-membership login">
-                                        <a href="{{ route('logout', app()->getLocale()) }}" class="">LOGOUT</a>
+                                        <a href="{{ route('logout', app()->getLocale()) }}" class="">@lang("logout")</a>
                                         <span class="ml-3 mr-3 menu-span">|</span>
                                         <a href="{{ route('gallerist.dashboard', app()->getLocale()) }}"
-                                            class="">ACCOUNT</a>
+                                            class="">@lang("account")</a>
                                     </div>
                                     @else
                                     <div class="col-12 text-right montserrat-regular login-membership login">
-                                        <a href="{{ route('login', app()->getLocale()) }}" class="">LOG IN</a>
+                                        <a href="{{ route('login', app()->getLocale()) }}" class="">@lang("login")</a>
                                         <span class="ml-3 mr-3 menu-span">|</span>
-                                        <a href="{{ route('register', app()->getLocale()) }}" class="">BITE
-                                            MEMBERSHIP</a>
+                                        <a href="{{ route('register', app()->getLocale()) }}" class="">@lang("bite_membership")</a>
                                     </div>
                                     @endif
                                 </div>
@@ -104,22 +103,22 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link h-100px text-center" href="{{ route('all.news', app()->getLocale()) }}">
-                                <span class="sr-only">(current)</span>NEWS
+                                <span class="sr-only">(current)</span>@lang('news')
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link h-100px text-center"
-                                href="{{ route('about.bite', app()->getLocale()) }}">ABOUT BITE </a>
+                                href="{{ route('about.bite', app()->getLocale()) }}">@lang('about_bite') </a>
                         </li>
 
                         {{-- <li class="nav-item">
-                            <a class="nav-link h-100px text-center" href="#">BITE NETWORK</a>
+                            <a class="nav-link h-100px text-center" href="#">@lang('bite_network')</a>
                         </li> --}}
 
                         <li class="nav-item">
                             <a class="nav-link h-100px text-center"
-                                href="{{ route('contact', app()->getLocale()) }}">CONTACT</a>
+                                href="{{ route('contact', app()->getLocale()) }}">@lang('contact')</a>
                         </li>
                         {{-- <li class="nav-item">
                             <a class="nav-link h-100px text-center"

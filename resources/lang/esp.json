@@ -1,0 +1,44 @@
+{
+    "news"              : "NOTICIAS",
+    "about_bite"        : "Sobre BITE",
+    "bite_network"      : "La red de BITE",
+    "contact"           : "Contacto",
+    "bite_membership"   : "Miembros de BITE",
+    "login"             : "Inicio de session",
+    "logout"            : "Cierre de sesión",
+    "account"           : "Cuenta",
+
+    "e-mail"            : "Correo electrónico",
+    "password"          : "Contraseña",
+    "remember_me"       : "Recuérdame",
+
+    "gallery_name"      : "Nombre de la galería",
+    "curator"           : "Comisario de arte",
+    "upload_cover"      : "Subir foto de portada",
+    "about_gallery"     : "Sobre la galería",
+    "website"           : "Página web",
+    "media_link"        : "Media link",
+    "cover_letter"      : "Carta de presentación",
+    "submit"            : "ENVIAR",
+
+    "save_changes"      : "Guardar cambios",
+    "add_event"         : "Añadir evento",
+    "add_article"       : "Agregar artículo",
+
+    "event_name"        : "Nombre del evento",
+    "about_event"       : "Sobre el event",
+    "additional_photo"  : "Foto adicional",
+    "description"       : "descripción",
+    "note"              : "Nota",
+    "next"              : "SIGUIENTE",
+
+    "artist_name"       : "Nombre del artista",
+    "about_artist"      : "Sobre el artista",
+    "add_artwork"       : "Añadir obra",
+
+    "article_name"      : "Nombre de la artículo",
+    "about_article"     : "Sobre el artículo",
+
+    "full_name"         : "Nombre completo",
+    "text_message"      : "Mensaje"
+}

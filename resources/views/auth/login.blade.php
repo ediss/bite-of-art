@@ -35,7 +35,7 @@
                     <div class=" col-12 text-center">
                         <input id="email" type="email"
                             class="form-control text-center border-0 @error('email') is-invalid @enderror"
-                            placeholder="E-mail address" name="email" value="{{ old('email') }}" required
+                            placeholder="{{ __("e-mail") }}" name="email" value="{{ old('email') }}" required
                             autocomplete="email" autofocus>
 
                         @error('email')
@@ -53,7 +53,7 @@
                     <div class=" col-12">
                         <input id="password" type="password"
                             class="form-control text-center border-0 @error('password') is-invalid @enderror" name="password" required
-                            autocomplete="current-password" placeholder="Password">
+                            autocomplete="current-password" placeholder="{{ __("password")}}">
 
                         @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -69,7 +69,7 @@
             <div class="form-group row mb-0 mt-4">
                 <div class="col-md-12 text-center">
                     <button type="submit" class="my-btn">
-                        {{ __('Login') }}
+                        {{ __('login') }}
                     </button>
 
                   
@@ -82,15 +82,15 @@
                             {{ old('remember') ? 'checked' : '' }}>
 
                         <label class="form-check-label" for="remember">
-                            {{ __('Remember Me') }}
+                            {{ __('remember_me') }}
                         </label>
                     </div>
 
-                    @if (Route::has('password.request'))
+                    {{-- @if (Route::has('password.request'))
                     <a class="btn btn-link" href="{{ route('password.request', app()->getLocale()) }}" style="color:#cccccc">
                         {{ __('Forgot Your Password?') }}
                     </a>
-                    @endif
+                    @endif --}}
                 </div>
             </div>
         </form>

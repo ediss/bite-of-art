@@ -1,0 +1,44 @@
+{
+    "news"              : "NOVICE",
+    "about_bite"        : "O BITE- u",
+    "bite_network"      : "MREŽA BITE",
+    "contact"           : "KONTAKT",
+    "bite_membership"   : "BITE ČLANSTVO",
+    "login"             : "PRIJAVA",
+    "logout"            : "ODJAVA",
+    "account"           : "RAČUN",
+
+    "e-mail"            : "E-naslov",
+    "password"          : "Geslo",
+    "remember_me"       : "Zapomni si me",
+
+    "gallery_name"      : "Ime galerije",
+    "curator"           : "Kurator",
+    "upload_cover"      : "Naloži naslovno fotografijo",
+    "about_gallery"     : "O galeriji",
+    "website"           : "Spletna stran",
+    "media_link"        : "Media link",
+    "cover_letter"      : "Spremno pismo",
+    "submit"            : "POŠLJI",
+
+    "save_changes"      : "SHRANI SPREMEMBE ",
+    "add_event"         : "DODAJ DOGODEK",
+    "add_article"       : "DODAJ ČLANEK",
+
+    "event_name"        : "Ime dogodka",
+    "about_event"       : "O dogodku",
+    "additional_photo"  : "Dodatna fotografija",
+    "description"       : "opis",
+    "note"              : "Opomba",
+    "next"              : "NAPREJ",
+
+    "artist_name"       : "Ime umetnika",
+    "about_artist"      : "O umetniku",
+    "add_artwork"       : "DODAJ UMETNIŠKO DELO",
+
+    "article_name"      : "Članek ime",
+    "about_article"     : "O Članek",
+
+    "full_name"         : "Ime in Priimek",
+    "text_message"      : "Sporočilo"
+}

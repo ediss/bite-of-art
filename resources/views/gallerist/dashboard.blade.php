@@ -47,7 +47,7 @@
 
                         <div class=" col-10 col-lg-2 text-left">
                             <input type="text" class="form-control border-0" name="gallery_name"
-                                placeholder="Gallery name" value="{{ Auth::user()->gallery_name }}">
+                                placeholder="{{__("gallery_name")}}" value="{{ Auth::user()->gallery_name }}">
                         </div>
 
 
@@ -82,7 +82,7 @@
 
                         <div class=" col-8 text-left">
                             <input type="text" class="form-control border-0" name="curator_name"
-                                placeholder="Curator name" value="{{ Auth::user()->name }}">
+                                placeholder="{{__("curator")}}" value="{{ Auth::user()->name }}">
                         </div>
 
                         <div class="col-2">
@@ -113,7 +113,7 @@
 
                         <div class=" col-1 text-left">
                             <div class="upload-btn-wrapper">
-                                <button class="my-btn">Upload Cover</button>
+                                <button class="my-btn">{{__("upload_cover")}}</button>
                                 <input type="file" name="gallery_cover" id="gallery_cover" />
                             </div>
                         </div>
@@ -121,7 +121,7 @@
 
                         <div class=" col-7">
 
-                            <textarea class="form-control border-0" name="about_gallery" placeholder="About gallery"
+                            <textarea class="form-control border-0" name="about_gallery" placeholder="{{__("about_gallery")}}"
                                 maxlength="2000" onkeyup="charCount(this)"
                                 id="about_gallery">{{ Auth::user()->about_gallery }}</textarea>
                         </div>
@@ -148,7 +148,7 @@
                         </div>
 
                         <div class=" col-8 text-left">
-                            <input type="password" name="password" class="form-control border-0" placeholder="Password">
+                            <input type="password" name="password" class="form-control border-0" placeholder="{{__("password")}}">
                         </div>
 
 
@@ -171,7 +171,7 @@
                         </div>
 
                         <div class=" col-8 text-left">
-                            <input type="input" class="form-control border-0" name="website" placeholder="Website"
+                            <input type="input" class="form-control border-0" name="website" placeholder="{{__("website")}}"
                                 value="{{ Auth::user()->website }}">
                         </div>
 
@@ -295,12 +295,12 @@
 <div class="row mt-5">
     <div class="col-12 text-center mt">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button class="my-btn-2 mr-2">SAVE CHANGES</button>
+            <button class="my-btn-2 mr-2">{{__("save_changes")}}</button>
             <a href="{{ route('add.new.event', app()->getLocale()) }}">
-                <button class="my-btn-2">ADD EVENT</button>
+                <button class="my-btn-2">{{__("add_event")}}</button>
             </a>
             <a href="{{ route('add.new.article', app()->getLocale()) }}">
-                <button class="my-btn-2 ml-2">ADD ARTICLE</button>
+                <button class="my-btn-2 ml-2">{{__("add_article")}}</button>
             </a>
         </div>
     </div>

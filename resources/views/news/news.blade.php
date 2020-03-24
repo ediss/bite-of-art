@@ -15,7 +15,7 @@
 <div class="row animation-duration2 fadeInRight" id="smallGallery">
 
     <div class="col-12 p-0 m-0 h-80px h-100px">
-        <h1 class="page-heading text-center montserrat-bold pt-4 mb-0">NEWS</h1>
+        <h1 class="page-heading text-center montserrat-bold pt-4 mb-0">{{__("news")}}</h1>
     </div>
     <div class="col-12 p-0">
         <div id="recipeCarousel" class="carousel slide" data-ride="carousel" data-interval="900000">

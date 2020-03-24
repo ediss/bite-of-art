@@ -44,7 +44,7 @@
 
                         <div class=" col-10 col-lg-2 text-left">
                             <input type="text" class="form-control border-0" name="gallery_name"
-                                placeholder="Gallery name" value="{{ Request::get('gallery_name') }}">
+                                placeholder="{{__("gallery_name")}}" value="{{ Request::get('gallery_name') }}" autofocus>
                         </div>
 
 
@@ -81,7 +81,7 @@
 
                         <div class=" col-8 text-left">
                             <input type="text" class="form-control border-0" name="curator_name"
-                                placeholder="Curator name" value="{{ Request::get('curator_name') }}">
+                                placeholder="{{__("curator")}}" value="{{ Request::get('curator_name') }}">
                         </div>
 
 
@@ -114,7 +114,7 @@
 
                         <div class=" col-1 text-left">
                             <div class="upload-btn-wrapper">
-                                <button class="my-btn">Upload Cover</button>
+                                <button class="my-btn">{{__("upload_cover")}}</button>
                                 <input type="file" name="gallery_cover" id="gallery_cover" />
                             </div>
                         </div>
@@ -122,7 +122,7 @@
 
                         <div class=" col-7">
 
-                            <textarea class="form-control border-0" name="about_gallery" placeholder="About gallery"
+                            <textarea class="form-control border-0" name="about_gallery" placeholder="{{__("about_gallery")}}"
                                 maxlength="2000" onkeyup="charCount(this)"
                                 id="about_gallery">{{ Request::get('about_gallery') }}</textarea>
                         </div>
@@ -176,7 +176,7 @@
                         </div>
 
                         <div class=" col-8 text-left">
-                            <input type="password" name="password" class="form-control border-0" placeholder="Password">
+                            <input type="password" name="password" class="form-control border-0" placeholder="{{__("password")}}">
                         </div>
 
 
@@ -199,7 +199,7 @@
                         </div>
 
                         <div class=" col-8 text-left">
-                            <input type="text" class="form-control border-0" name="website" placeholder="Website"
+                            <input type="text" class="form-control border-0" name="website" placeholder="{{__("website")}}"
                                 value="{{ Request::get('website') }}">
                         </div>
 
@@ -216,7 +216,7 @@
                         </div>
 
                         <div class=" col-8 text-left">
-                            <input type="text" class="form-control border-0" name="media_link" placeholder="Media link"
+                            <input type="text" class="form-control border-0" name="media_link" placeholder="{{__("media_link")}}"
                                 value="{{ Request::get('media_link') }}">
                         </div>
 
@@ -233,7 +233,7 @@
                         </div>
 
                         <div class=" col-7 text-left">
-                            <textarea class="form-control border-0" name="cover_letter" placeholder="Cover letter"
+                            <textarea class="form-control border-0" name="cover_letter" placeholder="{{__("cover_letter")}}"
                                 maxlength="2000" onkeyup="charCount(this)"
                                 id="cover_letter">{{ Request::get('cover_letter') }}</textarea>
                         </div>
@@ -262,7 +262,7 @@
 
                 <div class="col-12 text-center mt-5">
                     <div class="next-btn">
-                        <button class="my-btn">SUBMIT</button>
+                        <button class="my-btn">{{__("submit")}}</button>
                         {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
                     </div>
                 </div>
