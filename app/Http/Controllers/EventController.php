@@ -50,13 +50,18 @@ class EventController extends Controller
     public function getArticle(Request $request) {
 
         $articles = new News();
+        $id = $request->id;
         $articles_additionals = new ArticleAdditionals();
-        $article = $articles->where('id', '=', $request->id)->first();
+        $article = $articles->where('id', '=', $id)->first();
 
-        
+
 
         $article_additionals = $articles_additionals->where('article_id', '=', $request->id)->get();
-        return view ('news.article', ['article' => $article, 'additionals' => $article_additionals]);
+        return view ('news.article', [
+            'article'       => $article,
+            'additionals'   => $article_additionals,
+            'url_id'        => $id
+            ]);
 
 
     }
@@ -75,7 +80,8 @@ class EventController extends Controller
 
         return view('event-opened',[
             'data'=> $event_data,
-            'next' => $next
+            'next' => $next,
+            'url_id' => $id
         ]);
 
         
