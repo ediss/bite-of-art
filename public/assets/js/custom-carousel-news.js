@@ -34,7 +34,7 @@ $(document).ready(function () {
 
         var $e = $(e.relatedTarget);
         var idx = $e.index();
-        var itemsPerSlide = 2;
+        var itemsPerSlide = 1;
         var totalItems = $('.carousel-item-news').length;
     
         if (idx >= totalItems - (itemsPerSlide - 1)) {
