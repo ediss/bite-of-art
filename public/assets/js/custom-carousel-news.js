@@ -2,9 +2,9 @@
 
 
 $(document).ready(function () {
-    $('#recipeCarousel .carousel-control-prev').css({
-        opacity: 0
-    });
+    // $('#recipeCarousel .carousel-control-prev').css({
+    //     opacity: 0
+    // });
 
     $(".img-opacity").mouseover(function (e) {
         e.preventDefault();
@@ -17,26 +17,26 @@ $(document).ready(function () {
 
     $('#recipeCarousel').on('slide.bs.carousel', function (e) {
 
-        if($(e.relatedTarget).hasClass('first-news')) {
-            
-            $('#recipeCarousel .carousel-control-prev').css({
-                opacity: 0,
-                display : 'none'
-              });
-        }else {
-            $('#recipeCarousel .carousel-control-prev').css({
-                opacity: 1,
-                display : 'block'
+        // if($(e.relatedTarget).hasClass('first-news')) {
 
-              });
-        }
+        //     $('#recipeCarousel .carousel-control-prev').css({
+        //         opacity: 0,
+        //         display : 'none'
+        //       });
+        // }else {
+        //     $('#recipeCarousel .carousel-control-prev').css({
+        //         opacity: 1,
+        //         display : 'block'
+
+        //       });
+        // }
 
 
         var $e = $(e.relatedTarget);
         var idx = $e.index();
         var itemsPerSlide = 4;
         var totalItems = $('.carousel-item-news').length;
-    
+
         if (idx >= totalItems - (itemsPerSlide - 1)) {
             var it = itemsPerSlide - (totalItems - idx);
             for (var i = 0; i < it; i++) {
@@ -46,8 +46,8 @@ $(document).ready(function () {
                 } else {
                     $('.carousel-item-news').eq(0).appendTo('.carousel-inner-news');
                 }
-    
-    
+
+
             }
         }
     });
@@ -57,15 +57,15 @@ $(document).ready(function () {
         var first = $("#recipeCarousel .carousel-inner-news .carousel-item-news:first");
 
         if (e.originalEvent.wheelDelta / 120 < 0) {
-       
+
             $(this).carousel('next');
 
         }
 
         if (e.originalEvent.wheelDelta / 120 > 0) {
-            if (!first.hasClass('active')) {
+
               $(this).carousel('prev');
-            }
+
           }
     });
 
