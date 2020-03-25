@@ -29,7 +29,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-80px h-100px">
+                    <div class="card-body text-center h-80px h-80px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
 
@@ -46,7 +46,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-80px h-100px">
+                    <div class="card-body text-center h-80px h-80px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
@@ -62,7 +62,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-80px h-100px">
+                    <div class="card-body text-center h-80px h-80px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
@@ -100,7 +100,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-100px">
+                    <div class="card-body text-center h-80px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
@@ -118,7 +118,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-100px">
+                    <div class="card-body text-center h-80px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
 
@@ -135,7 +135,7 @@
                         <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                     </div>
 
-                    <div class="card-body text-center h-100px">
+                    <div class="card-body text-center h-80px">
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
