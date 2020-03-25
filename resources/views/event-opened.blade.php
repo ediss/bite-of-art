@@ -16,7 +16,7 @@
     @if(isset($data))
 
     @php
-    
+
     $counter = 0;
     @endphp
 
@@ -36,7 +36,7 @@
                 $counter ++;
                 $langdesc = app()->getLocale();
 
-                
+
                 @endphp
                 <div
                     class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
@@ -53,19 +53,28 @@
                             @switch(app()->getLocale())
                                 @case('slo')
                                 @php $desc = explode('~', $data->event_description_slo); @endphp
-                                    @break
+                                @break
                                 @case('srb')
                                 @php $desc = explode('~', $data->event_description_srb  ); @endphp
                                     @break
                                 @case('esp')
-                                @php $desc = explode('~', $data->event_description_esp); @endphp
+
+                                @if($data->event_description_esp != '')
+                                    @php $desc = explode('~', $data->event_description_esp); @endphp
                                     @break
+
+                                @endif
+
                                 @default
-                                
+
                                 @php $desc = explode('~', $data->event_description_en); @endphp
-                                
+
                             @endswitch
-                            <p>{{ $desc[0] }}</p>
+                            <p>@if($desc[0] == '')
+                                    @php $desc = explode('~', $data->event_description_en); @endphp
+                                @endif
+                                {{ $desc[0] }}
+                            </p>
                         </div>
 
                     </div>
@@ -106,7 +115,7 @@
                 <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 ">
                     @php
                     $counter++;
-                    
+
                     @endphp
                     <div class="card">
                         <div class="col-10">
