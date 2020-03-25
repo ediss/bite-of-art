@@ -25,7 +25,7 @@ $(document).ready(function () {
               });
         }else {
             $('#recipeCarousel .carousel-control-prev').css({
-                opacity: 1,
+                opacity: 4,
                 display : 'block'
 
               });
