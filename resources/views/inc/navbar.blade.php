@@ -141,7 +141,7 @@
                             
                             @else
                             <a href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $language ) }}" class=" {{(app()->getLocale() == $language) ? 'active-language' : ''}} ">
-                                {{strtoupper($language)}}cccc
+                                {{strtoupper($language)}}
                             </a>
                             @endif
                             
