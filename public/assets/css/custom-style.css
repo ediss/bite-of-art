@@ -386,7 +386,7 @@ body {
     }
 
     /* left or forward direction */
-    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  #carouselExample2  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
     .carousel-item-next.carousel-item-left + .carousel-item-main,
     .carousel-item-next.carousel-item-left
         + .carousel-item-main
@@ -485,7 +485,7 @@ body {
     }
 
     /* left or forward direction */
-    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+   #carouselExample2 .active.carousel-item-left + .carousel-item-next.carousel-item-left,
     .carousel-item-next.carousel-item-left + .carousel-item-gallery,
     .carousel-item-next.carousel-item-left
         + .carousel-item-gallery

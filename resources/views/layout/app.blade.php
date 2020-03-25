@@ -6,7 +6,7 @@
 <head>
 
     <noscript>
-    <meta http-equiv="refresh" content="0; url={{ url('/warning')}}" />
+    <meta http-equiv="refresh" content="0; url={{ url('/en/warning')}}" />
     </noscript>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
