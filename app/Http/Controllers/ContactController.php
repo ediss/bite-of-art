@@ -27,7 +27,7 @@ class ContactController extends Controller
                     ];
 
                     Mail::send(['text'=>'mail'], $data, function($message) use ($data) {
-                        $message->to('office@biteofart.org', 'BiteOfArt')->subject ($data['subject'])->replyTo($data['email']);
+                        $message->to('skenderi.e94@gmail.com', 'BiteOfArt')->subject ($data['subject'])->replyTo($data['email']);
                         $message->from($data['email'], $data['name'] );
                     });
 
