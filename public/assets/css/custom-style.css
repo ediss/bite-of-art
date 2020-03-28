@@ -677,7 +677,7 @@ body {
     }
 }
 
-@media(min-width:760px) and (max-width :1440px) {
+@media(min-width:760px) and (max-width :990px) {
     .gallery-first-slide h1 {
         font-size:0.8rem;
     }

@@ -63,8 +63,8 @@
                         <i class="fa fa-2x fa-edit"></i>
                     </a>
 
-                    <a href="" class="dashtext-2 js-delete-patient ml-2" data-id="{{ 1 }}"> <i
-                            class="fa fa-2x fa-expand"></i></i> </a>
+                    {{-- <a href="" class="dashtext-2 js-delete-patient ml-2" data-id="{{ 1 }}"> <i
+                            class="fa fa-2x fa-expand"></i></i> </a> --}}
                 </td>
             </tr>
             @endforeach
