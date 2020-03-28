@@ -36,7 +36,7 @@ class EventController extends Controller
         ->where('event_open', '>=', $today)->orderBy('event_open')->get();
 
         
-        $news = News::where('approved', '=', 1)->get();
+        $news = News::where('approved', '=', 1)->orderBy('article_open', 'desc')->get();
 
 
         return view('index', [
