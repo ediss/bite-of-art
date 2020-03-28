@@ -675,9 +675,7 @@ body {
         font-family: montserrat-bold;
         cursor: pointer;
     }
-}
 
-@media(min-width:760px) and (max-width :990px) {
     .gallery-first-slide h1 {
         font-size:0.8rem;
     }
@@ -689,6 +687,8 @@ body {
         font-size:0.1rem;
     }
 }
+
+
 
 @media(min-width:1165px) {
     .my-btn {
