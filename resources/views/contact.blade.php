@@ -6,7 +6,7 @@
 @endsection
 
 @section('logo-img')
-    <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">
+<img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">
 @endsection
 @section('content')
 <div class="row">
@@ -36,8 +36,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="md-form mb-0">
-                        <input type="text" id="email" name="email" class="form-control p-0" placeholder="{{__("e-mail")}}">
-                        
+                        <input type="text" id="email" name="email" class="form-control p-0"
+                            placeholder="{{__("e-mail")}}">
+
                     </div>
                 </div>
             </div>
@@ -49,38 +50,25 @@
                 <div class="col-md-12">
                     <div class="md-form mb-0">
                         <textarea type="text" id="message" name="message" rows="5"
-                            class="form-control p-0 md-textarea contact-textarea" placeholder="{{__("text_message")}}"></textarea>
+                            class="form-control p-0 md-textarea contact-textarea"
+                            placeholder="{{__("text_message")}}"></textarea>
 
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-10 social mt-3 pl-0">
-                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
-                    class="fb-xfbml-parse-ignore mr-2">
+              
+                <a target="_blank" class="mr-2" href="https://www.instagram.com/biteof.art">
+                    <img class="" src="{{ asset('images/social-network/instagram.png') }}">
+                </a>
+                <a target="_blank" href="https://www.facebook.com/biteofartofficial" class="fb-xfbml-parse-ignore mr-2">
                     <img class="" src="{{ asset('images/social-network/facebook.png') }}">
                 </a>
-
-                <a target="_blank"
-                    href="http://pinterest.com/pin/create/button/?url={{url()->current()}}"
-                    class="pin-it-button mr-2" count-layout="horizontal">
-                    <img class="" src="{{ asset('images/social-network/pinterest.png') }}">
-                </a>
-
-                <a target="_blank" class="mr-2"
-                    href="http://twitter.com/share?&url={{url()->current()}}&hashtags=bite,of,art">
+                <a target="_blank" class="mr-2" href="https://twitter.com/biteofart">
                     <img class="" src="{{ asset('images/social-network/twitter.png') }}">
                 </a>
 
-
-                <a target="_blank" class="mr-2"
-                    href="http://www.linkedin.com/shareArticle?mini=true&url={{ url()->current() }}">
-                    <img class="" src="{{ asset('images/social-network/linkedin.png') }}">
-                </a>
-
-                <a href="mailto:?subject=I wanted you to see this site&amp;body={{url()->current()}}">
-                    <img class="mt-2" src="{{ asset('images/social-network/gmail.png') }}">
-                </a>
 
             </div>
             <div class="row btn-sbm-mt">

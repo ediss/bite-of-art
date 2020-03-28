@@ -107,3 +107,5 @@ $(document).ready(function() {
         $(".virtual-toure").height(vr_height);
     }
 });
+
+

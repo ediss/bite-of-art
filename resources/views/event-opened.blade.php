@@ -82,29 +82,44 @@
                     <div class="col-lg-10 social-scale">
                         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
                             class="fb-xfbml-parse-ignore">
-                            <img class="" src="{{ asset('images/social-network/facebook.png') }}">
+                            <img class="social-fb"
+                            src="{{ asset('images/social-network/facebook.png') }}"
+                            data-src="{{ asset('images/social-network/facebook.png') }}"
+                            data-hover="{{ asset('images/social-network/fb-black.png') }}" alt="slide 2">
                         </a>
 
                         <a target="_blank"
                             href="http://pinterest.com/pin/create/button/?url={{url()->current()}}&media={{ url($data->event_cover) }}"
                             class="pin-it-button" count-layout="horizontal">
-                            <img class="" src="{{ asset('images/social-network/pinterest.png') }}">
+                            <img class="social-pinterest"
+                            src="{{ asset('images/social-network/pinterest.png') }}"
+                            data-src="{{ asset('images/social-network/pinterest.png') }}"
+                            data-hover="{{ asset('images/social-network/pinterest-black.png') }}" alt="slide 2">
                         </a>
 
                         <a target="_blank"
                             href="http://twitter.com/share?&url={{url()->current()}}&hashtags=bite,of,art">
-                            <img class="" src="{{ asset('images/social-network/twitter.png') }}">
+                            <img class="social-twitter"
+                            src="{{ asset('images/social-network/twitter.png') }}"
+                            data-src="{{ asset('images/social-network/twitter.png') }}"
+                            data-hover="{{ asset('images/social-network/twitter-black.png') }}" alt="slide 2">
                         </a>
 
 
                         <a target="_blank"
                             href="http://www.linkedin.com/shareArticle?mini=true&url={{ url()->current() }}&title={{ $data->event_name }}&summary={{ url($data->event_cover) }}">
-                            <img class="" src="{{ asset('images/social-network/linkedin.png') }}">
+                            <img class="social-linkedin"
+                            src="{{ asset('images/social-network/linkedin.png') }}"
+                            data-src="{{ asset('images/social-network/linkedin.png') }}"
+                            data-hover="{{ asset('images/social-network/linked-black.png') }}" alt="slide 2">
                         </a>
 
                         <a href="mailto:?subject=I wanted you to see this site&amp;body={{url()->current()}}"
                             title="Event: {{ $data->event_name }}">
-                            <img class="mt-2" src="{{ asset('images/social-network/gmail.png') }}">
+                            <img class="social-gmail"
+                            src="{{ asset('images/social-network/gmail.png') }}"
+                            data-src="{{ asset('images/social-network/gmail.png') }}"
+                            data-hover="{{ asset('images/social-network/gmail-black.png') }}" alt="slide 2">
                         </a>
 
                     </div>
@@ -244,5 +259,7 @@
     $('.footer').css('display', 'none');
 </script>
 <script src=" {{ asset('assets/js/opened-event.js') }}"></script>
+<script src=" {{ asset('assets/js/hover.js') }}"></script>
+
 
 @endsection

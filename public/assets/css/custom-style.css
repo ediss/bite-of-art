@@ -727,6 +727,8 @@ body {
     border:2px solid green;
 }
 .social-scale {
+    position: relative;
+        display: inline-block;
     bottom: 0;
   }
   .social-scale img{
@@ -894,5 +896,10 @@ body {
     font-size:0.6rem;
 }
 
+.social-scale a{
+    text-decoration: none;
+}
 
-
+.social a{
+    text-decoration: none;
+}

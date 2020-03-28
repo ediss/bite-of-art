@@ -201,7 +201,9 @@
 @section('footer-scripts')
 
 
+<script src=" {{ asset('assets/js/hover.js') }}"></script>
 <script src=" {{ asset('assets/js/about.js') }}"></script>
+
 
 <script>
     $('.footer').css('display', 'none');
