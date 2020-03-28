@@ -33,7 +33,7 @@ class ModeratorController extends Controller
 
     public function getGallerists()
     {
-        $gallerists = new User;
+        $gallerists = new User();
 
         $data = $gallerists->where('role_id', '2')->get();
 

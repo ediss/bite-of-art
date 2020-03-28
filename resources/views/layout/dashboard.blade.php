@@ -263,47 +263,6 @@
         });
 
 
-//         $(document).on('click', '.update-artist-event', function(e) {
-
-//         var event_id = $('.hidden_event_id').val();
-//         var artist_id = $('.artist_id_hidden').val();
-
-//         var form = document.getElementById('updateEventArtist_'+artist_id);
-//         var formData = new FormData(form);
-
-
-
-
-//         e.preventDefault();
-
-//         $.ajaxSetup({
-//             headers: {
-//                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//             }
-//         });
-//         $.ajax({
-            
-//             url: "/moderator/update-whole/event/"+event_id,
-//             method: 'post',
-//             contentType: false,
-//             processData: false,
-//             cache: false,
-//             data:formData,
-//             success: function(result){
-//                 if (typeof result.message != "undefined" && result.message.length) {
-//                     toastr[result.message[0]](result.message[1]);
-//                 }
-
-//                     alert("usao");
-//             if(result.success === false) {
-//               $("#content").html(result.html);
-              
-//             }
-//             }
-//         });
-
-// });
-
         $(document).on('click', '.custom-control-input', function(e) {
             // e.preventDefault();
 

@@ -17,8 +17,8 @@
 
 <div class="row">
     <div class="col-12 col-md-6 offset-md-3">
-        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-
+        <form id="contact-form" name="contact-form" action="{{ route('contact', app()->getLocale()) }}" method="POST">
+            @csrf
             <!--Grid row-->
             <div class="row">
 

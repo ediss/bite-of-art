@@ -4,14 +4,65 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User as Gallerist;
-
+use Auth;
 use Validator;
+use Response;
+use Redirect;
 
 
 class GalleristController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
         $validator = null;
+        if ($request->isMethod('post')) {
+            $validator = Validator::make(
+                $request->all(),
+                [
+                    "gallery_name"   => "required",
+                    "curator_name"   => "required",
+                    "city_country"   => "required",
+                    "about_gallery"  => "required",
+                ],
+                [
+                    "gallery_name.required"     => "Field 'Gallery Name' can't be empty",
+                    "about_gallery.required"    => "Field 'About Gallery' can't be empty",
+                    "curator_name.required"     => "Field 'Curator Name' can't be empty",
+                    "city_country.required"     => "Field 'City/Country' can't be empty",
+                ]
+            );
+
+            if ($validator->passes()) {
+                if ($request->hasFile('gallery_cover')) {
+                    $gallery_cover        = $request->file('gallery_cover');
+                    $gallery_cover_name   = 'cover_'.time().'.'.$gallery_cover->getClientOriginalExtension();
+                    $gallery_cover_path   = $gallery_cover ? $gallery_cover->move('images/galleries/', $gallery_cover_name) : null;
+
+                }
+
+                if(!isset($gallerist)) {
+                    $gallerist = Gallerist::find(Auth::user()->id);
+                }
+
+                $gallerist->name            = $request->input('curator_name');
+                $gallerist->gallery_name    = $request->input('gallery_name');
+                $gallerist->city_country    = $request->input('city_country');
+                $gallerist->gallery_cover   = (isset($gallery_cover_path)) ? $gallery_cover_path : null;
+                $gallerist->about_gallery   = $request->input('about_gallery');
+                if($gallerist->save()) {
+                    //send mail to moderator
+                    $message = ["success", $gallerist->gallery_name . " is updated"];
+
+                    return Response::json(['success' => true, 'message' => $message]);
+
+
+                }else {
+                    $message = ["error", "OOps! Something went wrong!"];
+                    return Response::json(["message" => $message]);
+                }
+
+            }
+        }
+
         return view('gallerist.dashboard',[
             'validator' => $validator
         ]);
@@ -63,7 +114,7 @@ class GalleristController extends Controller
 
                 }
 
-    
+
                 //Inserting in DB
                 $articleObj->article_name           = $article_name;
                 $articleObj->article_open           = $article_date[0];
@@ -71,7 +122,7 @@ class GalleristController extends Controller
                 $articleObj->article_cover          = $article_cover_path;
 
                 $articleObj->article_description    = $article_cover_desc.'~';
-                
+
                 $articleObj->article_media          = $article_media;
                 $articleObj->article_media_desc     = $article_media_desc;
                 $articleObj->article_note           = $article_note;
@@ -81,9 +132,9 @@ class GalleristController extends Controller
 
                 if($articleObj->save()) {
                     $message = ["success", $article_name. " is saved"];
-                    
 
-                    
+
+
 
                     $html = View::make('gallerist.add-news',[
                         'validator' => $validator

@@ -22,7 +22,12 @@
                     <td>{{ $gallerist->name }}</td>
                     <td>{{ $gallerist->email }}</td>
                     <td>{{ $gallerist->gallery_name }} <br> {{ $gallerist->city_country }}</td>
-                    <td> <img src="{{ $gallerist->gallery_cover }}" style="max-width:30%;max-height: 30%;"></td>
+
+                    @if($gallerist->gallery_cover != null)
+                      <td><img src = "{{ url($gallerist->gallery_cover) }}" style="max-width:30%;max-height: 30%;"></td>
+                    @else
+                    <td>/</td>
+                    @endif
                     <td>{{ $gallerist->about_gallery }}</td>
                     <td>{{ $gallerist->media_link }}</td>
                     <td>{{ $gallerist->cover_letter }}</td>

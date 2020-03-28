@@ -86,11 +86,11 @@
                         </label>
                     </div>
 
-                    {{-- @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request', app()->getLocale()) }}" style="color:#cccccc">
+                    @if (Route::has('password.request'))
+                    <a class="btn btn-link" href="{{ route('password.request') }}" style="color:#cccccc">
                         {{ __('Forgot Your Password?') }}
                     </a>
-                    @endif --}}
+                    @endif
                 </div>
             </div>
         </form>

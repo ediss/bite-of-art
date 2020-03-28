@@ -1,8 +1,8 @@
 @extends('layout.app')
 
 @section('css')
-<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-style.css')}}" />
-{{-- <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style2.css')}}" /> --}}
+<link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
+
 @endsection
 
 @section('logo-img')
@@ -114,15 +114,15 @@
                         <div class=" col-1 text-left">
                             <div class="upload-btn-wrapper">
                                 <button class="my-btn">{{__("upload_cover")}}</button>
-                                <input type="file" name="gallery_cover" id="gallery_cover" />
+                                <input type="file" name="gallery_cover" id="gallery_cover2" />
                             </div>
                         </div>
 
 
                         <div class=" col-7">
 
-                            <textarea class="form-control border-0" name="about_gallery" placeholder="{{__("about_gallery")}}"
-                                maxlength="2000" onkeyup="charCount(this)"
+                            <textarea class="form-control border-0" name="about_gallery"
+                                placeholder="{{__("about_gallery")}}" maxlength="2000" onkeyup="charCount(this)"
                                 id="about_gallery">{{ Auth::user()->about_gallery }}</textarea>
                         </div>
 
@@ -148,7 +148,8 @@
                         </div>
 
                         <div class=" col-8 text-left">
-                            <input type="password" name="password" class="form-control border-0" placeholder="{{__("password")}}">
+                            <input type="password" name="password" class="form-control border-0"
+                                placeholder="{{__("password")}}">
                         </div>
 
 
@@ -171,8 +172,8 @@
                         </div>
 
                         <div class=" col-8 text-left">
-                            <input type="input" class="form-control border-0" name="website" placeholder="{{__("website")}}"
-                                value="{{ Auth::user()->website }}">
+                            <input type="input" class="form-control border-0" name="website"
+                                placeholder="{{__("website")}}" value="{{ Auth::user()->website }}">
                         </div>
 
 
@@ -183,99 +184,7 @@
 
 
 
-                    <!--Gallery Cover mobile-->
-                    <div class="row elements-mid-align d-lg-none h-80px h-100px border-bottom">
-
-                        <div class="col-2"></div>
-
-                        <div class=" col-4 text-left">
-                            <div class="upload-btn-wrapper">
-                                <button class="my-btn">Upload Cover</button>
-                                <input type="file" name="gallery_cover" id="gallery_cover" />
-                            </div>
-                        </div>
-
-                        <div class="col-4">
-                            @if ( $validator && $validator->errors()->first('gallery_cover') )
-                            <div class="alert alert-danger text-center mt-2">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                {{ $validator->errors()->first('gallery_cover') }}
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-
-                    <!--About Gallery mobile -->
-                    <div class="row elements-mid-align  d-lg-none h-80px  border-bottom">
-
-
-                        <div class="col-2"></div>
-
-
-                        <div class=" col-7">
-
-                            <textarea class="form-control border-0" name="about_gallery" placeholder="About gallery"
-                                maxlength="2000" onkeyup="charCount(this)"
-                                id="about_gallery">{{ Auth::user()->about_gallery }}</textarea>
-                        </div>
-
-                        <div class="col-1">
-                            <span class="float-left"></span>
-                        </div>
-                        <div class="col-2">
-                            @if ( $validator && $validator->errors()->first('about_gallery') )
-                            <div class="alert alert-danger text-center mt-2">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                {{ $validator->errors()->first('about_gallery') }}
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-
-                    <!--Gallery password mobile-->
-                    <div class="row elements-mid-align d-lg-none h-80px h-100px border-bottom">
-                        <div class="col-2">
-
-                        </div>
-
-                        <div class=" col-8 text-left">
-                            <input type="password" name="password" class="form-control border-0" placeholder="Password">
-                        </div>
-
-
-                        <div class="col-2">
-                            @if ( $validator && $validator->errors()->first('password') )
-                            <div class="alert alert-danger text-center mt-2">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                {{ $validator->errors()->first('password') }}
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-
-                    <!--Gallery website mobile-->
-
-                    <div class="row elements-mid-align d-lg-none h-80px h-100px border-bottom">
-                        <div class="col-2">
-
-                        </div>
-
-                        <div class=" col-8 text-left">
-                            <input type="input" class="form-control border-0" name="website" placeholder="Website"
-                                value="{{ Auth::user()->website }}">
-                        </div>
-
-
-                        <div class="col-2">
-
-                        </div>
-                    </div>
+      
 
 
 
@@ -295,7 +204,10 @@
 <div class="row mt-5">
     <div class="col-12 text-center mt">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button class="my-btn-2 mr-2">{{__("save_changes")}}</button>
+
+            <button class="my-btn-2 mr-2 update-gallerist">{{__("save_changes")}}</button>
+
+
             <a href="{{ route('add.new.event', app()->getLocale()) }}">
                 <button class="my-btn-2">{{__("add_event")}}</button>
             </a>
@@ -305,4 +217,44 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer-scripts')
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src=" {{ asset('plugins/toastr/toastr.min.js') }}"></script>
+
+<script>
+    $( ".update-gallerist" ).click(function(e) {
+        var form = document.getElementById('register');
+
+        var formData = new FormData(form);
+        var gallerist_id = "{{ Auth::user()->id }}";
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: "{{ route('gallerist.dashboard', app()->getLocale()) }}",
+            method: 'POST',
+            contentType: false,
+            processData: false,
+            cache: false,
+            data:formData,
+
+            success: function(response){
+                if (typeof response.message != "undefined" && response.message.length) {
+                        toastr[response.message[0]](response.message[1]);
+                    }
+                //$('#content').html(data.html);
+            },
+            error: function (request, status, error) {
+                alert("error! Contact us!");
+            }
+        });
+    });
+
+</script>
+
 @endsection

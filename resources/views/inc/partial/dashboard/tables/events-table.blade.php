@@ -16,7 +16,7 @@
           <tbody>
               @php $counter = 0; @endphp
               @foreach($events as $event)
-
+            
                 @php $counter++; @endphp
                 {{-- @php dd($event->artworks) @endphp --}}
 

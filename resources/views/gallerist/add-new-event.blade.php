@@ -158,7 +158,7 @@ $(document).ready(function(){
 
 var ww = document.body.clientWidth;
 if (ww < 760) {
-    window.location.href = "{{ url('warning/mobile') }}"; 
+    window.location.href = "{{ route('warning', app()->getLocale()) }}"; 
 }
 
 </script>

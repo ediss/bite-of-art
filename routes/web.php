@@ -15,6 +15,11 @@
 //     return view('index');
 // });
 
+    // Password Reset Routes...
+    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
 Route::get('/test',                 'EventController@test');
 Route::get('/', function(){
@@ -29,35 +34,30 @@ Route::group([
     Route::get("/about-us", function(){
         return View::make("about");
      })->name('about.bite');
-    
+
     // Route::post('/event/{id?}', 'EventController@ajaxLoadEventData');
     // Auth::routes();
     Route::get('/login', 'Auth\CustomLoginController@showLoginForm')->name('login')->middleware('guest');
     Route::post('/login', 'Auth\CustomLoginController@login')->name('custom.login.submit');
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-    
+
     Route::any('membership', 'Auth\CustomRegisterController@register')->name('register');
-    
-    
-    // Password Reset Routes...
-    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-    Route::post('password/reset', 'Auth\ResetPasswordController@reset');
-    
-    
+
+
+
+
     Route::get('/',     'EventController@index')->name('home');
-    
+
 
     //Route::get('/home', 'EventController@index')->name('home');
-    
-    
-    
+
+
+
     //need to be protected
-    
-    
+
+
     Route::get('/news/{id?}', 'EventController@getArticle')->name("opened.news");
-    
+
     Route::group([
         'prefix'        => 'gallerist',
         'middleware'    => ['auth'],
@@ -67,20 +67,20 @@ Route::group([
         Route::post('/submitArtist',    'EventController@submitArtist')     ->name('add.artist');
         Route::post('/submitArtwork',   'EventController@submitArtwork')    ->name('add.artwork');
     });
-    
-    
+
+
     Route::any('/ajax',             'EventController@ajaxTest')->middleware('auth');
-    
+
     Route::any('/event/{id?}',      'EventController@ajaxLoadEventData')->name('opened.event');
-    
+
     Route::get('/all-news',         'NewsController@index')->name('all.news');
     Route::any('/news/add/article', 'NewsController@addArticle')->name('add.new.article')->middleware('auth');
     Route::any('/contact',          'ContactController@index')->name('contact');
-    
-    
-    
-    
-    
+
+
+
+
+
     Route::group([
         'prefix'        => 'moderator',
         'middleware'    => ['auth','moderator'],
@@ -97,9 +97,9 @@ Route::group([
         Route::post('/approve-article/{id}',    'ModeratorController@approveArticle')->name('approve.article');
         Route::any('/update-article/{id}',      'ModeratorController@updateArticle')->name('moderator.article.update');
         Route::any('/article-additional/{id?}',  'ModeratorController@articleAdditional')->name('moderator.article.additional');
-    
+
     });
-    
-    Route::get('/warning/{mobile?}',                 'Controller@redirectUser');
-    
+
+    Route::get('/warning/{mobile?}',                 'Controller@redirectUser')->name('warning');
+
 });
