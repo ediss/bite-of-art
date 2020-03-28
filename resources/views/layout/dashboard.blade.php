@@ -150,7 +150,7 @@
             var approved= $(this).prop("checked");
 
             var article_id = $(this).attr('data-id');
-            var route = "{{ route('approve.gallerist',["article_id+", 'app()->getLocale()']) }}"
+            var route = "{{ route('approve.article',["article_id+", 'app()->getLocale()']) }}"
 
             e.preventDefault();
             $.ajaxSetup({
