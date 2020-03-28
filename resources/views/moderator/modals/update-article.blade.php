@@ -1,4 +1,4 @@
-<form id="updateArticle" method="POST" action={{ route('moderator.article.update', ['id' => $article->id], app()->getLocale()) }}
+<form id="updateArticle" method="POST" action={{ route('moderator.article.update', ['id' => $article->id, app()->getLocale()]) }}
         enctype="multipart/form-data">
             
         <div class="form-group">
