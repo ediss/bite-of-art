@@ -1,6 +1,8 @@
-<form id="articleSubmit" action="{{ route('add.new.article', app()->getLocale()) }}" enctype="multipart/form-data" method="POST">
+<form id="articleSubmit" action="{{ route('add.new.article', ['language'=>app()->getLocale()]) }}" enctype="multipart/form-data" method="POST">
     @csrf
     <!--Add article-->
+    {{-- @php dd( app()->getLocale()) @endphp --}}
+    {{-- @php dd( route('add.new.article', ['language'=>app()->getLocale()])) @endphp --}}
     <div class="row">
 
         <div class="col-12 border-bottom border-top ">

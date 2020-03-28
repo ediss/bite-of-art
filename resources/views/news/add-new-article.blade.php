@@ -52,7 +52,8 @@ AjaxLoad.initialize();
       }
   });
   $.ajax({
-      url: "/news/add/article",
+    
+      url: "{{ route('add.new.article', app()->getLocale()) }}",
       method: 'post',
       contentType: false,
       processData: false,
