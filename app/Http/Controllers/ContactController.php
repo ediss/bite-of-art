@@ -13,11 +13,11 @@ class ContactController extends Controller
             if ($request->isMethod('post')) {
 
                 $name           = $request->input('name');
-                
+
                 $email          = $request->input('email');
                 $subject        = "naslov";
                 $msg            = $request->input('message');
-    
+
 
                     $data = [
                         'name'          => $name,
@@ -27,7 +27,7 @@ class ContactController extends Controller
                     ];
 
                     Mail::send(['text'=>'mail'], $data, function($message) use ($data) {
-                        $message->to('skenderi.e94@gmail.com', 'BiteOfArt')->subject ($data['subject'])->replyTo($data['email']);
+                        $message->to('biteofart.dev@gmail.com', 'BiteOfArt')->subject ($data['subject'])->replyTo($data['email']);
                         $message->from($data['email'], $data['name'] );
                     });
 
