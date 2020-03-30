@@ -68,7 +68,7 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-5">
+                            <div class="row">
                                 <div class="col-3">
                                     <a target="_blank" href="http://bum.org.rs/">
                                         <img class="img-fluid  d-block gallery-img about-bum"
