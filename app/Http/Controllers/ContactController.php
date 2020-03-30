@@ -15,7 +15,7 @@ class ContactController extends Controller
                 $name           = $request->input('name');
 
                 $email          = $request->input('email');
-                $subject        = "naslov";
+                $subject        = "Message from contact form";
                 $msg            = $request->input('message');
 
 
@@ -26,7 +26,7 @@ class ContactController extends Controller
                         'msg'           => $msg
                     ];
 
-                    Mail::send(['text'=>'mail'], $data, function($message) use ($data) {
+                    Mail::send(['text'=>'mails.contact'], $data, function($message) use ($data) {
                         $message->to('biteofart.dev@gmail.com', 'BiteOfArt')->subject ($data['subject'])->replyTo($data['email']);
                         $message->from($data['email'], $data['name'] );
                     });

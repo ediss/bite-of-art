@@ -8,6 +8,7 @@ use App\Models\Artist;
 use App\Models\Artwork;
 use App\Models\News;
 use App\Models\ArticleAdditionals;
+use Mail;
 use Validator;
 use Response;
 use View;
@@ -196,7 +197,16 @@ class EventController extends Controller
                     $message = ["success", $event_name. " is saved"];
                     $eventLastId = $eventObj->id;
 
-                    //GaleryName(first 3 char)+GaleryId+EventName(first 3 char)+EventID
+                    $data = [
+                        'subject' => 'New Event Opened!',
+                        'user' => Auth::user()->name,
+                        'event_name' => $eventObj->event_name
+                    ];
+                    Mail::send(['text'=>'mails.event-opened'], $data, function($mail) use ($data) {
+                        $mail->to('biteofart.dev@gmail.com', 'BiteOfArt2')->subject ($data['subject']);
+                        $mail->from('biteofart.dev@gmail.com', 'Gallerist '.$data['user']. ' opened a event' );
+                    });
+
                     $nfc_tag = substr(Auth::user()->gallery_name, 0, 3).Auth::user()->id.substr($eventObj->event_name, 0, 3).$eventLastId;
 
 

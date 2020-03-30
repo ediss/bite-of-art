@@ -17,6 +17,11 @@
 
 <div class="row">
     <div class="col-12 col-md-6 offset-md-3">
+        @if (Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            {{Session::get('success')}}
+        </div>
+        @endif
         <form id="contact-form" name="contact-form" action="{{ route('contact', app()->getLocale()) }}" method="POST">
             @csrf
             <!--Grid row-->

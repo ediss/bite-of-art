@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User as Gallerist;
 use Auth;
+use Mail;
 use Validator;
 use Response;
 use Redirect;
@@ -50,6 +51,15 @@ class GalleristController extends Controller
                 $gallerist->about_gallery   = $request->input('about_gallery');
                 if($gallerist->save()) {
                     //send mail to moderator
+                    $data = [
+                        'subject' => 'Gallery is updated',
+                        'user'    => $gallerist->gallery_name
+                    ];
+                    Mail::send(['text'=>'mails.gallery-updated'], $data, function($message) use ($data) {
+                        $message->to('biteofart.dev@gmail.com', 'BiteOfArt2')->subject ($data['subject']);
+                        $message->from('biteofart.dev@gmail.com', 'Gallerist '.$data['user']. ' made some changes' );
+                        
+                    });
                     $message = ["success", $gallerist->gallery_name . " is updated"];
 
                     return Response::json(['success' => true, 'message' => $message]);

@@ -101,8 +101,9 @@
                     </div>
 
                     <div class="card-body text-center h-80px">
-                        <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
-                        <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
+                        {{-- <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
+                        <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p> --}}
+                        <h4 class="card-title montserrat-bold">EVENTS</h4>
 
                     </div>
                 </div>
@@ -119,8 +120,9 @@
                     </div>
 
                     <div class="card-body text-center h-80px">
-                        <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
-                        <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
+                        {{-- <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
+                        <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p> --}}
+                        <h4 class="card-title montserrat-bold">EVENTS</h4>
 
                     </div>
                 </div>
@@ -136,8 +138,9 @@
                     </div>
 
                     <div class="card-body text-center h-80px">
-                        <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
-                        <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
+                        {{-- <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
+                        <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p> --}}
+                        <h4 class="card-title montserrat-bold text-center">EVENTS</h4>
 
                     </div>
                 </div>

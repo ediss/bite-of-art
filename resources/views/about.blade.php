@@ -19,12 +19,12 @@
     <div class="col-12 p-0">
         <div id="myCarouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item  active  col-lg-8 offset-lg-2 animation-duration2 fadeInUp about-first">
+                <div class="carousel-item  active  col-12 animation-duration2 fadeInUp about-first">
                     @php
                     $counter++;
                     @endphp
                     <div class="row">
-                        <div class="col-12  text-justify">
+                        <div class="col-lg-8 offset-lg-2  text-justify">
                             <h1 class="montserrat-bold text-center">About BITE of art</h1>
 
                             <p class="montserrat-regular mt-5">The <b>BITE of Art </b> initiative represents a joint
@@ -50,115 +50,113 @@
                     </div>
                 </div>
 
-                <div class="carousel-item  col-6 offset-3 ">
+                <div class="carousel-item  col-12 ">
                     @php
                     $counter++;
                     @endphp
 
                     <div class="row">
-                        <div class="col-12">
-                            <a target="_blank" href="https://ec.europa.eu/programmes/creative-europe/node_en">
-                                <img class="img-fluid  d-block gallery-img about-europe"
-                                    src="{{ asset('images/about/partners-cb/creative_europe.png') }}"
-                                    data-src="{{ asset('images/about/partners-cb/creative_europe.png') }}"
-                                    data-hover="{{ asset('images/about/partners/creative_europe.png') }}" alt="slide 2">
-                            </a>
+                        <div class="col-8 offset-2">
+                            <div class="row">
+                                <div class="col-12">
+                                    <a target="_blank" href="https://ec.europa.eu/programmes/creative-europe/node_en">
+                                        <img class="img-fluid  d-block gallery-img about-europe"
+                                            src="{{ asset('images/about/partners-cb/EU2.png') }}"
+                                            data-src="{{ asset('images/about/partners-cb/EU2.png') }}"
+                                            data-hover="{{ asset('images/about/partners/EU.png') }}" alt="slide 2">
+                                    </a>
+                                </div>
+                            </div>
 
+                            <div class="row mb-5">
+                                <div class="col-3">
+                                    <a target="_blank" href="http://bum.org.rs/">
+                                        <img class="img-fluid  d-block gallery-img about-bum"
+                                            src="{{ asset('images/about/partners-cb/bum2.png') }}"
+                                            data-src="{{ asset('images/about/partners-cb/bum2.png') }}"
+                                            data-hover="{{ asset('images/about/partners/bum.png') }}" alt="slide 2">
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a target="_blank" href="https://www.tipovej.org/">
+                                        <img class="img-fluid  d-block gallery-img about-tripovej"
+                                            src="{{ asset('images/about/partners-cb/tipovej2.png') }}"
+                                            data-src="{{ asset('images/about/partners-cb/tipovej2.png') }}"
+                                            data-hover="{{ asset('images/about/partners/tipovej.png') }}"
+                                            alt="slide 2">
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a target="_blank" href="https://www.kcb.org.rs/">
+                                        <img class="img-fluid  d-block gallery-img about-kcb"
+                                            src="{{ asset('images/about/partners-cb/kcb2.png') }}"
+                                            data-src="{{ asset('images/about/partners-cb/kcb2.png') }}"
+                                            data-hover="{{ asset('images/about/partners/kcb.png') }}"
+                                            alt="slide 2">
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a target="_blank" href="https://www.consorcimuseus.gva.es/">
+                                        <img class="img-fluid  d-block gallery-img about-valencia"
+                                            src="{{ asset('images/about/partners-cb/valenciana2.png') }}"
+                                            data-src="{{ asset('images/about/partners-cb/valenciana2.png') }}"
+                                            data-hover="{{ asset('images/about/partners/valenciana.png') }}"
+                                            alt="slide 2">
+                                    </a>
+                                </div>
+                            </div>
 
+                            <div class="row">
+                                <div class="col-3">
+                                    <a target="_blank" href="https://www.mladizmaji.si/en/">
+                                        <img class="img-fluid  d-block gallery-img about-zmaji"
+                                            src="{{ asset('images/about/partners-cb/mladizmaji2.png') }}"
+                                            data-src="{{ asset('images/about/partners-cb/mladizmaji2.png') }}"
+                                            data-hover="{{ asset('images/about/partners/mladizmaji.png') }}" alt="slide 2">
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a target="_blank" href="http://communications.rs/">
+                                        <img class="img-fluid  d-block gallery-img about-colormedia"
+                                            src="{{ asset('images/about/partners-cb/color2.png') }}"
+                                            data-src="{{ asset('images/about/partners-cb/color2.png') }}"
+                                            data-hover="{{ asset('images/about/partners/color.png') }}" alt="slide 2">
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a target="_blank" href="http://www.backslash.es/">
+                                        <img class="img-fluid  d-block gallery-img about-blackslash"
+                                            src="{{ asset('images/about/partners-cb/backsplash2.png') }}"
+                                            data-src="{{ asset('images/about/partners-cb/backsplash2.png') }}"
+                                            data-hover="{{ asset('images/about/partners/backsplash.png') }}" alt="slide 2">
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a target="_blank" href="http://connect-international.org/en/">
+                                        <img class="img-fluid  d-block gallery-img about-connect"
+                                            src="{{ asset('images/about/partners-cb/connect2.png') }}"
+                                            data-src="{{ asset('images/about/partners-cb/connect2.png') }}"
+                                            data-hover="{{ asset('images/about/partners/connect.png') }}" alt="slide 2">
+                                    </a>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
-                    <div class="row mb-5">
-                        <div class="col-4">
-                            <a target="_blank" href="http://bum.org.rs/">
-                                <img class="img-fluid  d-block gallery-img about-bum"
-                                    src="{{ asset('images/about/partners-cb/BUM.png') }}"
-                                    data-src="{{ asset('images/about/partners-cb/BUM.png') }}"
-                                    data-hover="{{ asset('images/about/partners/BUM.png') }}" alt="slide 2">
-                            </a>
 
-                        </div>
-
-                        <div class="col-4"></div>
-
-                        <div class="col-4">
-                            <a target="_blank" href="https://www.tipovej.org/">
-                                <img class="img-fluid  d-block gallery-img about-tripovej"
-                                    src="{{ asset('images/about/partners-cb/Tipovej_Slovenia.png') }}"
-                                    data-src="{{ asset('images/about/partners-cb/Tipovej_Slovenia.png') }}"
-                                    data-hover="{{ asset('images/about/partners/Tipovej_Slovenia.png') }}"
-                                    alt="slide 2">
-                            </a>
-
-                            <a target="_blank" href="https://www.mladizmaji.si/en/">
-                                <img class="img-fluid  d-block gallery-img about-zmaji"
-                                    src="{{ asset('images/about/partners-cb/mladi_zmaji.png') }}"
-                                    data-src="{{ asset('images/about/partners-cb/mladi_zmaji.png') }}"
-                                    data-hover="{{ asset('images/about/partners/mladi_zmaji.png') }}" alt="slide 2">
-                            </a>
-
-
-
-                        </div>
-                    </div>
-
-                    <div class="row mt-5">
-                        <div class="col-4 ">
-                            <a target="_blank" href="http://www.backslash.es/">
-                                <img class="img-fluid  d-block gallery-img about-blackslash"
-                                    src="{{ asset('images/about/partners-cb/Backslash.png') }}"
-                                    data-src="{{ asset('images/about/partners-cb/Backslash.png') }}"
-                                    data-hover="{{ asset('images/about/partners/Backslash.png') }}" alt="slide 2">
-                            </a>
-                        </div>
-                        <div class="col-4"></div>
-                        <div class="col-4">
-                            <a target="_blank" href="http://communications.rs/">
-                                <img class="img-fluid  d-block gallery-img about-colormedia"
-                                    src="{{ asset('images/about/partners-cb/color_media.png') }}"
-                                    data-src="{{ asset('images/about/partners-cb/color_media.png') }}"
-                                    data-hover="{{ asset('images/about/partners/color_media.png') }}" alt="slide 2">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="row ">
-                        <div class="col-4 ">
-                            <a target="_blank" href="http://connect-international.org/en/">
-                                <img class="img-fluid  d-block gallery-img about-connect"
-                                    src="{{ asset('images/about/partners-cb/Connect_logo.png') }}"
-                                    data-src="{{ asset('images/about/partners-cb/Connect_logo.png') }}"
-                                    data-hover="{{ asset('images/about/partners/Connect_logo.png') }}" alt="slide 2">
-                            </a>
-
-                            <a target="_blank" href="https://www.kcb.org.rs/">
-                                <img class="img-fluid  d-block gallery-img about-kcb"
-                                    src="{{ asset('images/about/partners-cb/Kulturni_centar_BGD.png') }}"
-                                    data-src="{{ asset('images/about/partners-cb/Kulturni_centar_BGD.png') }}"
-                                    data-hover="{{ asset('images/about/partners/Kulturni_centar_BGD.png') }}"
-                                    alt="slide 2">
-                            </a>
-                        </div>
-                        <div class="col-4"></div>
-                        <div class="col-4">
-                            <a target="_blank" href="https://www.consorcimuseus.gva.es/">
-                                <img class="img-fluid  d-block gallery-img about-valencia"
-                                    src="{{ asset('images/about/partners-cb/Valencia_Museums.png') }}"
-                                    data-src="{{ asset('images/about/partners-cb/Valencia_Museums.png') }}"
-                                    data-hover="{{ asset('images/about/partners/Valencia_Museums.png') }}"
-                                    alt="slide 2">
-                            </a>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="carousel-item  col-8 offset-2 about-last">
+                <div class="carousel-item  col-12 about-last">
                     @php
                     $counter++;
                     @endphp
+                        <div class="row">
+                            <div class="col-8 offset-2">
+                                <img class="img-fluid  d-block gallery-img" src="{{ asset('images/about/BITEAB.jpg') }}"
+                                alt="slide 2">
+                            </div>
+                        </div>
 
-                    <img class="img-fluid  d-block gallery-img" src="{{ asset('images/about/BITEAB.jpg') }}"
-                        alt="slide 2">
 
 
 
