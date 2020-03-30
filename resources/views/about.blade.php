@@ -56,7 +56,7 @@
                     @endphp
 
                     <div class="row">
-                        <div class="col-6 offset-3">
+                        <div class="col-12 col-lg-6 offset-lg-3">
                             <div class="row">
                                 <div class="col-12">
                                     <a target="_blank" href="https://ec.europa.eu/programmes/creative-europe/node_en">
