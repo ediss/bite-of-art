@@ -61,6 +61,7 @@ $(document).ready(function() {
     var active = $("#carouselExample .active");
     active.next().find('.card-body').css({opacity: 1});
     active.next().find('.img-description-event').css({opacity: 1});
+    active.next().find('.card:first-child').addClass("img-opacity-event");
     carouselItemStyle(active, null);
 
     // mobile
