@@ -97,7 +97,7 @@
 
                 <div class="carousel-item carousel-item-main  col-4 p-0 active">
                     <div class="card" data-id="{{ $event_in_past->id }}" >
-                        <div class="">
+                        <div class="img-opacity-event">
                             <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                         </div>
                         <div class="img-description-event">
@@ -123,7 +123,7 @@
 
                 <div class="carousel-item carousel-item-main  col-4 p-0">
                     <div class="card" data-id="{{ $event_in_feature->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_feature->id, app()->getLocale() ]) }}">
-                        <div class="">
+                        <div class="img-opacity-event">
                             <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
                         </div>
                         <div class="img-description-event text-center">
@@ -147,7 +147,7 @@
                 @if(!$loop->last)
                 <div class="carousel-item carousel-item-main  col-4 p-0">
                     <div class="card" data-id="{{ $event_in_past->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
-                        <div class="">
+                        <div class="img-opacity-event">
                             <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                         </div>
                         <div class="img-description-event text-center">

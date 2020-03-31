@@ -107,7 +107,6 @@ html, body {
   }
 
   .img-opacity-event:hover::before{
-    cursor: pointer;
     background: rgba(0,0,0,0);
   }
 
