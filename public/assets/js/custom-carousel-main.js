@@ -54,12 +54,14 @@ function carouselItemStyle(active, item) {
 $(document).ready(function() {
     //hide event name
     $("#carouselExample .card-body").css({ opacity: 0 });
+    $('#carouselExample .img-description-event').css({opacity: 0});
 
 
 
     var active = $("#carouselExample .active");
-    active.next().find('.card-body').css({opacity: 1})
-    carouselItemStyle(active, null)
+    active.next().find('.card-body').css({opacity: 1});
+    active.next().find('.img-description-event').css({opacity: 1});
+    carouselItemStyle(active, null);
 
     // mobile
 
@@ -90,8 +92,11 @@ $(document).ready(function() {
 
         carouselItemStyle(active, item);
         $("#carouselExample .card-body").css({ opacity: 0 });
+        $('#carouselExample .img-description-event').css({opacity: 0});
 
 
         active.next().find('.card-body').css({opacity: 1})
+        active.next().find('.img-description-event').css({opacity: 1});
+
     });
 });

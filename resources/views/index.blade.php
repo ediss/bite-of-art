@@ -97,7 +97,14 @@
 
                 <div class="carousel-item carousel-item-main  col-4 p-0 active">
                     <div class="card" data-id="{{ $event_in_past->id }}" >
-                        <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
+                        <div class="img-opacity">
+                            <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
+                        </div>
+                        <div class="img-description-event">
+                            <h4 class="card-title montserrat-bold text-center">{{ $event_in_past->event_name }}</h4>
+                            <p class="card-text montserrat-bold text-center">@ {{ $event_in_past->event_place }}</p>
+                        </div>
+                        
                     </div>
 
                     <div class="card-body text-center h-80px">
@@ -116,7 +123,13 @@
 
                 <div class="carousel-item carousel-item-main  col-4 p-0">
                     <div class="card" data-id="{{ $event_in_feature->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_feature->id, app()->getLocale() ]) }}">
-                        <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
+                        <div class="img-opacity">
+                            <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
+                        </div>
+                        <div class="img-description-event text-center">
+                            <h4 class="card-title montserrat-bold text-center">{{ $event_in_feature->event_name }}</h4>
+                            <p class="card-text montserrat-bold text-center">@ {{ $event_in_feature->event_place }}</p>
+                        </div>
                     </div>
 
                     <div class="card-body text-center h-80px">
@@ -134,7 +147,14 @@
                 @if(!$loop->last)
                 <div class="carousel-item carousel-item-main  col-4 p-0">
                     <div class="card" data-id="{{ $event_in_past->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
-                        <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
+                        <div class="img-opacity">
+                            <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
+                        </div>
+                        <div class="img-description-event text-center">
+                            <h4 class="card-title montserrat-bold text-center">{{ $event_in_past->event_name }}</h4>
+                            <p class="card-text montserrat-bold text-center">@ {{ $event_in_past->event_place }}</p>
+                        </div>
+                        
                     </div>
 
                     <div class="card-body text-center h-80px">
@@ -181,7 +201,7 @@
                         <div class="img-opacity" news-id={{ $n->id }} data-href="{{ route('opened.news', ['id'=>$n->id, app()->getLocale() ]) }}">
                             <img class="img-fluid  d-block" src="{{ $n->article_cover}}" alt="slide 1">
                         </div>
-                        <div class="img-description">
+                        <div class="img-description-event">
                             <p class="montserrat-bold text-left"> {{$n->article_name}}</p>
                         </div>
 
