@@ -334,15 +334,15 @@ body {
     }
 
     #carouselExample2 .carousel-inner-gallery {
-        /* width: 120%;
-        left: -10%; */
+        width: 120%;
+        left: -10%;
     }
 
     .h-100px {
         height: 100px;
     }
     #mainGallery .w-120 {
-        /* width: 120%; */
+        width: 120%;
         /* transform: scale(2.2);
         transform-origin: 50% 0; */
     }
@@ -449,8 +449,9 @@ body {
     }
     .transform-img {
         transform: scale(1.8);
-        transform-origin: 50% 0%;
         -webkit-transform:scale(1.8);
+        transform-origin: 50% 0%;
+        /* -webkit-transform:scale(1.8); */
     }
 
     .carousel-item-gallery {
