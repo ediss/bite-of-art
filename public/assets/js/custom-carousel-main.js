@@ -42,9 +42,9 @@ function carouselItemStyle(active, item) {
     $(active).next().find(".card").addClass("click");
 
     //show event name on hover
-    // $(active.next()).mouseover(function() {
-    //     $(this).find(".card-body").css("opacity", "1").removeClass("fadeOutDown").addClass("animation-duration fadeInUp");
-    // });
+    $(active.next()).mouseover(function() {
+        $(this).find(".img-opacity").css("cursor", "pointer");
+    });
 
     // $(active.next()).mouseout(function() {
     //     $(this).find(".card-body").css("opacity", "0").removeClass("animation-duration fadeInUp").addClass("animation-duration fadeOutDown");

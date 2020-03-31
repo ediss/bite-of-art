@@ -10,7 +10,7 @@ function closeNews() {
 $(document).ready(function () {
 
   /*opening news*/
-  $(".img-opacity").click(function () {
+  $("#recipeCarousel .img-opacity").click(function () {
 
     var news_id = $(this).attr("news-id");
     var route = $(this).attr("data-href");
