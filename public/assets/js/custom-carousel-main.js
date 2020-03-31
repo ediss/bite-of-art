@@ -62,7 +62,6 @@ $(document).ready(function() {
     active.next().find('.card-body').css({opacity: 1});
     active.next().find('.img-description-event').css({opacity: 1});
     active.next().find('.card:first-child').css({
-        "img-opacity-event:hover::before" :    " background: rgba(0,0,0,0)",
         "cursor" :"pointer"
 
     });

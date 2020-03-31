@@ -106,9 +106,9 @@ html, body {
     transition:  background 1s linear;
   }
 
-  /* .img-opacity-event:hover::before{
+  .img-opacity-event:hover::before{
     background: rgba(0,0,0,0);
-  } */
+  }
 
   .img-description-event {
     width: 100%;
