@@ -61,7 +61,11 @@ $(document).ready(function() {
     var active = $("#carouselExample .active");
     active.next().find('.card-body').css({opacity: 1});
     active.next().find('.img-description-event').css({opacity: 1});
-    active.next().find('.card:first-child').css("cursor", "pointer");
+    active.next().find('.card:first-child').css({
+        "img-opacity-event:hover::before" :    " background: rgba(0,0,0,0)",
+        "cursor" :"pointer"
+
+    });
     carouselItemStyle(active, null);
 
     // mobile
