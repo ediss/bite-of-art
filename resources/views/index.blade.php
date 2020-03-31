@@ -100,7 +100,7 @@
                         <div class="img-opacity">
                             <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                         </div>
-                        <div class="img-description-event">
+                        <div class="img-description">
                             <h4 class="card-title montserrat-bold text-center">{{ $event_in_past->event_name }}</h4>
                             <p class="card-text montserrat-bold text-center">@ {{ $event_in_past->event_place }}</p>
                         </div>
@@ -126,7 +126,7 @@
                         <div class="img-opacity">
                             <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
                         </div>
-                        <div class="img-description-event text-center">
+                        <div class="img-description text-center">
                             <h4 class="card-title montserrat-bold text-center">{{ $event_in_feature->event_name }}</h4>
                             <p class="card-text montserrat-bold text-center">@ {{ $event_in_feature->event_place }}</p>
                         </div>
@@ -150,7 +150,7 @@
                         <div class="img-opacity">
                             <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                         </div>
-                        <div class="img-description-event text-center">
+                        <div class="img-description text-center">
                             <h4 class="card-title montserrat-bold text-center">{{ $event_in_past->event_name }}</h4>
                             <p class="card-text montserrat-bold text-center">@ {{ $event_in_past->event_place }}</p>
                         </div>
@@ -201,7 +201,7 @@
                         <div class="img-opacity" news-id={{ $n->id }} data-href="{{ route('opened.news', ['id'=>$n->id, app()->getLocale() ]) }}">
                             <img class="img-fluid  d-block" src="{{ $n->article_cover}}" alt="slide 1">
                         </div>
-                        <div class="img-description-event">
+                        <div class="img-description">
                             <p class="montserrat-bold text-left"> {{$n->article_name}}</p>
                         </div>
 
