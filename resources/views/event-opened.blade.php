@@ -73,7 +73,7 @@
                             @if(strip_tags($desc[0] == ''))
                                     @php $desc = explode('~', $data->event_description_en); @endphp
                                 @endif
-                                <p style="font-size:0.6rem">{!! $desc[0] !!}</p>
+                                <p>{!! $desc[0] !!}</p>
                            
                         </div>
 
