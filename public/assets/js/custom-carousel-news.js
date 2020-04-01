@@ -9,10 +9,12 @@ $(document).ready(function () {
     $(".img-opacity").mouseover(function (e) {
         e.preventDefault();
         $(this).next('.img-description').addClass('animation-duration fadeOutDown my-opacity');
+        $(this).next('.img-description').css('opacity', '0');
     });
 
     $(".img-opacity").mouseout(function () {
         $(this).next('.img-description').removeClass('animation-duration fadeOutDown my-opacity').addClass('animation-duration fadeInUp');
+        $(this).next('.img-description').css('opacity', '1');
     });
 
     $('#recipeCarousel').on('slide.bs.carousel', function (e) {

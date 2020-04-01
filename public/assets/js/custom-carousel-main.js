@@ -42,6 +42,7 @@ function carouselItemStyle(active, item) {
     $(active).next().find(".card").addClass("click");
 
     //show event name on hover
+    
     $(active.next()).mouseover(function() {
         $(this).find(".img-opacity").css("cursor", "pointer");
     });
@@ -66,6 +67,17 @@ $(document).ready(function() {
 
     });
     carouselItemStyle(active, null);
+
+    active.next().find(".img-opacity-event").mouseover(function (e) {
+        e.preventDefault();
+        $(this).next('.img-description-event').addClass('animation-duration fadeOutDown my-opacity');
+        $(this).next('.img-description-event').css('opacity', '0');
+    });
+
+    active.next().find(".img-opacity-event").mouseout(function () {
+        $(this).next('.img-description-event').removeClass('animation-duration fadeOutDown my-opacity').addClass('animation-duration fadeInUp');
+        $(this).next('.img-description-event').css('opacity', '1');
+    });
 
     // mobile
 
