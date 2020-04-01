@@ -106,11 +106,11 @@
                     $counter++;
                     @endphp
                     <div class="card">
-                        <div class="col-10">
+                        <div class="col-10 montserrat-regular">
                             <div class="h-80px h-100px">
 
                             </div>
-                            <p style="">{{ $desc[1] }}</p>
+                            <p>{{ $desc[1] }}</p>
                         </div>
 
 
