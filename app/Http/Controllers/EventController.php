@@ -142,7 +142,7 @@ class EventController extends Controller
                 $event_media_desc   = $request->input('event_media_description');
                 $event_note         = $request->input('event_note');
 
-                $gallerist_id       = Auth::user()->id; //@todo id gallerist from auth
+                $gallerist_id       = Auth::user()->id;
 
                 $eventObj = new Event;
 
