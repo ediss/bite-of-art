@@ -101,7 +101,7 @@
                 </div>
 
                 @if($desc[1])
-                <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 ">
+                <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 additional-text">
                     @php
                     $counter++;
                     @endphp
