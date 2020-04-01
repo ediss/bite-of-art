@@ -714,6 +714,10 @@ html, body {
         font-size:0.8rem;
     }
     .mobile-first p {
+        font-size:0.4rem;
+    }
+
+    .additional-text {
         font-size:0.1rem;
     }
 }
