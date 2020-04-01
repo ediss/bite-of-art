@@ -26,13 +26,14 @@
                 @foreach ($feature_events as $event_in_feature)
                 <div class="carousel-item active" data-id="{{ $event_in_feature->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
                     <div class="card" data-href="{{ route('opened.event', ['id'=>$event_in_feature->id, app()->getLocale() ]) }}">
-                        <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
+                        <div class="img-opacity-event">
+                            <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
+                        </div>
                     </div>
 
-                    <div class="card-body text-center h-80px h-80px">
+                    <div class="img-description-event text-center">
                         <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p>
-
                     </div>
                 </div>
                 @endforeach
@@ -43,10 +44,13 @@
                 <div class="carousel-item {{ ($feature_events->count() == 0) ?  'active' : ''}}" data-id="{{ $event_in_past->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
 
                     <div class="card" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
-                        <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
+                        <div class="img-opacity-event">
+                            <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
+
+                        </div>
                     </div>
 
-                    <div class="card-body text-center h-80px h-80px">
+                    <div class="img-description-event text-center">
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
@@ -59,10 +63,14 @@
                 @if(!$loop->first)
                 <div class="carousel-item" data-id="{{ $event_in_past->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
                     <div class="card">
-                        <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
+                        <div class="img-opacity-event">
+                            <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
+
+                        </div>
                     </div>
 
-                    <div class="card-body text-center h-80px h-80px">
+                    <div class="img-description-event text-center">
+
                         <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
                         <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p>
 
@@ -71,8 +79,8 @@
                 @endif
                 @endforeach
                 @endif
-                
-      
+
+
 
 
 
@@ -104,13 +112,6 @@
                             <h4 class="card-title montserrat-bold text-center">{{ $event_in_past->event_name }}</h4>
                             <p class="card-text montserrat-bold text-center">@ {{ $event_in_past->event_place }}</p>
                         </div>
-                        
-                    </div>
-
-                    <div class="card-body text-center h-80px">
-                        {{-- <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
-                        <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p> --}}
-                        <h4 class="card-title montserrat-bold">EVENTS</h4>
 
                     </div>
                 </div>
@@ -131,13 +132,6 @@
                             <p class="card-text montserrat-bold text-center">@ {{ $event_in_feature->event_place }}</p>
                         </div>
                     </div>
-
-                    <div class="card-body text-center h-80px">
-                        {{-- <h4 class="card-title montserrat-bold">{{ $event_in_feature->event_name }}</h4>
-                        <p class="card-text montserrat-bold">@ {{ $event_in_feature->event_place }}</p> --}}
-                        <h4 class="card-title montserrat-bold">EVENTS</h4>
-
-                    </div>
                 </div>
                 @endforeach
                 @endif
@@ -154,13 +148,6 @@
                             <h4 class="card-title montserrat-bold text-center">{{ $event_in_past->event_name }}</h4>
                             <p class="card-text montserrat-bold text-center">@ {{ $event_in_past->event_place }}</p>
                         </div>
-                        
-                    </div>
-
-                    <div class="card-body text-center h-80px">
-                        {{-- <h4 class="card-title montserrat-bold">{{ $event_in_past->event_name }}</h4>
-                        <p class="card-text montserrat-bold">@ {{ $event_in_past->event_place }}</p> --}}
-                        <h4 class="card-title montserrat-bold text-center">EVENTS</h4>
 
                     </div>
                 </div>
@@ -187,6 +174,14 @@
 
     </div>
 
+</div>
+
+<div class="row h-80px">
+    <div class="col-4"></div>
+    <div class="col-4 text-center align-items-center d-flex justify-content-center">
+        <h2 class="card-title montserrat-bold ">EVENTS</h2>
+    </div>
+    <div class="col-4"></div>
 </div>
 
 <div class="row animation-duration2 fadeInRight" id="smallGallery">
@@ -223,10 +218,16 @@
 
     </div>
     {{-- <div class="carousel-controls">
-       
+
     </div> --}}
 </div>
-
+<div class="row h-80px">
+    <div class="col-4"></div>
+    <div class="col-4 text-center align-items-center d-flex justify-content-center">
+        <h2 class="card-title montserrat-bold ">NEWS</h2>
+    </div>
+    <div class="col-4"></div>
+</div>
 <!-- div for animation for opening news-->
 <div class="row overlay-news" id="openedNews"></div>
 

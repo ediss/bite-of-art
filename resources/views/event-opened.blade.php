@@ -73,7 +73,7 @@
                             <p>@if($desc[0] == '')
                                     @php $desc = explode('~', $data->event_description_en); @endphp
                                 @endif
-                                {{ $desc[0] }}
+                                {!! $desc[0] !!}
                             </p>
                         </div>
 

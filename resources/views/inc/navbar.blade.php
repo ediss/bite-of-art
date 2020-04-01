@@ -122,7 +122,7 @@
                         </li>
                         {{-- <li class="nav-item">
                             <a class="nav-link h-100px text-center"
-                                href="{{ route('opened.event', ['language' => app()->getLocale(), 'id' => 25]) }}">TEST</a>
+                                href="{{ route('test')}}">TEST</a>
                         </li> --}}
 
                     </ul>

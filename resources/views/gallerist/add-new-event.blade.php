@@ -3,8 +3,19 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/animate.css')}}" />
 <link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
-
 <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-style.css')}}" />
+
+<script src="https://cdn.tiny.cloud/1/6lpj0hls50t5fhszqn1yu17ptqwgc31358a1egzwi0uqx4ni/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>
+    tinymce.init({
+        selector:'textarea#event_cover_description',
+        plugins: "link wordcount",
+        menubar: false,
+        default_link_target: "_blank",
+        toolbar: "undo redo | underline bold italic|alignjustify| link "
+    });
+</script>
 
 @endsection
 
@@ -97,6 +108,7 @@ $(document).ready(function(){
 
     $(document).on('click', '.save_event', function(e) {
         e.preventDefault();
+
         var route = "{{route('add.new.event', app()->getLocale())}}";
         saveEvent(route);
     });

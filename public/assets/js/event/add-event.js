@@ -1,6 +1,10 @@
 function saveEvent(route) {
     var form = document.getElementById('eventSubmit');
     var formData = new FormData(form);
+    var description = tinyMCE.get('event_cover_description').getContent();
+  
+    formData.append('desc', description);
+
    $.ajaxSetup({
       headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

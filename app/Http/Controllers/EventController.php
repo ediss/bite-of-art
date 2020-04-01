@@ -21,6 +21,10 @@ class EventController extends Controller
     //     $this->middleware('auth');
     // }
 
+    public function test() {
+        return view('test', ['validator'=>false]);
+    }
+
     public function index() {
 
         $event = new Event();
@@ -110,12 +114,12 @@ class EventController extends Controller
                 "event_name"                => "required",
                 "event_cover"               => "required",
                 "daterange"                 => "required",
-                "event_cover_description"   => "required",
+                // "event_cover_description"   => "required",
             ],
             [
                 "event_name.required"               => "Field 'Event Name ' can't be empty",
                 "daterange.required"                => "Please choose date",
-                "event_cover_description.required"  => "Field 'About Event ' can't be empty",
+                // "event_cover_description.required"  => "Field 'About Event ' can't be empty",
                 "event_cover.required"              => "Choose photo",
 
 
@@ -126,7 +130,8 @@ class EventController extends Controller
                 $event_name         = $request->input('event_name');
                 $event_date         = explode(" - ", $request->input('daterange'));
                 $event_cover        = $request->input('event_cover');
-                $event_cover_desc   = $request->input('event_cover_description');
+                //tynimce
+                $event_cover_desc   = $request->desc;
                 $event_image_1      = $request->input('event_image_1');
                 $event_image_2      = $request->input('event_image_2');
                 $event_image_3      = $request->input('event_image_3');
@@ -140,6 +145,8 @@ class EventController extends Controller
                 $gallerist_id       = Auth::user()->id; //@todo id gallerist from auth
 
                 $eventObj = new Event;
+
+                dd($gallerist_id);
 
                 //uplouding event photos
                 if ($request->hasFile('event_cover')) {

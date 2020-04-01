@@ -21,7 +21,7 @@
     Route::post('password/reset', 'Auth\ResetPasswordController@reset');
     Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
-Route::get('/test',                 'EventController@test');
+// Route::get('/test',                 'EventController@test')->name('test');
 Route::get('/', function(){
     return redirect(app()->getLocale());
 });

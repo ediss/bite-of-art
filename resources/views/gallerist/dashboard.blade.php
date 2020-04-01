@@ -3,6 +3,7 @@
 @section('css')
 <link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
 
+
 @endsection
 
 @section('logo-img')

@@ -48,7 +48,7 @@
         <div class="event-wraper col-12">
 
             <!--About Event -->
-            <div class="row elements-mid-align h-80px h-100px border-bottom">
+            <div class="row elements-mid-align  border-bottom">
                 <div class="col-1 d-md-none d-lg-block">
                     @if ( $validator && $validator->errors()->first('event_cover') )
                     <div class="alert alert-danger text-center mt-2">
