@@ -515,30 +515,21 @@ class ModeratorController extends Controller
                 $request->all(),
                 [
                     "new_article_name"   => "required",
-                    "new_article_text"   => "required",
-                    "new_article_cover"  => "required",
-                    "new_daterange"      => "required",
                 ],
                 [
-                    "new_article_text.required"  => "Field 'Text' can't be empty",
                     "new_article_name.required"  => "Field 'Name ' can't be empty",
-                    "new_article_cover.required" => "Field 'Text' can't be empty",
-                    "new_daterange.required"     => "Field 'Name ' can't be empty",
-
                 ]
             );
 
             if ($validator->passes()) {
 
                 $article_name         = $request->input('new_article_name');
-                $article_date         = $request->input('new_daterange');
+                $article_date         = explode('-',$request->input('new_daterange'));
                 $article_cover        = $request->input('new_article_cover');
                 $article_text         = $request->input('new_article_text');
                 $article_text_srb     = $request->input('new_article_text_srb');
                 $article_text_esp     = $request->input('new_article_text_esp');
                 $article_text_slo     = $request->input('new_article_text_slo');
-
-
 
                 //uplouding article photos
                 if ($request->hasFile('new_article_cover')) {
@@ -550,7 +541,7 @@ class ModeratorController extends Controller
 
                 //Inserting in DB
                 $article->article_name              = $article_name;
-                $article->article_open              = $article_date;
+                $article->article_open              = $article_date[0];
                 $article->article_cover             = (isset($article_cover_path)) ? $article_cover_path : $article->article_cover;
                 $article->article_description       = $article_text;
                 $article->esp_article_description   = $article_text_esp;
@@ -559,31 +550,26 @@ class ModeratorController extends Controller
 
 
                 if ($article->save()) {
-                    $message = ["success", $article->article_name . " is updated"];
-                    return Response::json(['success' => true, 'message' => $message]);
+                    return redirect()->back()->with('message-success', $article->article_name . " is updated");
                 } else {
-                    $message = ["error", "OOps! Something went wrong!"];
-                    return Response::json(["message" => $message]);
+                    return redirect()->back()->with('message-error', "OOps! Something went wrong!");
                 }
             } else {
 
-                $html = View::make('moderator.modals.update-article', [
+               return view('moderator.news.update-article', [
                     'article' => $article,
                     'validator' => $validator
-                ])->render();
+                ]);
 
-                return Response::json(["html" => $html, 'success' => false]);
+                //return Response::json(["html" => $html, 'success' => false]);
             }
         }
 
 
-        $html = View::make('moderator.modals.update-article', [
-
+        return view('moderator.news.update-article', [
             'article'   => $article,
             'validator' => $validator
-        ])->render();
-
-        return Response::json(["html" => $html, "success" => $success]);
+        ]);
     }
 
     public function articleAdditional(Request $request)

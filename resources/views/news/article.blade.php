@@ -48,7 +48,7 @@
 
                             </div>
 
-                            <p>{{ $desc[0] }}</p>
+                            {!! $desc[0] !!}
                         </div>
                     </div>
 
@@ -68,7 +68,7 @@
                             src="{{ asset('images/social-network/pinterest.png') }}"
                             data-src="{{ asset('images/social-network/pinterest.png') }}"
                             data-hover="{{ asset('images/social-network/pinterest-black.png') }}" alt="slide 2">
-                            
+
                         </a>
 
                         <a target="_blank"
@@ -100,7 +100,7 @@
 
                 </div>
 
-                @if($desc[1])
+                @if(strip_tags($desc[1]) != "")
                 <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 additional-text">
                     @php
                     $counter++;
@@ -110,7 +110,7 @@
                             <div class="h-80px h-100px">
 
                             </div>
-                            <p>{{ $desc[1] }}</p>
+                            {!! $desc[1] !!}
                         </div>
 
 
@@ -153,7 +153,7 @@
 
         </div>
     </div>
-    <div class="carousel-controls-main animation-duration2">
+    <div class="carousel-controls-main animation-duration2" id="event-news">
         <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -179,4 +179,15 @@
 
 <script src=" {{ asset('assets/js/opened-news.js') }}"></script>
 <script src=" {{ asset('assets/js/hover.js') }}"></script>
+<script>
+
+
+$(".close-gallery").click(function(e) {
+
+$(this).removeClass('fadeInDown').addClass('fadeOutUp');
+setTimeout(function() {
+  window.location.href = "{{url()->previous() }}";
+});
+});
+</script>
 @endsection

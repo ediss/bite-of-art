@@ -56,10 +56,15 @@
                 </td>
 
                 <td>
-                    <a class="text-primary  js-modal mb-5" data-modalid='edit_news'
+                    {{-- <a class="text-primary  js-modal mb-5" data-modalid='edit_news'
                         data-modaltitle="Update Article: {{$article->article_name}}"
                         submit_button='js-submit'
                         data-url="{{ route('moderator.article.update',  ['id' => $article->id,  app()->getLocale()]) }}" data-savetext="Save">
+                        <i class="fa fa-2x fa-edit"></i>
+                    </a> --}}
+
+                    <a class="text-primary"
+                        href="{{ route('moderator.article.update',  ['id' => $article->id,  app()->getLocale()]) }}">
                         <i class="fa fa-2x fa-edit"></i>
                     </a>
 

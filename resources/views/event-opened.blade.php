@@ -70,11 +70,11 @@
                                 @php $desc = explode('~', $data->event_description_en); @endphp
 
                             @endswitch
-                            <p>@if($desc[0] == '')
+                            @if(strip_tags($desc[0] == ''))
                                     @php $desc = explode('~', $data->event_description_en); @endphp
                                 @endif
                                 {!! $desc[0] !!}
-                            </p>
+                           
                         </div>
 
                     </div>
@@ -126,7 +126,7 @@
 
                 </div>
 
-                @if(isset($desc[1]) && $desc[1] != "")
+                @if(strip_tags($desc[1] != ""))
                 <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 ">
                     @php
                     $counter++;
@@ -137,7 +137,7 @@
                             <div class="h-80px h-100px">
 
                             </div>
-                            <p style="font-size:0.6rem">{{ $desc[1] }}</p>
+                            {!! $desc[1] !!}
                         </div>
 
 
@@ -232,7 +232,7 @@
         </div>
 
     </div>
-    <div class="carousel-controls-main">
+    <div class="carousel-controls-main" id="event-news">
         <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>

@@ -75,4 +75,13 @@ $(document).on('click', '.save_article', function(e) {
     saveArticle();
 });
 </script>
+<script>
+    $(".close-gallery").click(function(e) {
+    
+    $(this).removeClass('fadeInDown').addClass('fadeOutUp');
+    setTimeout(function() {
+      window.location.href = "{{url()->previous() }}";
+    });
+    });
+    </script>
 @endsection

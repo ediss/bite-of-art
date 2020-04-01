@@ -282,7 +282,7 @@
 
       $(this).removeClass('fadeInDown').addClass('fadeOutUp');
       setTimeout(function() {
-        window.location.href = "{{url('/') }}";
+        window.location.href = "{{url()->previous() }}";
       });
   });
 </script>

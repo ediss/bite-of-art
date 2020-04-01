@@ -17,3 +17,14 @@
     </div>
 </div>
 @endsection
+@section('footer-scripts')
+<script>
+    $(".close-gallery").click(function(e) {
+    
+    $(this).removeClass('fadeInDown').addClass('fadeOutUp');
+    setTimeout(function() {
+      window.location.href = "{{url()->previous() }}";
+    });
+    });
+    </script>
+@endsection

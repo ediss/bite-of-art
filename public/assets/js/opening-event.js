@@ -10,13 +10,16 @@ function openingEventAnimations() {
     $("#smallGallery").addClass("moveRight");
 
     $("#smallGallery").animate({ right: "250%" }, 1500);
+    
+    $("#news-h1").addClass("moveRight");
 
-    $("#carouselExample")
-        .find(".card-body")
+    $("#news-h1").animate({ right: "250%" }, 1500);
+
+    $("#events-h1")
         .animate(
             {
-                transition: "height 1.4s ease-in-out",
-                height: "0px"
+                transition: "opacity 1.4s ease-in-out",
+                opacity: "0"
             },
             {
                 step: function() {
@@ -25,7 +28,7 @@ function openingEventAnimations() {
                         visibility: "hidden"
                     });
                 },
-                duration: 2000
+                duration: 1000
             }
         );
 

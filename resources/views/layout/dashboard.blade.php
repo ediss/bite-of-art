@@ -3,6 +3,7 @@
 
 <head>
     @include('inc.moderator.head')
+    @yield("css")
 </head>
 
 <body>
