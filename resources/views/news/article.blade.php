@@ -110,7 +110,7 @@
                             <div class="h-80px h-100px">
 
                             </div>
-                            <p style="font-size:0.6rem">{{ $desc[1] }}</p>
+                            <p style="">{{ $desc[1] }}</p>
                         </div>
 
 
