@@ -146,7 +146,6 @@ class EventController extends Controller
 
                 $eventObj = new Event;
 
-                dd($gallerist_id);
 
                 //uplouding event photos
                 if ($request->hasFile('event_cover')) {
