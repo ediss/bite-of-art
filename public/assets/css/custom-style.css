@@ -475,6 +475,10 @@ html, body {
     .mobile-first p {
         font-size:0.6rem;
     }
+
+    .additional-text {
+        font-size:0.6rem;
+    }
     .transform-img {
         transform: scale(1.8);
         -webkit-transform:scale(1.8);
