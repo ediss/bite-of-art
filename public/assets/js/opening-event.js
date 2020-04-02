@@ -18,7 +18,7 @@ function openingEventAnimations() {
     $("#events-h1")
         .animate(
             {
-                transition: "opacity 1.4s ease-in-out",
+                transition: "opacity .8s ease-in-out",
                 opacity: "0"
             },
             {
@@ -28,7 +28,7 @@ function openingEventAnimations() {
                         visibility: "hidden"
                     });
                 },
-                duration: 1000
+                duration: 800
             }
         );
 
