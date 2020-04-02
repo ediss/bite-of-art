@@ -70,13 +70,13 @@ $(document).ready(function() {
 
     active.next().find(".img-opacity-event").mouseover(function (e) {
         e.preventDefault();
-        $(this).next('.img-description-event').addClass('animation-duration fadeOutDown my-opacity');
-        $(this).next('.img-description-event').css('opacity', '0');
+        $(this).find('.img-description-event').addClass('animation-duration fadeOutDown my-opacity');
+        $(this).find('.img-description-event').css('opacity', '0');
     });
 
     active.next().find(".img-opacity-event").mouseout(function () {
-        $(this).next('.img-description-event').removeClass('animation-duration fadeOutDown my-opacity').addClass('animation-duration fadeInUp');
-        $(this).next('.img-description-event').css('opacity', '1');
+        $(this).find('.img-description-event').removeClass('animation-duration fadeOutDown my-opacity').addClass('animation-duration fadeInUp');
+        $(this).find('.img-description-event').css('opacity', '1');
     });
 
     // mobile

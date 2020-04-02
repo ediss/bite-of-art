@@ -89,6 +89,9 @@ html, body {
     background: rgba(0,0,0,0.5);
     transition:  background 1s linear;
   }
+  .img-description:hover{
+      cursor:pointer;
+  }
 
   .img-opacity:hover::before{
     cursor: pointer;

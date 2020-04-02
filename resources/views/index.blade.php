@@ -20,8 +20,8 @@
 
                 @foreach ($feature_events as $event_in_feature)
                 <div class="carousel-item active" data-id="{{ $event_in_feature->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
-                    <div class="card" data-href="{{ route('opened.event', ['id'=>$event_in_feature->id, app()->getLocale() ]) }}">
-                        <div class="img-opacity-event">
+                    <div class="card img-opacity-event" data-href="{{ route('opened.event', ['id'=>$event_in_feature->id, app()->getLocale() ]) }}">
+                        <div class="">
                             <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
                         </div>
                     </div>
@@ -38,8 +38,8 @@
                 @if($event_in_past)
                 <div class="carousel-item {{ ($feature_events->count() == 0) ?  'active' : ''}}" data-id="{{ $event_in_past->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
 
-                    <div class="card" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
-                        <div class="img-opacity-event">
+                    <div class="card img-opacity-event" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
+                        <div class="">
                             <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
 
                         </div>
@@ -57,8 +57,8 @@
                 @foreach ($events_in_past as $event_in_past)
                 @if(!$loop->first)
                 <div class="carousel-item" data-id="{{ $event_in_past->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
-                    <div class="card">
-                        <div class="img-opacity-event">
+                    <div class="card img-opacity-event">
+                        <div class="">
                             <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
 
                         </div>
@@ -99,8 +99,8 @@
                 @if($event_in_past)
 
                 <div class="carousel-item carousel-item-main  col-4 p-0 active">
-                    <div class="card" data-id="{{ $event_in_past->id }}" >
-                        <div class="img-opacity-event">
+                    <div class="card img-opacity-event" data-id="{{ $event_in_past->id }}" >
+                        <div class="">
                             <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                         </div>
                         <div class="img-description-event">
@@ -118,8 +118,8 @@
                 @foreach ($feature_events as $event_in_feature)
 
                 <div class="carousel-item carousel-item-main  col-4 p-0">
-                    <div class="card" data-id="{{ $event_in_feature->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_feature->id, app()->getLocale() ]) }}">
-                        <div class="img-opacity-event">
+                    <div class="card img-opacity-event" data-id="{{ $event_in_feature->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_feature->id, app()->getLocale() ]) }}">
+                        <div class="">
                             <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
                         </div>
                         <div class="img-description-event text-center">
@@ -135,8 +135,8 @@
                 @foreach ($events_in_past as $event_in_past)
                 @if(!$loop->last)
                 <div class="carousel-item carousel-item-main  col-4 p-0">
-                    <div class="card" data-id="{{ $event_in_past->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
-                        <div class="img-opacity-event">
+                    <div class="card img-opacity-event" data-id="{{ $event_in_past->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
+                        <div class="">
                             <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
                         </div>
                         <div class="img-description-event text-center">
