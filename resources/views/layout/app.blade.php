@@ -61,7 +61,7 @@
         </script>
 
         <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
-        <script src="/plugins/jquery.blockUI.js"></script>
+        <script src="/assets/js/min/jquery.blockUI.min.js"></script>
         <script src="/assets/js/common/global.js"></script>
 
 
