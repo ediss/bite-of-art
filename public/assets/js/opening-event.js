@@ -69,7 +69,7 @@ $(document).ready(function(){
         var event_id = $(this).attr("data-id");
         var language = $("#mainGallery").attr("data-language");
         var route = $(this).attr("data-href");
-
+        $(this).find('.img-opacity-event').toggleClass("changed");
 
         openingEventAnimations();
 
@@ -98,7 +98,6 @@ $(document).ready(function(){
 
                 },
                 duration: 3000,
-
                 complete: function() {
                     var carouselDiv = $("#carouselExample");
                     window.location.href = route;

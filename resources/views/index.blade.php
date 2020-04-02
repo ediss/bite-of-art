@@ -179,7 +179,7 @@
 <div class="row h-80px" id="events-h1">
     <div class="col-4"></div>
     <div class="col-4 text-center align-items-center d-flex justify-content-center">
-        <h2 class="card-title montserrat-bold events-h1">EVENTS</h2>
+        <h2 class="card-title montserrat-bold events-h1 animated delay-3s zoomIn">EVENTS</h2>
     </div>
     <div class="col-4"></div>
 </div>
@@ -224,7 +224,7 @@
 <div class="row h-80px" id="news-h1">
     <div class="col-4"></div>
     <div class="col-4 text-center align-items-center d-flex justify-content-center">
-        <h2 class="card-title montserrat-bold ">NEWS</h2>
+        <h2 class="card-title montserrat-bold animated delay-3s zoomIn ">NEWS</h2>
     </div>
     <div class="col-4"></div>
 </div>

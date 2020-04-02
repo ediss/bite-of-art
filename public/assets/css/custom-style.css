@@ -106,8 +106,14 @@ html, body {
     transition:  background 1s linear;
   }
 
+
   .img-opacity-event:hover::before{
     background: rgba(0,0,0,0);
+  }
+   .changed:before{
+
+    background: rgba(0,0,0,0);
+
   }
 
   .img-description-event {
