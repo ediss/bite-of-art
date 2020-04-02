@@ -107,9 +107,6 @@
                     @endphp
                     <div class="card">
                         <div class="col-10 montserrat-regular">
-                            <div class="h-80px h-100px">
-
-                            </div>
                             {!! $desc[1] !!}
                         </div>
 
