@@ -187,8 +187,8 @@
                 @foreach ($news as $n)
                 <div
                     class="carousel-item carousel-item-news  col-6 col-md-25 p-0 {{ $loop->first ? 'active first-news' : '' }}">
-                    <div class="card img-opacity">
-                        <div class="" news-id={{ $n->id }} data-href="{{ route('opened.news', ['id'=>$n->id, app()->getLocale() ]) }}">
+                    <div class="card img-opacity" news-id={{ $n->id }} data-href="{{ route('opened.news', ['id'=>$n->id, app()->getLocale() ]) }}">
+                        <div class="" >
                             <img class="img-fluid  d-block" src="{{ $n->article_cover}}" alt="slide 1">
                         </div>
                         <div class="img-description">
