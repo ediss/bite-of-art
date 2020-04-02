@@ -210,7 +210,7 @@
 
     </div> --}}
 </div>
-<div class="row">
+<div class="row animation-duration2 fadeInRight">
     <div class="col-12">
         <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
