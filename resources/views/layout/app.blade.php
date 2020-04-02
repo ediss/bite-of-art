@@ -17,6 +17,8 @@
 
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-menu.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-style.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/animate.min.css')}}" />
+
 
     @yield('css')
 

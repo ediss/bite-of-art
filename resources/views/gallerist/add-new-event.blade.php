@@ -1,9 +1,7 @@
 @extends('layout.app')
 @section('css')
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/animate.css')}}" />
 <link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
-<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-style.css')}}" />
 
 <script src="https://cdn.tiny.cloud/1/6lpj0hls50t5fhszqn1yu17ptqwgc31358a1egzwi0uqx4ni/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 

@@ -1,11 +1,7 @@
 @extends('layout.app')
 
 @section('css')
-<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/animate.css')}}" />
 
-<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/custom-style.css')}}" />
-{{-- <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style2.css')}}" /> --}}
-@endsection
 
 @section('logo-img')
     <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">

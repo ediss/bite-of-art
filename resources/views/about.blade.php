@@ -1,9 +1,5 @@
 @extends('layout.app')
 
-@section('css')
-<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/animate.css')}}" />
-@endsection
-
 @section('logo-img')
 <div class="close-gallery animation-duration2 fadeInDown"></div>
 @endsection
