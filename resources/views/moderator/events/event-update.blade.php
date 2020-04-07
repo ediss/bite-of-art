@@ -1,5 +1,56 @@
+@extends('layout.dashboard')
+@section('css')
+
+<script src="https://cdn.tiny.cloud/1/6lpj0hls50t5fhszqn1yu17ptqwgc31358a1egzwi0uqx4ni/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
+
+<script>
+        tinymce.init({
+              selector:'textarea#new_event_description, textarea#new_event_description_srb, textarea#new_event_description_esp, textarea#new_event_description_slo',
+              menubar:false,
+              branding: false,
+              plugins: "link wordcount",
+              default_link_target: "_blank",
+              toolbar: "undo redo | underline bold italic|alignjustify| link ",
+              //toolbar:"styleselect",
+
+              // style_formats: [
+              //     {title: 'Headers', items: [
+              //         {title: 'Header 1', format: 'h1'},
+              //         {title: 'Header 2', format: 'h2'},
+              //         {title: 'Header 3', format: 'h3'},
+              //         {title: 'Header 4', format: 'h4'},
+              //         {title: 'Header 5', format: 'h5'},
+              //         {title: 'Header 6', format: 'h6'}
+              //     ]}
+              // ],
+          });
+</script>
+@endsection
+
+@section('content')
+@if(session()->has('message-success'))
+    <div class="alert alert-success">
+        {{ session()->get('message-success') }}
+    </div>
+@elseif(session()->has('message-error'))
+<div class="alert alert-danger">
+    {{ session()->get('message-success') }}
+</div>
+@endif
+<div class="row mb-4">
+    <div class="col-12 text-center">
+        <h1>
+            Update Event
+        </h1>
+        <h3>({{ $event->event_name }})</h3>
+    </div>
+</div>
+
+
 <form id="updateEvent" method="POST" action={{ route('moderator.event.update', ['id' => $event->id,  app()->getLocale()]) }}
     enctype="multipart/form-data">
+    @csrf
     <div class="form-group">
         <div class="row">
             <div class="col-md-6">
@@ -35,19 +86,9 @@
 
             </div>
             <div class="col-md-6">
-                <label class="form-control-label"><b>Event place</b></label>
-                <input type="text" class="form-control" name="new_event_place" value="{{ $event->event_place }}"
-                    disabled>
-            </div>
-        </div>
-
-    </div>
-    <div class="form-group">
-
-        <div class="row">
-            <div class="col-12">
+                <label class="form-control-label"><b>Event date</b></label>
                 <input type="text" name="new_daterange" class="form-control text-center js-datepicker-range"
-                    value="{{ $event->event_open }} - {{ $event->event_closed }}">
+                value="{{ $event->event_open }} - {{ $event->event_closed }}">
             </div>
         </div>
 
@@ -75,7 +116,7 @@
 
     <div class="form-group">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <label class="form-control-label"><b>Event description</b></label>
                 <textarea name="new_event_description" id="new_event_description" cols="30" rows="10"
                     class="form-control">{{ $event->event_description_en }}</textarea>
@@ -88,17 +129,17 @@
                 </div>
                 @endif
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <label class="form-control-label"><b>Event description(SRB)</b></label>
                 <textarea name="new_event_description_srb" id="new_event_description_srb" cols="30" rows="10"
                     class="form-control">{{ $event->event_description_srb }}</textarea>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <label class="form-control-label"><b>Event description(ESP)</b></label>
                 <textarea name="new_event_description_esp" id="new_event_description_esp" cols="30" rows="10"
                     class="form-control">{{ $event->event_description_esp }}</textarea>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <label class="form-control-label"><b>Event description(SLO)</b></label>
                 <textarea name="new_event_description_slo" id="new_event_description_slo" cols="30" rows="10"
                     class="form-control">{{ $event->event_description_slo }}</textarea>
@@ -191,11 +232,17 @@
     </div>
 
     <div class="form-group">
-        <label class="form-control-label"><b>Gallerist</b></label>
-
-        <input type="text" class="form-control" name="gallerist_id" value="{{ $event->gallerist_id }}" disable>
-
+        <label class="form-control-label"><b>Gallerist:</b></label>
+            <h3>{{ $event->user->name }}</h3>
     </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-8 offset-2 text-center">
+                <input type="submit" class="btn btn-lg text-white dashbg-1" value="Update event">
+            </div>
+        </div>
+        </div>
     <script>
         $('.js-datepicker-range').daterangepicker({
             opens:"center",
@@ -209,7 +256,7 @@
 
 
 
-@section('footer-scripts')
+
 
 
 @endsection

@@ -84,7 +84,7 @@ Route::group([
         Route::get('/get-events',               'ModeratorController@getEvents')->name('get.all.events');
         Route::get('/get-news',                 'ModeratorController@getNews')->name('get.all.news');
         Route::any('/update-event/{id}',        'ModeratorController@updateEvent')->name('moderator.event.update');
-        Route::any('/update-whole/event/{id}',  'ModeratorController@updateEventArtistData')->name('moderator.event.artist.update');
+        Route::any('/update-whole-event/{id}',  'ModeratorController@updateEventArtistData')->name('moderator.event.artist.update');
         Route::any('/update-event-artwork/{id}','ModeratorController@updateEventArtworkData')->name('moderator.event.artwork.update');
         Route::post('/approve-event/{id}',      'ModeratorController@approveEvent')->name('approve.event');
         Route::post('/update-gallerist/{id}',   'ModeratorController@approveGallerist')->name('approve.gallerist');

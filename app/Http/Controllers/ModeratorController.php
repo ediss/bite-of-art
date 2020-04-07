@@ -218,33 +218,29 @@ class ModeratorController extends Controller
                     $nfc_tag = substr($event->user->gallery_name, 0, 3).$event->user->id.substr($event->event_name, 0, 3).$event->id;
 
                     $event->nfc_tag = $nfc_tag;
-
                     $event->save();
 
-                    return Response::json(['success' => true, 'message' => $message]);
-                } else {
-                    $message = ["error", "OOps! Something went wrong!"];
-                    return Response::json(["message" => $message]);
+                    return redirect()->back()->with('message-success', $event->event_name . " is updated");
+                }else {
+                        return redirect()->back()->with('message-error', "OOps! Something went wrong!");
                 }
             } else {
 
-                $html = View::make('moderator.modals.update-event', [
+                return view('moderator.event-update', [
                     'event' => $event,
                     'validator' => $validator
-                ])->render();
+                ]);
 
-                return Response::json(["html" => $html, 'success' => false]);
             }
         }
 
 
-        $html = View::make('moderator.modals.update-event', [
+        return view('moderator.event-update', [
 
             'event' => $event,
             'validator' => $validator
-        ])->render();
+        ]);
 
-        return Response::json(["html" => $html, "success" => $success]);
     }
 
     /* Updating artist which belong to Event*/
@@ -257,12 +253,9 @@ class ModeratorController extends Controller
 
 
         $artists = Artist::where('event_id', '=', $event_id)->get();
-  
-        
-        $validator = null;
-        if ($request->isMethod('post')) { 
-            
 
+        $validator = null;
+        if ($request->isMethod('post')) {
             $validator = Validator::make(
                 $request->all(),
                 [
@@ -314,11 +307,11 @@ class ModeratorController extends Controller
 
                 $artistObj->artist_name       = $artist_name;
                 $artistObj->artist_about      = $artist_about;
-                                                   
+
                 if(isset($artist_cover_path)){
                     $artistObj->artist_cover      = $artist_cover_path;
                 }
-                
+
                 $artistObj->artist_img_1      = (isset($artist_img_1_path)) ? $artist_img_1_path : $artistObj->artist_img_1;
                 $artistObj->artist_img_2      = (isset($artist_img_2_path)) ? $artist_img_2_path : $artistObj->artist_img_2;
                 $artistObj->artist_img_3      = (isset($artist_img_3_path)) ? $artist_img_3_path : $artistObj->artist_img_3;
@@ -349,15 +342,16 @@ class ModeratorController extends Controller
 
 
         }
-        $html = View::make('inc.partial.dashboard.update-all-event-data', [
+
+        return view ('moderator.events.update-all-event-data', [
 
             'artists'    => $artists,
             'event_id'   =>  $event_id,
             'event_name' => $event_name,
             'validator'  => $validator
-        ])->render();
+        ]);
 
-        return Response::json(["html" => $html, "success" => $success]);
+        //return Response::json(["html" => $html, "success" => $success]);
     }
 
 
@@ -365,11 +359,11 @@ class ModeratorController extends Controller
         public function updateEventArtworkData(Request $request, $artwork_id) {
 
             $artwork = Artwork::find($artwork_id);
-            
+
             $validator = null;
-            if ($request->isMethod('post')) { 
-                
-    
+            if ($request->isMethod('post')) {
+
+
                 $validator = Validator::make(
                     $request->all(),
                     [
@@ -381,7 +375,7 @@ class ModeratorController extends Controller
                         "new_artwork_about.required"  => "Field 'About Artwork ' can't be empty",
                     ]
                 );
-    
+
                 if ($validator->passes()) {
                     $artwork_name        = $request->input('new_artwork_name');
                     $artwork_about       = $request->input('new_artwork_about');
@@ -392,70 +386,70 @@ class ModeratorController extends Controller
                     $artwork_img_desc    = $request->input('new_artwork_img_1_desc');
                     $artwork_img_desc_2  = $request->input('new_artwork_img_2_desc');
                     $artwork_img_desc_3  = $request->input('new_artwork_img_3_desc');
-    
+
                     if ($request->hasFile('new_artwork_cover')) {
                         $artwork_cover        = $request->file('new_artwork_cover');
                         $artwork_cover_name   = 'cover_' . time() . '.' . $artwork_cover->getClientOriginalExtension();
                         $artwork_cover_path   = $artwork_cover ? $artwork_cover->move('images/artworks/', $artwork_cover_name) : null;
                     }
-    
+
                     if ($request->hasFile('new_artwork_img_1')) {
                         $artwork_img_1        = $request->file('new_artwork_img_1');
                         $artwork_img_1_name   = 'artwork_img_1_' . time() . '.' . $artwork_img_1->getClientOriginalExtension();
                         $artwork_img_1_path   = $artwork_img_1 ? $artwork_img_1->move('images/artworks/', $artwork_img_1_name) : null;
                     }
-    
+
                     if ($request->hasFile('new_artwork_img_2')) {
                         $artwork_img_2        = $request->file('new_artwork_img_2');
                         $artwork_img_2_name   = 'artwork_img_2_' . time() . '.' . $artwork_img_2->getClientOriginalExtension();
                         $artwork_img_2_path   = $artwork_img_2 ? $artwork_img_2->move('images/artworks/', $artwork_img_2_name) : null;
                     }
-    
+
                     if ($request->hasFile('new_artwork_img_3')) {
                         $artwork_img_3        = $request->file('new_artwork_img_3');
                         $artwork_img_3_name   = 'artwork_img_3_' . time() . '.' . $artwork_img_3->getClientOriginalExtension();
                         $artwork_img_3_path   = $artwork_img_3 ? $artwork_img_3->move('images/artworks/', $artwork_img_3_name) : null;
                     }
-    
-                    
-    
+
+
+
                     $artwork->artwork_name       = $artwork_name;
                     $artwork->artwork_about      = $artwork_about;
-                                                       
+
                     if(isset($artwork_cover_path)){
                         $artwork->artwork_cover      = $artwork_cover_path;
                     }
-                    
+
                     $artwork->artwork_img_1      = (isset($artwork_img_1_path)) ? $artwork_img_1_path : $artwork->artwork_img_1;
                     $artwork->artwork_img_2      = (isset($artwork_img_2_path)) ? $artwork_img_2_path : $artwork->artwork_img_2;
                     $artwork->artwork_img_3      = (isset($artwork_img_3_path)) ? $artwork_img_3_path : $artwork->artwork_img_3;
                     $artwork->artwork_img_1_desc = $artwork_img_desc;
                     $artwork->artwork_img_2_desc = $artwork_img_desc_2;
                     $artwork->artwork_img_3_desc = $artwork_img_desc_3;
-    
-    
-    
+
+
+
                     if ($artwork->save()) {
-                        
+
                         $artwork_nfc_tag = $artwork->event->nfc_tag.substr($artwork_name, 0, 3).$artwork->id;
                         $artwork->nfc_tag = $artwork_nfc_tag;
 
                         $artwork->save();
-                        
+
                         return Redirect::back()->with('success', $artwork->artwork_name . " is updated");
-    
+
 
                     } else {
                         $message = ["error", "OOps! Something went wrong!"];
                         return Response::json(["message" => $message]);
                     }
                 } else {
-    
+
                     return Redirect::back()->withErrors($validator);
-    
+
                 }
-    
-    
+
+
             }
         }
 

@@ -87,7 +87,7 @@
     <script>
         $(document).on('change', '.gallerist_id2', function(e) {
             var approved= $(this).prop("checked");
-            
+
             var gallerist_id = $(this).attr('data-id');
 
             var route = "{{ route('approve.gallerist',["gallerist_id+", 'app()->getLocale()']) }}"
@@ -122,7 +122,7 @@
 
             var event_id = $(this).attr('data-id');
 
-            
+
             var route = "{{ route('approve.event', ['id' =>"event_id",  app()->getLocale()]) }}"
             //  var route = "{{ route('approve.gallerist',["event_id+", 'app()->getLocale()']) }}";
             e.preventDefault();
@@ -238,30 +238,6 @@
 
         });
 
-
-        $(document).on('click', '.all-event-data', function(e) {
-
-            var event_id = $(this).attr('event_id');
-
-            
-
-            e.preventDefault();
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                
-                url: "/moderator/update-whole/event/"+event_id,
-                method: 'get',
-                success: function(data){
-                    $('#content').html(data.html);
-                }
-            });
-
-        });
 
 
         $(document).on('click', '.custom-control-input', function(e) {

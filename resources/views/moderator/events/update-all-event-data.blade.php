@@ -1,5 +1,19 @@
+@extends('layout.dashboard')
+
+@section('content')
+@if(session()->has('message-success'))
+    <div class="alert alert-success">
+        {{ session()->get('message-success') }}
+    </div>
+@elseif(session()->has('message-error'))
+<div class="alert alert-danger">
+    {{ session()->get('message-success') }}
+</div>
+@endif
+
+@if($artists->count() > 0)
 @foreach ($artists as $artist)
-<form method="POST" action={{ route('moderator.event.artist.update', ['id' => $event_id], app()->getLocale()) }} class="mt-5"
+<form method="POST" action={{ route('moderator.event.artist.update', ['id' => $event_id, 'language'=>app()->getLocale()]) }} class="mt-5"
     enctype="multipart/form-data">
     @csrf
     <h1 class="text-center">{{$event_name}}</h1>
@@ -311,10 +325,16 @@
     </div>
 </div>
 @endforeach
+@else
+    <p>Event {{$event_name}} dont' have artist(s)</p>
+@endif
 
 
 
 
-@section('footer-scripts')
+
+
+
+
 
 @endsection

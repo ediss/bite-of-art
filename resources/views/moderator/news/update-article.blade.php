@@ -5,13 +5,27 @@
     referrerpolicy="origin"></script>
 
 <script>
-    tinymce.init({
-        selector:'textarea',
-        plugins: "link wordcount",
-        menubar: false,
-        default_link_target: "_blank",
-        toolbar: "undo redo | underline bold italic|alignjustify| link "
-    });
+       tinymce.init({
+              selector:'textarea',
+              menubar:false,
+              branding: false,
+              plugins: "link wordcount",
+              default_link_target: "_blank",
+              toolbar: "undo redo | underline bold italic|alignjustify| link ",
+              
+              //toolbar:"styleselect",
+
+              // style_formats: [
+              //     {title: 'Headers', items: [
+              //         {title: 'Header 1', format: 'h1'},
+              //         {title: 'Header 2', format: 'h2'},
+              //         {title: 'Header 3', format: 'h3'},
+              //         {title: 'Header 4', format: 'h4'},
+              //         {title: 'Header 5', format: 'h5'},
+              //         {title: 'Header 6', format: 'h6'}
+              //     ]}
+              // ],
+          });
 </script>
 @endsection
 
