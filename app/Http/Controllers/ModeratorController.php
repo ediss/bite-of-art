@@ -514,6 +514,7 @@ class ModeratorController extends Controller
             $validator = Validator::make(
                 $request->all(),
                 [
+                    "new_article_text"   => "required",
                     "new_article_name"   => "required",
                 ],
                 [

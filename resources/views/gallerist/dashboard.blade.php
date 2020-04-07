@@ -123,7 +123,7 @@
                         <div class=" col-7">
 
                             <textarea class="form-control border-0" name="about_gallery"
-                                placeholder="{{__("about_gallery")}}" maxlength="2000" onkeyup="charCount(this)"
+                                placeholder="{{__("about_gallery")}}" maxlength="3500" onkeyup="charCount(this)"
                                 id="about_gallery">{{ Auth::user()->about_gallery }}</textarea>
                         </div>
 

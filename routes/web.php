@@ -44,13 +44,7 @@ Route::group([
     Route::any('membership', 'Auth\CustomRegisterController@register')->name('register');
 
 
-
-
     Route::get('/',     'EventController@index')->name('home');
-
-
-    //Route::get('/home', 'EventController@index')->name('home');
-
 
 
     //need to be protected

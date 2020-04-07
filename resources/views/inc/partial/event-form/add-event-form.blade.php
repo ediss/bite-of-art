@@ -60,7 +60,7 @@
                     @endif
                 </div>
 
-                <div class=" col-1 col-md-2 offset-md-1 offset-lg-0 col-lg-1 text-left">
+                <div class="p-0 col-1 col-md-2 offset-md-1 offset-lg-0 col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">{{__("upload_cover") }}</button>
                         <input type="file" name="event_cover" id="event_cover" />
@@ -70,7 +70,7 @@
 
                 <div class="col-7">
                     <textarea class="form-control border-0" name="event_cover_description" placeholder="{{__("about_event") }}"
-                        maxlength="2000" onkeyup="charCount(this)"
+                        maxlength="3500" onkeyup="charCount(this)"
                         id="event_cover_description">{{ Request::get('event_cover_description') }}</textarea>
                 </div>
                 <div class="col-1">
@@ -78,12 +78,12 @@
                 </div>
 
                 <div class="col-2 d-md-none d-lg-block">
-                    @if ( $validator && $validator->errors()->first('event_cover_description') )
+                    @if ( $validator && $validator->errors()->first('desc') )
                     <div class="alert alert-danger text-center mt-2">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        {{ $validator->errors()->first('event_cover_description') }}
+                        {{ $validator->errors()->first('desc') }}
                     </div>
                     @endif
                 </div>
@@ -95,7 +95,7 @@
 
                 </div>
 
-                <div class=" col-1 col-md-2  col-lg-1 text-left">
+                <div class="p-0 col-1 col-md-2  col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">{{__("additional_photo") }}#1</button>
                         <input type="file" name="event_image_1" id="event_image_1">
@@ -122,7 +122,7 @@
 
                 </div>
 
-                <div class=" col-1 col-md-2  col-lg-1 text-left">
+                <div class="p-0 col-1 col-md-2  col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">{{__("additional_photo") }}#2</button>
                         <input type="file" name="event_image_2" id="event_image_2">
@@ -147,7 +147,7 @@
 
                 </div>
 
-                <div class=" col-1 col-md-2  col-lg-1 text-left">
+                <div class="p-0 col-1 col-md-2  col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">{{__("additional_photo") }}#3</button>
                         <input type="file" name="event_image_3" id="event_image_3">
@@ -209,7 +209,7 @@
             <div class="row text-center mt-3">
                 <div class="col-12">
                     <div class="next-btn">
-                        <button class="my-btn save_event">{{__("next")}}</button>
+                        <button class="my-btn-2 save_event">{{__("next")}}</button>
                         {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
                     </div>
                 </div>

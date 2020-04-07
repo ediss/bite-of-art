@@ -3,22 +3,33 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
 
-<script src="https://cdn.tiny.cloud/1/6lpj0hls50t5fhszqn1yu17ptqwgc31358a1egzwi0uqx4ni/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/6lpj0hls50t5fhszqn1yu17ptqwgc31358a1egzwi0uqx4ni/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
 
 <script>
     tinymce.init({
         selector:'textarea#event_cover_description',
+        menubar:false,
+        // menubar:"format",
+        // menu: {
+        //     format: { title: 'Format', items: ' formats ' },
+
+
+        // },
+        // formats: {
+        //     h1: { block: 'h1' } 
+        // },
+  
         plugins: "link wordcount",
-        menubar: false,
         default_link_target: "_blank",
-        toolbar: "undo redo | underline bold italic|alignjustify| link "
+        toolbar: "undo redo | underline bold italic|alignjustify| link| "
     });
 </script>
 
 @endsection
 
 @section('logo-img')
-    <div class="close-gallery animation-duration2 fadeInDown"></div>
+<div class="close-gallery animation-duration2 fadeInDown"></div>
 @endsection
 
 
@@ -29,40 +40,45 @@
         <div id="event">
             @include('inc.partial.event-form.add-event-form')
         </div>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-12 p-0">
         <!--Add artist-->
         <div class="d-none" id="artist">
-
         </div>
-        <!--end artist-->
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-12 p-0">
         <!--Add artwork-->
         <div class="d-none" id="artwork">
-
         </div>
-        <!--end artwork-->
-
-        {{-- <button class="my-btn add_artist">ADD MORE ARTISTS</button> --}}
-        <div id="artowrk-button" class="row d-none">
-            <div class="col-12 text-center mt-4">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button class="my-btns-new mr-2 add_artwork">ADD MORE ARTWORKS</button>
-                    <button class="my-btns-new next-buttons">NEXT</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="artist-button" class="row d-none">
-            <div class="col-12 text-center mt-4">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button class="my-btns-new mr-2 submit_event">SUBMIT EVENT</button>
-                    <button class="my-btns-new add_artist">ADD MORE ARTISTS</button>
-                </div>
+    </div>
+</div>
+<div class="row">
+    <div id="artowrk-button" class="row d-none">
+        <div class="col-12 text-center mt-4">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button class="my-btns-new mr-2 add_artwork">ADD MORE ARTWORKS</button>
+                <button class="my-btns-new next-buttons">NEXT</button>
             </div>
         </div>
     </div>
 
+    <div id="artist-button" class="row d-none">
+        <div class="col-12 text-center mt-4">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button class="my-btns-new mr-2 submit_event">SUBMIT EVENT</button>
+                <button class="my-btns-new add_artist">ADD MORE ARTISTS</button>
+            </div>
+        </div>
+    </div>
 </div>
+{{-- <button class="my-btn add_artist">ADD MORE ARTISTS</button> --}}
+
 @endsection
 
 @section('footer-scripts')
@@ -74,7 +90,7 @@
 
 
 <script>
-$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
+    $(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
 
 $(document).ready(function(){
 
@@ -94,7 +110,7 @@ $(document).ready(function(){
 
     $(".page-footer").hide();
 
-    
+
 
     $('.js-datepicker-range').daterangepicker({
             timePicker: true,
@@ -161,14 +177,14 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.submit_event', function(e) {
-        window.location.href = "{{ route('gallerist.dashboard', app()->getLocale()) }}"; 
+        window.location.href = "{{ route('gallerist.dashboard', app()->getLocale()) }}";
     });
 
 });
 
 var ww = document.body.clientWidth;
 if (ww < 760) {
-    window.location.href = "{{ route('warning', app()->getLocale()) }}"; 
+    window.location.href = "{{ route('warning', app()->getLocale()) }}";
 }
 
 </script>

@@ -70,7 +70,7 @@
          $(this).keyup(function(e){
              e.preventDefault();
              var characterCount = el.value.length;
-             $(el).parent().next().text(characterCount+"/ 2000");
+             $(el).parent().next().text(characterCount+"/ 3500");
              $(el).next().next().next('span')
          });
      }

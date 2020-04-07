@@ -107,19 +107,20 @@ class EventController extends Controller
 
         $validator = null;
         if ($request->isMethod('post')) {
-
+            
+            //dd($request->all());
 
             //dd(explode(" ", $request->input('daterange')));
             $validator = Validator::make($request->all(), [
                 "event_name"                => "required",
                 "event_cover"               => "required",
                 "daterange"                 => "required",
-                // "event_cover_description"   => "required",
+                "desc"                      => "required",
             ],
             [
                 "event_name.required"               => "Field 'Event Name ' can't be empty",
                 "daterange.required"                => "Please choose date",
-                // "event_cover_description.required"  => "Field 'About Event ' can't be empty",
+                "desc.required"                     => "Field 'About Event ' can't be empty",
                 "event_cover.required"              => "Choose photo",
 
 

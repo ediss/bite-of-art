@@ -52,7 +52,7 @@
                     @endif
                 </div>
 
-                <div class=" col-1 col-md-2 offset-md-1 offset-lg-0 col-lg-1 text-left">
+                <div class=" p-0 col-1 col-md-2 offset-md-1 offset-lg-0 col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">{{__("upload_cover")}}</button>
                         <input type="file" name="artist_cover">
@@ -62,7 +62,7 @@
 
                 <div class="col-7">
                     <textarea class="form-control border-0" name="artist_about" placeholder="{{__("about_artist")}}"
-                        maxlength="2000" onkeyup="charCount(this)"
+                        maxlength="3500" onkeyup="charCount(this)"
                         id="artist_about">{{ Request::get('artist_about') }}</textarea>
                 </div>
                 <div class="col-1">
@@ -87,16 +87,16 @@
 
                 </div>
 
-                <div class=" col-1 col-md-2 col-lg-1 text-left">
+                <div class=" p-0 col-1 col-md-2 col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">{{__("additional_photo") }}#1</button>
                         <input type="file" name="artist_image_1">
                     </div>
                 </div>
-
+ 
 
                 <div class="col-7">
-                    <textarea class="form-control border-0" name="artist_image_1_desc" maxlength="2000"
+                    <textarea class="form-control border-0" name="artist_image_1_desc" maxlength="3500"
                         onkeyup="charCount(this)" placeholder="{{__("additional_photo") }}#1 {{__("description") }}"
                         id="artist_image_1_desc">{{ Request::get('artist_image_1_desc') }}</textarea>
                 </div>
@@ -113,7 +113,7 @@
 
                 </div>
 
-                <div class=" col-1 col-md-2  col-lg-1 text-left">
+                <div class=" p-0 col-1 col-md-2  col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">{{__("additional_photo") }}#2</button>
                         <input type="file" name="artist_image_2">
@@ -139,7 +139,7 @@
 
                 </div>
 
-                <div class=" col-1 col-md-2  col-lg-1 text-left">
+                <div class=" p-0 col-1 col-md-2  col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">{{__("additional_photo") }}#3</button>
                         <input type="file" name="artist_image_3">
@@ -199,7 +199,7 @@
             <div class="row text-center mt-3">
                 <div class="col-12">
                     <div class="next-btn">
-                        <button class="my-btn save_artist">{{__("add_artwork")}}</button>
+                        <button class="my-btn-2 save_artist">{{__("add_artwork")}}</button>
                         {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
                     </div>
                 </div>
@@ -212,11 +212,11 @@
 
     <div class="errors d-lg-none">
 
-         
 
-            @if ( $validator && $validator->errors()) 
-            
-    
+
+            @if ( $validator && $validator->errors())
+
+
             @foreach($validator->errors()->messages() as $error)
                 <div class="alert alert-danger text-center mt-2">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -224,10 +224,10 @@
                     </button>
                     {{ $error[0] }}
                 </div>
-                
+
             @endforeach
-            
-    
+
+
             @endif
         </div>
 </form>

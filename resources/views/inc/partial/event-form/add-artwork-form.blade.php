@@ -55,7 +55,7 @@
                     @endif
                 </div>
 
-                <div class=" col-1 col-md-2 offset-md-1 offset-lg-0 col-lg-1 text-left">
+                <div class="p-0 col-1 col-md-2 offset-md-1 offset-lg-0 col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">Upload Cover</button>
                         <input type="file" name="artwork_cover" />
@@ -91,7 +91,7 @@
 
                 </div>
 
-                <div class=" col-1 col-md-2  col-lg-1 text-left">
+                <div class="p-0 col-1 col-md-2  col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">Additional photo#1</button>
                         <input type="file" name="artwork_image_1">
@@ -119,7 +119,7 @@
 
                 </div>
 
-                <div class=" col-1 col-md-2  col-lg-1 text-left">
+                <div class="p-0 col-1 col-md-2  col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">Additional photo#2</button>
                         <input type="file" name="artwork_image_2">
@@ -144,7 +144,7 @@
 
                 </div>
 
-                <div class=" col-1 col-md-2  col-lg-1 text-left">
+                <div class="p-0 col-1 col-md-2  col-lg-1 text-left">
                         <div class="upload-btn-wrapper">
                         <button class="my-btn">Additional photo#3</button>
                         <input type="file" name="artwork_image_3">
@@ -205,7 +205,7 @@
             <div class="row text-center mt-3">
                 <div class="col-12">
                     <div class="next-btn">
-                        <button class="my-btn save_artwork">SAVE ARTWORK</button>
+                        <button class="my-btn-2 save_artwork">SAVE ARTWORK</button>
                         {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
                     </div>
                 </div>

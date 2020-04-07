@@ -229,7 +229,7 @@
 
                         <div class=" col-7 text-left">
                             <textarea class="form-control border-0" name="cover_letter" placeholder="{{__("cover_letter")}}"
-                                maxlength="2000" onkeyup="charCount(this)"
+                                maxlength="3500" onkeyup="charCount(this)"
                                 id="cover_letter">{{ Request::get('cover_letter') }}</textarea>
                         </div>
 
@@ -257,7 +257,7 @@
 
                 <div class="col-12 text-center mt-5">
                     <div class="next-btn">
-                        <button class="my-btn">{{__("submit")}}</button>
+                        <button class="my-btn-2">{{__("submit")}}</button>
                         {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
                     </div>
                 </div>

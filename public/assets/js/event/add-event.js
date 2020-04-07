@@ -1,8 +1,10 @@
+
+
 function saveEvent(route) {
     var form = document.getElementById('eventSubmit');
     var formData = new FormData(form);
     var description = tinyMCE.get('event_cover_description').getContent();
-  
+
     formData.append('desc', description);
 
    $.ajaxSetup({
@@ -26,6 +28,15 @@ function saveEvent(route) {
 
           if(result.success === false) {
             $("#event").html(result.html);
+            tinymce.remove();
+            tinymce.init({
+              selector:'textarea#event_cover_description',
+              plugins: "link wordcount",
+              menubar: false,
+              default_link_target: "_blank",
+              toolbar: "undo redo | underline bold italic|alignjustify| link "
+          });
+
           }
           if(result.success === true) {
             $( ".event-wraper" ).animate({
@@ -45,12 +56,12 @@ function saveEvent(route) {
       },
       error: function(request, status, error) {
         alert("error! Call developer! Email: skenderi.e94@gmail.com");
-    
         alert(request.responseText);
       }
 
    });
 }
+
 
 function saveArtist(route) {
 
