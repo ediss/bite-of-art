@@ -22,24 +22,22 @@ class NewsController extends Controller
 
      public function addArticle(Request $request) {
 
-
-
           //@todo find better solution, method is too big
 
           $validator = null;
           if ($request->isMethod('post')) {
 
               $validator = Validator::make($request->all(), [
-                  "article_name"              => "required",
-                  "article_cover"             => "required",
-                  "daterange"                 => "required",
-                  "article_cover_description" => "required",
+                  "article_name"    => "required",
+                  "article_cover"   => "required",
+                  "daterange"       => "required",
+                  "desc"            => "required",
               ],
               [
-                  "article_name.required"               => "Field 'article Name ' can't be empty",
-                  "daterange.required"                  => "Please choose date",
-                  "article_cover_description.required"  => "Field 'About article ' can't be empty",
-                  "article_cover.required"              => "Choose photo",
+                  "article_name.required"   => "Field 'article Name ' can't be empty",
+                  "daterange.required"      => "Please choose date",
+                  "desc.required"           => "Field 'About article ' can't be empty",
+                  "article_cover.required"  => "Choose photo",
 
 
 

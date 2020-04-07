@@ -10,19 +10,23 @@
     tinymce.init({
         selector:'textarea#event_cover_description',
         menubar:false,
-        // menubar:"format",
-        // menu: {
-        //     format: { title: 'Format', items: ' formats ' },
-
-
-        // },
-        // formats: {
-        //     h1: { block: 'h1' } 
-        // },
-  
+        branding: false,
         plugins: "link wordcount",
         default_link_target: "_blank",
-        toolbar: "undo redo | underline bold italic|alignjustify| link| "
+        toolbar: "undo redo | underline bold italic|alignjustify| link ",
+        
+        //toolbar:"styleselect",
+
+        // style_formats: [
+        //     {title: 'Headers', items: [
+        //         {title: 'Header 1', format: 'h1'},
+        //         {title: 'Header 2', format: 'h2'},
+        //         {title: 'Header 3', format: 'h3'},
+        //         {title: 'Header 4', format: 'h4'},
+        //         {title: 'Header 5', format: 'h5'},
+        //         {title: 'Header 6', format: 'h6'}
+        //     ]}
+        // ],
     });
 </script>
 

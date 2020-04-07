@@ -52,7 +52,7 @@
     <div class="article-wraper col-12 ">
 
 
-        <div class="row elements-mid-align h-80px h-100px border-bottom">
+        <div class="row elements-mid-align  border-bottom">
 
             <div class="col-1 d-md-none d-lg-block">
                 @if ( $validator && $validator->errors()->first('article_cover') )
@@ -76,7 +76,7 @@
             <div class=" col-7">
                 <textarea class="form-control border-0 pl-0" name="article_cover_description" placeholder="{{__("about_article") }}"
                     maxlength="2000" onkeyup="charCount(this)"
-                    id="article_cover_description">{{ Request::get('article_cover_description') }}</textarea>
+                    id="article_cover_description">{{ Request::get('desc') }}</textarea>
 
             </div>
             <div class="col-1">
@@ -84,12 +84,12 @@
             </div>
 
             <div class="col-2 d-md-none d-lg-block">
-                @if ( $validator && $validator->errors()->first('article_cover_description') )
+                @if ( $validator && $validator->errors()->first('desc') )
                 <div class="alert alert-danger text-center mt-2">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    {{ $validator->errors()->first('article_cover_description') }}
+                    {{ $validator->errors()->first('desc') }}
                 </div>
                 @endif
             </div>

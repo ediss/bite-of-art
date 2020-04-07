@@ -3,6 +3,32 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
 <link href="{{ asset('plugins/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
+<script src="https://cdn.tiny.cloud/1/6lpj0hls50t5fhszqn1yu17ptqwgc31358a1egzwi0uqx4ni/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
+
+<script>
+    tinymce.init({
+        selector:'textarea#article_cover_description',
+        menubar:false,
+        branding: false,
+        plugins: "link wordcount",
+        default_link_target: "_blank",
+        toolbar: "undo redo | underline bold italic|alignjustify| link ",
+        
+        //toolbar:"styleselect",
+
+        // style_formats: [
+        //     {title: 'Headers', items: [
+        //         {title: 'Header 1', format: 'h1'},
+        //         {title: 'Header 2', format: 'h2'},
+        //         {title: 'Header 3', format: 'h3'},
+        //         {title: 'Header 4', format: 'h4'},
+        //         {title: 'Header 5', format: 'h5'},
+        //         {title: 'Header 6', format: 'h6'}
+        //     ]}
+        // ],
+    });
+</script>
 @endsection
 
 @section('logo-img')
@@ -44,6 +70,9 @@ AjaxLoad.initialize();
     function saveArticle() {
         var form = document.getElementById('articleSubmit');
         var formData = new FormData(form);
+        var description = tinyMCE.get('article_cover_description').getContent();
+
+        formData.append('desc', description);
 
   $.ajaxSetup({
       headers: {
@@ -65,6 +94,28 @@ AjaxLoad.initialize();
 
         if(result.success === false) {
             $("#article").html(result.html);
+            tinymce.remove();
+            tinymce.init({
+                selector:'textarea#article_cover_description',
+                menubar:false,
+                branding: false,
+                plugins: "link wordcount",
+                default_link_target: "_blank",
+                toolbar: "undo redo | underline bold italic|alignjustify| link ",
+                
+                //toolbar:"styleselect",
+
+                // style_formats: [
+                //     {title: 'Headers', items: [
+                //         {title: 'Header 1', format: 'h1'},
+                //         {title: 'Header 2', format: 'h2'},
+                //         {title: 'Header 3', format: 'h3'},
+                //         {title: 'Header 4', format: 'h4'},
+                //         {title: 'Header 5', format: 'h5'},
+                //         {title: 'Header 6', format: 'h6'}
+                //     ]}
+                // ],
+            });
           }
       }
   });

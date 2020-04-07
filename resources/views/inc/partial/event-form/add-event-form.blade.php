@@ -71,7 +71,7 @@
                 <div class="col-7">
                     <textarea class="form-control border-0" name="event_cover_description" placeholder="{{__("about_event") }}"
                         maxlength="3500" onkeyup="charCount(this)"
-                        id="event_cover_description">{{ Request::get('event_cover_description') }}</textarea>
+                        id="event_cover_description">{{ Request::get('desc') }}</textarea>
                 </div>
                 <div class="col-1">
                     <span class="float-left"></span>
