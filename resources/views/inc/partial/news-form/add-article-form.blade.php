@@ -152,7 +152,7 @@
         <div class="row text-center mt-3">
                 <div class="col-12">
                     <div class="next-btn">
-                        <button class="my-btn save_article">{{__("submit")}}</button>
+                        <button class="my-btn-2 save_article">{{__("submit")}}</button>
                         {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
                     </div>
                 </div>

@@ -47,7 +47,7 @@ class NewsController extends Controller
                   $article_name         = $request->input('article_name');
                   $article_date         = $request->input('daterange');
                   $article_cover        = $request->input('article_cover');
-                  $article_cover_desc   = $request->input('article_cover_description');
+                  $article_cover_desc   = $request->desc;
                   $article_media        = $request->input('article_media');
                   $article_media_desc   = $request->input('article_media_description');
                   $article_note         = $request->input('article_note');

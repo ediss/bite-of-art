@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Dark Bootstrap Admin by Bootstrapious.com</title>
+<title>Biteofart | Admin Panel</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
@@ -13,8 +13,7 @@
 <!-- Custom Font Icons CSS-->
 <link rel="stylesheet" href="{{asset('assets/dashboard/css/font.css')}}">
 <!-- Google fonts - Muli-->
-<link rel="stylesheet"
-    href="{{asset('assets/dashboard/https://fonts.googleapis.com/css?family=Muli:300,400,700')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700')">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <!-- theme stylesheet-->
 <link rel="stylesheet" href="{{asset('assets/dashboard/css/style.default.css')}}" id="theme-stylesheet">

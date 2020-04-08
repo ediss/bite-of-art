@@ -32,7 +32,7 @@
                 <td>{{ $first_part }}</td>
                 <td>{{ $article->article_media }}</td>
                 <td>{{ $article->article_note }}</td>
-                <td>{{ $article->user_id }}</td>
+                <td>{{ $article->user->name }}</td>
                 <td>
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input article_id" name="article_id"
@@ -48,20 +48,13 @@
                     <a class="text-dark btn btn-info  js-modal mb-5" data-modalid='add_images_or_video_to_article'
                         data-modaltitle="Update Article: {{$article->article_name}}"
                         submit_button='my-js-submit'
-                        data-url="{{ route('moderator.article.additional', ['id' => $article->id,  app()->getLocale()]) }}" data-savetext="Save">
+                        data-url="{{ route('moderator.article.additional', ['language' => app()->getLocale(), 'id' => $article->id ]) }}" data-savetext="Save">
                         Additional
                     </a>
 
-                    
                 </td>
 
                 <td>
-                    {{-- <a class="text-primary  js-modal mb-5" data-modalid='edit_news'
-                        data-modaltitle="Update Article: {{$article->article_name}}"
-                        submit_button='js-submit'
-                        data-url="{{ route('moderator.article.update',  ['id' => $article->id,  app()->getLocale()]) }}" data-savetext="Save">
-                        <i class="fa fa-2x fa-edit"></i>
-                    </a> --}}
 
                     <a class="text-primary"
                         href="{{ route('moderator.article.update',  ['id' => $article->id,  app()->getLocale()]) }}">

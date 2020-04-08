@@ -64,7 +64,7 @@
 
             <div class="col-md-6">
                 <label class="form-control-label"><b>Date</b></label>
-                <input type="text" name="new_daterange" class="form-control text-center js-datepicker-range"
+                <input type="text" name="new_daterange" id="new_daterange" class="form-control text-center js-datepicker-range"
                     value="{{ $article->article_open }}">
             </div>
 
@@ -147,22 +147,21 @@
     </div>
     </div>
 
-    
-    <script>
-        $('.js-datepicker-range').daterangepicker({
-                opens:"center",
-                singleDatePicker: true,
-                locale: {
-                format: 'YYYY.MM.DD'
-            },
-            });
-    </script>
 </form>
 @endsection
 
 
 
 @section('footer-scripts')
+<script>
+        $('.js-datepicker-range').daterangepicker({
+        opens:"center",
+        singleDatePicker: true,
 
+        locale: {
+            format: 'YYYY-MM-DD'
+        },
+    });
+</script>
 
 @endsection

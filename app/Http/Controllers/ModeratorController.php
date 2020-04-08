@@ -226,7 +226,7 @@ class ModeratorController extends Controller
                 }
             } else {
 
-                return view('moderator.event-update', [
+                return view('moderator.events.event-update', [
                     'event' => $event,
                     'validator' => $validator
                 ]);
@@ -234,8 +234,7 @@ class ModeratorController extends Controller
             }
         }
 
-
-        return view('moderator.event-update', [
+        return view('moderator.events.event-update', [
 
             'event' => $event,
             'validator' => $validator
@@ -517,9 +516,8 @@ class ModeratorController extends Controller
             );
 
             if ($validator->passes()) {
-
                 $article_name         = $request->input('new_article_name');
-                $article_date         = explode('-',$request->input('new_daterange'));
+                $article_date         = $request->input('new_daterange');
                 $article_cover        = $request->input('new_article_cover');
                 $article_text         = $request->input('new_article_text');
                 $article_text_srb     = $request->input('new_article_text_srb');
@@ -536,7 +534,7 @@ class ModeratorController extends Controller
 
                 //Inserting in DB
                 $article->article_name              = $article_name;
-                $article->article_open              = $article_date[0];
+                $article->article_open              = $article_date;
                 $article->article_cover             = (isset($article_cover_path)) ? $article_cover_path : $article->article_cover;
                 $article->article_description       = $article_text;
                 $article->esp_article_description   = $article_text_esp;

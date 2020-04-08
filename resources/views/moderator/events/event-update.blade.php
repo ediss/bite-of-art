@@ -243,20 +243,18 @@
             </div>
         </div>
         </div>
-    <script>
-        $('.js-datepicker-range').daterangepicker({
-            opens:"center",
-            timePicker: true,
-            locale: {
-            format: 'YYYY.MM.DD hh:mm:ss'
-        },
-        });  
-    </script>
 </form>
 
+@endsection
 
-
-
-
-
+@section('footer-scripts')
+<script>
+    $('.js-datepicker-range').daterangepicker({
+        opens:"center",
+        timePicker: true,
+        locale: {
+        format: 'YYYY.MM.DD hh:mm:ss'
+    },
+    });  
+</script>
 @endsection

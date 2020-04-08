@@ -51,6 +51,11 @@
 <script src=" {{ asset('assets/js/common/global.js') }}"></script>
 
 <script>
+    var ww = document.body.clientWidth;
+
+    if (ww < 760) {
+    window.location.href = "{{ route('warning',['mobile'=>true, 'language'=> app()->getLocale()]) }}";
+}
 AjaxLoad.initialize();
 </script>
 
@@ -134,4 +139,6 @@ $(document).on('click', '.save_article', function(e) {
     });
     });
     </script>
+
+    
 @endsection

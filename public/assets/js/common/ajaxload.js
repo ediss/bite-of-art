@@ -200,13 +200,6 @@ var AjaxLoad = {
             self.submit(containerElem, $(this), url,"POST", Data);
         });
 
-        $('.js-datepicker-range').daterangepicker({
-            timePicker: true,
-            locale: {
-            format: 'YYYY.MM.DD hh:mm:ss'
-        },
-        });        
-
     },
 
     /*
