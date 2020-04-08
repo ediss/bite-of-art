@@ -253,6 +253,12 @@
 <script>
     $('.footer').css('display', 'none');
 </script>
+<script>
+
+
+
+
+</script>
 <script src=" {{ asset('assets/js/opened-event.js') }}"></script>
 <script src=" {{ asset('assets/js/hover.js') }}"></script>
 
