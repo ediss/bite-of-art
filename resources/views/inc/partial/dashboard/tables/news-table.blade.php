@@ -32,7 +32,7 @@
                 <td>{{ $first_part }}</td>
                 <td>
                     @if($article->article_media != "")
-                        <a href="{{ $article->article_media }}">See article media</a>
+                        <a target="_blank" href="{{ $article->article_media }}">See article media</a>
                     @endif
                     </td>
                 <td>{{ $article->article_note }}</td>
