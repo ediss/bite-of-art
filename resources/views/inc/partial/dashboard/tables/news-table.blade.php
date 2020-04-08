@@ -30,7 +30,7 @@
                     
                 @endphp
                 <td>{{ $first_part }}</td>
-                <td>{{ $article->article_media }}</td>
+                <td> <a href="{{ $article->article_media }}">See article media</a></td>
                 <td>{{ $article->article_note }}</td>
                 <td>{{ $article->user->name }}</td>
                 <td>
