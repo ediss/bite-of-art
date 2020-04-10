@@ -5,6 +5,7 @@ function goToSlide(number) {
 }
 $(document).ready(function() {
     var ww = document.body.clientWidth;
+    var route = $(".next-id").attr("data-route");
 
     var number = window.location.hash.replace(/^\D+/g, '');//Get the number
 
@@ -56,21 +57,27 @@ $(document).ready(function() {
         }, 1500);
     });
 
-    $(document).on("wheel", "#carouselExample2", function(e) {
+    $(document).on('wheel',"#carouselExample2", function(e) {
+
+        var delta = e.originalEvent.deltaY;
+
         $(".gallery-first-slide")
-            .parent()
-            .removeClass("fadeInUp");
+        .parent()
+        .removeClass("fadeInUp");
 
-        if (e.originalEvent.wheelDelta / 120 < 0) {
+        if (delta > 0) {
             $(this).carousel("next");
-        }
 
-        if (e.originalEvent.wheelDelta / 120 > 0) {
+        }
+        else {
             if (!first.hasClass("active")) {
                 $(this).carousel("prev");
             }
         }
-    });
+
+        return false;
+      });
+
 
     $(document).on("slide.bs.carousel", "#carouselExample2", function(e) {
 
@@ -111,14 +118,13 @@ $(document).ready(function() {
 
             if ($("#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:last").hasClass("active") &&e.direction == "left") {
               var next = $(".next-id").attr("next-id");
-              
-              window.location.href = "/event/" + next;
-          }
+
+              window.location.href = route;
+            }
         }
 
         if ($("#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:last").prev().hasClass("active") &&e.direction == "left") {
             var next = $(".next-id").attr("next-id");
-            var route = $(".next-id").attr("data-route");
 
             setTimeout(function() {
                 window.location.href = route;

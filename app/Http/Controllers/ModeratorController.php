@@ -454,7 +454,7 @@ class ModeratorController extends Controller
                         return Redirect::back()->with('success', $artwork->artwork_name . " is updated");
 
                     } else {
-                        $message = ["error", "OOps! Something went wrong!"];
+                        $message = ["error", "OOps! Something went wrong! Update artwork error! Copy this message and call developer.."];
                         return Response::json(["message" => $message]);
                     }
                 } else {
