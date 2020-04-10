@@ -188,7 +188,7 @@
 
         {{-- @php dd($artist->artworks) @endphp --}}
         @foreach ($artist->artworks as $artwork)
-        <form method="POST" action={{ route('moderator.event.artwork.update', ['id' => $artwork->id], app()->getLocale()) }} class="mt-5"
+        <form method="POST" action={{ route('moderator.event.artwork.update', ['id' => $artwork->id, 'language' => app()->getLocale()]) }} class="mt-5"
             enctype="multipart/form-data">
             @csrf
 
