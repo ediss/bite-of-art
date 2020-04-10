@@ -372,9 +372,9 @@ class ModeratorController extends Controller
 
 
         /* Updating artwork which belong to Event*/
-        public function updateEventArtworkData(Request $request, $artwork_id) {
+        public function updateEventArtworkData(Request $request) {
 
-            $artwork = Artwork::find($artwork_id);
+            $artwork = Artwork::find($request->id);
 
             $validator = null;
             if ($request->isMethod('post')) {
@@ -444,7 +444,6 @@ class ModeratorController extends Controller
                     $artwork->artwork_img_3_desc = $artwork_img_desc_3;
 
 
-
                     if ($artwork->save()) {
 
                         $artwork_nfc_tag = $artwork->event->nfc_tag.substr($artwork_name, 0, 3).$artwork->id;
@@ -453,7 +452,6 @@ class ModeratorController extends Controller
                         $artwork->save();
 
                         return Redirect::back()->with('success', $artwork->artwork_name . " is updated");
-
 
                     } else {
                         $message = ["error", "OOps! Something went wrong!"];

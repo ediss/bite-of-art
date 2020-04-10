@@ -63,7 +63,7 @@
     </div>
 </div>
 <div class="row">
-    <div id="artowrk-button" class="row d-none">
+    <div id="artowrk-button" class="col-12 d-none">
         <div class="col-12 text-center mt-4">
             <div class="btn-group" role="group" aria-label="Basic example">
                 <button class="my-btns-new mr-2 add_artwork">ADD MORE ARTWORKS</button>
