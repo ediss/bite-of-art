@@ -12,6 +12,7 @@ function openingEventAnimations() {
     $("#smallGallery").animate({ right: "250%" }, 1500);
     
     $("#news-h1").addClass("moveRight");
+    $("#news-carousel").fadeOut();
 
     $("#news-h1").animate({ right: "250%" }, 1500);
 
@@ -69,7 +70,7 @@ $(document).ready(function(){
         var event_id = $(this).attr("data-id");
         var language = $("#mainGallery").attr("data-language");
         var route = $(this).attr("data-href");
-        $(this).find('.img-opacity-event').toggleClass("changed");
+        $(this).toggleClass("changed");
 
         openingEventAnimations();
 

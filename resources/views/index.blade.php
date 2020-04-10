@@ -210,7 +210,7 @@
 
     </div> --}}
 </div>
-<div class="row animation-duration2 fadeInRight">
+<div class="row " id="news-carousel">
     <div class="col-12">
         <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -241,6 +241,7 @@
 <script src=" {{ asset('assets/js/min/custom-carousel-main.min.js') }}"></script>
 <script src=" {{ asset('assets/js/min/custom-carousel-news.min.js') }}"></script>
 <script src=" {{ asset('assets/js/min/opening-event.min.js') }}"></script>
+{{-- <script src=" {{ asset('assets/js/opening-event.js') }}"></script> --}}
 <script src=" {{ asset('assets/js/min/opening-news.min.js') }}"></script>
 
 

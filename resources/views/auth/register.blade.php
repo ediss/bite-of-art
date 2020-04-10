@@ -255,8 +255,8 @@
 
 
 
-                <div class="col-12 text-center mt-5">
-                    <div class="next-btn">
+                <div class="col-12 text-center h-80px h-100px">
+                    <div class="next-btn mt-4">
                         <button class="my-btn-2">{{__("submit")}}</button>
                         {{-- <input type="file" name="event_cover" id="event_cover" /> --}}
                     </div>

@@ -144,6 +144,7 @@ html, body {
 
 .card {
     border: none !important;
+    font-size: 10px;
 }
 .card-body {
     line-height: 35px;

@@ -1,4 +1,4 @@
-<a target="_blank"href="{{route('add.new.article', app()->getLocale())}}" class="btn btn-primary">Add article <i class="fa fa-plus"></i></a>
+<a target="_blank"href="{{route('add.new.article', app()->getLocale())}}" class="btn btn-dark p-3">Add article <i class="fa fa-plus"></i></a>
 <div class="table-responsive">
     
     <table class="table table-striped table-hover" style="table-layout:fixed;">

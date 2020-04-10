@@ -105,3 +105,10 @@
   .modal-open .modal {
     z-index: 3000 !important;
   }
+
+.centred-logo {
+  position: absolute;
+  top:50%;
+  left: 46%;
+  text-align: center;
+}

@@ -207,29 +207,8 @@
 
     </div>
 
-    <div class="form-group">
-        <div class="row">
-            <div class="col-md-6">
-                <label class="form-control-label"><b>Event media</b></label>
-                <input type="text" class="form-control" name="new_event_media" value="{{ $event->event_media }}">
-            </div>
-            <div class="col-md-6">
-                <label class="form-control-label"><b>Event media description</b></label>
-                <textarea name="new_media_description" id="new_media_description" cols="10" rows="1"
-                    class="form-control">{{ $event->event_media_desc }}</textarea>
-            </div>
-        </div>
 
 
-
-    </div>
-
-    <div class="form-group">
-        <label class="form-control-label"><b>Event note</b></label>
-
-        <textarea name="new_event_note" id="new_event_note" cols="30" rows="5"
-            class="form-control">{{ $event->event_note }}</textarea>
-    </div>
 
     <div class="form-group">
         <label class="form-control-label"><b>Gallerist:</b></label>

@@ -11,17 +11,19 @@
     @if(isset($data))
 
     @php
-
-    $counter = 0;
+    $counter = 1;
+    //dd($data);
     @endphp
 
     <div class="col-12 p-0">
         <div id="carouselExample2" class="carousel slide" data-ride="carousel" data-interval="900000">
             <div class="carousel-inner carousel-inner-gallery transform-img p-0 m-0 next-id" role="listbox"
-                {{ $next ? 'next-id='.$next->id : '' }}>
+                {{ $next ? 'next-id='.$next->id : 'next-id=#' }} 
+                
+                data-route={{route('opened.event', ['language'=>app()->getLocale(), 'id'=> ($next) ? $next->id : $data->id ])}}>
 
                 <div class="carousel-item carousel-item-gallery  col-1 mobile-hidden col-lg-4  active"
-                    style="visibility:hidden">
+                    style="visibility:hidden" >
 
                     <div class="card">
                         <p>first_slide</p>
@@ -33,8 +35,7 @@
 
 
                 @endphp
-                <div
-                    class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first">
+                <div class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first" data-slide-id= "{{$counter}}">
 
                     <div class="card">
                         <div class="col-lg-10 gallery-first-slide">
@@ -47,10 +48,10 @@
 
                             @switch(app()->getLocale())
                                 @case('slo')
-                                @php $desc = explode('~', $data->event_description_slo); @endphp
-                                @break
+                                    @php $desc = explode('~', $data->event_description_slo); @endphp
+                                    @break
                                 @case('srb')
-                                @php $desc = explode('~', $data->event_description_srb  ); @endphp
+                                    @php $desc = explode('~', $data->event_description_srb  ); @endphp
                                     @break
                                 @case('esp')
 
@@ -65,11 +66,12 @@
                                 @php $desc = explode('~', $data->event_description_en); @endphp
 
                             @endswitch
+
                             @if(strip_tags($desc[0] == ''))
-                                    @php $desc = explode('~', $data->event_description_en); @endphp
-                                @endif
+                                @php $desc = explode('~', $data->event_description_en); @endphp
+                            @endif
                                 <p>{!! $desc[0] !!}</p>
-                           
+
                         </div>
 
                     </div>
@@ -121,33 +123,35 @@
 
                 </div>
 
-                @if(strip_tags($desc[1] != ""))
-                <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 ">
-                    @php
-                    $counter++;
+                {{-- @if(strip_tags($desc[1]) != "")
+                @php
+                  dd(strip_tags($desc[1]));
+                $counter++;
+                @endphp
+                <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 " data-slide-id= "{{$counter}}">
 
-                    @endphp
                     <div class="card">
                         <div class="col-10">
-                            <div class="h-80px h-100px">
-
-                            </div>
-                            <p style="font-size:0.6rem">{!! $desc[1] !!}</p>
+                            {!! $desc[1] !!}
                         </div>
 
 
                     </div>
 
                 </div>
-                @endif
-                <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 " id="event_cover">
-                    @php
-                    $counter++;
-                    @endphp
+                @endif --}}
+
+                @php
+                $counter++;
+                @endphp
+                <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 " id="event_cover" data-slide-id= "{{$counter}}">
+
                     <div class="card">
                         <img class="img-fluid  d-block gallery-img" src="{{ url( $data->event_cover) }}" alt="slide 2">
 
                     </div>
+                    {{-- <h5 class="montserrat-bold text-center"> {{ $data->event_name }}</h5> --}}
+
 
                 </div>
 
@@ -156,11 +160,12 @@
                 @php
                 $counter++;
                 @endphp
-                <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4">
+                <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4" data-slide-id= "{{$counter}}">
                     <div class="card">
                         <img class="img-fluid  d-block gallery-img" src="{{ url($data->event_img_1) }}" alt="slide 2">
-
+                        <p class="montserrat-bold text-center"> {{ $data->event_img_1_desc }}</p>
                     </div>
+                    
 
                 </div>
                 @endif
@@ -169,10 +174,10 @@
                 @php
                 $counter++;
                 @endphp
-                <div class="carousel-item carousel-item-gallery p-0   col-12  col-lg-4">
+                <div class="carousel-item carousel-item-gallery p-0   col-12  col-lg-4" data-slide-id= "{{$counter}}">
                     <div class="card">
                         <img class="img-fluid  d-block gallery-img" src="{{ url($data->event_img_2) }}" alt="slide 2">
-
+                        <p class="montserrat-bold text-center"> {{ $data->event_img_2_desc }}</p>
                     </div>
 
                 </div>
@@ -182,21 +187,21 @@
                 @php
                 $counter++;
                 @endphp
-                <div class="carousel-item carousel-item-gallery p-0  col-12  col-lg-4">
+                <div class="carousel-item carousel-item-gallery p-0  col-12  col-lg-4" data-slide-id= "{{$counter}}">
                     <div class="card">
                         <img class="img-fluid  d-block gallery-img" src="{{ url($data->event_img_3) }}" alt="slide 2">
-
+                        <p class="montserrat-bold text-center"> {{ $data->event_img_3_desc }}</p>
                     </div>
-
                 </div>
 
                 @endif
+
+
+                @if(isset($data->vr_tour))
                 @php
                 $counter++;
                 @endphp
-
-                @if(isset($data->vr_tour))
-                <div class="carousel-item carousel-item-gallery carousel-item-vr p-0  col-12  col-lg-4">
+                <div class="carousel-item carousel-item-gallery carousel-item-vr p-0  col-12  col-lg-4" data-slide-id= "{{$counter}}">
                     <div class="card">
                         <iframe height="" width="100%" allowfullscreen="true" src="{{ $data->vr_tour }}"
                             class="virtual-toure"> </iframe>
@@ -207,7 +212,10 @@
                 @endif
 
                 @if(isset($data->img_360))
-                <div class="carousel-item carousel-item-gallery carousel-item-vr p-0  col-12  col-lg-4">
+                @php
+                $counter++;
+                @endphp
+                <div class="carousel-item carousel-item-gallery carousel-item-vr p-0  col-12  col-lg-4" data-slide-id= "{{$counter}}">
                     <div class="card">
                         <iframe height="" width="100%" allowfullscreen="true" src="{{ $data->img_360 }}"
                             class="virtual-toure"> </iframe>
@@ -227,7 +235,7 @@
         </div>
 
     </div>
-    <div class="carousel-controls-main" id="event-news">
+    <div class="carousel-controls-main " id="event-news">
         <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -237,10 +245,11 @@
             <span class="sr-only">Next</span>
         </a>
         <ol class="carousel-indicators">
-            @for ($i = 0; $i < $counter; $i++) <li data-target="#carouselExample2" data-slide-to="{{ $i }}"
-                {{ ($i == 0) ? "class=active" : ""}}>
-                </li>
-                @endfor
+            @for ($i = 1; $i < $counter; $i++)
+            <li data-target="#carouselExample2" data-slide-to="{{ $i }}"
+                {{ ($i == 1) ? "class=active" : ""}}>
+            </li>
+            @endfor
 
         </ol>
     </div>
@@ -252,12 +261,6 @@
 @section('footer-scripts')
 <script>
     $('.footer').css('display', 'none');
-</script>
-<script>
-
-
-
-
 </script>
 <script src=" {{ asset('assets/js/opened-event.js') }}"></script>
 <script src=" {{ asset('assets/js/hover.js') }}"></script>

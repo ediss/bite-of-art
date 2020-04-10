@@ -84,6 +84,21 @@ class ModeratorController extends Controller
         return Response::json(["html" => $html]);
     }
 
+    //launch modal with event note & event media description
+    public function eventMediaDesc(Request $request) {
+        $event = Event::find($request->id);
+
+        $event_media_desc = $event->event_media_desc;
+        $event_note = $event->event_note;
+
+        $html = View::make('moderator.modals.event-additional-data', [
+            'event_media_desc' => $event_media_desc,
+            'event_note'       => $event_note
+            ])->render();
+
+        return Response::json(["html" => $html, "success" => "true"]);
+    }
+
     public function approveEvent(Request $request,  $id, $lang)
     {
         $event = Event::find($request->id);
@@ -134,6 +149,8 @@ class ModeratorController extends Controller
                     "new_event_name.required"         => "Field 'Name ' can't be empty",
                 ]
             );
+
+            // dd($request->all());
 
             if ($validator->passes()) {
                 $vr_tour            = $request->input('virtual_tour');

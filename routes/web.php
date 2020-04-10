@@ -82,6 +82,7 @@ Route::group([
         Route::get('/',                         'ModeratorController@index')->name('moderator.dashboard');
         Route::get('/get-gallerists',           'ModeratorController@getGallerists')->name('get.all.gallerists');
         Route::get('/get-events',               'ModeratorController@getEvents')->name('get.all.events');
+        Route::get('/events-media-desc',        'ModeratorController@eventMediaDesc')->name('moderator.event.media.desc');
         Route::get('/get-news',                 'ModeratorController@getNews')->name('get.all.news');
         Route::any('/update-event/{id}',        'ModeratorController@updateEvent')->name('moderator.event.update');
         Route::any('/update-whole-event/{id}',  'ModeratorController@updateEventArtistData')->name('moderator.event.artist.update');

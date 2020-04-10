@@ -164,14 +164,14 @@
             <div class="row">
                 <div class="col-6">
 
-                    <input type="submit" class="btn btn-success btn-lg float-right text-light update-artist-event"
+                    <input type="submit" class="btn dashbg-1 btn-lg float-right text-light update-artist-event"
                         value="Update Artist">
                 </div>
                 <div class="col-6 ">
                     @php $artworks_count = count($artist->artworks)@endphp
-                    <a class="btn btn-primary btn-lg float-left" data-toggle="collapse"
+                    <a class="btn dashbg-3 text-light btn-lg float-left" data-toggle="collapse"
                         href="#collapseOne_{{ $artist->id }}">
-                        See {{ $artist->artist_name }} artwork({{ $artworks_count }})
+                        Show artworks({{ $artworks_count }})
                     </a>
                 </div>
             </div>
@@ -314,7 +314,7 @@
 
             <div class="form-group">
                 <div class="col-12 text-center">
-                    <input type="submit" class="btn btn-primary btn-lg text-light" value="Update Artwork">
+                    <input type="submit" class="btn dashbg-1 btn-lg text-light" value="Update Artwork">
                 </div>
             </div>
             <hr>

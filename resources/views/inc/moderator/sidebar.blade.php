@@ -3,8 +3,12 @@
         <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"></div>
             <div class="title">
+                <a href="{{ route('moderator.dashboard', app()->getLocale())}}">
+                    <strong class="text-dark">Admin</strong><strong>Panel</strong>
+                </a>
                 <h1 class="h5">{{Auth::user()->name}}</h1>
-                <p>Moderator</p>
+                     
+             
             </div>
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>

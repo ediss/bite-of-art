@@ -50,9 +50,15 @@
                                         <a href="{{ route('logout', app()->getLocale()) }}" class="">LOGOUT <span
                                                 class="ml-3 mr-3 d-none d-md-block menu-span">|</span></a>
                                     </div>
-                                    <div class="col-6 m-auto p-0"> <a
-                                            href="{{ route('gallerist.dashboard', app()->getLocale()) }}"
-                                            class="">ACCOUNT</a></div>
+                                    <div class="col-6 m-auto p-0">
+                                        @if(Auth::user()->role_id== 1)
+                                        <a href="{{ route('moderator.dashboard', app()->getLocale()) }}"
+                                            class="">@lang("account")</a>
+                                        @else
+                                        <a href="{{ route('gallerist.dashboard', app()->getLocale()) }}"
+                                            class="">@lang("account")</a>
+                                        @endif
+                                    </div>
                                     @else
                                     <div class="col-6 m-auto p-0">
                                         <a href="{{ route('login', app()->getLocale()) }}" class="">LOG IN <span
@@ -75,8 +81,13 @@
                                     <div class="col-12 text-right montserrat-regular login-membership login">
                                         <a href="{{ route('logout', app()->getLocale()) }}" class="">@lang("logout")</a>
                                         <span class="ml-3 mr-3 menu-span">|</span>
+                                        @if(Auth::user()->role_id== 1)
+                                        <a href="{{ route('moderator.dashboard', app()->getLocale()) }}"
+                                            class="">@lang("account")</a>
+                                        @else
                                         <a href="{{ route('gallerist.dashboard', app()->getLocale()) }}"
                                             class="">@lang("account")</a>
+                                        @endif
                                     </div>
                                     @else
                                     <div class="col-12 text-right montserrat-regular login-membership login">
