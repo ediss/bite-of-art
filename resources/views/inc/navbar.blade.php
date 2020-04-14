@@ -1,11 +1,11 @@
-<div class="row h-80px h-100px m-auto">
+<div class="row h-80px m-auto">
     <div class="col-12 p-0">
         <nav class="navbar navbar-light  lighten-4  w-100 p-0">
             <div class="col-12 p-0">
                 <div class="row">
                     <div class="col-4 p-0">
                         <div class="logo">
-                            <a class="navbar-brand m-auto p-0 h-80px h-100px" href="{{ url('/') }}">
+                            <a class="navbar-brand m-auto p-0 h-80px " href="{{ url('/') }}">
                                 @yield('logo-img')
                             </a>
                         </div>
@@ -33,12 +33,12 @@
             </div>
 
             <div class="ml-auto bg-dark-mobile overlay " id="overlay">
-                <div class="row h-100px m-auto">
+                <div class="row h-80px m-auto">
                     <div class="col-12">
                         <div class="row h-80px">
                             <div class="col-4 m-auto p-0">
                                 <div class="logo">
-                                    <a class="navbar-brand m-auto p-0 h-80px h-100px" href="{{ url('/') }}">
+                                    <a class="navbar-brand m-auto p-0 h-80px " href="{{ url('/') }}">
                                         <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">
                                     </a>
                                 </div>
