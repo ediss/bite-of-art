@@ -10,6 +10,8 @@
 
     "e-mail"            : "E-mail adresa",
     "password"          : "Lozinka",
+    "new_password"      : "Nova lozinka",
+    "confirm_password"  : "Potvrdi lozinku",
     "remember_me"       : "Zapamti Me",
 
     "gallery_name"      : "Naziv galerije",

@@ -11,6 +11,7 @@
               <th>Media link</th>
               <th>Cover Letter</th>
               <th>Approved?</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -39,6 +40,19 @@
                         {{-- <input type="hidden" class="gallerist_id" name="gallerist_id" value= {{ $gallerist->id }}> --}}
                       </div>
                     </td>
+                    <td>
+                      <a class="  js-modal text-primary" data-modalid='gallerist_update'
+                      data-modaltitle="Update Gallerist: {{$gallerist->name}}"
+                      submit_button='my-js-submit'
+                      data-url="{{ route('moderator.gallerist.update',  ['id' => $gallerist->id,  app()->getLocale()]) }}" data-savetext="Save">
+                      <i class="fa fa-2x fa-edit"></i>
+
+                  </a>
+                
+  
+                      {{-- <a href="" class="dashtext-2 js-delete-patient ml-2" data-id="{{ 1 }}"> <i
+                              class="fa fa-2x fa-expand"></i></i> </a> --}}
+                  </td>
                  </tr>
               @endforeach
           </tbody>

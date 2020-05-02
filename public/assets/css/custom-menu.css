@@ -1,6 +1,6 @@
 #overlay li a {
     /* text-align: center; */
-    line-height: 80px;
+    line-height: 100px;
     color: #cccccc;
     font-size: 14pt;
     font-family: montserrat-bold;
@@ -197,7 +197,7 @@
 	}
 
 	.login-membership {
-		margin-top: 35px;
+		margin-top: 30px;
 		padding-right: 100px !important;
 	}
 

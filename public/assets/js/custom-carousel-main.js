@@ -92,7 +92,9 @@ $(document).ready(function() {
     });
 
     $("#carouselExample").bind("wheel", function(e) {
-        var event = e.originalEvent.wheelDelta;
+        // var event = e.originalEvent.wheelDelta;
+        var event = e.originalEvent.deltaY;
+
         //wheelCarousel(event, $(this));
     });
 

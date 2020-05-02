@@ -35,7 +35,7 @@
 
 
                 @endphp
-                <div class="carousel-item carousel-item-gallery  animation-duration2 fadeInUp col-12  col-lg-4 mobile-first" data-slide-id= "{{$counter}}">
+                <div class="carousel-item carousel-item-gallery  animated slow fadeInUp col-12  col-lg-4 mobile-first" data-slide-id= "{{$counter}}">
 
                     <div class="card">
                         <div class="col-lg-10 gallery-first-slide">

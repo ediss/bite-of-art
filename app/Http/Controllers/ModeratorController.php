@@ -44,8 +44,9 @@ class ModeratorController extends Controller
         return Response::json(["html" => $html]);
     }
 
-    public function approveGallerist(Request $request, $id, $lang)
-    {
+    
+
+    public function approveGallerist(Request $request, $id, $lang) {
 
         $gallerist = User::find($request->id);
 
@@ -69,6 +70,17 @@ class ModeratorController extends Controller
                 return Response::json(["message" => $message]);
             }
         }
+    }
+
+    public function updateGallerist(Request $request) {
+        $gallerist = User::find($request->id);
+        $validator = null;
+        $html = View::make('moderator.modals.update-gallerist', [
+            "gallerist" => $gallerist,
+            'validator' => $validator
+        ])->render();
+
+        return Response::json(["html" => $html, "success" => "true"]);
     }
 
     public function getEvents()

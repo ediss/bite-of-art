@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     $(".close-gallery")
       .removeClass("d-none")
-      .addClass(" animation-duration2 fadeInDown");
+      .addClass(" animate faster fadeInDown");
  
   });
 

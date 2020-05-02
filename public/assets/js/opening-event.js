@@ -98,7 +98,7 @@ $(document).ready(function(){
                     });
 
                 },
-                duration: 3000,
+                duration: 2000,
                 complete: function() {
                     var carouselDiv = $("#carouselExample");
                     window.location.href = route;

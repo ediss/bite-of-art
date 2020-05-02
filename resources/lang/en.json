@@ -10,6 +10,8 @@
 
     "e-mail"            : "E-mail address",
     "password"          : "Password",
+    "new_password"      : "New password",
+    "confirm_password"  : "Confirm password",
     "remember_me"       : "Remember Me",
 
     "gallery_name"      : "Gallery name",

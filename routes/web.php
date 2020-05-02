@@ -16,10 +16,12 @@
 // });
 
     // Password Reset Routes...
-    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    
+    
+    Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
 // Route::get('/test',                 'EventController@test')->name('test');
 Route::get('/', function(){
@@ -62,6 +64,7 @@ Route::group([
         Route::post('/submitArtwork',   'EventController@submitArtwork')    ->name('add.artwork');
     });
 
+    Route::post('/updateGallerist/{id?}',    'GalleristController@updateGallerist')->name('update.gallerist');
 
     Route::any('/ajax',             'EventController@ajaxTest')->middleware('auth');
 
@@ -81,6 +84,7 @@ Route::group([
     ], function() {
         Route::get('/',                         'ModeratorController@index')->name('moderator.dashboard');
         Route::get('/get-gallerists',           'ModeratorController@getGallerists')->name('get.all.gallerists');
+        Route::get('/uodate-gallerist',         'ModeratorController@updateGallerist')->name('moderator.gallerist.update');
         Route::get('/get-events',               'ModeratorController@getEvents')->name('get.all.events');
         Route::get('/events-media-desc',        'ModeratorController@eventMediaDesc')->name('moderator.event.media.desc');
         Route::get('/get-news',                 'ModeratorController@getNews')->name('get.all.news');

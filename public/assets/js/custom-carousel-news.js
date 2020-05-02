@@ -1,5 +1,21 @@
 
+    $(document).on("wheel", '#recipeCarousel', function (e) {
 
+
+        var first = $("#recipeCarousel .carousel-inner-news .carousel-item-news:first");
+            
+        if (e.originalEvent.deltaY > 0) {
+    
+            $(this).carousel('next');
+    
+        }
+    
+        if (e.originalEvent.deltaY <= 0) {
+    
+              $(this).carousel('prev');
+    
+          }
+    });
 
 $(document).ready(function () {
     // $('#recipeCarousel .carousel-control-prev').css({
@@ -54,25 +70,8 @@ $(document).ready(function () {
         }
     });
 
-    $('#recipeCarousel').bind('wheel', function (e) {
-
-        var first = $("#recipeCarousel .carousel-inner-news .carousel-item-news:first");
-
-        if (e.originalEvent.wheelDelta / 120 < 0) {
-
-            $(this).carousel('next');
-
-        }
-
-        if (e.originalEvent.wheelDelta / 120 > 0) {
-
-              $(this).carousel('prev');
-
-          }
-    });
-
-
-
 });
+
+
 
 
