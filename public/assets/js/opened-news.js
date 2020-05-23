@@ -44,7 +44,7 @@ $(document).on("wheel", '#carouselExample2', function (e) {
 $(document).on("slide.bs.carousel", '#carouselExample2', function (e) {
 
 
-    if (first_slide.hasClass('active')) {
+    if (first_slide.prev().hasClass('active')) {
         $(".carousel-controls-main .carousel-control-prev").css({
             opacity: 0,
             display: "none"
