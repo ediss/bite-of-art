@@ -44,28 +44,25 @@ $(document).on("wheel", '#carouselExample2', function (e) {
 $(document).on("slide.bs.carousel", '#carouselExample2', function (e) {
 
 
-    if (!last_slide.prev().hasClass('active')) {
+    if (first_slide.hasClass('active')) {
         $(".carousel-controls-main .carousel-control-prev").css({
-            opacity: 1,
-            display: "block"
-        });
-
-        $(".carousel-controls-main .carousel-control-next").css({
             opacity: 0,
             display: "none"
+          
         });
-
     }else{
         $(".carousel-controls-main .carousel-control-prev").css({
-            opacity: 0,
-            display: "none"
-        });
-        $(".carousel-controls-main .carousel-control-next").css({
             opacity: 1,
             display: "block"
         });
     }
 
+    if (last_slide.hasClass('active')) {
+        $(".carousel-controls-main .carousel-control-next").css({
+            opacity: 0,
+            display: "none"
+        });
+    }
     if (e.direction == "left") {
       $('.carousel-indicators').find('.active').removeClass('active').next().addClass('active');
     } else {
