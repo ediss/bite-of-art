@@ -11,9 +11,6 @@
 
 <div class="row animation-duration2 fadeInLeft" id="mainGallery" data-language="{{ app()->getLocale() }}">
 
-    <div class="col-12 p-0 m-0 h-80px h-100px">
-        <h1 class="page-heading text-center montserrat-bold pt-4 mb-0">{{__("events")}}</h1>
-    </div>
     <div class="col-12 p-0">
         <div id="carouselExampleIndicators" class="carousel slide d-lg-none" data-ride="carousel">
             <div class="carousel-inner">
@@ -172,6 +169,14 @@
 
     </div>
 
+</div>
+
+<div class="row h-80px" id="events-h1">
+    <div class="col-4"></div>
+    <div class="col-4 text-center align-items-center d-flex justify-content-center">
+        <h2 class="card-title montserrat-bold events-h1 animated delay-3s zoomIn">@lang('events')</h2>
+    </div>
+    <div class="col-4"></div>
 </div>
 
 @endsection
