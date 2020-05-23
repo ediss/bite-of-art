@@ -6,7 +6,7 @@
 <head>
 
     <noscript>
-    <meta http-equiv="refresh" content="0; url={{ url('/en/warning')}}" />
+        <meta http-equiv="refresh" content="0; url={{ url('/en/warning')}}" />
     </noscript>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -66,38 +66,42 @@
 
 
         <script>
-            function charCount(el) {
-         $(this).keyup(function(e){
-             e.preventDefault();
-             var characterCount = el.value.length;
-             $(el).parent().next().text(characterCount+"/ 3500");
-             $(el).next().next().next('span')
-         });
-     }
+        function charCount(el) {
+            $(this).keyup(function(e){
+                e.preventDefault();
+                var characterCount = el.value.length;
+                $(el).parent().next().text(characterCount+"/ 3500");
+                $(el).next().next().next('span')
+            });
+        }
  
-     $('.carousel').carousel({
-  interval: false
-})
+        $('.carousel').carousel({
+            interval: false
+        })
 
 
 
-    function flip() {
-    var images = [
-        "../images/live.png",
-        "../images/live2.png",
-    ]
-    var current = 0;
-    setInterval(function () {
+        function flip() {
+            var images = [
+                "../images/live.png",
+                "../images/live2.png",
+            ]
+            var current = 0;
+            setInterval(function () {
 
-        $('#flip').attr('src', images[current]);
-        current = (current < images.length - 1) ? current + 1 : 0;
+                $('#flip').attr('src', images[current]);
+                current = (current < images.length - 1) ? current + 1 : 0;
 
-    }, 500);
-
-}
+            }, 500);
+        }
 $(document).ready(function () {
     flip();
 
+    $(".about-europe").mouseover(function () {
+             $(this).attr('src', $(this).data("hover"));
+          }).mouseout(function () {
+            $(this).attr('src', $(this).data("src"));
+         });
     $('#toggle').click(function () {
      $(this).toggleClass('active');
      $('#overlay').toggleClass('open');

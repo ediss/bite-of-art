@@ -6,17 +6,17 @@
     font-family: montserrat-bold;
     src: url(../fonts/montserrat/Montserrat-Bold.otf);
     padding: 0 !important;
-  
+
 }
 
 #overlay li:hover {
     background-color: #cccccc;
-    
+
   }
   #overlay li a:hover {
     color: #ffffff;
   }
-  
+
 .overlay {
   position: fixed;
   background-color:#FFFFFF;
@@ -46,6 +46,12 @@
   z-index: 100;
   transition: opacity .25s ease;
 }
+
+.eu-logo {
+  right: 20px;
+  top:15px;
+}
+
 
 .button_container:hover +.active +.top {
      opacity: 0.7;
@@ -148,7 +154,7 @@
 }
 
 .login a:hover {
- 
+
  text-decoration: none;
  font-family: montserrat-bold;
  src: url(../fonts/montserrat/Montserrat-Bold.otf);
@@ -159,7 +165,7 @@
 	}
 
 .languages {
-  
+
 	position: absolute;
 	width: 100%;
 	bottom: 0;
@@ -169,7 +175,7 @@
   }
   .active-language {
 	font-family: montserrat-bold;
-	src: url(../fonts/montserrat/Montserrat-Bold.otf); 
+	src: url(../fonts/montserrat/Montserrat-Bold.otf);
   }
 
 
@@ -185,6 +191,11 @@
 }
 
 @media(min-width: 990px) {
+
+	.eu-logo {
+		right: 10px;
+		top:15px;
+	  }
 	.button_container {
 		top:25px;
 		right:25px;
@@ -204,5 +215,12 @@
 	#overlay li a {
 		line-height: 100px;
 		font-size: 24pt;
+	}
+}
+
+@media all and (min-width:1800px){
+	.eu-logo {
+		right:5px;
+		top:0px;
 	}
 }
