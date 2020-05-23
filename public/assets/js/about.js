@@ -17,6 +17,22 @@
     }
 
 
+    $(document).on('keydown',  function(event) {
+
+        if (event.keyCode == 37) {
+           //event.preventDefault();
+            if (!first.hasClass('active')) {
+                $("#myCarouselExampleIndicators").carousel("prev");
+            }
+        }
+        if (event.keyCode == 39) {
+            //event.preventDefault();
+            if (!last.hasClass('active')) {
+                $("#myCarouselExampleIndicators").carousel("next");
+            }
+         }
+    });
+
 
     $(document).on("wheel", "#myCarouselExampleIndicators", function(e) {
         $(".carousel-item:first")
