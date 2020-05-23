@@ -55,13 +55,20 @@ $(document).on("slide.bs.carousel", '#carouselExample2', function (e) {
             opacity: 1,
             display: "block"
         });
+
+        
     }
 
-    if (last_slide.prev().prev().hasClass('active')) {
+    if($(active).next().is(last_slide)) {
         $(".carousel-controls-main .carousel-control-next").css({
             opacity: 0,
             display: "none"
-        });
+        });   
+    }else{
+        $(".carousel-controls-main .carousel-control-next").css({
+            opacity: 1,
+            display: "block"
+        });   
     }
     if (e.direction == "left") {
       $('.carousel-indicators').find('.active').removeClass('active').next().addClass('active');
