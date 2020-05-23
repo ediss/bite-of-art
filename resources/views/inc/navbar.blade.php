@@ -141,6 +141,11 @@
 
                         <li class="nav-item">
                             <a class="nav-link h-100px text-center"
+                                href="{{ route('all.events', app()->getLocale()) }}">@lang('events')</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link h-100px text-center"
                                 href="{{ route('contact', app()->getLocale()) }}">@lang('contact')</a>
                         </li>
                         {{-- <li class="nav-item">

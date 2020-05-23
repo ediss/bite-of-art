@@ -52,6 +52,28 @@ class EventController extends Controller
         ]);
     }
 
+    public function allEvents() {
+        $event = new Event();
+
+        $today = date('Y-m-d');
+
+        $event_in_past = $event::where('approved', '=', 1)
+        ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->first();
+
+        $events_in_past = $event::where('approved', '=', 1)
+        ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->get();
+
+        $feature_events = $event::where('approved', '=', 1)
+        ->where('event_open', '>=', $today)->orderBy('event_open')->get();
+
+        return view('all-events', [
+            'event_in_past'  => $event_in_past,
+            'events_in_past' => $events_in_past,
+            'feature_events' => $feature_events,
+        ]);
+
+    }
+
     public function getArticle(Request $request) {
 
         $articles = new News();

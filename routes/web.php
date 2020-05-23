@@ -71,6 +71,7 @@ Route::group([
     Route::any('/event/{id?}',      'EventController@ajaxLoadEventData')->name('opened.event');
 
     Route::get('/all-news',         'NewsController@index')->name('all.news');
+    Route::get('/events',           'EventController@allEvents')->name('all.events');
     Route::any('/news/add/article', 'NewsController@addArticle')->name('add.new.article')->middleware('auth');
     Route::any('/contact',          'ContactController@index')->name('contact');
 
