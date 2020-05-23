@@ -264,6 +264,13 @@
 </script>
 <script src=" {{ asset('assets/js/opened-event.js') }}"></script>
 <script src=" {{ asset('assets/js/hover.js') }}"></script>
+<script>
+$(".close-gallery").click(function(e) {
 
-
+    $(this).removeClass('fadeInDown').addClass('fadeOutUp');
+    setTimeout(function() {
+      window.location.href = "{{url()->previous() }}";
+    });
+    });
+</script>
 @endsection
