@@ -57,6 +57,21 @@ $(document).ready(function() {
         }, 1500);
     });
 
+    $(document).on('keydown',  function(event) {
+
+        if (event.keyCode == 37) {
+           //event.preventDefault();
+            if (!first.hasClass('active')) {
+                $("#carouselExample2").carousel("prev");
+            }
+        }
+
+        if (event.keyCode == 39) {
+            //event.preventDefault();
+            $("#carouselExample2").carousel("next");
+         }
+    });
+
     $(document).on('wheel',"#carouselExample2", function(e) {
 
         var delta = e.originalEvent.deltaY;

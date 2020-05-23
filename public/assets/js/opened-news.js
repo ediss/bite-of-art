@@ -3,12 +3,29 @@ $(".carousel-controls-main .carousel-control-prev").css({
     display: "none"
 });
 
+var first_slide = $('.news-first-slide');
+
+var last_slide = $('.carousel-inner-gallery .carousel-item-gallery:last');
+
+$(document).on('keydown',  function(event) {
+
+    if (event.keyCode == 37) {
+       //event.preventDefault();
+        if (!first_slide.prev().hasClass('active')) {
+            $("#carouselExample2").carousel("prev");
+        }
+    }
+
+    if (event.keyCode == 39) {
+        //event.preventDefault();
+        if (!last_slide.prev().hasClass('active')) {
+            $("#carouselExample2").carousel("next");
+        }
+     }
+});
+
 $(document).on("wheel", '#carouselExample2', function (e) {
     var delta = e.originalEvent.deltaY;
-
-    var first_slide = $('.news-first-slide');
-
-    var last_slide = $('.carousel-inner-gallery .carousel-item-gallery:last');
 
     if (delta > 0) {
         if (!last_slide.prev().hasClass('active')) {
@@ -16,7 +33,7 @@ $(document).on("wheel", '#carouselExample2', function (e) {
         }
     }
     if (!first_slide.prev().hasClass('active')) {
-       
+
         if (delta <= 0) {
             $(this).carousel("prev");
         }
@@ -26,18 +43,26 @@ $(document).on("wheel", '#carouselExample2', function (e) {
 
 $(document).on("slide.bs.carousel", '#carouselExample2', function (e) {
 
-    var first_slide = $('.news-first-slide');
 
-    var last_slide = $('.carousel-inner-gallery .carousel-item-gallery:last');
     if (!last_slide.prev().hasClass('active')) {
         $(".carousel-controls-main .carousel-control-prev").css({
             opacity: 1,
             display: "block"
         });
+
+        $(".carousel-controls-main .carousel-control-next").css({
+            opacity: 0,
+            display: "none"
+        });
+
     }else{
         $(".carousel-controls-main .carousel-control-prev").css({
             opacity: 0,
             display: "none"
+        });
+        $(".carousel-controls-main .carousel-control-next").css({
+            opacity: 1,
+            display: "block"
         });
     }
 
