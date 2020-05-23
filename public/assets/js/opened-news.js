@@ -5,7 +5,8 @@ $(".carousel-controls-main .carousel-control-prev").css({
 
 var first_slide = $('.news-first-slide');
 
-var last_slide = $('.carousel-inner-gallery .carousel-item-gallery:last');
+var last_slide = $("#carouselExample2 .carousel-inner-gallery .carousel-item-gallery:last");
+
 
 $(document).on('keydown',  function(event) {
 
@@ -42,22 +43,21 @@ $(document).on("wheel", '#carouselExample2', function (e) {
 });
 
 $(document).on("slide.bs.carousel", '#carouselExample2', function (e) {
+    var active = $(e.relatedTarget);
 
-
-    if (first_slide.prev().hasClass('active')) {
+    if ($(active).next().hasClass("mobile-first")) {
         $(".carousel-controls-main .carousel-control-prev").css({
             opacity: 0,
             display: "none"
-          
         });
-    }else{
+    } else {
         $(".carousel-controls-main .carousel-control-prev").css({
             opacity: 1,
             display: "block"
         });
     }
 
-    if (last_slide.hasClass('active')) {
+    if (last_slide.prev().prev().hasClass('active')) {
         $(".carousel-controls-main .carousel-control-next").css({
             opacity: 0,
             display: "none"
