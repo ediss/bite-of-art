@@ -810,7 +810,7 @@ html, body {
 
 
 .b-red {
-    border:2px solid red;
+    border:3px solid red;
 }
 .b-green {
     border:2px solid green;
@@ -993,3 +993,26 @@ html, body {
     text-decoration: none;
 }
 
+.center-align{
+    height: 100%;
+    width: 100%;
+}
+.virtual_curator, .virtual_tour, .news_about, .events_about {
+    position: absolute;
+    width: 100%;
+}
+
+.virtual_curator {
+    top:5%;
+}
+
+.virtual_tour {
+    top:30%;
+}
+.news_about {
+    bottom: 30%;
+}
+
+.events_about {
+    bottom: 5%;
+}

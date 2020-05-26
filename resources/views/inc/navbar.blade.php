@@ -21,7 +21,7 @@
                         @endif
                     </div>
                     
-                    <div class="col-3 col-md-2">
+                    <div class="col-4 col-md-3 col-xl-2">
                         <div class="eu-logo position-absolute">
                             <a target="_blank" href="https://ec.europa.eu/programmes/creative-europe/node_en">
                                 <img class="img-fluid  d-block gallery-img about-europe"
