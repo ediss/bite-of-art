@@ -124,6 +124,12 @@
 
                 <div class="menu-links">
                     <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link h-100px text-center"
+                                href="{{ route('all.events', app()->getLocale()) }}">@lang('events')</a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link h-100px text-center" href="{{ route('all.news', app()->getLocale()) }}">
                                 <span class="sr-only">(current)</span>@lang('news')
@@ -138,11 +144,6 @@
                         {{-- <li class="nav-item">
                             <a class="nav-link h-100px text-center" href="#">@lang('bite_network')</a>
                         </li> --}}
-
-                        <li class="nav-item">
-                            <a class="nav-link h-100px text-center"
-                                href="{{ route('all.events', app()->getLocale()) }}">@lang('events')</a>
-                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link h-100px text-center"
