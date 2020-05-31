@@ -527,7 +527,7 @@ html, body {
         font-size:0.6rem;
     }
 
-    .additional-text {
+    .additional-text p{
         font-size:0.6rem;
     }
     .transform-img {
@@ -772,7 +772,7 @@ html, body {
         font-size:0.4rem;
     }
 
-    .additional-text {
+    .additional-text > .card  p {
         font-size:0.4rem;
     }
 }

@@ -561,25 +561,23 @@ class ModeratorController extends Controller
                     $article_cover_path   = $article_cover ? $article_cover->move('images/articles/', $article_cover_name) : null;
                 }
 
-                foreach($which_img as $img_chb) {
-                    if ($request->hasFile('new_article_image_'.$img_chb)) {
-                        $article_image = $request->file('new_article_image_'.$img_chb);
+                if(isset($which_img)) {
+                    foreach($which_img as $img_chb) {
+                        if ($request->hasFile('new_article_image_'.$img_chb)) {
+                            $article_image = $request->file('new_article_image_'.$img_chb);
 
-                        $article_image_name = Str::random(5)."-".date('his')."-".Str::random(3).".".$article_image->getClientOriginalExtension();
-                        $article_image_path = $article_image ? $article_image->move('images/articles/', $article_image_name) : null;
+                            $article_image_name = Str::random(5)."-".date('his')."-".Str::random(3).".".$article_image->getClientOriginalExtension();
+                            $article_image_path = $article_image ? $article_image->move('images/articles/', $article_image_name) : null;
 
-                        $article_new_img = ArticleAdditionals::find($img_chb);
+                            $article_new_img = ArticleAdditionals::find($img_chb);
 
-                        $article_new_img->article_img = (isset($article_image_path)) ? $article_image_path : $article_new_img->article_img;
+                            $article_new_img->article_img = (isset($article_image_path)) ? $article_image_path : $article_new_img->article_img;
 
-                        $article_new_img->save();
+                            $article_new_img->save();
 
+                        }
                     }
                 }
-
-
-
-
 
                 //Inserting in DB (news table)
                 $article->article_name              = $article_name;

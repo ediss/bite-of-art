@@ -29,13 +29,10 @@
                 $desc = explode('~', $article->article_description);
                 @endphp
 
-                <div
-                    class="carousel-item carousel-item-gallery news-first-slide animated fast fadeInUp col-12  col-lg-4 mobile-first">
-
-
+                <div class="carousel-item carousel-item-gallery news-first-slide animated fast fadeInUp col-12  col-lg-4 mobile-first">
                     <div class="card">
                         <div class="col-10 montserrat-regular text-left">
-                            <div class="h-100px">
+                            <div class="h-80kpx">
                                 <h1 class="montserrat-bold">{{ $article->article_name }} </h1>
                                 <p>{{date('Y-d-M',strtotime($article->article_open))}}</p>
 
