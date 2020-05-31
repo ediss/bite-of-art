@@ -524,11 +524,11 @@ html, body {
         font-size:1rem;
     }
     .mobile-first p {
-        font-size:0.6rem;
+        font-size:0.5rem;
     }
 
     .additional-text p{
-        font-size:0.6rem;
+        font-size:0.5rem;
     }
     .transform-img {
         transform: scale(1.8);
@@ -746,6 +746,8 @@ html, body {
     }
     /*end of news slider*/
 }
+
+
 @media(min-width:760px) and (max-width: 1160px) {
     
     .my-btn {
@@ -791,6 +793,16 @@ html, body {
         /* width:130px; */
         font-family: montserrat-bold;
         cursor: pointer;
+    }
+}
+
+@media all and (min-width:1400px){
+    .mobile-first p {
+        font-size:0.6rem;
+    }
+
+    .additional-text p{
+        font-size:0.6rem;
     }
 }
 
