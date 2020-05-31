@@ -134,10 +134,27 @@
 
 
         </div>
+    </div>
+<hr>
+    <div class="form-group">
+        <div class="row">
+
+            <div class="col-12 text-center">
+                <h1>Additional images</h1>
+            </div>
+            
+            @foreach ($article_additional as $item)
+                <div class="col-md-3">
+                    <p><img src="{{ url($item->article_img) }}" class="img-fluid"></p>
+                    <label class="form-control-label"><b>Change image </b></label>
+                    <p><input type="file" name="new_article_image_{{ $item->id }}" /> </p>
+                    <p><input type="checkbox" name="which_img[]" value="{{ $item->id }}">Change</p>
+                    
+                </div>
+            @endforeach
 
 
-
-        {{-- <input type="password" placeholder="Password" class="form-control"> --}}
+        </div>
     </div>
     <div class="form-group">
     <div class="row">

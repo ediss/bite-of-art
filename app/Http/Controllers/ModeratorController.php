@@ -44,7 +44,7 @@ class ModeratorController extends Controller
         return Response::json(["html" => $html]);
     }
 
-    
+
 
     public function approveGallerist(Request $request, $id, $lang) {
 
@@ -526,7 +526,7 @@ class ModeratorController extends Controller
 
         $article = News::find($article_id);
 
-
+        $article_additional = ArticleAdditionals::where("article_id", "=", $article_id)->get();
 
 
         if ($request->isMethod('post')) {
@@ -550,6 +550,9 @@ class ModeratorController extends Controller
                 $article_text_srb     = $request->input('new_article_text_srb');
                 $article_text_esp     = $request->input('new_article_text_esp');
                 $article_text_slo     = $request->input('new_article_text_slo');
+                //geting checkbox input value (image id) for resolving which img need to be changed
+                $which_img = $request->input('which_img');
+
 
                 //uplouding article photos
                 if ($request->hasFile('new_article_cover')) {
@@ -558,8 +561,27 @@ class ModeratorController extends Controller
                     $article_cover_path   = $article_cover ? $article_cover->move('images/articles/', $article_cover_name) : null;
                 }
 
+                foreach($which_img as $img_chb) {
+                    if ($request->hasFile('new_article_image_'.$img_chb)) {
+                        $article_image = $request->file('new_article_image_'.$img_chb);
 
-                //Inserting in DB
+                        $article_image_name = Str::random(5)."-".date('his')."-".Str::random(3).".".$article_image->getClientOriginalExtension();
+                        $article_image_path = $article_image ? $article_image->move('images/articles/', $article_image_name) : null;
+
+                        $article_new_img = ArticleAdditionals::find($img_chb);
+
+                        $article_new_img->article_img = (isset($article_image_path)) ? $article_image_path : $article_new_img->article_img;
+
+                        $article_new_img->save();
+
+                    }
+                }
+
+
+
+
+
+                //Inserting in DB (news table)
                 $article->article_name              = $article_name;
                 $article->article_open              = $article_date;
                 $article->article_cover             = (isset($article_cover_path)) ? $article_cover_path : $article->article_cover;
@@ -567,6 +589,16 @@ class ModeratorController extends Controller
                 $article->esp_article_description   = $article_text_esp;
                 $article->srb_article_description   = $article_text_srb;
                 $article->slo_article_description   = $article_text_slo;
+
+                //Inserting in DB (article_additionals table)
+
+
+
+
+
+//                $article_images = new ArticleAdditionals($article_id);
+
+
 
 
                 if ($article->save()) {
@@ -587,13 +619,13 @@ class ModeratorController extends Controller
 
 
         return view('moderator.news.update-article', [
-            'article'   => $article,
-            'validator' => $validator
+            'article'            => $article,
+            'validator'          => $validator,
+            'article_additional' => $article_additional
         ]);
     }
 
-    public function articleAdditional(Request $request)
-    {
+    public function articleAdditional(Request $request) {
 
         $success = null;
         $article_id = $request->id;
@@ -614,9 +646,9 @@ class ModeratorController extends Controller
                 //dd($article_images);
 
                 foreach($article_images as $article_image) {
-                    $article_additional = new ArticleAdditionals();
 
-                $article_image_name  = Str::random(5)."-".date('his')."-".Str::random(3).".".$article_image->getClientOriginalExtension();
+                    $article_additional = new ArticleAdditionals();
+                    $article_image_name = Str::random(5)."-".date('his')."-".Str::random(3).".".$article_image->getClientOriginalExtension();
                     $article_image_path = $article_image ? $article_image->move('images/articles/', $article_image_name) : null;
 
 

@@ -41,10 +41,34 @@
             <div class="col-12">
                 <footer class=" footer">
 
-                    <!-- Copyright -->
-                    <div class="footer-copyright text-center montserrat-regular ">All rights reserved © BITE of art 2020
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4 text-center">
+                            <div class="row d-xl-none2">
+                                <div class="col-4 offset-4">
+                                    <a target="_blank" href="https://ec.europa.eu/programmes/creative-europe/node_en">
+                                        <img class="img-fluid  d-block gallery-img about-europe"
+                                            src="{{ asset('images/about/partners-cb/EU2.png') }}"
+                                            data-src="{{ asset('images/about/partners-cb/EU2.png') }}"
+                                            data-hover="{{ asset('images/about/partners/EU.png') }}" alt="creative europe">
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Copyright -->
+                            <div class="footer-copyright text-center montserrat-regular ">All rights reserved © BITE of
+                                art 2020
+                            </div>
+                            <!-- Copyright -->
+                        </div>
+                        <div class="col-4">
+       
+                            
+                        </div>
                     </div>
-                    <!-- Copyright -->
+
+                    
+                    
 
                 </footer>
             </div>
@@ -66,7 +90,7 @@
 
 
         <script>
-        function charCount(el) {
+            function charCount(el) {
             $(this).keyup(function(e){
                 e.preventDefault();
                 var characterCount = el.value.length;
