@@ -21,17 +21,7 @@
                         @endif
                     </div>
                     
-                    <div class="col-4 col-md-3 col-xl-2">
-                        {{-- <div class="eu-logo position-absolute">
-                            <a target="_blank" href="https://ec.europa.eu/programmes/creative-europe/node_en">
-                                <img class="img-fluid  d-block gallery-img about-europe"
-                                    src="{{ asset('images/about/partners-cb/EU2.png') }}"
-                                    data-src="{{ asset('images/about/partners-cb/EU2.png') }}"
-                                    data-hover="{{ asset('images/about/partners/EU.png') }}" alt="creative europe">
-                            </a>
-                        </div> --}}
-                        
-                    </div>
+     
                     <div class="col-1 menu-open" style="max-width: 4%">
                         
                         <div class="button_container" id="toggle">

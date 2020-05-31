@@ -38,14 +38,14 @@
 
         <!-- Footer -->
         <div class="row page-footer">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <footer class=" footer">
 
                     <div class="row">
-                        <div class="col-4"></div>
-                        <div class="col-4 text-center">
+                        <div class="col-4 d-none d-md-block"></div>
+                        <div class="col-12 col-md-4">
                             <div class="row d-xl-none2">
-                                <div class="col-4 offset-4">
+                                <div class="col-12 col-md-4 offset-md-4">
                                     <a target="_blank" href="https://ec.europa.eu/programmes/creative-europe/node_en">
                                         <img class="img-fluid  d-block gallery-img about-europe"
                                             src="{{ asset('images/about/partners-cb/EU2.png') }}"
