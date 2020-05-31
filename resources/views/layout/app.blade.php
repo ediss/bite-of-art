@@ -43,8 +43,8 @@
 
                     <div class="row">
                         <div class="col-4 d-none d-md-block"></div>
-                        <div class="col-6  col-md-4 offset-3 offset-md-0">
-                            <div class="row d-xl-none2">
+                        <div class="col-12  col-md-4">
+                            <div class="row d-none d-md-block">
                                 <div class="col-12 col-md-4 offset-md-4">
                                     <a target="_blank" href="https://ec.europa.eu/programmes/creative-europe/node_en">
                                         <img class="img-fluid  d-block gallery-img about-europe"
@@ -56,9 +56,9 @@
                             </div>
                             
                             <!-- Copyright -->
-                            {{-- <div class="footer-copyright text-center montserrat-regular ">All rights reserved © BITE of
+                            <div class="footer-copyright text-center montserrat-regular d-md-none">All rights reserved © BITE of
                                 art 2020
-                            </div> --}}
+                            </div>
                             <!-- Copyright -->
                         </div>
                         <div class="d-none d-md-block col-md-4">
