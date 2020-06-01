@@ -15,7 +15,7 @@
     <div class="col-12 p-0">
         <div id="myCarouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item    col-12 animation-duration2 fadeInUp about-first">
+                <div class="carousel-item    col-12 animation-duration2 fadeInUp about-first active">
                     @php
                     $counter++;
                     @endphp
@@ -142,12 +142,12 @@
 
                 </div>
 
-                <div class="carousel-item  col-12 about-last active">
+                <div class="carousel-item  col-12 about-last ">
                     @php
                     $counter++;
                     @endphp
                         <div class="row">
-                            <div class="col-8 offset-2">
+                            <div class="col-12 col-md-8 offset-md-2">
                                 <div class="row">
                                     <div class="col-6 infinite pulse11 animated">
                                         <img class="img-fluid  d-block gallery-img" src="{{ asset('images/about/BITEAB.png') }}">
@@ -155,7 +155,7 @@
                                     <div class="col-6 ">
                                         <div class="center-align">
                                             <div class="virtual_curator">
-                                                <div class="col-6 ml-5">
+                                                <div class="col-6">
                                                     <a href="https://www.youtube.com/watch?v=69zQD2rI-y0" target="_blank">
                                                         <img class="img-fluid  d-block gallery-img" src="{{ asset('images/about/virtual_curator.png') }}">
                                                     </a>
@@ -164,7 +164,7 @@
                                             </div>
     
                                             <div class="virtual_tour">
-                                                <div class="col-6 ml-5">
+                                                <div class="col-6">
                                                     <a href="{{ route('opened.news', ['language'=>app()->getLocale(), 'id'=> 12 ]) }}" target="_blank">
                                                         <img class="img-fluid  d-block gallery-img" src="{{ asset('images/about/virtual_tour.png') }}">
                                                     </a>
@@ -173,7 +173,7 @@
                                             </div>
     
                                             <div class="news_about">
-                                                <div class="col-6 ml-5">
+                                                <div class="col-6">
                                                     <a href="{{ route('all.news', ['language'=>app()->getLocale()]) }}" target="_blank">
                                                         <img class="img-fluid  d-block gallery-img" src="{{ asset('images/about/news.png') }}">
                                                     </a>
@@ -181,7 +181,7 @@
                                                 </div>
                                             </div>
                                             <div class="events_about">
-                                                <div class="col-6 ml-5">
+                                                <div class="col-6">
                                                     <a href="{{ route('all.events', ['language'=>app()->getLocale()]) }}" target="_blank">
                                                         <img class="img-fluid  d-block gallery-img" src="{{ asset('images/about/events.png') }}">
                                                     </a>
