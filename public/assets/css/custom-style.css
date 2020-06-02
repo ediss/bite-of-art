@@ -541,8 +541,8 @@ transform: translateZ(0);
         font-size:0.5rem;
     }
     .transform-img {
-        transform: perspective(1px) scale(1.8);
-        -webkit-transform: perspective(1px) scale(1.8);
+        transform: scale(1.8);
+        -webkit-transform:scale(1.8);
         transform-origin: 50% 0%;
         /* -webkit-transform:scale(1.8); */
     }
