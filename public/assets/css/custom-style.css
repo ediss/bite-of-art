@@ -5,6 +5,8 @@ html, body {
     padding: 0px;
     overflow-x: hidden;
     /* background-color: black; */
+    -webkit-font-smoothing: antialiased;
+
 }
 .navbar{
     height: 100%;
