@@ -11,9 +11,6 @@ html, body {
 }
 p {
     -webkit-font-smoothing: subpixel-antialiased;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-
 }
 .navbar{
     height: 100%;
