@@ -31,7 +31,7 @@
 
                 <div class="carousel-item carousel-item-gallery news-first-slide animated fast fadeInUp col-12  col-lg-4 mobile-first">
                     <div class="card">
-                        <div class="col-10 montserrat-regular text-left">
+                        <div class="col-9 montserrat-regular text-left">
                             <div class="h-80kpx">
                                 <h1 class="montserrat-bold">{{ $article->article_name }} </h1>
                                 <p>{{date('Y-d-M',strtotime($article->article_open))}}</p>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
 
-                    <div class="col-10 social-scale">
+                    <div class="col-9">
                         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
                             class="fb-xfbml-parse-ignore">
                             <img class="social-fb"
@@ -96,7 +96,7 @@
                     $counter++;
                     @endphp
                     <div class="card">
-                        <div class="col-10 montserrat-regular">
+                        <div class="col-9 montserrat-regular">
                             {!! $desc[1] !!}
                         </div>
 
