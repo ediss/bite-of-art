@@ -90,7 +90,7 @@ $(document).ready(function(){
                     //$(this).find(".active").next().find("img").addClass("new-transform");
                     
                     $(this).find(".p-0").removeClass("p-0");
-                    $(this).find(".active").next().next().css("display","none");
+                    // $(this).find(".active").next().next().css("display","none");
 
                     $(this).find(".active").next().next().animate({
                         left: "55%",
