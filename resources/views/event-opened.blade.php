@@ -16,10 +16,14 @@
     @endphp
 
     <div class="col-12 p-0">
+
+
+
+
         <div id="carouselExample2" class="carousel slide" data-ride="carousel" data-interval="900000">
-            <div class="carousel-inner carousel-inner-gallery transform-img p-0 m-0 next-id" role="listbox"
-                {{ $next ? 'next-id='.$next->id : 'next-id=#' }} 
-                
+            <div class="carousel-inner carousel-inner-gallery  p-0 m-0 next-id" role="listbox"
+                {{ $next ? 'next-id='.$next->id : 'next-id=#' }}
+
                 data-route={{route('opened.event', ['language'=>app()->getLocale(), 'id'=> ($next) ? $next->id : $data->id ])}}>
 
                 <div class="carousel-item carousel-item-gallery  col-1 mobile-hidden col-lg-4  active"
@@ -36,16 +40,15 @@
 
                 @endphp
                 <div class="carousel-item carousel-item-gallery  animated slow fadeInUp col-12  col-lg-4 mobile-first" data-slide-id= "{{$counter}}">
-
                     <div class="card">
-                        <div class="col-lg-10 gallery-first-slide text-justify">
+                        <div class="col-lg-9 gallery-first-slide text-justify w-100">
                             <div class=" h-100px">
                                 <h1 class="montserrat-bold"> {{ $data->event_name }}</h1>
                                 <p>{{ strtoupper(date('d M', strtotime($data->event_open))) }} -
                                     {{ strtoupper(date('d M Y', strtotime($data->event_closed ))) }}</p>
                                 <p>@ {{ $data->event_place }}</p>
                             </div>
-
+        
                             @switch(app()->getLocale())
                                 @case('slo')
                                     @php $desc = explode('~', $data->event_description_slo); @endphp
@@ -54,28 +57,28 @@
                                     @php $desc = explode('~', $data->event_description_srb  ); @endphp
                                     @break
                                 @case('esp')
-
+        
                                 @if($data->event_description_esp != '')
                                     @php $desc = explode('~', $data->event_description_esp); @endphp
                                     @break
-
+        
                                 @endif
-
+        
                                 @default
-
+        
                                 @php $desc = explode('~', $data->event_description_en); @endphp
-
+        
                             @endswitch
-
+        
                             @if(strip_tags($desc[0] == ''))
                                 @php $desc = explode('~', $data->event_description_en); @endphp
                             @endif
                                 <p>{!! $desc[0] !!}</p>
-
+        
                         </div>
-
+        
                     </div>
-
+        
                     <div class="col-lg-10 social-scale">
                         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
                             class="fb-xfbml-parse-ignore">
@@ -84,7 +87,7 @@
                             data-src="{{ asset('images/social-network/facebook.png') }}"
                             data-hover="{{ asset('images/social-network/fb-black.png') }}" alt="slide 2">
                         </a>
-
+        
                         <a target="_blank"
                             href="http://pinterest.com/pin/create/button/?url={{url()->current()}}&media={{ url($data->event_cover) }}"
                             class="pin-it-button" count-layout="horizontal">
@@ -93,7 +96,7 @@
                             data-src="{{ asset('images/social-network/pinterest.png') }}"
                             data-hover="{{ asset('images/social-network/pinterest-black.png') }}" alt="slide 2">
                         </a>
-
+        
                         <a target="_blank"
                             href="http://twitter.com/share?&url={{url()->current()}}&hashtags=bite,of,art">
                             <img class="social-twitter"
@@ -101,8 +104,8 @@
                             data-src="{{ asset('images/social-network/twitter.png') }}"
                             data-hover="{{ asset('images/social-network/twitter-black.png') }}" alt="slide 2">
                         </a>
-
-
+        
+        
                         <a target="_blank"
                             href="http://www.linkedin.com/shareArticle?mini=true&url={{ url()->current() }}&title={{ $data->event_name }}&summary={{ url($data->event_cover) }}">
                             <img class="social-linkedin"
@@ -110,7 +113,7 @@
                             data-src="{{ asset('images/social-network/linkedin.png') }}"
                             data-hover="{{ asset('images/social-network/linked-black.png') }}" alt="slide 2">
                         </a>
-
+        
                         <a href="mailto:?subject=I wanted you to see this site&amp;body={{url()->current()}}"
                             title="Event: {{ $data->event_name }}">
                             <img class="social-gmail"
@@ -118,7 +121,7 @@
                             data-src="{{ asset('images/social-network/gmail.png') }}"
                             data-hover="{{ asset('images/social-network/gmail-black.png') }}" alt="slide 2">
                         </a>
-
+        
                     </div>
 
                 </div>
@@ -165,7 +168,7 @@
                         <img class="img-fluid  d-block gallery-img" src="{{ url($data->event_img_1) }}" alt="slide 2">
                         <p class="montserrat-bold text-center"> {{ $data->event_img_1_desc }}</p>
                     </div>
-                    
+
 
                 </div>
                 @endif
@@ -235,6 +238,8 @@
         </div>
 
     </div>
+
+    
     <div class="carousel-controls-main " id="event-news">
         <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

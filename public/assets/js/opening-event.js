@@ -83,22 +83,23 @@ $(document).ready(function(){
                         transition:
                             "transform 1.9s ease-in-out, width 1.9s ease-in-out",
                         // transform: "scale(1.6) translate3d(18%, 0, 0)",
-                        transform: "scale(1.8) translate(11.1%, 0px)",
-                        // width: "140%"
+                        transform: "scale(1) translate(13.33%, 0px)",
+                        width: "200%",
                     });
 
                     //$(this).find(".active").next().find("img").addClass("new-transform");
-
+                    
                     $(this).find(".p-0").removeClass("p-0");
+                    $(this).find(".active").next().next().css("display","none");
 
-                    $(this).find(".active").next().next().animate({
-                        left: "55%",
-                        "transform-origin": "0 0",
-                        transition: "transform .1s ease-in-out"
-                    });
+                    // $(this).find(".active").next().next().animate({
+                    //     left: "55%",
+                    //     "transform-origin": "0 0",
+                    //     transition: "transform .1s ease-in-out"
+                    // });
 
                 },
-                duration: 2000,
+                duration: 2500,
                 complete: function() {
                     var carouselDiv = $("#carouselExample");
                     window.location.href = route;

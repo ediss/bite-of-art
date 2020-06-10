@@ -4,6 +4,7 @@ html, body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+    overflow-y: hidden;
     /* background-color: black; */
     -webkit-font-smoothing: subpixel-antialiased;
     backface-visibility: hidden;
@@ -404,7 +405,14 @@ transform: translateZ(0);
 
 @media (min-width: 990px) {
 
+.mobile-first2{
+    position: absolute;
+    border:2px solid red;
+}
 
+.mobile-first2 p {
+    font-size: 1rem;
+}
     .carousel-control-prev,.carousel-control-next {
         height: calc(100% - (100px));
         top:90px !important;
@@ -423,8 +431,10 @@ transform: translateZ(0);
     }
 
     #carouselExample2 .carousel-inner-gallery {
-        width: 120%;
-        left: -10%;
+        /* width: 120%;
+        left: -10%; */
+        width: 200%;
+        left: -50%;
     }
 
     .h-100px {
@@ -808,11 +818,11 @@ transform: translateZ(0);
 
 @media all and (min-width:1400px){
     .mobile-first p {
-        font-size:0.6rem;
+        font-size:1rem;
     }
 
     .additional-text p{
-        font-size:0.6rem;
+        font-size:1rem;
     }
 }
 
