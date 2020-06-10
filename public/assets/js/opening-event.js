@@ -92,11 +92,11 @@ $(document).ready(function(){
                     $(this).find(".p-0").removeClass("p-0");
                     $(this).find(".active").next().next().css("display","none");
 
-                    // $(this).find(".active").next().next().animate({
-                    //     left: "55%",
-                    //     "transform-origin": "0 0",
-                    //     transition: "transform .1s ease-in-out"
-                    // });
+                    $(this).find(".active").next().next().animate({
+                        left: "55%",
+                        "transform-origin": "0 0",
+                        transition: "transform .1s ease-in-out"
+                    });
 
                 },
                 duration: 2500,
