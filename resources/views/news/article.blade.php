@@ -15,7 +15,7 @@
             @endphp
 
 
-            <div class="carousel-inner carousel-inner-gallery transform-img p-0 m-0 next-id" role="listbox">
+            <div class="carousel-inner carousel-inner-gallery p-0 m-0 next-id" role="listbox">
 
                 <div class="carousel-item carousel-item-gallery  col-1 mobile-hidden col-lg-4  active"
                     style="visibility:hidden">
