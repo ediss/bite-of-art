@@ -133,6 +133,15 @@ $(document).ready(function () {
  });
 });
 
+document.onload = function(){
+    $("#mainGallery").addClass("radi");
+}
+
+
+window.addEventListener('load', function () {
+    $("#mainGallery").addClass("fadeInLeft  animation-duration2");
+    $("#smallGallery").addClass("fadeInRight animation-duration2");
+})
         </script>
 
         @yield('footer-scripts')

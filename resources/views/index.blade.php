@@ -8,7 +8,7 @@
 @section('content')
 
 {{-- @php dd(app()->getLocale()); @endphp --}}
-<div class="row animation-duration2 fadeInLeft" id="mainGallery" data-language="{{ app()->getLocale() }}">
+<div class="row " id="mainGallery" data-language="{{ app()->getLocale() }}">
 
 
     <div class="col-12 p-0">
@@ -179,7 +179,7 @@
     <div class="col-4"></div>
 </div>
 
-<div class="row animation-duration2 fadeInRight " id="smallGallery">
+<div class="row" id="smallGallery">
     <div class="col-12 p-0">
         <div id="recipeCarousel" class="carousel slide" data-ride="carousel" data-interval="900000">
             <div class="carousel-inner carousel-inner-news w-100 mini p-0 m-0" role="listbox">
