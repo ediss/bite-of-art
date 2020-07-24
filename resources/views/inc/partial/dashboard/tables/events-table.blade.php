@@ -73,17 +73,26 @@
         <td>
 
           <div class="row p-0">
-            <div class="col-6 p-0">
-              <a class="dashtext-4" title="Edit Event"
+            <div class="col-4 p-0">
+              <a class="text-white" title="Edit Event"
                 href="{{ route('moderator.event.update',  ['id' => $event->id,  app()->getLocale()]) }}">
                 <i class="fa fa-2x fa-edit"></i>
               </a>
             </div>
-            <div class="col-6 p-0">
+            <div class="col-4 p-0">
               <a class="dashtext-4 all-event-data" title="Artist and Artworks"
                 href=" {{ route('moderator.event.artist.update',['id'=>$event->id, 'language'=>app()->getLocale() ]) }}">
                 <i class="fa fa-2x fa-expand"></i>
               </a>
+            </div>
+
+            <div class="col-4 p-0">
+              <a class="text-primary "
+              href="{{ route('moderator.event.delete', ['id' => $event->id,  app()->getLocale()]) }}"  
+                  onclick="return confirm('ARE YOU SURE?');">
+              <i class="fa fa-2x fa-trash"></i>
+
+          </a>
             </div>
           </div>
 

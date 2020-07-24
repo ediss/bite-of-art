@@ -24,8 +24,8 @@
                             <strong class="text-dark">Admin</strong><strong>Panel</strong>
                         </a>
                         <h1 class="h5">{{Auth::user()->name}}</h1>
-                             
-                     
+
+
                     </div>
 
                 </div>
@@ -47,6 +47,16 @@
 
                     @endforeach
 
+
+                    @if(session()->has('message-success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message-success') }}
+                    </div>
+                    @elseif(session()->has('message-error'))
+                    <div class="alert alert-danger">
+                        {{ session()->get('message-error') }}
+                    </div>
+                    @endif
                     @if(session()->has('success'))
                     <div class="alert alert-success">
                         {{ session()->get('success') }}
@@ -54,8 +64,8 @@
                     @endif
 
                     @yield('content')
-                
-                    
+
+
 
                 </div>
             </section>

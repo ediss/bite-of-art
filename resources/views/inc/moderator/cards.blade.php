@@ -6,7 +6,7 @@
                         <div class="icon"><i class="fa fa-users fa-2x" aria-hidden="true"></i></div>
                         <strong>All Gallerists</strong>
                     </div>
-                    <div class="number dashtext-1">27</div>
+                    <div class="number dashtext-1">{{$count_gallerists}}</div>
                 </div>
                 <div class="progress progress-template">
                     <div role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-template dashbg-1"></div>
@@ -20,7 +20,7 @@
                         <div class="icon"><i class="fa fa-2x fa-calendar" aria-hidden="true"></i></div>
                         <strong>All Events</strong>
                     </div>
-                    <div class="number dashtext-2">375</div>
+                    <div class="number dashtext-2">{{$count_events}}</div>
                 </div>
                 <div class="progress progress-template">
                     <div role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0"
@@ -35,7 +35,7 @@
                         <div class="icon"><i class="fa fa-2x fa-newspaper-o" aria-hidden="true"></i></div>
                         <strong>News</strong>
                     </div>
-                    <div class="number dashtext-3">140</div>
+                    <div class="number dashtext-3">{{$count_news}}</div>
                 </div>
                 <div class="progress progress-template">
                     <div role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0"

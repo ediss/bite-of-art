@@ -30,15 +30,7 @@
 @endsection
 
 @section('content')
-@if(session()->has('message-success'))
-    <div class="alert alert-success">
-        {{ session()->get('message-success') }}
-    </div>
-@elseif(session()->has('message-error'))
-<div class="alert alert-danger">
-    {{ session()->get('message-success') }}
-</div>
-@endif
+
 <h1>{{ $article->article_name }}</h1>
 <form method="POST"
     action={{ route('moderator.article.update', ['id' => $article->id, app()->getLocale()]) }}

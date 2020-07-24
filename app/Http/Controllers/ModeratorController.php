@@ -21,13 +21,26 @@ use View;
 class ModeratorController extends Controller
 {
     //@todo make middleware for moderator
+    public $count_news;
+    public $count_events;
+    public $count_gallerists;
     public function __construct()
     {
         $this->middleware('moderator');
-    }
 
-    public function index()
-    {
+        $this->count_news       = count(News::all());
+        $this->count_events     = count(Event::all());
+        $this->count_gallerists = count(User::where('role_id', '!=', '1')->get());
+
+        View::share([
+            'count_news' => $this->count_news,
+            'count_events' => $this->count_events,
+            'count_gallerists' => $this->count_gallerists,
+
+        ]);
+    }
+    public function index() {
+
         return view('layout.dashboard');
     }
 
@@ -676,5 +689,26 @@ class ModeratorController extends Controller
         $html = View::make('moderator.modals.article-additional', ['article_id' => $article_id])->render();
 
         return Response::json(["html" => $html, "success" => $success]);
+    }
+
+
+    public function deleteArticle(Request $request) {
+
+        $article = News::findOrFail($request->id);
+        $article->delete();
+        return redirect()->back()->with('message-error', $article->article_name . " is deleted");
+
+
+    }
+
+
+
+    public function deleteEvent(Request $request) {
+
+        $event = Event::findOrFail($request->id);
+        $event->delete();
+        return redirect()->back()->with('message-error', $event->event_name . " is deleted");
+
+
     }
 }

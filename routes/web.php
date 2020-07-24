@@ -96,7 +96,11 @@ Route::group([
         Route::post('/update-gallerist/{id}',   'ModeratorController@approveGallerist')->name('approve.gallerist');
         Route::post('/approve-article/{id}',    'ModeratorController@approveArticle')->name('approve.article');
         Route::any('/update-article/{id}',      'ModeratorController@updateArticle')->name('moderator.article.update');
-        Route::any('/article-additional/{id?}',  'ModeratorController@articleAdditional')->name('moderator.article.additional');
+        Route::any('/article-additional/{id?}', 'ModeratorController@articleAdditional')->name('moderator.article.additional');
+
+        Route::any('/delete-article/{id}',      'ModeratorController@deleteArticle')->name('moderator.article.delete');
+        Route::any('/delete-event/{id}',        'ModeratorController@deleteEvent')->name('moderator.event.delete');
+
 
     });
 

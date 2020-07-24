@@ -1,15 +1,7 @@
 @extends('layout.dashboard')
 
 @section('content')
-@if(session()->has('message-success'))
-    <div class="alert alert-success">
-        {{ session()->get('message-success') }}
-    </div>
-@elseif(session()->has('message-error'))
-<div class="alert alert-danger">
-    {{ session()->get('message-success') }}
-</div>
-@endif
+
 
 @if($artists->count() > 0)
 @foreach ($artists as $artist)

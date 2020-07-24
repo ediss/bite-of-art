@@ -136,6 +136,7 @@
                 <textarea class="form-control border-0" name="article_note" placeholder="{{__("note")}}" maxlength="2000"
                     onkeyup="charCount(this)" id="article_note">{{ Request::get('article_note') }}</textarea>
                 @elseif(Auth::user()->role_id == 1)
+                <label for="">Extra images</label>
                 <input type="file" class="form-control" name="article_images[]" placeholder="address" multiple>
                 @endif
             </div>

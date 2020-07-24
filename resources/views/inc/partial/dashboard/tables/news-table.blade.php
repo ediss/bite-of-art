@@ -60,13 +60,25 @@
 
                 <td>
 
-                    <a class="text-primary"
-                        href="{{ route('moderator.article.update',  ['id' => $article->id,  app()->getLocale()]) }}">
+                    <a class="text-white"
+                        href="{{ route('moderator.article.update', ['id' => $article->id,  app()->getLocale()]) }}">
                         <i class="fa fa-2x fa-edit"></i>
                     </a>
 
+                    <a class="text-primary ml-3"
+                        href="{{ route('moderator.article.delete', ['id' => $article->id,  app()->getLocale()]) }}"  
+                            onclick="return confirm('ARE YOU SURE?');">
+                        <i class="fa fa-2x fa-trash"></i>
+
+                    </a>
+
+
                     {{-- <a href="" class="dashtext-2 js-delete-patient ml-2" data-id="{{ 1 }}"> <i
                             class="fa fa-2x fa-expand"></i></i> </a> --}}
+                </td>
+
+                <td>
+
                 </td>
             </tr>
             @endforeach
