@@ -441,13 +441,13 @@ transform: translateZ(0);
         height: 100px;
     }
     #mainGallery .w-120 {
-        width: 120%;
+        width: 100%;
         /* transform: scale(2.2);
         transform-origin: 50% 0; */
     }
 
     #carouselExample .carousel-inner-main {
-        left: -10%;
+        /* left: -10%; */
     }
     .carousel-item-main {
         margin-right: 0;

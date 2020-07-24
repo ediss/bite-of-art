@@ -83,7 +83,7 @@ $(document).ready(function(){
                         transition:
                             "transform 1.9s ease-in-out, width 1.9s ease-in-out",
                         // transform: "scale(1.6) translate3d(18%, 0, 0)",
-                        transform: "scale(1) translate(13.33%, 0px)",
+                        transform: "scale(1) translate(8.33%, 0px)",
                         width: "200%",
                     });
 
