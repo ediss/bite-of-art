@@ -186,7 +186,7 @@
 
                 @foreach ($news as $n)
                 <div
-                    class="carousel-item carousel-item-news  col-6 col-md-25 p-0 {{ $loop->first ? 'active first-news' : '' }}">
+                    class="carousel-item carousel-item-news  col-6 col-md-20 p-0 {{ $loop->first ? 'active first-news' : '' }}">
                     <div class="card img-opacity" news-id={{ $n->id }} data-href="{{ route('opened.news', ['id'=>$n->id, app()->getLocale() ]) }}">
                         <div class="" >
                             <img class="img-fluid  d-block" src="{{ $n->article_cover}}" alt="slide 1">
@@ -239,7 +239,7 @@
 
 @section('footer-scripts')
 <script src=" {{ asset('assets/js/min/custom-carousel-main.min.js') }}"></script>
-<script src=" {{ asset('assets/js/min/custom-carousel-news.min.js') }}"></script>
+<script src=" {{ asset('assets/js/custom-carousel-news.js') }}"></script>
 {{-- <script src=" {{ asset('assets/js/min/opening-event.min.js') }}"></script> --}}
 <script src=" {{ asset('assets/js/opening-event.js') }}"></script>
 <script src=" {{ asset('assets/js/min/opening-news.min.js') }}"></script>

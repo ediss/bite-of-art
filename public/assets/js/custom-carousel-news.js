@@ -35,24 +35,10 @@ $(document).ready(function () {
 
     $('#recipeCarousel').on('slide.bs.carousel', function (e) {
 
-        // if($(e.relatedTarget).hasClass('first-news')) {
-
-        //     $('#recipeCarousel .carousel-control-prev').css({
-        //         opacity: 0,
-        //         display : 'none'
-        //       });
-        // }else {
-        //     $('#recipeCarousel .carousel-control-prev').css({
-        //         opacity: 1,
-        //         display : 'block'
-
-        //       });
-        // }
-
 
         var $e = $(e.relatedTarget);
         var idx = $e.index();
-        var itemsPerSlide = 4;
+        var itemsPerSlide = 6;
         var totalItems = $('.carousel-item-news').length;
 
         if (idx >= totalItems - (itemsPerSlide - 1)) {

@@ -456,9 +456,9 @@ transform: translateZ(0);
         cursor: pointer;
       }
 
-    .col-md-25 {
-        flex: 0 0 25% !important;
-        max-width: 25% !important;
+    .col-md-20 {
+        flex: 0 0 20% !important;
+        max-width: 20% !important;
     }
 
     .carousel-inner-main .active,
@@ -653,6 +653,11 @@ transform: translateZ(0);
     .carousel-inner-news .active
         + .carousel-item-news
         + .carousel-item-news
+        + .carousel-item-news,
+    .carousel-inner-news .active
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
         + .carousel-item-news {
         display: block;
     }
@@ -668,6 +673,12 @@ transform: translateZ(0);
         + .carousel-item-news,
     .carousel-inner-news
         .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left)
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news,
+    .carousel-inner-news
+        .carousel-item-news.active:not(.carousel-item-right):not(.carousel-item-left)
+        + .carousel-item-news
         + .carousel-item-news
         + .carousel-item-news
         + .carousel-item-news {
@@ -695,7 +706,14 @@ transform: translateZ(0);
         + .carousel-item-news
         + .carousel-item-news
         + .carousel-item-news
+        + .carousel-item-news,
+    .carousel-item-next.carousel-item-left
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
         + .carousel-item-news {
+            
         position: relative;
         transform: translate3d(-100%, 0, 0);
         visibility: visible;
@@ -717,7 +735,14 @@ transform: translateZ(0);
         + .carousel-item-news
         + .carousel-item-news
         + .carousel-item-news
+        + .carousel-item-news,
+    .carousel-item-prev.carousel-item-right
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
+        + .carousel-item-news
         + .carousel-item-news {
+            
         position: relative;
         transform: translate3d(100%, 0, 0);
         visibility: visible;
@@ -750,10 +775,11 @@ transform: translateZ(0);
         + .carousel-item-news
         + .carousel-item-news
         + .carousel-item-news
+        + .carousel-item-news
         + .carousel-item-news {
         position: absolute;
         top: 0;
-        right: -25%;
+        right: -20%;
         z-index: -1;
         display: block;
         visibility: visible;
