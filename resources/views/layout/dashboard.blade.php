@@ -12,14 +12,22 @@
     </header>
     <div class="d-flex align-items-stretch">
         <!-- Sidebar Navigation-->
-        @include('inc.moderator.sidebar')
+        {{-- @include('inc.moderator.sidebar') --}}
 
         <!-- Sidebar Navigation end-->
         <div class="page-content">
 
             <div class="page-header">
                 <div class="container-fluid">
-                    <h2 class="h5 no-margin-bottom">Dashboard</h2>
+                    <div class="title">
+                        <a href="{{ route('moderator.dashboard', app()->getLocale())}}">
+                            <strong class="text-dark">Admin</strong><strong>Panel</strong>
+                        </a>
+                        <h1 class="h5">{{Auth::user()->name}}</h1>
+                             
+                     
+                    </div>
+
                 </div>
             </div>
             <section class="no-padding-top no-padding-bottom">

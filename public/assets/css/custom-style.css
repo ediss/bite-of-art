@@ -5,7 +5,7 @@ html, body {
     padding: 0px;
     overflow-x: hidden;
     overflow-y: hidden;
-    /* background-color: black; */
+    /* background-color: #212121; */
     -webkit-font-smoothing: subpixel-antialiased;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;

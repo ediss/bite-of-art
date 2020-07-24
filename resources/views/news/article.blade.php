@@ -1,5 +1,10 @@
 @extends('layout.app')
 
+@section('page-title')
+
+{{$article->article_name}}
+    
+@endsection
 @section('logo-img')
 <div class="close-gallery animation-duration2 fadeInDown"></div>
 @endsection
@@ -26,8 +31,12 @@
                 </div>
                 @php
                 $counter ++;
-                $desc = explode('~', $article->article_description);
+                $article_contents = explode('~', $article->article_description);
+
+
+                
                 @endphp
+
 
                 <div class="carousel-item carousel-item-gallery news-first-slide animated fast fadeInUp col-12  col-lg-4 mobile-first">
                     <div class="card">
@@ -38,7 +47,7 @@
 
                             </div>
 
-                            {!! $desc[0] !!}
+                            {!! $article_contents[0] !!}
                         </div>
                     </div>
 
@@ -90,21 +99,31 @@
 
                 </div>
 
-                @if(strip_tags($desc[1]) != "")
-                <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 additional-text">
-                    @php
-                    $counter++;
-                    @endphp
-                    <div class="card">
-                        <div class="col-9 montserrat-regular">
-                            {!! $desc[1] !!}
+                
+
+                @if(count($article_contents)>1) 
+                    @foreach($article_contents as $key => $value)
+                        @if(strip_tags($value) != "")
+                        <div class="carousel-item carousel-item-gallery p-0 col-12  col-lg-4 additional-text">
+                            @php
+                            $counter++;
+                            @endphp
+                            <div class="card">
+                                <div class="col-9 montserrat-regular">
+                                    {!! $value !!}
+                                </div>
+        
+        
+                            </div>
+        
                         </div>
-
-
-                    </div>
-
-                </div>
+                        @endif
+                    @endforeach
                 @endif
+
+                {{-- @if(strip_tags($desc[1]) != "")
+               
+                @endif --}}
 
                 <!-- had fadeInRight class -->
                 <div class="carousel-item carousel-item-gallery col-md-4 p-0 col-lg-4 animation-duration2 ">

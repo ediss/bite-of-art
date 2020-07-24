@@ -9,6 +9,7 @@
         <meta http-equiv="refresh" content="0; url={{ url('/en/warning')}}" />
     </noscript>
 
+    <title>Biteofart |@yield("page-title")</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
