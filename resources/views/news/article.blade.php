@@ -122,12 +122,9 @@
                     @endforeach
                 @endif
 
-                {{-- @if(strip_tags($desc[1]) != "")
-               
-                @endif --}}
 
                 <!-- had fadeInRight class -->
-                <div class="carousel-item carousel-item-gallery col-md-4 p-0 col-lg-4 animation-duration2 ">
+                <div class="carousel-item carousel-item-gallery col-md-4 p-0 col-lg-4 animation-duration2 last-slide">
                     @php
                     $counter++;
                     @endphp
