@@ -51,7 +51,7 @@
                         </div>
                     </div>
 
-                    <div class="col-9">
+                    <div class="col-9 social-scale">
                         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
                             class="fb-xfbml-parse-ignore">
                             <img class="social-fb"
