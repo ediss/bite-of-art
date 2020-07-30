@@ -4,7 +4,7 @@ html, body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     /* background-color: #212121; */
     -webkit-font-smoothing: subpixel-antialiased;
     backface-visibility: hidden;
@@ -544,11 +544,11 @@ transform: translateZ(0);
         font-size:1rem;
     }
     .mobile-first p {
-        font-size:0.5rem;
+        font-size:0.9rem;
     }
 
     .additional-text p{
-        font-size:0.5rem;
+        font-size:0.9rem;
     }
     .transform-img {
         transform: scale(1.8);
@@ -879,7 +879,9 @@ transform: translateZ(0);
     bottom: 0;
   }
   .social-scale img{
-    transform: scale(0.625);
+    /* transform: scale(0.625); */
+    margin: 6%;
+    margin-left: 0;
   }
 
   .page-footer {
