@@ -16,7 +16,7 @@ class NewsController extends Controller
      public function index() {
 
         //return only approved
-         return view ('news.news', ['news' => News::where('approved','=', 1)->get()]);
+         return view ('news.news', ['news' => News::where('approved','=', 1)->orderBy('article_open', 'desc')->get()]);
      }
 
 
