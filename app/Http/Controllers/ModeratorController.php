@@ -496,7 +496,8 @@ class ModeratorController extends Controller
     {
 
         //return only approved
-        $data = News::all();
+        
+        $data = News::orderBy('article_open', 'desc')->get();
         $html = View::make('inc.partial.dashboard.tables.news-table', [
             'news'  => $data,
         ])->render();
