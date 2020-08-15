@@ -44,7 +44,7 @@
 
                             </div>
 
-                            {!! $article_contents[0] !!}
+                            <p> {!! $article_contents[0] !!}</p>
                         </div>
                     </div>
 
