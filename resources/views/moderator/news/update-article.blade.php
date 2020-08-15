@@ -11,9 +11,9 @@
               branding: false,
               plugins: "link wordcount",
               default_link_target: "_blank",
-              toolbar: "undo redo | underline bold italic|alignjustify| link ",
+              toolbar: "undo redo | underline bold italic|alignjustify| link | styleselect",
               
-              //toolbar:"styleselect",
+            //   toolbar:"styleselect",
 
               // style_formats: [
               //     {title: 'Headers', items: [
