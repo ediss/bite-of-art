@@ -30,11 +30,8 @@
                     </div>
                 </div>
                 @php
-                $counter ++;
-                $article_contents = explode('~', $article->article_description);
-
-
-                
+                    $counter ++;
+                    $article_contents = explode('~', $article->article_description);
                 @endphp
 
 
@@ -111,7 +108,11 @@
                             @endphp
                             <div class="card">
                                 <div class="col-9 montserrat-regular">
-                                    {!! $value !!}
+                                    
+                                    <p>
+                                        {!! $value !!}
+                                    </p>
+                                    
                                 </div>
         
         
