@@ -1,8 +1,8 @@
 function wheelCarousel(e, el) {
     if (e / 120 < 0) {
-        el.carousel("next");
-    } else {
         el.carousel("prev");
+    } else {
+        el.carousel("next");
     }
 }
 
@@ -91,11 +91,17 @@ $(document).ready(function() {
         $(active).addClass("mobile-click");
     });
 
+
+
+
+
+
+
     $("#carouselExample").bind("wheel", function(e) {
         // var event = e.originalEvent.wheelDelta;
         var event = e.originalEvent.deltaY;
 
-        //wheelCarousel(event, $(this));
+        wheelCarousel(event, $(this));
     });
 
     $("#carouselExample").on("slide.bs.carousel", function(e) {

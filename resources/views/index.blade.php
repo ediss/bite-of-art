@@ -238,7 +238,9 @@
 
 
 @section('footer-scripts')
-<script src=" {{ asset('assets/js/min/custom-carousel-main.min.js') }}"></script>
+{{-- <script src=" {{ asset('assets/js/min/custom-carousel-main.min.js') }}"></script> --}}
+<script src=" {{ asset('assets/js/custom-carousel-main.js') }}"></script>
+
 <script src=" {{ asset('assets/js/custom-carousel-news.js') }}"></script>
 {{-- <script src=" {{ asset('assets/js/min/opening-event.min.js') }}"></script> --}}
 <script src=" {{ asset('assets/js/opening-event.js') }}"></script>
