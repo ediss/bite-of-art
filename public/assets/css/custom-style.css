@@ -1077,3 +1077,11 @@ transform: translateZ(0);
 .events_about {
     bottom: 5%;
 }
+
+.carouselExample .active .img-description-event {
+    opacity: 0;
+}
+
+#carouselExample .card:not(.click) > .img-description-event {
+    display: none;
+  }

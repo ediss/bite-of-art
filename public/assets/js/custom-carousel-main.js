@@ -67,11 +67,11 @@ $(document).ready(function() {
 
     });
     carouselItemStyle(active, null);
-
     active.next().find(".img-opacity-event").mouseover(function (e) {
         e.preventDefault();
         $(this).find('.img-description-event').addClass('animation-duration fadeOutDown my-opacity');
         $(this).find('.img-description-event').css('opacity', '0');
+        
     });
 
     active.next().find(".img-opacity-event").mouseout(function () {
@@ -115,11 +115,19 @@ $(document).ready(function() {
         recursiveCarousel(active, idx, itemsPerSlide, totalItems, direction);
 
         carouselItemStyle(active, item);
-        $("#carouselExample .card-body").css({ opacity: 0 });
-        $('#carouselExample .img-description-event').css({opacity: 0});
+        active.next().find(".img-opacity-event").mouseover(function (e) {
+            e.preventDefault();
+            $(this).find('.img-description-event').addClass('animation-duration fadeOutDown my-opacity');
+            $(this).find('.img-description-event').css('opacity', '0');
+            
+        });
+    
+        active.next().find(".img-opacity-event").mouseout(function () {
+            $(this).find('.img-description-event').removeClass('animation-duration fadeOutDown my-opacity').addClass('animation-duration fadeInUp');
+            $(this).find('.img-description-event').css('opacity', '1');
+        });
+        active.find('.img-description-event').css('opacity', '0');
 
-
-        active.next().find('.card-body').css({opacity: 1})
         active.next().find('.img-description-event').css({opacity: 1});
 
     });
