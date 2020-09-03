@@ -199,9 +199,18 @@
                                     <input type="text" name="new_artwork_name" class="form-control"
                                         value={{ $artwork->artwork_name }}>
                             </div>
-                            <div class="col-12 mt-5">
+                     
+
+                            <div class="col-12 mt-3">
                                 <label class="form-control-label"><b>New cover image </b></label>
                                 <p><input type="file" name="new_artwork_cover" class="form-control"></p>
+
+                            </div>
+
+                            <div class="col-12 mt-3 ">
+                                <label class="form-control-label"><b>New artwork media (video link) </b></label>
+                                <input type="text" name="new_artwork_media" class="form-control"
+                                value={{ $artwork->artwork_media }}>
 
                             </div>
                         </div>
@@ -227,7 +236,7 @@
                         @endif
 
 
-                        <input type="file" name="anew_artwork_img_1" id="anew_artwork_img_1" />
+                        <input type="file" name="new_artwork_img_1" id="new_artwork_img_1" />
 
                     </div>
                     <div class="col-md-4">
@@ -237,7 +246,7 @@
                         @else
                         <p class="text-primary"> Not set</p>
                         @endif
-                        <input type="file" name="anew_artwork_img_2" id="anew_artwork_img_2" />
+                        <input type="file" name="new_artwork_img_2" id="new_artwork_img_2" />
                     </div>
                     <div class="col-md-4">
                         <label class="form-control-label"><b>Artwork image 3</b></label>
@@ -246,7 +255,7 @@
                         @else
                         <p class="text-primary"> Not set</p>
                         @endif
-                        <input type="file" name="anew_artwork_img_3" id="anew_artwork_img_3" />
+                        <input type="file" name="new_artwork_img_3" id="new_artwork_img_3" />
                     </div>
 
                 </div>

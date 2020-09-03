@@ -421,12 +421,14 @@ class ModeratorController extends Controller
                     $artwork_name        = $request->input('new_artwork_name');
                     $artwork_about       = $request->input('new_artwork_about');
                     $artwork_cover       = $request->input('new_artwork_cover');
+                    $artwork_media       = $request->input('new_artwork_media');
                     $artwork_img_1       = $request->input('new_artwork_img_1');
                     $artwork_img_2       = $request->input('new_artwork_img_2');
                     $artwork_img_3       = $request->input('new_artwork_img_3');
                     $artwork_img_desc    = $request->input('new_artwork_img_1_desc');
                     $artwork_img_desc_2  = $request->input('new_artwork_img_2_desc');
                     $artwork_img_desc_3  = $request->input('new_artwork_img_3_desc');
+                    
 
                     if ($request->hasFile('new_artwork_cover')) {
                         $artwork_cover        = $request->file('new_artwork_cover');
@@ -461,13 +463,13 @@ class ModeratorController extends Controller
                         $artwork->artwork_cover      = $artwork_cover_path;
                     }
 
+                    $artwork->artwork_media      = $artwork_media;
                     $artwork->artwork_img_1      = (isset($artwork_img_1_path)) ? $artwork_img_1_path : $artwork->artwork_img_1;
                     $artwork->artwork_img_2      = (isset($artwork_img_2_path)) ? $artwork_img_2_path : $artwork->artwork_img_2;
                     $artwork->artwork_img_3      = (isset($artwork_img_3_path)) ? $artwork_img_3_path : $artwork->artwork_img_3;
                     $artwork->artwork_img_1_desc = $artwork_img_desc;
                     $artwork->artwork_img_2_desc = $artwork_img_desc_2;
                     $artwork->artwork_img_3_desc = $artwork_img_desc_3;
-
 
                     if ($artwork->save()) {
 
