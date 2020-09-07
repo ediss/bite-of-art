@@ -19,7 +19,7 @@
 
 
                 @foreach ($feature_events as $event_in_feature)
-                <div class="carousel-item active" data-id="{{ $event_in_feature->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
+                <div class="carousel-item active" data-id="{{ $event_in_feature->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_feature->id, app()->getLocale() ]) }}">
                     <div class="card img-opacity-event" data-href="{{ route('opened.event', ['id'=>$event_in_feature->id, app()->getLocale() ]) }}">
                         <div class="">
                             <img class="img-fluid  d-block" src="{{ $event_in_feature->event_cover}}" alt="slide 2">
@@ -57,7 +57,7 @@
                 @foreach ($events_in_past as $event_in_past)
                 @if(!$loop->first)
                 <div class="carousel-item" data-id="{{ $event_in_past->id }}" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
-                    <div class="card img-opacity-event">
+                    <div class="card img-opacity-event" data-href="{{ route('opened.event', ['id'=>$event_in_past->id, app()->getLocale() ]) }}">
                         <div class="">
                             <img class="img-fluid  d-block" src="{{ $event_in_past->event_cover}}" alt="slide 2">
 
