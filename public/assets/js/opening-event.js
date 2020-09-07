@@ -116,7 +116,7 @@ $(document).ready(function(){
         var event_id = $(this).attr("data-id");
         var route = $(this).attr("data-href");
 
-        alert(route);
+        // alert(route);
 
         $("#smallGallery").addClass("moveRight");
 
