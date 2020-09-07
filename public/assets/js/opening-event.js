@@ -116,6 +116,8 @@ $(document).ready(function(){
         var event_id = $(this).attr("data-id");
         var route = $(this).attr("data-href");
 
+        alert(route);
+
         $("#smallGallery").addClass("moveRight");
 
         $("#smallGallery").animate({ right: "130%" }, 1500);
