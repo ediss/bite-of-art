@@ -66,7 +66,7 @@ class EventController extends Controller
         $feature_events = $event::where('approved', '=', 1)
         ->where('event_open', '>=', $today)->orderBy('event_open', 'asc')->get();
 
-        dd($feature_events);
+        
 
         return view('all-events', [
             'event_in_past'  => $event_in_past,
