@@ -50,48 +50,48 @@
                                     <a target="_blank" href="https://ec.europa.eu/programmes/creative-europe/node_en">
                                         <img class="img-fluid  d-block gallery-img about-europe"
                                             src="{{ asset('images/about/partners-cb/EU2.png') }}"
-                                            data-src="{{ asset('images/about/partners-cb/EU2.png') }}"
-                                            data-hover="{{ asset('images/about/partners/EU.png') }}" alt="creative europe">
-                                    </a>
-                                </div>
-                            </div> --}}
-                            
-                            <!-- Copyright -->
-                            <div class="footer-copyright text-center montserrat-regular d-md-none">All rights reserved © BITE of
-                                art 2020
-                            </div>
-                            <!-- Copyright -->
+                            data-src="{{ asset('images/about/partners-cb/EU2.png') }}"
+                            data-hover="{{ asset('images/about/partners/EU.png') }}" alt="creative europe">
+                            </a>
                         </div>
-                        <div class="d-none d-md-block col-md-4">
-       
-                            
-                        </div>
+                    </div> --}}
+
+                    <!-- Copyright -->
+                    <div class="footer-copyright text-center montserrat-regular d-md-none">All rights reserved © BITE of
+                        art 2020
                     </div>
-
-                    
-                    
-
-                </footer>
+                    <!-- Copyright -->
             </div>
+            <div class="d-none d-md-block col-md-4">
 
+
+            </div>
         </div>
 
-        <!-- Footer -->
-
-        <!--Scripts-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
-
-        <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
-        <script src="/assets/js/min/jquery.blockUI.min.js"></script>
-        <script src="/assets/js/common/global.js"></script>
 
 
-        <script>
-            function charCount(el) {
+
+        </footer>
+    </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/min/jquery.blockUI.min.js"></script>
+    <script src="/assets/js/common/global.js"></script>
+
+
+    <script>
+        function charCount(el) {
             $(this).keyup(function(e){
                 e.preventDefault();
                 var characterCount = el.value.length;
@@ -131,7 +131,16 @@ $(document).ready(function () {
      $(this).toggleClass('active');
      $('#overlay').toggleClass('open');
  
- });
+    });
+
+});
+
+$(document).on("keypress", 'form', function (e) {
+    var code = e.keyCode || e.which;
+    if (code == 13) {
+        e.preventDefault();
+        return false;
+    }
 });
 
 document.onload = function(){
@@ -143,9 +152,9 @@ window.addEventListener('load', function () {
     $("#mainGallery").addClass("fadeInLeft  animation-duration2");
     $("#smallGallery").addClass("fadeInRight animation-duration2");
 })
-        </script>
+    </script>
 
-        @yield('footer-scripts')
+    @yield('footer-scripts')
 
     </div>
 

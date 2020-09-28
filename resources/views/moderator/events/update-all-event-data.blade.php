@@ -9,7 +9,7 @@
     enctype="multipart/form-data">
     @csrf
     <h1 class="text-center">{{$event_name}}</h1>
-    <input type="hidden" name="hiden_event_id" class="hidden_event_id" value={{ $event_id }}>
+    <input type="hidden" name="hiden_event_id" class="hidden_event_id" value="{{ $event_id }}">
 
 
 
@@ -197,7 +197,7 @@
                             <div class="col-12">
                                     <label class="form-control-label"><b>Artwork Name</b></label>
                                     <input type="text" name="new_artwork_name" class="form-control"
-                                        value={{ $artwork->artwork_name }}>
+                                        value="{{ $artwork->artwork_name }}">
                             </div>
                      
 
@@ -210,7 +210,7 @@
                             <div class="col-12 mt-3 ">
                                 <label class="form-control-label"><b>New artwork media (video link) </b></label>
                                 <input type="text" name="new_artwork_media" class="form-control"
-                                value={{ $artwork->artwork_media }}>
+                                value="{{ $artwork->artwork_media }}">
 
                             </div>
                         </div>
