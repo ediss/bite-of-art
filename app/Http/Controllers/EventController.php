@@ -61,7 +61,7 @@ class EventController extends Controller
         ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->first();
 
         $events_in_past = $event::where('approved', '=', 1)
-        ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->get();
+        ->where('event_open', '=<', $today)->orderBy('event_open', 'desc')->get();
 
         $feature_events = $event::where('approved', '=', 1)
         ->where('event_open', '>=', $today)->orderBy('event_open', 'asc')->get();
