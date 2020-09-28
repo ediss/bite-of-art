@@ -30,6 +30,9 @@
 
 <body>
 
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
     <div class="container-fluid">
 
         @include('inc.navbar')
@@ -143,9 +146,11 @@ $(document).on("keypress", 'form', function (e) {
     }
 });
 
-document.onload = function(){
-    $("#mainGallery").addClass("radi");
-}
+$(window).on('load', function(){
+    $("#status").fadeOut();
+    // will fade out the whole DIV that covers the website.
+    $("#preloader").delay(1000).fadeOut("slow");
+});
 
 
 window.addEventListener('load', function () {

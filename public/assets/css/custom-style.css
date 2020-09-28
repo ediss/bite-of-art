@@ -38,6 +38,30 @@ p {
     /* font-size: 21px; */
 }
 
+
+#preloader  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 99;
+   height: 100%;
+}
+
+#status  {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* background-image: url(http://opengraphicdesign.com/wp-content/uploads/2009/01/loader64.gif); */
+    background-image: url('../../images/loader.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+}
 .montserrat-bold {
     font-family: montserrat-bold;
     /* font-weight: bold; */
