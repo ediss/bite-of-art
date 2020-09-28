@@ -38,7 +38,7 @@ class EventController extends Controller
         ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->get();
 
         $feature_events = $event::where('approved', '=', 1)
-        ->where('event_open', '>=', $today)->orderBy('event_open')->get();
+        ->where('event_open', '>=', $today)->orderBy('event_open', 'desc')->get();
 
         
         $news = News::where('approved', '=', 1)->orderBy('article_open', 'desc')->get();
@@ -64,7 +64,7 @@ class EventController extends Controller
         ->where('event_open', '<', $today)->orderBy('event_open', 'desc')->get();
 
         $feature_events = $event::where('approved', '=', 1)
-        ->where('event_open', '>=', $today)->orderBy('event_open')->get();
+        ->where('event_open', '>=', $today)->orderBy('event_open', 'desc')->get();
 
         return view('all-events', [
             'event_in_past'  => $event_in_past,
