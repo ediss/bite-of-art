@@ -16,6 +16,8 @@ function openingEventAnimations() {
 
     $("#news-h1").animate({ right: "250%" }, 1500);
 
+    $("body").css('overflow' , "hidden");
+
     $("#events-h1")
         .animate(
             {
