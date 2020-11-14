@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Artist;
 use App\Models\Artwork;
+use App\Models\News;
 use App\User;
 use Response;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +25,7 @@ class ApiController extends Controller
             }
         }elseif($request->event_closed){
 
-            $now = Carbon::now();     
+            $now = Carbon::now();
 
             $response = (DB::select("select * from events where event_closed >= '$now' AND approved = '1' order by event_open "));
 
@@ -34,13 +35,13 @@ class ApiController extends Controller
         }else {
             $response = Event::where('approved', '=', 1)->get();
         }
-        
+
 
         return Response::json($response, 200, [], JSON_PRETTY_PRINT);
     }
 
     public function getArtists(Request $request) {
-        
+
         if($request->id) {
             $response = Artist::where('id', '=', $request->id)->get();
 
@@ -56,7 +57,7 @@ class ApiController extends Controller
         }else{
             $response = Artist::all();
         }
-        
+
 
         return Response::json($response, 200, [], JSON_PRETTY_PRINT);
 
@@ -64,16 +65,16 @@ class ApiController extends Controller
 
     public function getArtworks(Request $request) {
 
-        if($request->event_id) {
-            $response = Artwork::where('event_id', '=', $request->event_id)->get();
+        if($request->id) {
+            $response = News::where('id', '=', $request->id)->get();
 
             if($response->count() == 0) {
-                $response = "No artwork(s) belongs to Event with id: '$request->event_id'";
+                $response = "No article(s) belongs to News with id: '$request->id'";
             }
         }else{
-            $response = Artwork::all();
+            $response = News::all();
         }
-        
+
 
         return Response::json($response, 200, [], JSON_PRETTY_PRINT);
     }
@@ -90,7 +91,24 @@ class ApiController extends Controller
         }else{
             $response = User::where('role_id', '=', 2)->get();
         }
-        
+
+
+        return Response::json($response, 200, [], JSON_PRETTY_PRINT);
+    }
+
+
+    public function getNews(Request $request) {
+
+        if($request->event_id) {
+            $response = Artwork::where('event_id', '=', $request->event_id)->get();
+
+            if($response->count() == 0) {
+                $response = "No artwork(s) belongs to Event with id: '$request->event_id'";
+            }
+        }else{
+            $response = Artwork::all();
+        }
+
 
         return Response::json($response, 200, [], JSON_PRETTY_PRINT);
     }

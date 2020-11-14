@@ -18,7 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/getEvents', 'ApiController@getEvents');
-Route::get('/getArtists', 'ApiController@getArtists');
-Route::get('/getArtworks', 'ApiController@getArtworks');
-Route::get('/getGallerists', 'ApiController@getGallerists');
+Route::get('/getEvents',        'ApiController@getEvents');
+Route::get('/getArtists',       'ApiController@getArtists');
+Route::get('/getArtworks',      'ApiController@getArtworks');
+Route::get('/getGallerists',    'ApiController@getGallerists');
+Route::get('/getNews',          'ApiController@getNews');
+
