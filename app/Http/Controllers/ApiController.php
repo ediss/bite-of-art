@@ -65,14 +65,14 @@ class ApiController extends Controller
 
     public function getArtworks(Request $request) {
 
-        if($request->id) {
-            $response = News::where('id', '=', $request->id)->get();
+        if($request->event_id) {
+            $response = Artwork::where('event_id', '=', $request->event_id)->get();
 
             if($response->count() == 0) {
-                $response = "No article(s) belongs to News with id: '$request->id'";
+                $response = "No artwork(s) belongs to Event with id: '$request->event_id'";
             }
         }else{
-            $response = News::all();
+            $response = Artwork::all();
         }
 
 
@@ -97,17 +97,17 @@ class ApiController extends Controller
     }
 
 
-    public function getNews(Request $request) {
+        public function getNews(Request $request) {
 
-        if($request->event_id) {
-            $response = Artwork::where('event_id', '=', $request->event_id)->get();
+            if($request->id) {
+                $response = News::where('id', '=', $request->id)->get();
 
-            if($response->count() == 0) {
-                $response = "No artwork(s) belongs to Event with id: '$request->event_id'";
+                if($response->count() == 0) {
+                    $response = "No article(s) belongs to News with id: '$request->id'";
+                }
+            }else{
+                $response = News::all();
             }
-        }else{
-            $response = Artwork::all();
-        }
 
 
         return Response::json($response, 200, [], JSON_PRETTY_PRINT);
