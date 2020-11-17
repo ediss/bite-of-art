@@ -17,10 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['middleware' => ['cors']], function () {
+    Route::get('/getEvents',        'ApiController@getEvents');
+    Route::get('/getArtists',       'ApiController@getArtists');
+    Route::get('/getArtworks',      'ApiController@getArtworks');
+    Route::get('/getGallerists',    'ApiController@getGallerists');
+    Route::get('/getNews',          'ApiController@getNews');
+});
 
-Route::get('/getEvents',        'ApiController@getEvents');
-Route::get('/getArtists',       'ApiController@getArtists');
-Route::get('/getArtworks',      'ApiController@getArtworks');
-Route::get('/getGallerists',    'ApiController@getGallerists');
-Route::get('/getNews',          'ApiController@getNews');
 
