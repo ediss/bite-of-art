@@ -17,9 +17,14 @@ class ApiController extends Controller
 {
     public function getEvents(Request $request) {
 
-        
+        if($request->id) {
+            $response = Event::where('id','=', $request->id)
+            ->where('approved', '=', 1)->get();
 
-        if($request->nfc) {
+            if($response->count()==0) {
+                $response="No events data with id: '$request->id'";
+            }
+        }elseif($request->nfc) {
             $response = Event::where('nfc_tag','=', $request->nfc)
                               ->where('approved', '=', 1)->get();
             if($response->count()==0) {
