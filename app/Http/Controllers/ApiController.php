@@ -34,16 +34,16 @@ class ApiController extends Controller
 
             $now = Carbon::now();
 
-            $response = (DB::select("select * from events where event_closed >= '$now' AND approved = '1' order by event_open DESC"));
+            $response = (DB::select("select * from events where event_closed >= '$now' AND approved = '1' order by created_at DESC"));
 
             if(!$response) {
                 $response="No events data where event closed: '$request->event_closed'";
             }
         }elseif($request->last){
             $response = Event::select('id', 'event_name', 'event_open', 'event_closed', 'event_cover', 'event_place', 'gallerist_id')
-            ->where('approved', '=', 1)->orderBy('event_open', 'desc')->take($request->last)->get();
+            ->where('approved', '=', 1)->orderBy('created_at', 'desc')->take($request->last)->get();
         }else {
-            $response = Event::where('approved', '=', 1)->orderBy('event_open', 'desc')->get();
+            $response = Event::where('approved', '=', 1)->orderBy('created_at', 'desc')->get();
         }
 
 
