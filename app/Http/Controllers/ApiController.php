@@ -112,9 +112,42 @@ class ApiController extends Controller
             if($request->id) {
                 $response =  DB::table('news')
                                 ->leftJoin('article_additionals as aa', 'news.id', '=', 'aa.article_id')
+                                ->select('news.*', 'aa.article_video', 'aa.article_img','aa.img_360')
                                 ->where('news.id', '=', $request->id)
                                 ->where('news.approved', '=', 1)
                                 ->get();
+
+                $new_response = [];
+                foreach($response as $elem){
+                    if (!isset($new_response[$elem->id])){
+                        $new_response[$elem->id] = [
+
+                            'id'                        => $elem->id,
+                            'article_name'              => $elem->article_name,
+                            'article_open'              => $elem->article_open,
+                            'article_closed'            => $elem->article_closed,
+                            'article_cover'             => $elem->article_cover,
+                            'article_description'       => $elem->article_description,
+                            'srb_article_description'   => $elem->srb_article_description,
+                            'esp_article_description'   => $elem->esp_article_description,
+                            'slo_article_description'   => $elem->slo_article_description,
+                            'article_media'             => $elem->article_media,
+                            'article_media_desc'        => $elem->article_media_desc,
+                            'article_note'              => $elem->article_note,
+                            'user_id'                   => $elem->user_id,
+                            'approved'                  => $elem->approved,
+                            'created_at'                => $elem->created_at,
+                            'updated_at'                => $elem->updated_at,
+
+
+                            'article_additionals' =>[['article_video' => $elem->article_video, 'article_img' => $elem->article_img]]
+                        ];
+                    }
+                    else{
+                        $new_response[$elem->id]['article_additionals'][] =  ['article_video' => $elem->article_video, 'article_img' => $elem->article_img];
+                    }
+                }
+                $response = collect($new_response);
 
                 if($response->count() == 0) {
                     $response = "No article(s) belongs to News with id: '$request->id'";
