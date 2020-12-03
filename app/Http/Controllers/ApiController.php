@@ -110,15 +110,21 @@ class ApiController extends Controller
         public function getNews(Request $request) {
 
             if($request->id) {
-                $response = News::where('id', '=', $request->id)->get();
+                $response =  DB::table('news')
+                                ->leftJoin('article_additionals as aa', 'news.id', '=', 'aa.article_id')
+                                ->where('news.id', '=', $request->id)
+                                ->where('news.approved', '=', 1)
+                                ->get();
 
                 if($response->count() == 0) {
                     $response = "No article(s) belongs to News with id: '$request->id'";
                 }
             }elseif($request->last) {
-                $response = News::orderBy('article_open', 'desc')->take($request->last)->get();
+                $response = News::where('approved', '=', 1)
+                            ->orderBy('article_open', 'desc')->take($request->last)->get();
             }else{
-                $response = News::orderBy('article_open', 'desc')->get();
+                $response = News::where('approved', '=', 1)
+                            ->orderBy('article_open', 'desc')->get();
             }
 
 
