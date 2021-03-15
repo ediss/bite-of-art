@@ -13,7 +13,7 @@
         <div class="container-fluid d-flex align-items-center justify-content-between">
             <div class="navbar-header">
                 <!-- Navbar Header-->
-                <a target="_blank" href="{{url('/')}}" class="navbar-brand">
+                <a target="_blank" href="https://www.biteofart.org/#home" class="navbar-brand">
                     <div class="brand-text brand-big visible text-uppercase">
                         <strong class="text-dark">Bite</strong><strong>Of</strong><strong
                             class="text-white">Art.org</strong>
