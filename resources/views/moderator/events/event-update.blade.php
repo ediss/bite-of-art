@@ -61,8 +61,8 @@
 
     <div class="form-group">
         <div class="row">
-            <div class="col-md-6">
-                <label class="form-control-label"><b>Name</b></label>
+            <div class="col-md-3">
+                <label class="form-control-label"><b>Name(ENG)</b></label>
                 <input type="text" class="form-control" name="new_event_name" value="{{ $event->event_name }}">
 
                 <input type="hidden" name="event_id" id="event_id" class="event_id" value="{{ $event->id }}">
@@ -77,13 +77,32 @@
                 @endif
 
             </div>
-            <div class="col-md-6">
+
+            <div class="col-md-3">
+                <label class="form-control-label"><b>Name(SRB)</b></label>
+                <input type="text" class="form-control" name="new_event_name_srb" value="{{ $event->event_name_srb }}">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-control-label"><b>Name(ESP)</b></label>
+                <input type="text" class="form-control" name="new_event_name_esp" value="{{ $event->event_name_esp }}">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-control-label"><b>Name(SLO)</b></label>
+                <input type="text" class="form-control" name="new_event_name_slo" value="{{ $event->event_name_slo }}">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-12">
                 <label class="form-control-label"><b>Event date</b></label>
                 <input type="text" name="new_daterange" class="form-control text-center js-datepicker-range"
                 value="{{ $event->event_open }} - {{ $event->event_closed }}">
             </div>
         </div>
-
     </div>
 
     <div class="form-group">

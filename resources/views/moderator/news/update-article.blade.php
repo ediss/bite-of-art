@@ -38,8 +38,8 @@
     @csrf
     <div class="form-group">
         <div class="row">
-            <div class="col-md-6">
-                <label class="form-control-label"><b>Name</b></label>
+            <div class="col-md-3">
+                <label class="form-control-label"><b>Name(ENG)</b></label>
                 <input type="text" class="form-control" name="new_article_name" value="{{ $article->article_name }}">
 
 
@@ -54,10 +54,19 @@
 
             </div>
 
-            <div class="col-md-6">
-                <label class="form-control-label"><b>Date</b></label>
-                <input type="text" name="new_daterange" id="new_daterange" class="form-control text-center js-datepicker-range"
-                    value="{{ $article->article_open }}">
+            <div class="col-md-3">
+                <label class="form-control-label"><b>Name(SRB)</b></label>
+                <input type="text" class="form-control" name="new_article_name_srb" value="{{ $article->article_name_srb }}">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-control-label"><b>Name(ESP)</b></label>
+                <input type="text" class="form-control" name="new_article_name_esp" value="{{ $article->article_name_esp }}">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-control-label"><b>Name(SLO)</b></label>
+                <input type="text" class="form-control" name="new_article_name_slo" value="{{ $article->article_name_slo }}">
             </div>
 
         </div>
@@ -67,7 +76,9 @@
 
         <div class="row">
             <div class="col-12">
-
+                <label class="form-control-label"><b>Date</b></label>
+                <input type="text" name="new_daterange" id="new_daterange" class="form-control text-center js-datepicker-range"
+                    value="{{ $article->article_open }}">
             </div>
         </div>
 

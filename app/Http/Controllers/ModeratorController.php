@@ -158,8 +158,6 @@ class ModeratorController extends Controller
 
         $event = Event::find($event_id);
 
-
-
         $validator = null;
         if ($request->isMethod('post')) {
 
@@ -181,6 +179,9 @@ class ModeratorController extends Controller
                 $vr_tour            = $request->input('virtual_tour');
                 $img_360            = $request->input('img_360');
                 $event_name         = $request->input('new_event_name');
+                $event_name_srb     = $request->input('new_event_name_srb');
+                $event_name_esp     = $request->input('new_event_name_esp');
+                $event_name_slo     = $request->input('new_event_name_slo');
                 $event_date         = explode(" - ", $request->input('new_daterange'));
                 $event_cover        = $request->input('new_event_cover');
                 $event_desc         = $request->input('new_event_description');
@@ -197,9 +198,6 @@ class ModeratorController extends Controller
                 $event_media        = $request->input('new_event_media');
                 $event_media_desc   = $request->input('new_media_description');
                 $event_note         = $request->input('new_event_note');
-
-
-
 
                 //uplouding event photos
                 if ($request->hasFile('new_event_cover')) {
@@ -225,14 +223,14 @@ class ModeratorController extends Controller
                     $event_image_3_path   = $event_image_3 ? $event_image_3->move('images/events/', $event_image_3_name) : null;
                 }
 
-
                 //Inserting in DB
                 $event->event_name           = $event_name;
+                $event->event_name_srb       = $event_name_srb;
+                $event->event_name_esp       = $event_name_esp;
+                $event->event_name_slo       = $event_name_slo;
                 $event->event_open           = $event_date[0];
                 $event->event_closed         = $event_date[1];
                 $event->event_cover          = (isset($event_cover_path)) ? $event_cover_path : $event->event_cover;
-
-
 
                 $event->event_description_en     = $event_desc;
                 $event->event_description_srb    = $event_desc_srb;
@@ -251,10 +249,8 @@ class ModeratorController extends Controller
                 $event->img_360                  = $img_360;
 
 
-
                 if ($event->save()) {
                     $message = ["success", $event->event_name . " is updated"];
-
 
                     //GaleryName(first 3 char)+GaleryId+EventName(first 3 char)+EventID
                     $nfc_tag = substr($event->user->gallery_name, 0, 3).$event->user->id.substr($event->event_name, 0, 3).$event->id;
@@ -558,8 +554,12 @@ class ModeratorController extends Controller
                 ]
             );
 
+
             if ($validator->passes()) {
                 $article_name         = $request->input('new_article_name');
+                $article_name_srb     = $request->input('new_article_name_srb');
+                $article_name_esp     = $request->input('new_article_name_esp');
+                $article_name_slo     = $request->input('new_article_name_slo');
                 $article_date         = $request->input('new_daterange');
                 $article_cover        = $request->input('new_article_cover');
                 $article_text         = $request->input('new_article_text');
@@ -597,22 +597,15 @@ class ModeratorController extends Controller
 
                 //Inserting in DB (news table)
                 $article->article_name              = $article_name;
+                $article->article_name_srb          = $article_name_srb;
+                $article->article_name_esp          = $article_name_esp;
+                $article->article_name_slo          = $article_name_slo;
                 $article->article_open              = $article_date;
                 $article->article_cover             = (isset($article_cover_path)) ? $article_cover_path : $article->article_cover;
                 $article->article_description       = $article_text;
                 $article->esp_article_description   = $article_text_esp;
                 $article->srb_article_description   = $article_text_srb;
                 $article->slo_article_description   = $article_text_slo;
-
-                //Inserting in DB (article_additionals table)
-
-
-
-
-
-//                $article_images = new ArticleAdditionals($article_id);
-
-
 
 
                 if ($article->save()) {

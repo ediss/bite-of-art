@@ -124,6 +124,9 @@ class ApiController extends Controller
 
                             'id'                        => $elem->id,
                             'article_name'              => $elem->article_name,
+                            'article_name_srb'          => $elem->article_name_srb,
+                            'article_name_esp'          => $elem->article_name_esp,
+                            'article_name_slo'          => $elem->article_name_slo,
                             'article_open'              => $elem->article_open,
                             'article_closed'            => $elem->article_closed,
                             'article_cover'             => $elem->article_cover,
