@@ -40,7 +40,7 @@ class ApiController extends Controller
                 $response="No events data where event closed: '$request->event_closed'";
             }
         }elseif($request->last){
-            $response = Event::select('id', 'event_name', 'event_open', 'event_closed', 'event_cover', 'event_place', 'gallerist_id')
+            $response = Event::select('id', 'event_name', 'event_name_srb', 'event_name_esp', 'event_name_slo', 'event_open', 'event_closed', 'event_cover', 'event_place', 'gallerist_id')
             ->where('approved', '=', 1)->orderBy('created_at', 'desc')->take($request->last)->get();
         }else {
             $response = Event::where('approved', '=', 1)->orderBy('created_at', 'desc')->get();
